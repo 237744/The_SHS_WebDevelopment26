@@ -3,163 +3,76 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Mad Lib Assignment</title>
+    <title>Conditional Statements Assignment</title>
 
-    <style>
-        body {
-            font-family: Arial;
-            padding: 40px;
+    <script>
+
+        function isNegative() {
+
+            let num = document.getElementById("num").value;
+
+            // using !== (not equal strict comparison example)
+            if (num !== "") {
+
+                if (num < 0) {
+                    alert("negative");
+                }
+            }
         }
 
-        h1, h2 {
-            margin-top: 40px;
+        function isNegOrNon() {
+
+            let num = document.getElementById("num").value;
+
+            // using === and < operator
+            if (num < 0) {
+                alert("negative");
+            }
+            else if (num === "0" || num > 0) {
+                // using || (OR)
+                alert("nonnegative");
+            }
         }
 
-        input {
-            width: 300px;
-            height: 35px;
-            font-size: 20px;
-            margin: 5px;
-            padding-left: 5px;
+        function isNegOrNonOrNaN() {
+
+            let num = document.getElementById("num").value;
+
+            // using isNaN + logical operators
+            if (isNaN(num)) {
+                alert("Not a Number");
+            }
+            else if (num < 0 && num !== "") {
+                // using && (AND)
+                alert("negative");
+            }
+            else {
+                alert("nonnegative");
+            }
         }
 
-        button {
-            height: 40px;
-            font-size: 20px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
+    </script>
 
-        table {
-            border-collapse: collapse;
-            width: 70%;
-            margin-top: 15px;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-        }
-
-        th, td {
-            padding: 10px;
-            font-size: 18px;
-        }
-
-        p {
-            font-size: 20px;
-        }
-
-        .output {
-            color: blue;
-            font-weight: bold;
-            font-size: 24px;
-        }
-    </style>
 </head>
 
 <body>
 
-    <h1>Mad Lib Assignment</h1>
+    <main>
 
-    <!-- STORY -->
-    <h2>Short Story</h2>
+        <h2>Conditional Statement Exercises</h2>
 
-    <p>
-        Inside a quiet village near the mountains, a curious teenager named Mason dreamed of becoming an inventor.
-        Every afternoon, he worked inside his small garage building strange machines out of old metal and broken electronics.
-        His neighbors often laughed at his unusual ideas, but Mason never gave up on his experiments.
-    </p>
+        Number:
+        <input id="num" type="text"/>
 
-    <p>
-        One stormy evening, Mason discovered a glowing object buried beneath a pile of tools in the corner of the garage.
-        The object was smooth, silver, and covered in mysterious symbols that shimmered in the dark.
-        As soon as he touched it, the garage lights flickered wildly and the windows rattled from the powerful energy.
-    </p>
+        <br><br>
 
-    <p>
-        Mason slowly stepped through the doorway and entered a massive underground laboratory filled with futuristic technology.
-        Strange robots moved silently across the room while giant computer screens displayed maps of distant planets.
-        From that moment forward, Mason knew his ordinary life had changed forever.
-    </p>
+        <input type="button" value="Exercise One" onclick="isNegative()" />
+        <input type="button" value="Exercise Two" onclick="isNegOrNon()" />
+        <input type="button" value="Exercise Three" onclick="isNegOrNonOrNaN()" />
 
-    <!-- WORD TABLE -->
-    <h2>Remove and Classify Twenty Words</h2>
+        <div id="outError"></div>
 
-    <table>
-        <tr>
-            <th>Word</th>
-            <th>Type</th>
-        </tr>
-
-        <tr><td>quiet</td><td>Adjective</td></tr>
-        <tr><td>curious</td><td>Adjective</td></tr>
-        <tr><td>teenager</td><td>Noun</td></tr>
-        <tr><td>inventor</td><td>Noun</td></tr>
-        <tr><td>afternoon</td><td>Noun</td></tr>
-        <tr><td>small</td><td>Adjective</td></tr>
-        <tr><td>strange</td><td>Adjective</td></tr>
-        <tr><td>broken</td><td>Adjective</td></tr>
-        <tr><td>often</td><td>Adverb</td></tr>
-        <tr><td>unusual</td><td>Adjective</td></tr>
-        <tr><td>stormy</td><td>Adjective</td></tr>
-        <tr><td>glowing</td><td>Adjective</td></tr>
-        <tr><td>silver</td><td>Adjective</td></tr>
-        <tr><td>mysterious</td><td>Adjective</td></tr>
-        <tr><td>wildly</td><td>Adverb</td></tr>
-        <tr><td>massive</td><td>Adjective</td></tr>
-        <tr><td>futuristic</td><td>Adjective</td></tr>
-        <tr><td>silently</td><td>Adverb</td></tr>
-        <tr><td>giant</td><td>Adjective</td></tr>
-        <tr><td>planets</td><td>Noun</td></tr>
-    </table>
-
-    <!-- INPUT FORM -->
-    <h2>Mad Lib Input Form</h2>
-
-    <p>Noun:
-        <input type="text" id="noun1">
-    </p>
-
-    <p>Adjective:
-        <input type="text" id="adjective1">
-    </p>
-
-    <p>Adverb:
-        <input type="text" id="adverb1">
-    </p>
-
-    <p>Another Noun:
-        <input type="text" id="noun2">
-    </p>
-
-    <button onclick="makeMadLib()">Submit</button>
-
-    <!-- OUTPUT -->
-    <h2>Mad Lib Output</h2>
-
-    <p id="output" class="output"></p>
-
-    <!-- JAVASCRIPT -->
-    <script>
-
-        function makeMadLib() {
-
-            let noun1 = document.getElementById("noun1").value;
-            let adjective1 = document.getElementById("adjective1").value;
-            let adverb1 = document.getElementById("adverb1").value;
-            let noun2 = document.getElementById("noun2").value;
-
-            // FULL MAD LIB STORY (FIXED + MORE NATURAL)
-            let story =
-                "Inside a " + adjective1 + " world, a " + noun1 +
-                " moved " + adverb1 +
-                " through the village searching for a mysterious " + noun2 +
-                ". Everything around it felt strange and full of hidden energy.";
-
-            document.getElementById("output").innerHTML = story;
-        }
-
-    </script>
+    </main>
 
 </body>
 
