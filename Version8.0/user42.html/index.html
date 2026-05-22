@@ -1,18 +1,39 @@
+<!DOCTYPE html>
 <html lang="en">
-    <!--Version 8.0 
-	Name:
-	Date Completed:
-    -->
     <head>
-        
-        <title>Web Development User #00</title>
-    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Web Development User #42 - Weather App</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     
     <body>
         
-        <center>My name is User #00</center>
-    
-    </body>
+        <header style="text-align: center; margin-top: 20px;">
+            <h1>User #42's Weather Dashboard</h1>
+            <p>Assignment 1.8b: OpenWeatherMap API Integration</p>
+        </header>
 
+        <main style="max-width: 600px; margin: 0 auto; padding: 20px; text-align: center;">
+            
+            <section class="search-box">
+                <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+                <button id="search-btn">Search</button>
+            </section>
+
+            <section class="weather-display" style="margin-top: 30px;">
+                <h2 id="location">City Name</h2>
+                <div id="weather-icon">
+                    </div>
+                <h3 id="temperature">--°F</h3>
+                <p id="description">Weather condition</p>
+            </section>
+
+            <section class="extra-features" style="margin-top: 40px; border-top: 1px solid #ccc; padding-top: 20px;">
+                </section>
+
+        </main>
+    
+        <script src="script.js"></script>
+    </body>
 </html>

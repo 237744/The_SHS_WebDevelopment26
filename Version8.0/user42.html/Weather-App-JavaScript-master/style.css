@@ -1,0 +1,118 @@
+*{
+    font-family: "Rimouski";
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(135deg, #293251, #1f2a44);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+/* MAIN CARD */
+.container{
+    width: 320px;
+    background-color: #FFF;
+    border-radius: 12px;
+    padding-bottom: 30px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+/* TITLE */
+.app-title{
+    width: 100%;
+    height: 60px;
+    background: #293251;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-title p{
+    margin: 0;
+    font-size: 1.3em;
+    color: white;
+}
+
+/* ERROR BOX */
+.notification{
+    background-color: #f8d7da;
+    display: none;
+    text-align: center;
+}
+
+.notification p{
+    color: #721c24;
+    font-size: 1em;
+    margin: 0;
+    padding: 10px;
+}
+
+/* WEATHER AREA */
+.weather-container{
+    width: 100%;
+    padding: 20px 0;
+    background-color: #F4F9FF;
+}
+
+/* ICON */
+.weather-icon{
+    height: 130px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-icon img{
+    width: 100px;
+}
+
+/* TEMPERATURE */
+.temperature-value{
+    text-align: center;
+    margin-top: 10px;
+}
+
+.temperature-value p{
+    margin: 0;
+    color: #293251;
+    font-size: 4em;
+    cursor: pointer;
+}
+
+.temperature-value span{
+    font-size: 0.4em;
+    color: #293251;
+}
+
+/* DESCRIPTION */
+.temperature-description p{
+    margin: 10px 0 0 0;
+    color: #293251;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+/* LOCATION */
+.location p{
+    margin: 5px 0 0 0;
+    color: #555;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* EXTRA INFO (NEW FEATURE) */
+.extra-info{
+    margin-top: 15px;
+    text-align: center;
+    color: #293251;
+    font-size: 0.9em;
+}
+
+.extra-info p{
+    margin: 5px 0;
+}

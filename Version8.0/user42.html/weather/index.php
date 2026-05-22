@@ -1,12 +1,18 @@
 <?php
-// 1. FIX TIMEZONE: Force Central Time right at the start of the script
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// FIX TIMEZONE
 date_default_timezone_set("US/Central");
 
-$apiKey = "API KEY"; // Remember to paste your actual OpenWeatherMap API key here
-$cityId = "5046997"; // 5046997 Shakopee City Id
+// YOUR API KEY
+$apiKey = "d2b6e8a6f9d5024ac91bcb2a60dd205e";
 
-// 2. UNIT CHANGE: Changed from "metric" to "imperial" for Fahrenheit
-$units = "imperial"; 
+// SHAKOPEE CITY ID
+$cityId = "5046997";
+
+// USE FAHRENHEIT
+$units = "imperial";
 
 if ($units == 'metric'){
     $temp = "C";
@@ -14,58 +20,68 @@ if ($units == 'metric'){
 }
 else {
     $temp = "F";
-    $windUnit = "mph"; // Imperial uses miles per hour
+    $windUnit = "mph";
 }
 
-$googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?id=" . $cityId . "&lang=en&units=" . $units . "&APPID=" . $apiKey;
+// API URL
+$googleApiUrl = "https://api.openweathermap.org/data/2.5/weather?id="
+. $cityId . "&lang=en&units=" . $units . "&APPID=" . $apiKey;
 
+// CURL REQUEST
 $ch = curl_init();
+
 curl_setopt($ch, CURLOPT_HEADER, 0);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_URL, $googleApiUrl);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 curl_setopt($ch, CURLOPT_VERBOSE, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+
 $response = curl_exec($ch);
 curl_close($ch);
 
+// CONVERT JSON
 $data = json_decode($response);
+
 $currentTime = time();
 
-// 3. CONDITIONAL STATEMENT: Determine background color based on current temp
-// Grab the current temperature from the API object
-$currentTemp = $data->main->temp; 
+// CURRENT TEMP
+$currentTemp = $data->main->temp;
 
+// DYNAMIC BACKGROUND COLOR
 if ($currentTemp >= 80) {
-    $bgColor = "#ffccd5"; // Pastel soft red for hot days
-} elseif ($currentTemp >= 60 && $currentTemp < 80) {
-    $bgColor = "#fff2cc"; // Pastel warm yellow for nice days
-} elseif ($currentTemp >= 40 && $currentTemp < 60) {
-    $bgColor = "#d9ead3"; // Pastel green for mild/cool days
-} else {
-    $bgColor = "#c9daf8"; // Pastel blue for cold days
+    $bgColor = "#ffccd5";
+}
+elseif ($currentTemp >= 60 && $currentTemp < 80) {
+    $bgColor = "#fff2cc";
+}
+elseif ($currentTemp >= 40 && $currentTemp < 60) {
+    $bgColor = "#d9ead3";
+}
+else {
+    $bgColor = "#c9daf8";
 }
 ?>
 
 <!doctype html>
 <html>
+
 <head>
+
 <title>Forecast Weather using OpenWeatherMap with PHP</title>
 
 <style>
-/* 4. DYNAMIC BACKGROUND: Injected our PHP $bgColor variable here */
+
 body {
     font-family: Arial;
     font-size: 0.95em;
     color: #555555;
     background-color: <?php echo $bgColor; ?>;
-    transition: background-color 0.5s ease; /* Makes color shifts look smooth */
+    transition: background-color 0.5s ease;
 }
 
-/* Added a solid white background with transparency to the container 
-   so the text stays perfectly readable over the changing background colors */
 .report-container {
-    background: rgba(255, 255, 255, 0.9); 
+    background: rgba(255, 255, 255, 0.9);
     border: #E0E0E0 1px solid;
     padding: 20px 40px 40px 40px;
     border-radius: 8px;
@@ -81,9 +97,11 @@ body {
 
 .weather-forecast {
     color: #212121;
-    font-size: 1.2em;
+    font-size: 2em;
     font-weight: bold;
     margin: 20px 0px;
+    display:flex;
+    align-items:center;
 }
 
 span.min-temperature {
@@ -94,16 +112,133 @@ span.min-temperature {
 .time {
     line-height: 25px;
 }
+
+.time div{
+    margin:8px 0;
+}
+
 </style>
 
 </head>
+
 <body>
 
-    <div class="report-container">
-        <h2><?php echo $data->name; ?> Weather Status</h2>
-        <div class="time">
-            <div><?php echo date("l g:i a", $currentTime); ?></div>
-            <div><?php echo date("jS F, Y", $currentTime); ?></div>
-            <div><?php echo ucwords($data->weather[0]->description); ?></div>
+<div class="report-container">
+
+    <h2>
+        <?php echo $data->name; ?> Weather Status
+    </h2>
+
+    <div class="time">
+
+        <div>
+            <?php echo date("l g:i a", $currentTime); ?>
         </div>
-        <div class="weather-forecast">
+
+        <div>
+            <?php echo date("jS F, Y", $currentTime); ?>
+        </div>
+
+        <div>
+            <?php echo ucwords($data->weather[0]->description); ?>
+        </div>
+
+    </div>
+
+    <div class="weather-forecast">
+
+        <img
+        src="https://openweathermap.org/img/wn/<?php echo $data->weather[0]->icon; ?>@2x.png"
+        class="weather-icon" />
+
+        <?php echo $data->main->temp; ?>&deg;<?php echo $temp; ?>
+
+        <span class="min-temperature">
+            Min:
+            <?php echo $data->main->temp_min; ?>&deg;<?php echo $temp; ?>
+        </span>
+
+    </div>
+
+    <div class="time">
+
+        <div>
+            Humidity:
+            <?php echo $data->main->humidity; ?>%
+        </div>
+
+        <div>
+            Wind Speed:
+            <?php echo $data->wind->speed . " " . $windUnit; ?>
+        </div>
+
+        <div>
+            Pressure:
+            <?php echo $data->main->pressure; ?> hPa
+        </div>
+
+        <div>
+            Feels Like:
+            <?php echo $data->main->feels_like; ?>&deg;<?php echo $temp; ?>
+        </div>
+
+        <div>
+            Sunrise:
+            <?php echo date("g:i a", $data->sys->sunrise); ?>
+        </div>
+
+        <div>
+            Sunset:
+            <?php echo date("g:i a", $data->sys->sunset); ?>
+        </div>
+
+    </div>
+
+    <br>
+
+    <h3>
+
+    <?php
+    $weatherMain = $data->weather[0]->main;
+
+    if($weatherMain == "Rain"){
+        echo "Don't forget your umbrella ☔";
+    }
+    elseif($weatherMain == "Snow"){
+        echo "Bundle up outside ❄️";
+    }
+    elseif($weatherMain == "Clear"){
+        echo "Perfect weather today ☀️";
+    }
+    elseif($weatherMain == "Clouds"){
+        echo "A cloudy day in Shakopee ☁️";
+    }
+    else{
+        echo "Stay prepared for today's weather!";
+    }
+    ?>
+
+    </h3>
+
+    <!-- FEATURE 1: EXTRA ALERT MESSAGE -->
+    <div class="time">
+        <?php
+        if($currentTemp > 85){
+            echo "<b>Heat Advisory: Stay hydrated! 🥤</b>";
+        }
+        elseif($currentTemp < 32){
+            echo "<b>Freezing Alert: Dress warm 🧊</b>";
+        }
+        ?>
+    </div>
+
+    <!-- FEATURE 2: SIMPLE WEATHER ICON TEXT LABEL -->
+    <div class="time">
+        <b>Weather Type:</b>
+        <?php echo $data->weather[0]->main; ?>
+    </div>
+
+</div>
+
+</body>
+</html>
