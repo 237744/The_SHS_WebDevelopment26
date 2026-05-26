@@ -1,0 +1,20 @@
+body {
+    background: white;
+    color: black;
+    transition: 0.3s;
+}
+
+body.dark {
+    background: #121212;
+    color: #f1f1f1;
+}
+
+.card {
+    padding: 10px;
+    margin: 10px 0;
+    background: #f4f4f4;
+}
+
+body.dark .card {
+    background: #1e1e1e;
+}
