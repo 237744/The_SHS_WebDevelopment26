@@ -1,0 +1,11 @@
+function isNegOrNonOrNan(){
+  const userNum = document.getElementById("num").value;
+  
+  if (isNaN(userNum)) {
+    alert("Not a Number");
+  } else if (userNum < 0) {
+    alert("negative");
+  } else {
+    alert("nonnegative");
+  }
+}

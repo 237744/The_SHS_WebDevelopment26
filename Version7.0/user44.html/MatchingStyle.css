@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+
+body{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+background-image:radial-gradient(circle,#16d9e3,#46aef7);
+perspective:1200px;
+}
+
+.board{
+display:grid;
+grid-template-columns:repeat(4,100px);
+grid-template-rows:repeat(4,100px);
+gap:20px;
+transform:rotateX(50deg) rotateZ(22deg);
+transform-style:preserve-3d;
+}
+
+.clone{
+display:none;
+}
+
+.cube{
+position:relative;
+width:100px;
+height:100px;
+transform-style:preserve-3d;
+transition:.5s;
+cursor:pointer;
+}
+
+.cube.flipped{
+transform:rotateY(180deg);
+}
+
+.cube.matched{
+transform:rotateY(180deg);
+}
+
+.face{
+position:absolute;
+width:100px;
+height:100px;
+backface-visibility:hidden;
+}
+
+.face:nth-child(1){
+background:wheat;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:60px;
+font-family:'Fredoka One';
+}
+
+.face:nth-child(1)::before{
+content:"?";
+}
+
+.face:nth-child(3){
+background:dodgerblue;
+transform:rotateY(180deg);
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+background:rgba(255,255,255,.8);
+}
+
+.hidden{
+opacity:0;
+pointer-events:none;
+}
+
+.gameover{
+background:white;
+padding:30px;
+border-radius:30px;
+font-family:'Fredoka One';
+font-size:30px;
+}
+
+.reset{
+padding:10px 20px;
+cursor:pointer;
+}
+
+audio{
+display:none;
+}
+
+[data-tile="egg"] .face:nth-child(3){
+background:#fff8e7 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-egg.svg")
+center center no-repeat;
+background-size:60px;
+}
+
+[data-tile="dino"] .face:nth-child(3){
+background:#fff8e7 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-dino1.svg")
+bottom center no-repeat;
+background-size:85px;
+}
+
+[data-tile="ahahah"] .face:nth-child(3){
+background:#fff8e7 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-ah.svg")
+center center no-repeat;
+background-size:60px;
+}
+
+[data-tile="tri"] .face:nth-child(3){
+background:#fff8e7 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-tri.svg")
+center center no-repeat;
+background-size:85px;
+}
+
+[data-tile="ptero"] .face:nth-child(3){
+background:#fff8e7 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-ptero.svg")
+center center no-repeat;
+background-size:85px;
+}
+
+[data-tile="erupt"] .face:nth-child(3){
+background:#fff8e7 url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/62105/dino-erupt.svg")
+center center no-repeat;
+background-size:85px;
+}
+
+#moves{
+position:absolute;
+top:20px;
+left:20px;
+font-size:24px;
+font-family:'Fredoka One';
+color:white;
+}

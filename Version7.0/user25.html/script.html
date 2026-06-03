@@ -1,94 +1,247 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="en">
 <!--Version 5.0
-    Name:
+    Name: Rylan Peterson
     Date Completed:
 -->
 
 <head>
+
+    <script src="JS/SampleJS.js"></script>
+
     <title>JavaScript</title>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="SHS WebDev JavaScript Practice">
 
-    <!-- CSS -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <!-- Animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+
     <!-- Custom -->
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- JavaScript -->
-    <!-- These are needed to get the responsive menu to work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="JS/script.js"></script>
 
-    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+    <style>
+        .bigText {
+            font-size: 40px;
+            color: blue;
+            font-weight: bold;
+        }
 
-    <!-- Custom styles for this template -->
-    <style type="text/css">
+        .feature-box {
+            border: 2px solid black;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 10px;
+            background-color: lightgray;
+        }
 
+        body {
+            background-color: whitesmoke;
+        }
     </style>
+
 </head>
 
-<body>
-    <!---------------------------------- Begin the nav-bar ------------->
+<body onmousedown="isKeyPressed(event)">
+
+    <!---------------------------------- NAVBAR ----------------------------->
+
     <div class="menu">
         <nav class="navbar navbar-expand-md p-2 navbar-dark bg-dark">
+
             <a href="http://shakonet.isd720.com/WebDev" class="navbar-brand">WebDev</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+
+            <button type="button" class="navbar-toggler" data-toggle="collapse"
+                data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
+
                 <div class="navbar-nav">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="#" class="nav-item nav-link">About Me</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Music</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Lists</a>
-                    <a href="games.html" class="nav-item nav-link" tabindex="-1">Games</a>
-                    <a href="bootstrap.html" class="nav-item nav-link" tabindex="-1">Bootstrap</a>
-                    <a href="script.html" class="nav-item nav-link active" tabindex="-1">JavaScript</a>
-                    <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled" tabindex="-1">Contact</a>
-                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your Menu ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+                    <a href="games.html" class="nav-item nav-link">Games</a>
+                    <a href="bootstrap.html" class="nav-item nav-link">Bootstrap</a>
+                    <a href="script.html" class="nav-item nav-link active">JavaScript</a>
                 </div>
-                <div class="navbar-nav ms-auto">
-                    <a href="#" class="nav-item nav-link disabled">Login</a>
-                </div>
+
             </div>
         </nav>
     </div>
-    <!---------------------------------- End the nav-bar ------------->
 
-    <main class="m-3" id="content">
-        <h1 class="text-left my-3">My JavaScript Examples</h1>
-        <!-- Edit this line for the title of your page -->
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+    <!---------------------------------- PAGE TITLE ----------------------------->
+
+    <div class="container text-center mt-4">
+
+        <h1>My JavaScript Examples</h1>
+
+        <h3 id="loadText">Waiting for page load...</h3>
+
+    </div>
+
+    <!---------------------------------- ROW 1 ----------------------------->
+
+    <div class="container">
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Change Text</h3>
+
+                    <p id="textChange">My name is User #25</p>
+
+                    <button class="btn btn-primary" onclick="changeText()">
+                        Click Me
+                    </button>
+
+                </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Alert Button</h3>
+
+                    <button class="btn btn-danger" onclick="showAlert()">
+                        Show Alert
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Double Click</h3>
+
+                    <p ondblclick="doubleClick()">
+                        Double click this text
+                    </p>
+
+                </div>
+            </div>
+
         </div>
-    </main>
-    <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
 
+        <!---------------------------------- ROW 2 ----------------------------->
 
-    <!---------------------------------- Begin the footer ------------->
-    <footer class="small text-center" id="footer">
-        <p>
-            Webpage made by <a href="index.html" target="_blank">[your name]</a>
-        </p>
-    </footer>
-    <!---------------------------------- End the footer ------------->
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Hover Effect</h3>
+
+                    <p onmouseover="mouseOver()"
+                        onmouseout="mouseOut()"
+                        id="hoverText">
+
+                        Hover over me
+
+                    </p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Key Press</h3>
+
+                    <input type="text"
+                        onkeydown="keyPress()"
+                        placeholder="Type here">
+
+                    <p id="keyText"></p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Input Change</h3>
+
+                    <input type="text"
+                        onchange="inputChange()"
+                        placeholder="Change me">
+
+                    <p id="inputText"></p>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!---------------------------------- ROW 3 ----------------------------->
+
+        <div class="row text-center">
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Current Time</h3>
+
+                    <button class="btn btn-success"
+                        onclick="showTime()">
+
+                        Show Time
+
+                    </button>
+
+                    <p id="timeText"></p>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Background Color</h3>
+
+                    <button class="btn btn-warning"
+                        onclick="changeBackground()">
+
+                        Change Background
+
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="feature-box">
+
+                    <h3>Shift Key Detection</h3>
+
+                    <p>Click while holding shift</p>
+
+                    <p id="demo"></p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
 </body>
 
 </html>

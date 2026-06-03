@@ -1,37 +1,89 @@
+/* Task 26: Universal Selector - Applies to every element */
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+    /* Removed Task 23 ugly border and text-align */
+}
+
+/* --- Title Classes --- */
+.title {
+    color: red;
+}
+
+.title-large {
+    font-size: 2rem;
+    display: block;
+}
+
+.title-small {
+    font-size: .5rem;
+    display: block;
+}
+
+/* --- ID Selectors --- */
+#morecontent {
+    background-color: yellow; /* Task 18 */
+}
+
+#hireButtons {
+    border: 2px solid #476e9e; /* Task 22 brainstorming */
+    background-color: #f0f4f8;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 20px auto;
+}
+
+#footerTable {
+    background-color: #e9ecef; /* Task 22 brainstorming */
+    border-top: 2px solid #343a40;
+    padding: 10px;
+}
+
+/* --- Button Classes --- */
 .button {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	padding: 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
+    background-color: #5cb85c;
+    border: none;
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.button1 {
-	border-radius: 8px;
+/* Task 17: Sub-classes for radius */
+.button-largeRadius {
+    border-radius: 30px;
 }
 
-.button2 {
-	border-radius: 30%;
+.button-smallRadius {
+    border-radius: 4px;
 }
 
 .red {
-	background-color: #ff0000;
+    background-color: #d9534f;
 }
 
-td{
-	padding:20px;
+/* Custom Blue Button */
+.myButton {
+    background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    background-color: #7892c2;
+    border-radius: 10px;
+    border: 1px solid #4e6096;
+    display: inline-block;
+    color: #ffffff;
+    padding: 12px 37px;
+    text-decoration: none;
 }
 
-table{
-	margin-left: auto;
-	margin-right: auto;
+.myButton:hover {
+    background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 }
 
-h1, h2, h3, h4, h5, h6{
-	text-align:center;
+/* General Layout */
+h1, h3 {
+    text-align: center;
+}
+
+td {
+    padding: 15px;
 }

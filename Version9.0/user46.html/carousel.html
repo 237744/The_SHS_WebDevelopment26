@@ -27,59 +27,72 @@
     <!-- These are needed to get the responsive menu to work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
-        .container>img {
-            height: 80vh;
-            object-fit: contain;
-            margin-left: auto;
-            margin-right: auto;
-
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #b8b8b8 0%, #b8b8b8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 10px;
         }
-
-        .navbar-brand #brand a img {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-            position: static;
+         .menu {
+            width: 100%;
+            margin-bottom: 20px;
         }
+        .carousel {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
 
-        #brand {
-            height: 20px;
-        }
+.carousel-item {
+    height: 500px;
+    background-color: #000;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.carousel-indicators li {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.carousel-indicators .active {
+    background-color: #007bff;
+}
+
+/* FIX NAVBAR LOGO */
+.navbar-brand img {
+    height: 30px;
+    width: auto;
+}
     </style>
 </head>
 
 <body>
     <div class="menu">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div id="brand">
-                <a href="http://shakonet.isd720.com" class="navbar-brand">
-                    <img src="images/favicon.ico">
-                </a>
-            </div>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="#" class="nav-item nav-link">About Me</a>
-                    <a href="music.html" class="nav-item nav-link">Music</a>
-                    <a href="#" class="nav-item nav-link active">Lists</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Games</a>
-                    <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled"
-                        tabindex="-1">Contact</a>
-                    <!----------------------------------^ Edit These Items in your Menu ^ ------------->
-                </div>
-                <div class="navbar-nav ml-auto">
-                    <a href="#" class="nav-item nav-link disabled">Login</a>
-                </div>
-            </div>
-        </nav>
+         <nav>
+        <div style="background-color: rgb(0, 0, 0); padding: 10px;">
+             <a href="index.html" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 10px;">Home</a>
+             <a href="games.html" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 10px;">Games</a>
+             <a href="carousel.html" style="color: rgb(255, 255, 255); text-decoration: none;">Carousel</a>
+         </div>
+     </nav>
     </div>
     <!---------------------------------- End the nav-bar ------------->
     <div class="container-fluid">
@@ -87,7 +100,7 @@
             <div class="col-md-2">
             </div>
             <div class="col-md-8">
-                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="5000">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -95,21 +108,15 @@
                     </ol>
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <div class="container">
-                                <img class="d-block w-100" src="images/20190920_Eden_Prairie_Shakopee_web-2136.jpeg"
-                                    alt="First slide">
-                            </div>
+                            <img class="d-block w-100" src="images/2.jpg"
+                                alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <div class="container">
-                                <img class="d-block w-100" src="images/b5577_img2_41958_large.jpeg" alt="Second slide">
-                            </div>
+                            <img class="d-block w-100" src="images/1.jpg" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <div class="container">
-                                <img class="d-block w-100" src="images/shako_by_orndorf.jpeg"
-                                    alt="Third slide">
-                            </div>
+                            <img class="d-block w-100" src="images/tree.jpg"
+                                alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -128,10 +135,10 @@
         </div>
     </div>
 
-    <p>Lorem ipsum</p>
-    <p>Lorem ipsum</p>
-    <p>Lorem ipsum</p>
-    <p>Lorem ipsum</p>
+    <p>This carousel displays a series of images.</p>
+     <p>Please admire this work because it took me so long to rework this feature.</p>
+
+   
 </body>
 
 </html>

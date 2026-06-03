@@ -1,0 +1,103 @@
+<!DOCTYPE html><link rel="stylesheet" href="style.css">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simple Photo Gallery</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    My Photo Gallery
+    <!-- Car Photos -->
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70" alt="Sports Car"> 
+        
+        <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a" alt="Luxury Car">
+        <!-- Soccer Photos -->
+        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974" alt="Soccer Ball">
+
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018" alt="Soccer Match">
+        <!-- your other photos -->
+        <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20" alt="Soccer Stadium">
+
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c" alt="Safari Rally Car">
+
+        <img src="https://images.unsplash.com/photo-1552832230-c0197dd311b5" alt="Rome Italy">
+
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris Eiffel Tower">
+
+       <img src="https://images.unsplash.com/photo-1577223625816-7546f13df25d" alt="Inter Milan Nerazzurri">
+
+       <img src="https://images.unsplash.com/photo-1489392191049-fc10c97e64b6" alt="Kenya Landscape">
+       
+       <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946" alt="Beautiful Flowers">
+
+       <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7" alt="Roses and Violets">
+
+  </div>
+
+  <!-- Gallery -->
+  <div class="gallery">
+    <img src="https://picsum.photos/400/300?1" alt="Photo 1">
+    <img src="https://picsum.photos/400/300?2" alt="Photo 2">
+    <img src="https://picsum.photos/400/300?3" alt="Photo 3">
+    <img src="https://picsum.photos/400/300?4" alt="Photo 4">
+    <img src="https://picsum.photos/400/300?5" alt="Photo 5">
+    <img src="https://picsum.photos/400/300?6" alt="Photo 6">
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    © 2026 My Photo Gallery
+  </div>
+
+</body>
+</html>

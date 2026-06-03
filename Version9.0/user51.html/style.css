@@ -1,0 +1,17 @@
+img {
+    margin-left: 40px;
+}
+
+.text-indent {
+    text-indent: 40px;
+}
+
+.movie-layout {
+    display: flex;
+    text-indent: 55px;
+}
+
+.rating {
+    font-weight: bold;
+    color: #e50914;
+}

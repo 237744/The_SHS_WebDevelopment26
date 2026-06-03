@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../../Version4.0"
+		},
+		{
+			"path": "../../Version5.0"
+		},
+		{
+			"path": ".."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Version6.0"
+	}
+}

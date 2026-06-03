@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Tools</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            margin-bottom: 20px;
+        }
+        input {
+            width: 150px;
+            padding: 3px;
+            margin: 2px;
+        }
+        button {
+            padding: 3px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        .result {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .pythagorean-header {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            margin-bottom: 2px;
+        }
+        .pythagorean-inputs {
+            font-family: "Times New Roman", Times, serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <input type="number" id="add1"> + 
+        <input type="number" id="add2">
+        <button onclick="addNumbers()">add</button>
+        <span class="result" id="addResult"></span>
+    </div>
+
+    <div class="container">
+        <input type="number" id="mult1"> * <input type="number" id="mult2">
+        <button onclick="multiplyNumbers()">multiply</button>
+        <span class="result" id="multResult"></span>
+    </div>
+
+    <div class="container">
+        <div class="pythagorean-header">Pythagorean Theorem</div>
+        <div class="pythagorean-inputs">
+            a=<input type="number" id="pythA"><br>
+            b=<input type="number" id="pythB"><br>
+        </div>
+        <button onclick="findC()">Find C</button>
+        <span class="result" id="pythResult"></span>
+    </div>
+
+    <script>
+        function addNumbers() {
+            let num1 = parseFloat(document.getElementById('add1').value) || 0;
+            let num2 = parseFloat(document.getElementById('add2').value) || 0;
+            let sum = num1 + num2;
+            document.getElementById('addResult').innerText = "= " + sum;
+        }
+
+  
+        function multiplyNumbers() {
+            let num1 = parseFloat(document.getElementById('mult1').value) || 0;
+            let num2 = parseFloat(document.getElementById('mult2').value) || 0;
+            let product = num1 * num2;
+            document.getElementById('multResult').innerText = "= " + product;
+        }
+
+        // Function for Pythagorean Theorem (a^2 + b^2 = c^2)
+        function findC() {
+            let a = parseFloat(document.getElementById('pythA').value) || 0;
+            let b = parseFloat(document.getElementById('pythB').value) || 0;
+            
+            // Calculate C using the Math.hypot function (or Math.sqrt(a*a + b*b))
+            let c = Math.hypot(a, b);
+            
+            // Rounding to 2 decimal places to keep it clean
+            document.getElementById('pythResult').innerText = "c = " + c.toFixed(2);
+        }
+    </script>
+
+</body>
+</html>

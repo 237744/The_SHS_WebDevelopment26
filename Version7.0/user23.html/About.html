@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert Button Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            text-align: center;
+        }
+        .button-row {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        button {
+            padding: 12px 24px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Alert Button page</h1>
+        <p>Click any button to run the assigned function.</p>
+
+        <div class="button-row">
+            <button onclick="showOneAlert()">One</button>
+            <button onclick="showTwoAlerts()">Two</button>
+            <button onclick="showThreeAlerts()">Three</button>
+        </div>
+    </main>
+
+    <script>
+        function showOneAlert() {
+            alert('This is alert message 1');
+        }
+
+        function showTwoAlerts() {
+            alert('This is alert message 1');
+            alert('This is alert message 2');
+        }
+
+        function showThreeAlerts() {
+            alert('This is alert message 1');
+            alert('This is alert message 2');
+            alert('This is alert message 3');
+        }
+    </script>
+</body>
+</html>

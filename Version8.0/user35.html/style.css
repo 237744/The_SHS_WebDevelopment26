@@ -1,0 +1,128 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #0984e3);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #2d3436;
+}
+
+.weather-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    width: 350px;
+    text-align: center;
+    transition: background 0.5s ease;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #0984e3;
+}
+
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#city-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #dfe6e9;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+#search-btn {
+    padding: 10px 15px;
+    background-color: #0984e3;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.2s;
+}
+
+#search-btn:hover {
+    background-color: #00cec9;
+}
+
+.weather-box {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#location {
+    font-size: 24px;
+    margin: 10px 0 5px 0;
+}
+
+#weather-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+#description {
+    font-size: 18px;
+    text-transform: capitalize;
+    color: #636e72;
+    margin-bottom: 10px;
+}
+
+#temperature {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Extra features metrics grid layout */
+.extra-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    border-top: 1px solid #dfe6e9;
+    padding-top: 20px;
+    margin-top: 10px;
+}
+
+.detail-item {
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-item span {
+    color: #74b9ff;
+    font-weight: 600;
+}
+
+.error-msg {
+    color: #d63031;
+    background: #ff767533;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
+}
+
+/* Utility visibility styling toggles */
+.hidden {
+    display: none !important;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

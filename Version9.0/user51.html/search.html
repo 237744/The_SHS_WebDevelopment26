@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+    <title>TMDB Movie Search</title>
+    <script src="JS/search.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .search-container { margin: 30px; display: flex; justify-content: center; align-items: center;  }
+        input { padding: 10px; width: 750px; font-size: 16px; }
+        button { padding: 10px 15px; font-size: 16px; cursor: pointer; }
+        
+        .movie-result { display: flex; margin-top: 50px; margin-left: 30px; gap: 20px; max-width: 1000px; }
+        .movie-poster { max-width: 500px; border-radius: 12px; display: none; }
+        .movie-info { display: none; }
+        #messageEl {text-align: center;}
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand">WebDev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item">
+                        <a href="main-page.html" class="nav-link ">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="backtofuture.html" class="nav-link ">Back to the Future</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="shrek.html" class="nav-link ">Shrek</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="terminator.html" class="nav-link ">Terminator 2</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="search.html" class="nav-link ">Search</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Enter movie name...">
+        <button id="search-button">Search</button>
+    </div>
+
+    <div class="movie-result">
+        <img id="poster" class="movie-poster" src="" width="400px" alt="Movie Poster">
+        <div id="info-block" class="movie-info">
+            <h2 id="title"></h2>
+            <p>Rating: <span id="rating" class="rating"></span> / 10</p>
+            <p id="overview"></p>
+        </div>
+    </div>
+    <div id="messageEl">
+        <p id="message"></p>
+    </div>
+    <script src="search.js"></script>
+</body>
+</html>

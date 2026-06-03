@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA History Vault | League MVPs</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body { 
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        
+        .nav-link { color: #ffffff !important; }
+        .nav-link:hover { color: #ff0000 !important; }
+
+        .active-page {
+            color: #ff0000 !important;
+            font-weight: bold;
+        }
+
+        .page-header {
+            background-color: #034fba; 
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid #ff0000; 
+        }
+
+        .table-custom { border: 2px solid #ff0000; }
+        
+        .table-custom thead {
+            background-color: #034fba;
+            color: #ffffff;
+            border-bottom: 5px solid #000000 !important;
+        }
+        
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            background-color: rgba(3, 79, 186, 0.1); 
+        }
+
+        .table-custom th, .table-custom td {
+            border-left: 4px solid #000000 !important;
+            padding: 15px !important;
+        }
+
+        .table-custom th:first-child, .table-custom td:first-child {
+            border-left: none !important;
+        }
+        .footer-bar {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 0;
+    border-top: 2px solid #ffc107; /* The thin Gold line */
+    font-size: 0.85rem;
+    margin-top: auto; /* Helps with sticky footer */
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff0000; /* Red hover to match your page style */
+}
+
+/* This part ensures the footer stays at the bottom of the screen 
+   even if the page doesn't have much content */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+        /* Team Colors - Removed "background-color: inherit" from below to keep them solid */
+        .Thunder { color: #ffffff !important; background-color: #007AC1 !important; font-weight: bold; }
+        .nuggets { color: #ffffff !important; background-color: #0E2240 !important; font-weight: bold; }
+        .bucks { color: #ffffff !important; background-color: #00471B !important; font-weight: bold; }
+        .sixers { color: #ffffff !important; background-color: #006BB6 !important; font-weight: bold; } 
+        .rockets { color: #ffffff !important; background-color: #CE1141 !important; font-weight: bold; }
+        .warriors { color: #ffffff !important; background-color: #1D428A !important; font-weight: bold; }
+        .lakers { color: #ffffff !important; background-color: #552583 !important; font-weight: bold; }
+        .raptors { color: #ffffff !important; background-color: #CE1141 !important; font-weight: bold; }
+        .pacers { color: #ffffff !important; background-color: #002D62 !important; font-weight: bold; }
+        .mavericks { color: #ffffff !important; background-color: #00538C !important; font-weight: bold; }
+        .heat { color: #ffffff !important; background-color: #98002E !important; font-weight: bold; }  
+        .suns { color: #ffffff !important; background-color: #1D1160 !important; font-weight: bold; }
+        .cavs { color: #ffffff !important; background-color: #6F263D !important; font-weight: bold; }
+        .bulls { color: #ffffff !important; background-color: #CE1141 !important; font-weight: bold; }
+        .magic { color: #ffffff !important; background-color: #0077C0 !important; font-weight: bold; }
+        .timberwolves { color: #ffffff !important; background-color: #0C2340 !important; font-weight: bold; }
+        .spurs { color: #ffffff !important; background-color: #000000 !important; font-weight: bold; }
+        .jazz { color: #ffffff !important; background-color: #002B5C !important; font-weight: bold; }
+
+        .table-custom td[class] { opacity: 1 !important; }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning">
+    
+    <div class="container-fluid justify-content-start gap-3">
+        
+        <a class="navbar-brand" href="index.html">Home</a>
+        <div class="navbar-nav flex-row gap-3">
+            <a class="nav-link" href="champions.html">Past Champions</a>
+            <a class="nav-link active-page" href="mvps.html">MVPs</a>
+            <a class="nav-link" href="nbadraft.html">NBA Draft</a>
+            <a class="nav-link" href="teamhistory.html">Team history</a>
+        </div> </div> </nav>
+
+<header class="page-header mb-5">
+    <div class="container">
+        <h1 class="display-3 fw-bold">League MVPs</h1>
+        <p class="lead">Most Valuable Player Each Year (Since 1990)</p>
+    </div>
+</header>
+
+<main class="container mb-5">
+    <div class="table-responsive shadow">
+        <table class="table table-hover table-striped table-custom align-middle text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">Player</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Stats</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">2025</th>
+                    <td class="fw-bold">Shai Gilgeous-Alexander</td>
+                    <td class="Thunder">Oklahoma City Thunder</td>
+                    <td>32.7 PPG, 5.0 RPG, 6.4 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2024</th>
+                    <td class="fw-bold">Nikola Jokić</td>
+                    <td class="nuggets">Denver Nuggets</td>
+                    <td>26.4 PPG, 12.4 RPG, 9.0 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2023</th>
+                    <td class="fw-bold">Joel Embiid</td>
+                    <td class="sixers">Philadelphia 76ers</td>
+                    <td>33.1 PPG, 10.2 RPG, 4.2 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2022</th>
+                    <td class="fw-bold">Nikola Jokić</td>
+                    <td class="nuggets">Denver Nuggets</td>
+                    <td>27.1 PPG, 13.8 RPG, 7.9 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2021</th>
+                    <td class="fw-bold">Nikola Jokić</td>
+                    <td class="nuggets">Denver Nuggets</td>
+                    <td>26.4 PPG, 10.8 RPG, 8.3 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2020</th>
+                    <td class="fw-bold">Giannis Antetokounmpo</td>
+                    <td class="bucks">Milwaukee Bucks</td>
+                    <td>29.5 PPG, 13.6 RPG, 5.6 APG (DPOY)</td>
+                </tr>
+                <tr>
+                    <th scope="row">2019</th>
+                    <td class="fw-bold">Giannis Antetokounmpo</td>
+                    <td class="bucks">Milwaukee Bucks</td>
+                    <td>27.7 PPG, 12.5 RPG, 5.9 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2018</th>
+                    <td class="fw-bold">James Harden</td>
+                    <td class="rockets">Houston Rockets</td>
+                    <td>30.4 PPG, 5.4 RPG, 8.8 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2017</th>
+                    <td class="fw-bold">Russell Westbrook</td>
+                    <td class="Thunder">Oklahoma City Thunder</td>
+                    <td>31.6 PPG, 10.7 RPG, 10.4 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2016</th>
+                    <td class="fw-bold">Stephen Curry</td>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td>30.1 PPG, 5.4 RPG, 6.7 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2015</th>
+                    <td class="fw-bold">Stephen Curry</td>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td>23.8 PPG, 4.3 RPG, 7.7 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2014</th>
+                    <td class="fw-bold">Kevin Durant</td>
+                    <td class="Thunder">Oklahoma City Thunder</td>
+                    <td>32.0 PPG, 7.4 RPG, 5.5 APG</td>
+                </tr>         
+                <tr>
+                    <th scope="row">2013</th>
+                    <td class="fw-bold">LeBron James</td>
+                    <td class="heat">Miami Heat</td>
+                    <td>26.8 PPG, 8.0 RPG, 7.3 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2012</th>
+                    <td class="fw-bold">LeBron James</td>
+                    <td class="heat">Miami Heat</td>
+                    <td>27.1 PPG, 7.9 RPG, 6.2 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2011</th>
+                    <td class="fw-bold">Derrick Rose</td>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td>25.0 PPG, 4.1 RPG, 7.7 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2010</th>
+                    <td class="fw-bold">LeBron James</td>
+                    <td class="cavs">Cleveland Cavaliers</td>
+                    <td>29.7 PPG, 7.3 RPG, 8.6 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2009</th>
+                    <td class="fw-bold">LeBron James</td>
+                    <td class="cavs">Cleveland Cavaliers</td>
+                    <td>28.4 PPG, 7.6 RPG, 7.2 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2008</th>
+                    <td class="fw-bold">Kobe Bryant</td>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td>28.3 PPG, 6.3 RPG, 5.4 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2007</th>
+                    <td class="fw-bold">Dirk Nowitzki</td>
+                    <td class="mavericks">Dallas Mavericks</td>
+                    <td>24.6 PPG, 8.9 RPG, 3.4 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2006</th>
+                    <td class="fw-bold">Steve Nash</td>
+                    <td class="suns">Phoenix Suns</td>
+                    <td>18.8 PPG, 3.3 RPG, 10.5 APG</td>
+                </tr>  
+                <tr>
+                    <th scope="row">2005</th>
+                    <td class="fw-bold">Steve Nash</td>
+                    <td class="suns">Phoenix Suns</td>
+                    <td>15.5 PPG, 3.3 RPG, 11.5 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2004</th>
+                    <td class="fw-bold">Kevin Garnett</td>
+                    <td class="timberwolves">Minnesota Timberwolves</td>
+                    <td>24.3 PPG, 13.9 RPG, 5.0 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2003</th>
+                    <td class="fw-bold">Tim Duncan</td>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td>23.3 PPG, 12.9 RPG, 3.9 APG</td>
+                </tr>  
+                <tr>
+                    <th scope="row">2002</th>
+                    <td class="fw-bold">Tim Duncan</td>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td>25.5 PPG, 12.7 RPG, 3.7 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2001</th>
+                    <td class="fw-bold">Allen Iverson</td>
+                    <td class="sixers">Philadelphia 76ers</td>
+                    <td>31.1 PPG, 4.6 RPG, 4.6 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">2000</th>
+                    <td class="fw-bold">Shaquille O'Neal</td>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td>29.7 PPG, 13.6 RPG, 3.8 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1999</th>
+                    <td class="fw-bold">Karl Malone</td>
+                    <td class="jazz">Utah Jazz</td>
+                    <td>23.2 PPG, 9.7 RPG, 4.5 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1998</th>
+                    <td class="fw-bold">Michael Jordan</td>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td>28.7 PPG, 5.8 RPG, 3.5 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1997</th>
+                    <td class="fw-bold">Karl Malone</td>
+                    <td class="jazz">Utah Jazz</td>
+                    <td>27.4 PPG, 10.2 RPG, 3.9 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1996</th>
+                    <td class="fw-bold">Michael Jordan</td>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td>30.4 PPG, 6.6 RPG, 4.3 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1995</th>
+                    <td class="fw-bold">David Robinson</td>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td>27.6 PPG, 10.6 RPG, 3.9 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1994</th>
+                    <td class="fw-bold">Hakeem Olajuwon</td>
+                    <td class="rockets">Houston Rockets</td>
+                    <td>27.3 PPG, 11.9 RPG, 3.6 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1993</th>
+                    <td class="fw-bold">Charles Barkley</td>
+                    <td class="suns">Phoenix Suns</td>
+                    <td>25.6 PPG, 12.2 RPG, 5.1 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1992</th>
+                    <td class="fw-bold">Michael Jordan</td>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td>30.1 PPG, 6.4 RPG, 6.1 APG</td>
+                </tr>
+                <tr>
+                    <th scope="row">1991</th>
+                    <td class="fw-bold">Michael Jordan</td>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td>31.5 PPG, 6.0 RPG, 5.5 APG</td>
+                </tr> 
+                <tr>
+                    <th scope="row">1990</th>
+                    <td class="fw-bold">Magic Johnson</td>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td>22.3 PPG, 6.6 RPG, 11.5 APG</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer class="footer-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <p class="mb-0">© 2026 NBA History Vault</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="champions.html">Champions</a>
+            <a href="mvps.html">MVPs</a>
+            <a href="nbadraft.html">Draft</a>
+            <a href="teamhistory.html">Teams history</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

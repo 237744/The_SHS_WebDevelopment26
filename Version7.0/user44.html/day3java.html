@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Calculations</title>
+</head>
+<body>
+
+    <div>
+        <input type="text" id="addNum1"> + 
+        <input type="text" id="addNum2"> 
+        <button id="addBtn">add</button>
+        <span id="addResult"></span>
+    </div>
+    <br>
+
+    <div>
+        <input type="text" id="multNum1"> * <input type="text" id="multNum2"> 
+        <button id="multBtn">multiply</button>
+        <span id="multResult"></span>
+    </div>
+    
+    <h3>Pythagorean Theorem</h3>
+    <div>
+        <label>a=</label> <input type="text" id="sideA"><br><br>
+        <label>b=</label> <input type="text" id="sideB"><br><br>
+        <button id="pythagBtn">Find C</button>
+        <span id="pythagResult"></span>
+    </div>
+
+    <script>
+        // 10. Add Button
+        document.getElementById("addBtn").addEventListener("click", function() {
+            let num1 = Number(document.getElementById("addNum1").value);
+            let num2 = Number(document.getElementById("addNum2").value);
+            let result = num1 + num2;
+            document.getElementById("addResult").innerText = " = " + result;
+        });
+
+        // 11. Multiply Button
+        document.getElementById("multBtn").addEventListener("click", function() {
+            let num1 = Number(document.getElementById("multNum1").value);
+            let num2 = Number(document.getElementById("multNum2").value);
+            let result = num1 * num2;
+            document.getElementById("multResult").innerText = " = " + result;
+        });
+
+        // 12. Find C Button
+        document.getElementById("pythagBtn").addEventListener("click", function() {
+            let a = Number(document.getElementById("sideA").value);
+            let b = Number(document.getElementById("sideB").value);
+            let c = Math.sqrt((a * a) + (b * b));
+            document.getElementById("pythagResult").innerText = " c = " + c.toFixed(2);
+        });
+    </script>
+
+</body>
+</html>

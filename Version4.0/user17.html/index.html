@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 4.0
-        Name:
-        Date Completed:
+        Name: Kaleb
+        Date Completed: 05/11/26
     -->
 
 <head>
@@ -16,6 +16,12 @@
     <meta name="description" content="SHS WebDev Version 4.0 - Index">
 
     <!-- CSS -->
+<table id="hireButtons">
+
+<table id="footerTable">
+  
+
+
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
     <!-- Font Awesome -->
@@ -32,11 +38,162 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom styles for this template -->
+   
+
+    
     <style type="text/css">
         footer {
             font-size: 12px;
             text-align: center;
         }
+        .button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+.button1 {
+	border-radius: 8px;
+}
+
+.button2 {
+	border-radius: 30%;
+}
+
+.red {
+	background-color: #ff0000;
+}
+
+td{
+	padding:20px;
+}
+
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+h1, h2, h3, h4, h5, h6{
+	text-align:center;
+}
+
+
+.myButton {
+	box-shadow: 0px 1px 0px 0px #f0f7fa;
+	background:linear-gradient(to bottom, #33bdef 5%, #019ad2 100%);
+	background-color:#33bdef;
+	border-radius:6px;
+	border:1px solid #057fd0;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #5b6178;
+}
+.myButton:hover {
+	background:linear-gradient(to bottom, #019ad2 5%, #33bdef 100%);
+	background-color:#019ad2;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButton2 {
+	box-shadow:inset 0px 1px 0px 0px #fbafe3;
+	background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
+	background-color:#ff5bb0;
+	border-radius:6px;
+	border:1px solid #ee1eb5;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #c70067;
+}
+.myButton2:hover {
+	background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+	background-color:#ef027d;
+}
+.myButton2:active {
+	position:relative;
+	top:1px;
+}
+
+
+.myButton3 {
+	box-shadow:inset 0px 1px 0px 0px #f9eca0;
+	background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+	background-color:#f0c911;
+	border-radius:6px;
+	border:1px solid #e65f44;
+	display:inline-block;
+	cursor:pointer;
+	color:#c92200;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ded17c;
+}
+.myButton3:hover {
+	background:linear-gradient(to bottom, #f2ab1e 5%, #f0c911 100%);
+	background-color:#f2ab1e;
+}
+.myButton3:active {
+	position:relative;
+	top:1px;
+}
+.title{
+  color: blueviolet
+  ;
+  font-family: 'Trebuchet MS', sans-serif; 
+}
+
+.title-large {
+  font-size: 2rem;
+}
+
+.title-small {
+  font-size: .5rem;
+}
+#hireButtons {
+  background-color: #f0f8ff;
+  border: 2px solid #333;
+  padding: 15px;
+  text-align: center;
+}
+#footerTable {
+  background-color: #222;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c7c7c7;
+  box-sizing: border-box;
+}
+
     </style>
 </head>
 
@@ -88,9 +245,13 @@
             <tr>
                 <td>
                     <button>Hire me</button>
+                    <span class="title title-large">Hire me</span>
+
                 </td>
                 <td>
                     <button class="button">Hire me</button>
+                    <span class="title title-small">Hire me</span>
+
                 </td>
                 <td>
                     <button class="button button1">Hire me</button>
@@ -103,14 +264,15 @@
                 <td>
                     <button class="button button2 red">Hire me</button>
                 </td>
-                <td>
-                    <!-- New button 1 here-->
+                <td>       
+                    <a href="#" class="myButton">Hire me</a>
+
                 </td>
                 <td>
-                    <!-- New button 2 here-->
+                   <a href="#" class="myButton2">Hire me</a>
                 </td>
                 <td>
-                    <!-- New button 3 here-->
+                    <a href="#" class="myButton3">Hire me</a> 
                 </td>
             </tr>
         </table>

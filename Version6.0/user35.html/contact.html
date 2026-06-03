@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Pizza History</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-pizza-slice text-warning"></i> Pizza History</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="naples.html">Naples</a>
+                <a class="nav-link" href="america.html">America</a>
+                <a class="nav-link" href="modern.html">Modern</a>
+                <a class="nav-link active" href="contact.html">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="window active aero-window">
+            <div class="title-bar">
+                <div class="title-bar-text">Control Panel - Feedback</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button><button aria-label="Maximize"></button><button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <h2 class="text-dark"><i class="fas fa-pizza-slice text-primary"></i> The Great Pizza Survey</h2>
+                <form class="mt-3">
+                    <div class="mb-3">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" placeholder="Jimmy Mr. Beast">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Favorite Pizza Style</label>
+                        <select class="form-select">
+                            <option>Neapolitan (Thin & Traditional)</option>
+                            <option>New York (Large & Foldable)</option>
+                            <option>Chicago (Deep & Saucy)</option>
+                            <option>Detroit (Square & Crispy)</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Message/Review</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary shadow-sm px-4">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="fixed-bottom py-2 text-white text-center" style="background: rgba(0,0,0,0.8);">
+        <p class="mb-0 small">Pizza History Project | 2026</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

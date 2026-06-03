@@ -6,6 +6,7 @@
 -->
 
 <head>
+    <script src="JS/SampleJS.js"></script>
     <title>JavaScript</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,6 +46,7 @@
             <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
@@ -73,9 +75,16 @@
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+                <img id="Travis" src="images/Days Before Rodeo.jpeg">
+                <center><p id="textChange"> My name is User 14</p></center>
+                <center><button type="button" onclick="changeText()">Click if you like</button></center>
+                <p id="hideMe">This text can disappear.</p>
+                <button onclick="showAlert()">Alert</button>
+                <button onclick="changeColor()">Blue Background</button>
+                <button onclick="resetColor()">Reset Background</button>
+                <button onclick="hideText()">Hide Text</button>
+                <button onclick="showText()">Show Text</button>
+                <button onclick="changeImage()">Change Image</button>
             </div>
         </div>
     </main>

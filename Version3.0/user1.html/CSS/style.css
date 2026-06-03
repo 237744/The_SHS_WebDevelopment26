@@ -19,3 +19,17 @@ th {
 	color: #ffffff;
 	background-color: #003366;
 }
+
+body {
+    background-image: url("https://picsum.photos/1200/800");
+    background-size: cover;
+}
+ol {
+    color: blue;
+    font-weight: bold;
+}
+
+ul {
+    color: green;
+    list-style-type: square;
+}

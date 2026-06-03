@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Mad Lib (Vertical)</title>
+    <style>
+        /* 🛠️ CHANGED TO COLUMN: This forces the input rows to stack vertically */
+        form { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start;
+            gap: 15px; 
+            margin-top: 25px; 
+            padding: 10px;
+        }
+
+        /* 🛠️ CHANGED TO COLUMN: This stacks labels directly above their input boxes */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+            width: 100%;
+            max-width: 300px; /* Prevents the text boxes from stretching too wide */
+        }
+
+        label {
+            font-family: sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        
+        input, button { 
+            padding: 8px 12px; 
+            font-size: 14px; 
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 36px;
+            width: 100%; /* Makes inputs fill the 300px max-width container */
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            max-width: 120px; /* Keeps the submit button compact */
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Container for displaying the completed story */
+        #story-display {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #fafafa;
+            border-left: 6px solid #4CAF50;
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            line-height: 1.8;
+            max-width: 850px;
+            color: #333;
+            display: none; /* Stays invisible until they click submit */
+        }
+
+        .inserted-word {
+            color: #4CAF50;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="madlib-form" name="submit-to-google-sheet">
+        <div class="input-group">
+            <label>Noun (Place):</label>
+            <input id="word-valley" name="noun1" type="text" placeholder="valley" required>
+        </div>
+        <div class="input-group">
+            <label>Noun (Thing):</label>
+            <input id="word-wind" name="noun2" type="text" placeholder="wind" required>
+        </div>
+        <div class="input-group">
+            <label>Verb (Past):</label>
+            <input id="word-reached" name="verb1" type="text" placeholder="reached" required>
+        </div>
+        <div class="input-group">
+            <label>Adjective:</label>
+            <input id="word-dark" name="adjective1" type="text" placeholder="dark" required>
+        </div>
+        <div class="input-group">
+            <label>Adverb:</label>
+            <input id="word-loudly" name="adverb1" type="text" placeholder="loudly" required>
+        </div>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="story-display"></div>
+
+    <script>
+        const form = document.getElementById('madlib-form');
+        const displayBox = document.getElementById('story-display');
+        const scriptURL = '<your script url>';
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const valValley = document.getElementById('word-valley').value;
+            const valWind = document.getElementById('word-wind').value;
+            const valReached = document.getElementById('word-reached').value;
+            const valDark = document.getElementById('word-dark').value;
+            const valLoudly = document.getElementById('word-loudly').value;
+
+            const spanValley = `<span class="inserted-word">${valValley}</span>`;
+            const spanWind = `<span class="inserted-word">${valWind}</span>`;
+            const spanReached = `<span class="inserted-word">${valReached}</span>`;
+            const spanDark = `<span class="inserted-word">${valDark}</span>`;
+            const spanLoudly = `<span class="inserted-word">${valLoudly}</span>`;
+
+            const finishedStory = `
+                <p>I stepped into the valley of Black Hollow, where people said even the wind was afraid to blow too <strong>${spanLoudly}</strong>. 
+                At the center of it all lived a dragon known as Valcyrion, a creature spoken of in warnings, not stories. 
+                They said it destroyed entire cliffs just by landing and turned forests to ash without effort. 
+                I came anyway, because I needed to know if anything that feared the world could also be understood.</p>
+                
+                <p>When I reached the <strong>${spanBroken}</strong> ridge above its lair, I saw it rise from the shadows like a moving storm. 
+                Its scales were <strong>${spanDark}</strong> and cracked like burned stone, and its eyes cut through the air like blades. 
+                It didn't roar at first—it studied me, as if deciding how quickly I would break. 
+                I expected to run, but instead I stayed where I was and let the silence stretch between us.</p>
+            `;
+
+            displayBox.innerHTML = finishedStory;
+            displayBox.style.display = 'block'; // Make the box pop into view on click!
+
+            if (scriptURL !== '<your script url>') {
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .catch(err => console.log('Google Sheets error:', err.message));
+            }
+        });
+    </script>
+    
+</body>
+</html>

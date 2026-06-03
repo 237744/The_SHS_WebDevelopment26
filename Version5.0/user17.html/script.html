@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Version 5.0
+    Name: Kaleb
+    Date Completed: 05/21/26
+-->
+
+<head>
+    <script src="JS/SampleJS.js"></script>
+    <title>JavaScript</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="SHS WebDev JavaScript Practice">
+
+    <!-- CSS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <!-- JavaScript -->
+    <!-- These are needed to get the responsive menu to work -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="JS/script.js"></script>
+
+    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <!---------------------------------- Begin the nav-bar ------------->
+    <div class="menu">
+        <nav class="navbar navbar-expand-md p-2 navbar-dark bg-dark">
+            <a href="http://shakonet.isd720.com/WebDev" class="navbar-brand">WebDev</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="#" class="nav-item nav-link">About Me</a>
+                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Music</a>
+                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Lists</a>
+                    <a href="games.html" class="nav-item nav-link" tabindex="-1">Games</a>
+                    <a href="bootstrap.html" class="nav-item nav-link" tabindex="-1">Bootstrap</a>
+                    <a href="script.html" class="nav-item nav-link active" tabindex="-1">JavaScript</a>
+                    <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled" tabindex="-1">Contact</a>
+                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your Menu ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <a href="#" class="nav-item nav-link disabled">Login</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!---------------------------------- End the nav-bar ------------->
+
+    <main class="m-3" id="content">
+        <h1 class="text-left my-3">My JavaScript Examples</h1>
+        <!-- Edit this line for the title of your page -->
+        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+        <div class="container">
+            <p class="lead">Below are interactive JavaScript feature examples (functions live in JS/SampleJS.js).</p>
+
+            <div class="row mb-3">
+                <div class="col-md-4 mb-3">
+                    <div class="card p-2">
+                        <h5>1) Change Text</h5>
+                        <p id="textChange"> My name is User 17</p>
+                        <button class="btn btn-primary" onclick="changeText()">Change Text</button>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="card p-2">
+                        <h5>2) Show Date/Time</h5>
+                        <div id="dateOutput" class="mb-2">(date/time appears here)</div>
+                        <button class="btn btn-secondary" onclick="showDate()">Show Date</button>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="card p-2">
+                        <h5>3) Toggle Background</h5>
+                        <div id="toggleBox" class="p-3 mb-2" style="border:1px solid #ccc;">Box</div>
+                        <button class="btn btn-info" onclick="toggleBackground()">Toggle Color</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4 mb-3">
+                    <div class="card p-2">
+                        <h5>4) Click Counter</h5>
+                        <div>Clicks: <span id="clickCount">0</span></div>
+                        <button class="btn btn-success mt-2" onclick="countClicks()">Click me</button>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="card p-2">
+                        <h5>5) Prompt for Name</h5>
+                        <div id="nameOutput">(your name appears here)</div>
+                        <button class="btn btn-warning mt-2" onclick="promptName()">Enter Name</button>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-3">
+                    <div class="card p-2">
+                        <h5>6) Sum Two Numbers</h5>
+                        <input id="num1" class="form-control mb-1" placeholder="Number 1">
+                        <input id="num2" class="form-control mb-1" placeholder="Number 2">
+                        <button class="btn btn-dark" onclick="sumInputs()">Calculate Sum</button>
+                        <div id="sumOutput" class="mt-2">(result)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6 mb-3">
+                    <div class="card p-2">
+                        <h5>7) Random Quote</h5>
+                        <div id="quoteOutput">(quote appears here)</div>
+                        <button class="btn btn-outline-primary mt-2" onclick="randomQuote()">New Quote</button>
+                    </div>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <div class="card p-2">
+                        <h5>8) Validate Email</h5>
+                        <input id="emailInput" class="form-control mb-1" placeholder="you@example.com">
+                        <button class="btn btn-outline-success" onclick="validateEmail()">Validate</button>
+                        <div id="emailResult" class="mt-2">(validation result)</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
+
+
+    <!---------------------------------- Begin the footer ------------->
+    <footer class="small text-center" id="footer">
+        <p>
+            Webpage made by <a href="index.html" target="_blank">[your name]</a>
+        </p>
+    </footer>
+    <!---------------------------------- End the footer ------------->
+</body>
+
+</html>

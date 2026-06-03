@@ -1,0 +1,14 @@
+.music-card {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 20px;
+    transition: transform 0.2s ease;
+}
+
+.music-card:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User 19</title>
+    
+    <script src="SampleJS.js"></script>
+
+    <style>
+        /* Styles to recreate the exact class template layout appearance */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .navbar {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .navbar span {
+            margin-right: 15px;
+            color: #6c757d;
+            cursor: pointer;
+        }
+        .navbar .active {
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .header-title {
+            font-size: 36px;
+            margin: 20px 0;
+            color: #212529;
+        }
+        /* Flexbox container to align the colored sections in a straight horizontal row */
+        .banner-container {
+            display: flex;
+            width: 100%;
+            text-align: center;
+            align-items: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .zone-left {
+            background-color: #ffff4d; /* Bright yellow background */
+            flex: 2;
+            padding: 15px;
+        }
+        .zone-middle {
+            background-color: #f0ad4e; /* Orange background */
+            flex: 2;
+            padding: 15px;
+        }
+        .zone-right {
+            background-color: #ffff4d; /* Bright yellow background */
+            flex: 1;
+            padding: 15px;
+        }
+        .footer-text {
+            text-align: center;
+            font-size: 13px;
+            color: #007bff;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <strong>WebDev</strong> &nbsp;&nbsp; 
+        <span>Home</span> <span>About Me</span> <span>Music</span> <span>Lists</span> <span>Games</span> <span class="active">JavaScript</span> <span>Contact</span>
+    </div>
+
+    <h1 class="header-title">My JavaScript Examples</h1>
+
+    <div class="banner-container">
+        <div class="zone-left">
+            <span id="textChange">My name is User 19</span>
+        </div>
+        <div class="zone-middle">
+            <button type="button" onclick="changeText()">Click if you like</button>
+        </div>
+        <div class="zone-right">
+            PUT YOUR CODE HERE
+        </div>
+    </div>
+
+    <center style="margin-top: 30px;">
+        <button type="button" onclick="showAlertOne()">One</button>
+        <button type="button" onclick="showAlertTwo()">Two</button>
+        <button type="button" onclick="showAlertThree()">Three</button>
+    </center>
+
+    <div class="footer-text">
+        Webpage made by [your name]
+    </div>
+
+</body>
+</html>

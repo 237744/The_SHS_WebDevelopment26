@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza History | The Roman Roots</title>
+    
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+    <link rel="stylesheet" href="https://unpkg.com/7.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: #3b7bb5 url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1920') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 100vh;
+            padding-bottom: 70px;
+        }
+        .aero-window {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        .window-body {
+            background: #f0f0f0 !important;
+            color: #000 !important;
+        }
+        .taskbar-clock {
+            font-weight: bold;
+            padding: 2px 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-pizza-slice text-warning"></i> Pizza History</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="naples.html">Naples</a></li>
+                    <li class="nav-item"><a class="nav-link" href="america.html">America</a></li>
+                    <li class="nav-item"><a class="nav-link" href="modern.html">Modern</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="window active aero-window" id="mainPizzaWindow">
+            <div class="title-bar" id="windowTitleBar" style="background: linear-gradient(to bottom, #7ba2ce, #1a4d80);">
+                <div class="title-bar-text" id="windowTitleText">Internet Explorer - History of Pizza</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize" onclick="toggleWindowMinimize()"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close" onclick="toggleWindowMinimize()"></button>
+                </div>
+            </div>
+            
+            <div class="window-body" id="mainWindowBody">
+                <header class="text-center mb-4">
+                    <h1 class="display-5 fw-bold text-dark">From Flatbread to Global Icon</h1>
+                    <p class="lead text-secondary">Exploring the ancient origins of the world's favorite food.</p>
+                </header>
+
+                <div class="row g-4">
+                    <div class="col-md-7">
+                        <h3>The Ancient Flatbread</h3>
+                        <p>Long before the 18th century, civilizations like the Greeks and Egyptians were eating flatbreads topped with oils and herbs. This is widely considered the precursor to what we know today as pizza.</p>
+                        
+                        <div class="alert alert-warning border-dark" role="alert">
+                            <i class="fas fa-history me-2"></i> <strong>Historical Note:</strong> 
+                            <span id="fact-placeholder">The word "pizza" was first documented in 997 AD in Gaeta, Italy!</span>
+                        </div>
+                        <button class="btn btn-sm btn-outline-dark mb-3" onclick="showFunFact()">Cycle Next Fact</button>
+
+                        <hr>
+
+                        <div class="p-3 bg-white border rounded">
+                            <h5><i class="fa-solid calc-icon fa-calculator"></i> Ancient Recipe Fat Calculator</h5>
+                            <p class="text-muted small">Input parameters to run user-created calculation functions:</p>
+                            <div class="row g-2">
+                                <div class="col-6">
+                                    <label class="small">Fat Grams:</label>
+                                    <input type="number" id="fatGrams" class="form-control form-control-sm" value="12">
+                                </div>
+                                <div class="col-6">
+                                    <label class="small">Total Calories:</label>
+                                    <input type="number" id="totalCalories" class="form-control form-control-sm" value="250">
+                                </div>
+                            </div>
+                            <button class="btn btn-secondary btn-sm mt-2" onclick="calculatePizzaFatPercentage()">Run Calculation</button>
+                            <div class="mt-2 small font-monospace" id="calc-result">Result: Pending Calculation...</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-5">
+                        <div class="card pizza-card h-100 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1574071318508-1cdbad80ad38?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Ancient Pizza">
+                            <div class="card-body bg-light text-dark">
+                                <h5 class="card-title">Roman Focaccia</h5>
+                                <p class="card-text small">Panis focacius was a flatbread to which toppings were added.</p>
+                                
+                                <hr>
+                                <h6><i class="fa-solid fa-earth-americas"></i> Live Random Topping Suggestion</h6>
+                                <p class="small text-success font-monospace" id="api-display-box">Click below to pull dynamic API data...</p>
+                                <button class="btn btn-primary btn-sm" onclick="fetchPizzaIngredient()">Query API Data</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="mt-4 pt-3 border-top d-flex justify-content-between align-items-center">
+                    <div>
+                        <span class="small me-2 text-dark">Aero Border Color:</span>
+                        <button class="btn btn-sm btn-info py-0 px-2" onclick="changeAeroColor('#7ba2ce')">Teal</button>
+                        <button class="btn btn-sm btn-danger py-0 px-2" onclick="changeAeroColor('#cc3333')">Ruby</button>
+                        <button class="btn btn-sm btn-dark py-0 px-2" onclick="changeAeroColor('#444444')">Charcoal</button>
+                    </div>
+                    <button class="btn btn-primary" onclick="alert('Navigating to full library...')">Read More</button>
+                </footer>
+            </div>
+        </div>
+    </main>
+
+    <footer class="fixed-bottom py-2 text-white px-4 d-flex justify-content-between align-items-center" style="background: rgba(40,45,50,0.85); backdrop-filter: blur(10px); border-top: 1px solid rgba(255,255,255,0.2);">
+        <p class="mb-0 small"><i class="fab fa-windows text-info me-2"></i> Pizza History Project | 2026</p>
+        <div class="taskbar-clock small" id="live-clock">12:00:00 PM</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // --- EMBEDDED FUNCTION 1: System Tray Clock Handler ---
+        function updateSystemTime() {
+            const timeDisplay = document.getElementById('live-clock');
+            const currentTime = new Date();
+            timeDisplay.textContent = currentTime.toLocaleTimeString();
+        }
+        setInterval(updateSystemTime, 1000);
+        updateSystemTime(); // Initial instant tick execution
+
+        // --- EMBEDDED FUNCTION 2: UI window minimizing toggle behavior ---
+        function toggleWindowMinimize() {
+            const bodyElement = document.getElementById('mainWindowBody');
+            if (bodyElement.style.display === "none") {
+                bodyElement.style.display = "block";
+            } else {
+                bodyElement.style.display = "none";
+            }
+        }
+
+        // --- EMBEDDED FUNCTION 3: Aero Aesthetics color property manipulator ---
+        function changeAeroColor(hexColorValue) {
+            const titleBar = document.getElementById('windowTitleBar');
+            titleBar.style.background = `linear-gradient(to bottom, ${hexColorValue}, #111111)`;
+        }
+
+        // --- EMBEDDED FUNCTION 4: Text Content State Cycler ---
+        const alternativeFacts = [
+            "The word 'pizza' was first documented in 997 AD in Gaeta, Italy!",
+            "Ancient Roman soldiers added cheese and olive oil to matzah flatbreads.",
+            "The ruins of Pompeii revealed fully intact pizza-like bakeries and brick ovens!",
+            "Early writers noted Roman locals seasoned flatbreads with native herbs and garlic."
+        ];
+        let currentFactIndex = 0;
+        function showFunFact() {
+            currentFactIndex = (currentFactIndex + 1) % alternativeFacts.length;
+            document.getElementById('fact-placeholder').textContent = alternativeFacts[currentFactIndex];
+        }
+
+        // --- USER CREATED FUNCTION (Calculates Custom Logic Ratios) ---
+        function calculatePizzaFatPercentage() {
+            const fatInput = parseFloat(document.getElementById('fatGrams').value);
+            const calorieInput = parseFloat(document.getElementById('totalCalories').value);
+            const outputBox = document.getElementById('calc-result');
+
+            if (isNaN(fatInput) || isNaN(calorieInput) || calorieInput <= 0) {
+                outputBox.textContent = "Error: Provide valid inputs.";
+                return;
+            }
+
+            // Calculation algorithm: Fat calories = Grams * 9 calories
+            const fatCalories = fatInput * 9;
+            const absolutePercentage = (fatCalories / calorieInput) * 100;
+
+            outputBox.textContent = `Result: ${absolutePercentage.toFixed(1)}% Calories from Fat context.`;
+        }
+
+        // --- EMBEDDED FUNCTION 5 WITH API INTEGRATION & DATA DISPLAY ---
+        function fetchPizzaIngredient() {
+            const displayTarget = document.getElementById('api-display-box');
+            displayTarget.textContent = "Connecting to remote system servers...";
+
+            // Queries the free dynamic food ingredient engine API
+            fetch('https://www.themealdb.com/api/json/v1/1/random.php')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Network latency fault encountered.");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Extracting string data from API mapping layer object safely
+                    const foodItem = data.meals[0].strMeal;
+                    const primaryIngredient = data.meals[0].strIngredient1;
+                    
+                    // Displaying API data directly to screen rendering elements
+                    displayTarget.innerHTML = `<strong>Try:</strong> ${foodItem} <br> <strong>Key Component:</strong> ${primaryIngredient}`;
+                })
+                .catch(error => {
+                    displayTarget.textContent = "Fallback Local Topping Match: Fresh Basil & Oregano Blend.";
+                    console.error("API error trace:", error);
+                });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA History Vault | Home</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body { 
+        background-color: #ffffff; 
+        color: rgb(255, 0, 0); 
+        font-family: 'Segoe UI', sans-serif; 
+    }
+    .hero { 
+        padding: 100px 0; 
+        text-align: center; 
+        background: linear-gradient(rgb(255, 255, 255), rgb(255, 255, 255)), url('https://www.vecteezy.com/free-photos/plain-black-background') no-repeat center center; 
+        background-size: cover; 
+    }
+    
+    /* Fixed the font-weight error here */
+    .nav-link { 
+        color: #ffffff !important; 
+    }
+    
+    .nav-link:hover {
+        color: #ff0000 !important; 
+    }
+
+    .card { 
+        background: #034fba; 
+        border: 2px solid #ff0000; 
+        transition: 0.3s; 
+        color: #ffffff; 
+        position: relative; 
+    }
+    
+    .card:hover { 
+        transform: scale(1.03); 
+        background: #e79a00; 
+    }
+    
+    .btn-gold { 
+        background-color: #ff0000; 
+        color: #000000; 
+        font-weight: bold; 
+    }
+    
+    /* Card Titles */
+    .champions-title {
+        color: #ff0000 !important;
+    }
+    .mvp-title {
+        color: #ff0000 !important;
+    } 
+    .nav-link { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    .btn-gold { 
+    background-color: #ff0000 !important;
+    color: #ffffff !important;           
+    font-weight: bold;
+    text-transform: uppercase;
+    
+    /* The Border */
+    border: 3px solid #000000 !important; 
+    border-radius: 0px;                   
+    
+    transition: 0.3s;                   
+}
+
+.card:hover .btn-gold { 
+    background-color: #000000 !important; 
+    color: #ff0000 !important;        
+    border-color: #ffffff !important; 
+}
+.footer-bar {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 0;
+    border-top: 2px solid #ffc107; /* The thin Gold line */
+    font-size: 0.85rem;
+    margin-top: auto; /* Helps with sticky footer */
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff0000; /* Red hover to match your page style */
+}
+
+/* This part ensures the footer stays at the bottom of the screen 
+   even if the page doesn't have much content */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning">
+    <div class="container-fluid justify-content-start gap-3">
+        
+        <a class="navbar-brand fw-bold" href="index.html">Home</a>
+        
+        <div class="navbar-nav flex-row gap-3">
+            <a class="nav-link" href="champions.html">Past Champions</a>
+            <a class="nav-link" href="mvps.html">MVP's</a>
+            <a class="nav-link" href="nbadraft.html">NBA Draft</a>
+            <a class="nav-link" href="teamhistory.html">Team history</a>  
+        </div>
+        
+    </div>
+</nav>
+
+<header class="hero">
+    <div class="container">
+        <h1 class="display-2 fw-bold">NBA History</h1>
+        <p class="lead">Select a category to explore the history of the league.</p>
+    </div>
+</header>
+
+<main class="container my-5">
+    <div class="row g-4 justify-content-center">
+        
+        <div class="col-md-5">
+            <div class="card text-center p-4">
+                <div class="card-body">
+                    <h2 class="card-title champions-title">Past Champions</h2>
+                    <p class="card-text">Explore the dynasties and Finals MVPs throughout the years.</p>
+                    <a href="champions.html" class="btn btn-gold px-4 stretched-link">Enter Gallery</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5">
+            <div class="card text-center p-4">
+                <div class="card-body">
+                    <h2 class="card-title mvp-title">League MVP's</h2>
+                    <p class="card-text">Check out the NBA's Most Valuable Players since 1990.</p>
+                    <a href="mvps.html" class="btn btn-gold px-4 stretched-link">Enter Gallery</a>
+                </div>
+            </div>
+        </div>
+
+                <div class="col-md-5">
+            <div class="card text-center p-4">
+                <div class="card-body">
+                    <h2 class="card-title champions-title">NBA Draft</h2>
+                    <p class="card-text">Discover the the best players from each year's NBA Draft.</p>
+                    <a href="nbadraft.html" class="btn btn-gold px-4 stretched-link">Enter Gallery</a>
+                </div>
+            </div>
+        </div>
+         <div class="col-md-5">
+            <div class="card text-center p-4">
+                <div class="card-body">
+                    <h2 class="card-title mvp-title">Team History</h2>
+                    <p class="card-text">Explore the rich history of your favorite NBA teams.</p>
+                    <a href="teamhistory.html" class="btn btn-gold px-4 stretched-link">Enter Gallery</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <p class="mb-0">© 2026 NBA History Vault</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="champions.html">Champions</a>
+            <a href="mvps.html">MVPs</a>
+            <a href="nbadraft.html">Draft</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

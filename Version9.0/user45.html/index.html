@@ -1,18 +1,270 @@
-<html lang="en">
-    <!--Version 9.0 
-	Name:
-	Date Completed:
-    -->
+<!DOCTYPE html>
+<html>
     <head>
-        
-        <title>Web Development User #00</title>
-    
-    </head>
-    
-    <body>
-        
-        <center>My name is User #00</center>
-    
-    </body>
+        <title>Explore Here</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+        body {
+            min-height: 100vh;
+            background: linear-gradient(45deg, #002D5D, #52C9E8);
+            color: rgb(255, 255, 255);
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            padding-bottom: 0px;
+        }
 
+        .front {
+            background-image: url('Minnesotasign.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .Mnsports-front {
+            background-image: url('Mnsports.png'); 
+        }
+
+        .api-dashboard {
+            width: 80%;
+            max-width: 800px;
+            margin: 40px auto;
+            background: #002D5D;
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        .api-section {
+            border-bottom: 1px solid #151515;
+            padding: 15px 0;
+        }
+
+        .api-section:last-child {
+            border-bottom: none;
+        }
+
+        .api-section h4 {
+            margin-top: 0;
+            color: #44a4bc;
+        }
+
+        button {
+            background: #3b8fa3;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #36bcff;
+        }
+
+        input {
+            padding: 7px;
+            border-radius: 4px;
+            border: 1px solid #ffffff;
+            margin-right: 5px;
+        }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="nav">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="timberwolves.html" class="nav-link">Timberwolves</a></li>
+                        <li class="nav-item"><a href="twins.html" class="nav-link">Twins</a></li>
+                        <li class="nav-item"><a href="vikings.html" class="nav-link">Vikings</a></li>
+                        <li class="nav-item"><a href="wild.html" class="nav-link">Wild</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="content-header">
+            <h1>Minnesota Sports</h1>
+            <p>It might be known for hockey but has much more beneath the snow</p>
+            <img src="Mnflag.png" alt="Red Green Forest" width="500" height="300" style="margin-top: 10px; border-radius: 8px;">
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div class="front"></div>
+                <div class="back">
+                    <h2>Welcome</h2>
+                    <p>This page is dedicated to recognizing the accomplishments and players of the four major sports teams in the great state of Minnesota. I hope after seeing this website you'll see how much these teams mean to Minnesotans.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="card">
+                <div class="front Mnsports-front"></div>
+                <div class="back">
+                    <h3>Directions</h3>
+                    <p>Use the navbar on top of the page to navigate through webpages for all major sports teams. This includes the Vikings, Timberwolves, Twins, and Wild. Each page also includes a summary of the teams history, current team, and legendary player. Have fun exploring!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="api-dashboard">
+            <h3>Live Fan Support</h3>
+            
+            <div class="api-section">
+                <h4>1. Live Game Scores</h4>
+                <div id="scores-display">Loading upcoming schedules/scores...</div>
+            </div>
+
+            <div class="api-section">
+                <h4>2. Current Minneapolis Weather</h4>
+                <div id="weather-display">Fetching Minneapolis game-day forecast...</div>
+            </div>
+
+            <div class="api-section">
+                <h4>3. Ask the Coach</h4>
+                <input type="text" id="coach-input" placeholder="Ask about the '98 Vikings or '91 Twins..." style="width: 70%;">
+                <button onclick="askSportsCoach()">Ask</button>
+                <p id="coach-response" style="font-style: italic; color: #ffffff; margin-top: 10px;"></p>
+            </div>
+
+            <div class="api-section">
+                <h4>4. Jersey Price Converter</h4>
+                <p>See what a $120 USD jersey costs in your currency:</p>
+                <select id="currency-select" onchange="convertJerseyPrice()">
+                    <option value="CAD">Canadian Dollar (CAD)</option>
+                    <option value="EUR">Euro (EUR)</option>
+                    <option value="GBP">British Pound (GBP)</option>
+                    <option value="AUD">Australian Dollar (AUD)</option>
+                </select>
+                <span id="currency-display" style="margin-left: 15px; font-weight: bold;"></span>
+            </div>
+
+            <div class="api-section">
+                <h4>5. Locate the Stadiums</h4>
+                <p>Click below to open maps for Target Center, Target Field, U.S. Bank Stadium, or Grand Casino Arena.</p>
+                <button onclick="getStadiumDirections('Target Center')">Wolves Arena</button>
+                <button onclick="getStadiumDirections('Target Field')">Twins Stadium</button>
+                <button onclick="getStadiumDirections('US Bank Stadium')">Vikings Stadium</button>
+                <button onclick="getStadiumDirections('Xcel Energy Center')">Wild Arena</button>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Minnesota Sports Fan Fan Page. All rights reserved.</p>
+        </footer>
+
+        <script>
+        const OPENWEATHER_API_KEY = '7b675f8a3bad7acc70809711560b9cb9';
+        const AI_API_KEY = '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';
+        const SPORTS_API_KEY = '213c5658665da0994a1fb7e328adcfcc'; 
+        const EXCHANGE_API_KEY = 'd498561ed814c68be2c1d4e3';
+
+        window.onload = function() {
+            getMinneapolisWeather();
+            getLiveScores();
+            convertJerseyPrice();
+        };
+
+        async function getLiveScores() {
+            const display = document.getElementById('scores-display');
+            if(SPORTS_API_KEY === 'MY_THE_ODDS_API_KEY') {
+                display.innerHTML = "<em>Connect a sports API key to pull live schedules for the Wolves, Wild, Twins, or Vikings.</em>";
+                return;
+            }
+            
+            const url = `https://api.the-odds-api.com/v4/sports/basketball_nba/odds/?regions=us&oddsFormat=american&apiKey=${SPORTS_API_KEY}`;
+            try {
+                const response = await fetch(url);
+                const games = await response.json();
+                
+                const wolvesGame = games.find(g => g.home_team.includes("Timberwolves") || g.away_team.includes("Timberwolves"));
+                
+                if(wolvesGame) {
+                    display.innerHTML = `Next Matchup: <strong>${wolvesGame.away_team}</strong> vs <strong>${wolvesGame.home_team}</strong>`;
+                } else {
+                    display.innerHTML = "No live Minnesota games right this second, check back during game time";
+                }
+            } catch (err) {
+                display.innerHTML = "Could not load current game schedules.";
+            }
+        }
+
+        async function getMinneapolisWeather() {
+            const display = document.getElementById('weather-display');
+            if(OPENWEATHER_API_KEY === 'MY_OPENWEATHER_KEY') {
+                display.innerHTML = "<em>Connect an OpenWeatherMap API key to check if it's a dome-day or open-sky game day!</em>";
+                return;
+            }
+
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=Minneapolis&appid=${OPENWEATHER_API_KEY}&units=imperial`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                display.innerHTML = `Right now in Minneapolis: <strong>${data.main.temp}°F</strong> with ${data.weather.description}.`;
+            } catch (err) {
+                display.innerHTML = "Weather currently unavailable.";
+            }
+        }
+
+        async function askSportsCoach() {
+            const input = document.getElementById('coach-input').value;
+            const responseDisplay = document.getElementById('coach-response');
+            if(!input) return alert("Ask a question first");
+            
+            if(AI_API_KEY === 'MY_OPEN_AI_KEY') {
+                responseDisplay.innerText = "Coach says: 'Need an API key connected'";
+                return;
+            }
+
+            responseDisplay.innerText = "Coach is thinking...";
+            
+            const finalPrompt = `Answer this short question: ${input}`;
+            const url = `https://api.openai.com/v1/chat/completions ${AI_API_KEY}`;
+            
+            try {
+                const res = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: finalPrompt }] }] })
+                });
+                const data = await res.json();
+                responseDisplay.innerText = "📣 " + data.candidates.content.parts.text;
+            } catch (err) {
+                responseDisplay.innerText = "The coach lost his clipboard. Try again later.";
+            }
+        }
+
+        async function convertJerseyPrice() {
+            const display = document.getElementById('currency-display');
+            const targetCurrency = document.getElementById('currency-select').value;
+            
+            if(EXCHANGE_API_KEY === 'MY_EXCHANGERATE_KEY') {
+                display.innerText = "Connect ExchangeRate-API to calculate live conversions.";
+                return;
+            }
+
+            const url = `https://v6.exchangerate-api.com/v6/${EXCHANGE_API_KEY}/pair/USD/${targetCurrency}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                const convertedPrice = (120 * data.conversion_rate).toFixed(2);
+                display.innerText = `= ${convertedPrice} ${targetCurrency}`;
+            } catch(err) {
+                display.innerText = "Error pulling currency exchange rates.";
+            }
+        }
+
+        function getStadiumDirections(stadiumName) {
+            const formattedQuery = encodeURIComponent(`${stadiumName} Minneapolis MN`);
+            const mapUrl = `https://www.google.com/maps/search/?api=1&query=${formattedQuery}`;
+            
+            window.open(mapUrl, '_blank');
+        }
+        </script>
+    </body>
 </html>

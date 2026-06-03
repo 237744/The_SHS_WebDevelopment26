@@ -1,3 +1,4 @@
+@import url(rainbow.css);
 .background-red {
     background-color: red;
 }
@@ -24,4 +25,16 @@
 
 .background-violet {
     background-color: violet;
+}
+td:hover {
+        background-color: black;
+}
+    ul:hover {
+        color: red;
+    }
+    h1:focus{
+    background-color: rgb(39, 4, 216);
+}
+p :first-child {
+    color: rgb(30, 255, 0);
 }

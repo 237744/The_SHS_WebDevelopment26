@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap');
+
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: #fcfdfd;
+    color: #2c3e50;
+    transition: background-color 0.3s ease;
+}
+
+/* ==========================================================================
+   Header & Jumbotron
+   ========================================================================== */
+header[name="Jumbotron"] {
+    background: linear-gradient(135deg, #eef2f7 0%, #d9e2ec 100%);
+    border-bottom: 1px solid #bcccdc;
+    border-radius: 0 0 16px 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+header[name="Jumbotron"] h4 {
+    font-weight: 700;
+    color: #102a43;
+}
+
+/* ==========================================================================
+   Table custom style (Part IV Zebra customization)
+   ========================================================================== */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    --bs-table-color-type: #102a43;
+    /* Custom light blue-purple gradient tint instead of plain gray or red */
+    --bs-table-bg-type: rgba(59, 130, 246, 0.08); 
+}
+
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.03);
+    border: 1px solid #e2e8f0;
+}
+
+.table th {
+    background-color: #486581;
+    color: white;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   List group hover animations (Part V)
+   ========================================================================== */
+.list-group-item {
+    transition: all 0.2s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.list-group-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    background-color: #f0f4f8;
+}
+
+.list-group-item.active {
+    background-color: #3b82f6 !important;
+    border-color: #3b82f6 !important;
+}
+
+.badge-primary.active {
+    background-color: #2563eb !important;
+}
+
+/* ==========================================================================
+   Premium Footer (Part 1.5b)
+   ========================================================================== */
+footer {
+    background-color: #0f172a;
+    color: #94a3b8 !important;
+}
+
+footer a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #3b82f6;
+}
+
+footer .footer-social-icon {
+    font-size: 1.8rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: inline-block;
+    color: #64748b;
+}
+
+footer .footer-social-icon:hover {
+    color: #3b82f6;
+    transform: scale(1.2);
+}

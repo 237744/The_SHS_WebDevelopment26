@@ -44,6 +44,47 @@
         #rainbow {
             width: 100%;
         }
+        #knowledge > * {
+        border: 3px red solid;
+}
+a.highlight:hover {
+    color: #ff0000;
+    font-size: 22px;
+}
+p + * {
+    background-color: #FFFF00;
+}
+div li::marker{
+    color: red;
+}
+#CSS li::marker{
+    content:"😜 ";
+}
+td:hover {
+    background-color: black;
+}
+input:focus {
+    background-color: yellow;
+}
+/* unvisited link */
+a:link {
+    color: black;
+}
+
+/* visited link */
+a:visited {
+    color: grey;
+}
+
+/* mouse over link */
+a:hover {
+    color: hotpink;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
     </style>
 </head>
 
@@ -82,24 +123,20 @@
             </div>
         </div>
     </nav>
-    <!---------------------------------- End the nav-bar ------------------------------------->
-
-    <main class="container-fluid mt-3">
-
+    <class="container-fluid mt-3">
         <h1 class="text-left my-3 title" tabindex="0">Check out my work!</h1>
         <!-- Edit this line for the title of your page -->
-
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
         <h3 id="topHeading">I'm a Web Developer</h3>
         <div id="knowledge">
-            <li>CSS
+            <li id="CSS">CSS
                 <ul>
                     <li>Classes</li>
                     <li>Selectors</li>
                     <li>ID's</li>
                 </ul>
             </li>
-            <li>HTML
+            <li id="ME">HTML
                 <ul>
                     <li>Tables</li>
                     <li>DIV's</li>
@@ -107,9 +144,21 @@
                 </ul>
             </li>
         </div>
-        <p>
-            These are the things I know in the <strong>WEB DEVELOPMENT</strong> <u>world</u>.
-        </p>
+    <form action="portfolio.html" method="get">
+    First name: <input type="text" name="fname"><br><br>
+    Last name: <input type="text" name="lname"><br><br>
+    <input type="submit" value="Submit">
+    </form>
+    <h6><a class="highlight" href="index.html">1</a></h6>
+    <h6><a class="highlight" href="gallery.html">2</a></h6>
+    <h6>Styling a link depending on state</h6>
+    <h6><b><a href="display.html" target="_blank">This is a link</a></b></h6>
+    <h6><b>Note:</b> a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective.</h6>
+    <h6><b>Note:</b> a:active MUST come after a:hover in the CSS definition in order to be effective.</h6>
+    <p> WAKE UP IN A DREAM</p>
+    <p>
+        These are the things I know in the <strong>WEB DEVELOPMENT</strong> <u>world</u>.
+    </p>
         <p>
             I will use my knowledge to create an amazing website for you and your needs.
         </p>

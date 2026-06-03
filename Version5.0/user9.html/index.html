@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 5.0
-    Name:
-    Date Completed:
+    Name: Bennett Gordon
+    Date Completed: 4/29/26
 -->
 
 <head>
@@ -15,6 +15,12 @@
     <meta name="description" content="SHS WebDev Version 5.0 - Index Bootstrap Examples">
 
     <!-- CSS -->
+    <style>
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            --bs-table-color-type: var(--bs-table-striped-color);
+            --bs-table-bg-type: rgba(255, 242, 0, 0.93)
+        }
+    </style>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
     <!-- Font Awesome -->
@@ -66,7 +72,7 @@
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
+                            Link
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -157,35 +163,66 @@
 
             <!---------List-Group---------------------------------------------->
             <div class="container mt-3" name="list-group">
+                <div class="list-group">
+    <a href="https://drive.google.com/drive/home" class="list-group-item list-group-item-action active">
+        <i class="fa-solid fa-cloud"></i> Home
+    </a>
+    <a href="https://images.google.com/" class="list-group-item list-group-item-action">
+        <i class="fa-brands fa-google"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active">145</span>
+    </a>
+    <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+        <i class="fa-solid fa-headphones"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active">50</span>
+    </a>
+    <a href="https://www.youtube.com/" class="list-group-item list-group-item-action">
+        <i class="fa-brands fa-youtube"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right">8</span>
+    </a>
+</div>
             </div>
 
             <!---------Form Button--------------------------------------------->
             <div class="container mt-3 vstack" name="form-button">
+                <a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a>
             </div>
         </main>
 
         <!---------------------------------- Begin the footer ------------------------------------->
-        <footer>
-            <span class="title">Example of a Footer Title</span>
-            <div class="container py-4" id="footerTable">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
+        <footer class="bg-body-tertiary text-center text-lg-start">
+            <div class="container p-4">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+                        <h5 class="text-uppercase"> Doofenshmirtz Evil Incorporated</h5>
+
+                        <p>
+                            Doofenshmirtz Evil Incorporated is the fictional, villainous corporation 
+                            owned by Dr. Heinz Doofenshmirtz in Phineas and Ferb, headquartered in a 
+                            tall, purple tower in Danville. It serves as his base to create "-inator" 
+                            inventions for taking over the Tri-State Area, primarily funded by alimony 
+                            from his ex-wife, Charlene.
+                        </p>
+                    </div>
+                        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                            <h5 class="text-uppercase mb-0">More Info</h5>
+                                <ul class="list-unstyled">
+                                    <li>
+                                    <a href="https://phineasandferb.fandom.com/wiki/Doofenshmirtz_Evil_Incorporated" class="text-body">More Info</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://en.wikipedia.org/wiki/Dr._Heinz_Doofenshmirtz#Running_gags" class="text-body">Info on the Dr</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://en.wikipedia.org/wiki/Perry_the_Platypus" class="text-body">Info on Agent P</a>
+                                    </li>
+                                    <li>
+                                    <a href="https://en.wikipedia.org/wiki/Platypus" class="text-body">Info on Platypus's</a>
+                                    </li>
+                                </ul>
+                            </div>
+                </div>
             </div>
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2026 Copyright:
+                    <a class="text-body" href="https://phineasandferb.fandom.com/wiki/Doofenshmirtz_Evil_Incorporated">Doofenshmirtz Evil Incorporated</a>
+                </div>
         </footer>
         <!---------------------------------- End the footer --------------------------------------->
     </body>

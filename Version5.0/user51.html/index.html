@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 5.0
-    Name:
-    Date Completed:
+    Name: Ilya 
+    Date Completed: Apr 29th
 -->
 
 <head>
@@ -33,6 +33,7 @@
     <!-- Custom styles for this template -->
     <style type="text/css">
         footer {
+            background-color: aliceblue;
             font-size: 12px;
             text-align: center;
         }
@@ -47,45 +48,129 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            --bs-table-color-type: var(--bs-table-striped-color);
+            --bs-table-bg-type: rgba(255, 0, 0, 0.3)
+        }
+        .navbar {
+            --bs-navbar-padding-x: 0;
+            --bs-navbar-padding-y: 0.5rem;
+            --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
+            --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+            --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
+            --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+            --bs-navbar-brand-padding-y: 0.3125rem;
+            --bs-navbar-brand-margin-end: 1rem;
+            --bs-navbar-brand-font-size: 1.25rem;
+            --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
+            --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+            --bs-navbar-nav-link-padding-x: 0.5rem;
+            --bs-navbar-toggler-padding-y: 0.25rem;
+            --bs-navbar-toggler-padding-x: 0.75rem;
+            --bs-navbar-toggler-font-size: 1.25rem;
+            --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+            --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+            --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+            --bs-navbar-toggler-focus-width: 0.25rem;
+            --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+            }
+            
+            .navbar-dark .navbar-nav .show > .nav-link, 
+            .navbar-dark .navbar-nav .active > .nav-link, 
+            .navbar-dark .navbar-nav .nav-link.show, 
+            .navbar-dark .navbar-nav .nav-link.active { 
+                color: #fff; 
+            }
+
     </style>
 
     <body>
         <!---------------------------------- Begin the nav-bar ----------------------------------->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
-                <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav me-auto">
                         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">Home</a>
+                        <button
+                        data-mdb-collapse-init
+                        class="navbar-toggler"
+                        type="button"
+                        data-mdb-target="#navbarCenteredExample"
+                        aria-controls="navbarCenteredExample"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        >
+                        <i class="fas fa-bars"></i>
+                        </button>
+
+                <!-- Collapsible wrapper -->
+                <div
+                    class="collapse navbar-collapse justify-content-center"
+                    id="navbarCenteredExample">
+                <!-- Left links -->
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <!-- Navbar dropdown -->
+                    <li class="nav-item dropdown">
+                    <a
+                        data-mdb-dropdown-init
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        aria-expanded="false">
+                        Dropdown
+                    </a>
+                    <!-- Dropdown menu -->
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li>
+                            <a class="dropdown-item" href="#">Action</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                        <li>
+                            <a class="dropdown-item" href="#">Another action</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li>
+                            <a class="dropdown-item" href="#">Something else here</a>
                         </li>
+                    </ul>
+                    </li>
+                    <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
                         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-primary" type="button">Login</button>
                     </form>
                 </div>
+                <div>   
+                    <div class="container-fluid">
+                    <form class="d-flex input-group w-auto">
+                    <input
+                        type="search"
+                        class="form-control rounded"
+                        placeholder="Search"
+                        aria-label="Search"
+                        aria-describedby="search-addon"/>
+                        <span class="input-group-text border-0" id="search-addon">
+                            <i class="fas fa-search"></i>
+                        </span>
+                    </form>
+                </div></div>
             </div>
         </nav>
         <!---------------------------------- End the nav-bar ------------------------------------->
@@ -165,28 +250,34 @@
         </main>
 
         <!---------------------------------- Begin the footer ------------------------------------->
-        <footer>
-            <span class="title">Example of a Footer Title</span>
-            <div class="container py-4" id="footerTable">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
-            </div>
-        </footer>
+      <footer class="bg-body-tertiary text-center text-lg-start">
+  <div class="container p-4">
+    <div class="row">
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Contact us</h5>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+          voluptatem veniam, est atque cumque eum delectus sint!
+        </p>
+      </div>
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">More information</h5>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis
+          molestias. Fugiat pariatur maxime quis culpa corporis vitae repudiandae aliquam
+          voluptatem veniam, est atque cumque eum delectus sint!
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2026 Copyrights Reserved
+    <a class="text-body" href="https://mdbootstrap.com/"></a>
+  </div>
+</footer>
         <!---------------------------------- End the footer --------------------------------------->
     </body>
 

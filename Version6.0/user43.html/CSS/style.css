@@ -1,0 +1,87 @@
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Impact, sans-serif;
+        }
+
+        body {
+            background-image: url("https://cdn.wnba.com/sites/4/2025/08/Thumbnail-46.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-blend-mode: darken;
+            min-height: 100vh;
+          }
+    
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000000;
+            padding: 15px 30px;
+            width: 100vw;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-left a, .nav-right a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-left a:hover, .nav-right a:hover {
+            color: orange;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .logo-section img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            color: rgb(255, 255, 255);
+            height: 70vh;
+            text-align: center;
+            flex-direction: column;
+            padding-top: 40px;
+        }
+
+        .hero h1 {
+            font-size: 150px;
+            margin-bottom: 20px;
+        }
+        .hero img {
+            width: 600px;
+            margin-top: 20px;
+            border-radius: 0px;
+        }
+        footer {
+        text-align: center;
+        color: white;
+        padding: 53px;
+        background-color: rgba(0, 0, 0, 0.8);
+        margin-top: 50px;
+        }

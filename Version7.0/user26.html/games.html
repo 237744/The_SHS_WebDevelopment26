@@ -52,8 +52,8 @@
                     <a href="#" class="nav-item nav-link">About Me</a>
                     <a href="#" class="nav-item nav-link disabled" tabindex="-1">Music</a>
                     <a href="#" class="nav-item nav-link disabled" tabindex="-1">Lists</a>
-                    <a href="games.html" class="nav-item nav-link active" tabindex="-1">Games</a>
-                    <a href="bootstrap.html" class="nav-item nav-link" tabindex="-1">Bootstrap</a>
+                    <a href="games.html" class="nav-item nav-link active" tabindex="-1">Games</a>                    <a href="game2.html" class="nav-item nav-link" tabindex="-1">Target Clicker</a>
+                    <a href="game3.html" class="nav-item nav-link" tabindex="-1">Number Guess</a>                    <a href="bootstrap.html" class="nav-item nav-link" tabindex="-1">Bootstrap</a>
                     <a href="script.html" class="nav-item nav-link" tabindex="-1">JavaScript</a>
                     <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled" tabindex="-1">Contact</a>
                     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your Menu ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
@@ -75,6 +75,135 @@
         <p>
             Come and checkout these awesome JavaScript Games!!!!
         </p>
+        <script>
+var startTime = new Date();
+var endTime = new Date();
+var startPressed = false;
+var bgChangeStarted = false;
+var minWait = 1500;
+var maxWait = 5000;
+var timerID;
+var bestTime = null;
+
+function setDifficulty(level) {
+    if (level === 'hard') {
+        minWait = 500;
+        maxWait = 3000;
+        document.getElementById('difficultyLabel').textContent = 'Hard';
+    } else if (level === 'medium') {
+        minWait = 1500;
+        maxWait = 5000;
+        document.getElementById('difficultyLabel').textContent = 'Medium';
+    } else {
+        minWait = 2500;
+        maxWait = 6000;
+        document.getElementById('difficultyLabel').textContent = 'Easy';
+    }
+}
+
+function startTest() {
+    document.body.style.background = document.response.bgColorChange.options[document.response.bgColorChange.selectedIndex].text;
+    bgChangeStarted = true;
+    startTime = new Date();
+    document.getElementById('status').textContent = 'Wait for the color to change...';
+}
+
+function remark(responseTime) {
+    var responseString = "";
+    if (responseTime < 0.20) responseString = "Well done!";
+    if (responseTime >= 0.20 && responseTime < 0.30) responseString = "Nice!";
+    if (responseTime >= 0.40 && responseTime < 0.50) responseString = "Could be better...";
+    if (responseTime >= 0.50 && responseTime < 0.80) responseString = "Keep practicing!";
+    if (responseTime >= 0.80 && responseTime < 1.1) responseString = "Have you been day dreaming again?";
+    if (responseTime >= 1.1) responseString = "Did you fall asleep?";
+    return responseString;
+}
+
+function showBestTime(responseTime) {
+    if (bestTime === null || responseTime < bestTime) {
+        bestTime = responseTime;
+    }
+    document.getElementById('bestTime').textContent = bestTime.toFixed(3) + ' sec';
+}
+
+function stopTest() {
+    if (bgChangeStarted) {
+        endTime = new Date();
+        var responseTime = (endTime.getTime() - startTime.getTime()) / 1000;
+        document.body.style.background = "white";
+        document.getElementById('status').textContent = 'Ready';
+        alert("Your response time is: " + responseTime + " seconds \n" + remark(responseTime));
+        showBestTime(responseTime);
+        startPressed = false;
+        bgChangeStarted = false;
+    } else {
+        if (!startPressed) {
+            alert("Press start first to begin the test.");
+        } else {
+            clearTimeout(timerID);
+            startPressed = false;
+            document.getElementById('status').textContent = 'Cheated! Press Reset and start again.';
+            alert("Cheater! You pressed too early!");
+        }
+    }
+}
+
+function randNumber() {
+    var randMULTIPLIER = 0x015a4e35;
+    var randINCREMENT = 1;
+    var today = new Date();
+    var randSeed = today.getSeconds();
+    randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
+    return ((randSeed >> 15) & 0x7fff) / 32767;
+}
+
+function randomDelay() {
+    return minWait + Math.floor((maxWait - minWait) * randNumber());
+}
+
+function startit() {
+    if (startPressed) {
+        alert("Already started. Press stop to stop.");
+        return;
+    }
+    startPressed = true;
+    document.getElementById('status').textContent = 'Game started, wait for the screen to change.';
+    timerID = setTimeout(startTest, randomDelay());
+}
+
+function resetTest() {
+    clearTimeout(timerID);
+    startPressed = false;
+    bgChangeStarted = false;
+    document.body.style.background = "white";
+    document.getElementById('status').textContent = 'Ready';
+}
+</script>
+<p>Test your response time!</p>
+<p><strong>Status:</strong> <span id="status">Ready</span></p>
+<p><strong>Best reaction time:</strong> <span id="bestTime">--</span></p>
+<p><strong>Difficulty:</strong> <span id="difficultyLabel">Medium</span></p>
+Click on "Start" first, and wait until the background color changes. As soon as it changes, hit "stop!"
+<form name="response">
+    Change background color in:
+    <select name="bgColorChange">
+        <option selected>deeppink</option>
+        <option>aliceblue</option>
+        <option>crimson</option>
+        <option>darkkhaki</option>
+        <option>cadetblue</option>
+        <option>darkorchid</option>
+        <option>coral</option>
+    </select>
+    <select onchange="setDifficulty(this.value)">
+        <option value="easy">Easy</option>
+        <option value="medium" selected>Medium</option>
+        <option value="hard">Hard</option>
+    </select>
+    <input type="button" value="start" onclick="startit()">
+    <input type="button" value="stop" onclick="stopTest()">
+    <input type="button" value="Reset" onclick="resetTest()">
+</form>
         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑-->
     </main>
 

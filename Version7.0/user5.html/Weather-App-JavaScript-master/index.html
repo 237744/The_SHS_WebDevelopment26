@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App - JavaScript</title>
+    <link rel="stylesheet" href="font/Rimouski.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+  /* Container grid matching the structure */
+.custom-metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: 100%;
+    max-width: 340px; /* Constrains the grid width to fit beautifully in a mobile widget view */
+    margin: 15px auto;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-family: "Rimouski", sans-serif;
+}
+
+/* Individual weather widget items */
+.custom-metric-card {
+    background-color: #f7f0e8; /* Soft cream/beige tint background */
+    border-radius: 12px;
+    height: 70px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    box-sizing: border-box;
+}
+
+/* Header line handling formatting alignment */
+.custom-metric-header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+}
+
+.custom-metric-icon {
+    font-size: 14px;
+}
+
+.custom-metric-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #78716c; /* Muted stone grey text color */
+}
+
+/* Dynamic text data result values styling */
+.custom-metric-value {
+    font-size: 12px;
+    font-weight: 500;
+    color: #0c4a6e; /* Deep blue text color */
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-ellipsis: ellipsis;
+}
+
+/* Responsive adjustment layer replicating standard screen sizes breakpoint rules */
+@media (max-width: 1024px) {
+    .custom-metrics-grid {
+        gap: 6px;
+    }
+    .custom-metric-card {
+        height: 60px;
+        padding: 6px;
+    }
+    .custom-metric-title, 
+    .custom-metric-value {
+        font-size: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    
+    <div class="weather-outer-container">
+        <div class="app-title">
+            <p>Weather</p>
+        </div>
+        <div class="notification"> </div>
+        <div class="weather-container">
+            <div class="weather-icon">
+                <img src="icons/unknown.png" alt="">
+            </div>
+            <div class="temperature-value">
+                <p>- °<span>C</span></p>
+            </div>
+            <div class="temperature-description">
+                <p> - </p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+        </div>
+       <div class="custom-metrics-grid">
+    
+    <div class="custom-metric-card">
+        <div class="custom-metric-header">
+            <span class="custom-metric-icon">💨</span>
+            <span class="custom-metric-title">Wind</span>
+        </div>
+        <span id="wind" class="custom-metric-value">-</span>
+    </div>
+
+    <div class="custom-metric-card">
+        <div class="custom-metric-header">
+            <span class="custom-metric-icon">💧</span>
+            <span class="custom-metric-title">Humidity</span>
+        </div>
+        <span id="humidity" class="custom-metric-value">-</span>
+    </div>
+
+    <div class="custom-metric-card">
+        <div class="custom-metric-header">
+            <span class="custom-metric-icon">👁️</span>
+            <span class="custom-metric-title">Visibility</span>
+        </div>
+        <span id="visibility" class="custom-metric-value">-</span>
+    </div>
+
+    <div class="custom-metric-card">
+        <div class="custom-metric-header">
+            <span class="custom-metric-icon">🧭</span>
+            <span class="custom-metric-title">Pressure</span>
+        </div>
+        <span id="pressure" class="custom-metric-value">-</span>
+    </div>
+
+    <div class="custom-metric-card">
+        <div class="custom-metric-header">
+            <span class="custom-metric-icon">☀️</span>
+            <span class="custom-metric-title">UV Index</span>
+        </div>
+        <span id="uv-index" class="custom-metric-value">-</span>
+    </div>
+
+    <div class="custom-metric-card">
+        <div class="custom-metric-header">
+            <span class="custom-metric-icon">🌡️</span>
+            <span class="custom-metric-title">Dew Point</span>
+        </div>
+        <span id="dew-point" class="custom-metric-value">-</span>
+    </div>
+
+</div>
+</div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+
+

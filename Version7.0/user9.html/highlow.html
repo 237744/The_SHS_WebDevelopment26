@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            h1 {
+                text-align: center;
+                color: white;
+                font-size: 300%;
+            }
+            body {
+                background-color: black;
+            }
+            p {
+                color: white;
+                text-align:center;
+            }
+            input {
+                display: inline;
+            }
+            div {
+                text-align: center;
+            }
+        </style>
+        <script>
+            const answer = Math.floor(Math.random()*100)+1;
+
+            function checkGuess() {
+                const number = document.getElementById("guess").value;
+                if (number < answer) {
+                    alert("Higher");
+                } else if (number > answer) {
+                    alert("Lower");
+                } else if (number == answer) {
+                    alert("Success");
+                }
+                document.getElementById("guess").value = ""; 
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <h1>Higher or Lower</h1>
+            <p>Guess a number between 1 and 100:</p>
+            <div>
+                <input id="guess" type="text" min="1" max="100"/>
+                <input onclick="checkGuess()" type="button" value="Submit" />
+            </div>
+        </main>
+    </body>
+</html>

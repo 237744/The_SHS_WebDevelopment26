@@ -27,21 +27,48 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <!-- Custom styles for this template -->
-    <style type="text/css">
-        menu {
-            margin: 0;
-            padding: 0;
-        }
+<style type="text/css">
+    menu {
+        margin: 0;
+        padding: 0;
+    }
 
-        .wideMargin {
-            margin: 15px;
-        }
+    .wideMargin {
+        margin: 15px;
+    }
 
-        footer {
-            font-size: 12px;
-            text-align: center;
-        }
-    </style>
+    footer {
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* H3 Styling (Padding + Border + Display) */
+    h3 {
+        padding: 50px;
+        background-color: lavender;
+        display: inline-block;
+        border: 1px solid #5D6063;
+
+        border-bottom: 1px solid #5D6063;
+        border-right: 3px dotted #0000ff;
+        border-top: 5px inset;
+        border-left: 3px dashed #e9e9e9;
+    }
+
+    /* Paragraph Styling (Padding + Margin) */
+    p {
+        padding: 5px 50px 30px 5px;
+        background-color: lavender;
+        margin-bottom: 50px;
+        margin-top: 25px;
+    }
+
+    /* Strong (Inline Element Demo) */
+    strong {
+        padding: 50px;
+        background-color: lightblue;
+    }
+</style>
 </head>
 
 <body>
@@ -76,7 +103,15 @@
         <h1 class="text-left my-3">About Me</h1><!-- Edit this line for the title of your page -->
 
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+<h3>Headings Are Block Elements</h3>
 
+<p>paragraphs are blocks, too.<em>However</em>, &lt;em&gt; and &lt;strong&gt;
+elements are not. They are <strong>inline</strong> elements.</p>
+
+<div style='padding-top: 1px'></div>
+
+<p>Block elements define the flow of the HTML document, while inline elements
+do not.</p>
         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
     </main>
 

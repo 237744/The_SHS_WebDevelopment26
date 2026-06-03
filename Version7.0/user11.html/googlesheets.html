@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form & Spreadsheet</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #fff; color: #000; padding: 20px; }
+
+    .label { font-size: 12px; color: #666; margin-bottom: 8px; font-family: monospace; }
+    .section { margin-bottom: 2rem; }
+
+    /* Form */
+    .form-box {
+      border: 1px solid #000;
+      padding: 6px 6px 40px;
+    }
+    .form-row { display: flex; }
+    .form-row input {
+      border: 1px solid #aaa;
+      padding: 3px 6px;
+      font-size: 13px;
+      flex: 1;
+      border-radius: 0;
+      outline: none;
+      height: 26px;
+    }
+    .form-row input:not(:first-child) { border-left: none; }
+    .form-row button {
+      border: 1px solid #aaa;
+      border-left: none;
+      padding: 3px 10px;
+      font-size: 13px;
+      background: #f0f0f0;
+      cursor: pointer;
+      border-radius: 0;
+      height: 26px;
+    }
+
+    /* Spreadsheet */
+    .sheet {
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+    .sheet th, .sheet td {
+      border: 1px solid #bbb;
+      padding: 5px 10px;
+      text-align: center;
+      min-width: 120px;
+    }
+    .corner { background: #f0f0f0; }
+    .row-num {
+      background: #f0f0f0;
+      color: #666;
+      width: 32px;
+      min-width: 32px;
+    }
+    .col-head {
+      background: #f0f0f0;
+      color: #666;
+      font-weight: 400;
+    }
+    .col-head-active {
+      background: #c5d9f1;
+      color: #1a3a5c;
+      font-weight: 500;
+    }
+    .data-head {
+      font-weight: 700;
+      text-align: left;
+    }
+    .data-cell {
+      text-align: left;
+      height: 22px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <div class="label">form page</div>
+    <div class="form-box">
+      <div class="form-row">
+        <input type="text" placeholder="Email">
+        <input type="text" placeholder="Name">
+        <input type="text" placeholder="Favorite Color">
+        <input type="text" placeholder="Comments">
+        <button>Send</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">spreadsheet</div>
+    <table class="sheet">
+      <thead>
+        <tr>
+          <th class="corner"></th>
+          <th class="col-head">A</th>
+          <th class="col-head col-head-active">B</th>
+          <th class="col-head">C</th>
+          <th class="col-head">D</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="row-num">1</td>
+          <td class="data-head">timestamp</td>
+          <td class="data-head">name</td>
+          <td class="data-head">favoriteColor</td>
+          <td class="data-head">comment</td>
+        </tr>
+        <tr>
+          <td class="row-num">2</td>
+          <td class="data-cell"></td>
+          <td class="data-cell"></td>
+          <td class="data-cell"></td>
+          <td class="data-cell"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</body>
+</html>

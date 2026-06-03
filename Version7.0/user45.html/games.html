@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- JavaScript -->
+    
     <!-- These are needed to get the responsive menu to work -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -32,8 +33,258 @@
 
     <!-- Custom styles for this template -->
     <style type="text/css">
+body {
+  text-align:center;
+  font-family: helvetica;
+}
+canvas {
+  border: 2px solid rgb(151, 149, 149);
+}
+
 
     </style>
+    <script>
+        /**
+ * Namespace
+ */
+var Game      = Game      || {};
+var Keyboard  = Keyboard  || {}; 
+var Component = Component || {};
+
+/**
+ * Keyboard Map
+ */
+Keyboard.Keymap = {
+  37: 'left',
+  38: 'up',
+  39: 'right',
+  40: 'down'
+};
+
+/**
+ * Keyboard Events
+ */
+Keyboard.ControllerEvents = function() {
+  
+  // Setts
+  var self      = this;
+  this.pressKey = null;
+  this.keymap   = Keyboard.Keymap;
+  
+  // Keydown Event
+  document.onkeydown = function(event) {
+    self.pressKey = event.which;
+  };
+  
+  // Get Key
+  this.getKey = function() {
+    return this.keymap[this.pressKey];
+  };
+};
+
+/**
+ * Game Component Stage
+ */
+Component.Stage = function(canvas, conf) {  
+  
+  // Sets
+  this.keyEvent  = new Keyboard.ControllerEvents();
+  this.width     = canvas.width;
+  this.height    = canvas.height;
+  this.length    = [];
+  this.food      = {};
+  this.score     = 0;
+  this.direction = 'right';
+  this.conf      = {
+    cw   : 10,
+    size : 5,
+    fps  : 1000
+  };
+  
+  // Merge Conf
+  if (typeof conf == 'object') {
+    for (var key in conf) {
+      if (conf.hasOwnProperty(key)) {
+        this.conf[key] = conf[key];
+      }
+    }
+  }
+  
+};
+
+/**
+ * Game Component Snake
+ */
+Component.Snake = function(canvas, conf) {
+  
+  // Game Stage
+  this.stage = new Component.Stage(canvas, conf);
+  
+  // Init Snake
+  this.initSnake = function() {
+    
+    // Itaration in Snake Conf Size
+    for (var i = 0; i < this.stage.conf.size; i++) {
+      
+      // Add Snake Cells
+      this.stage.length.push({x: i, y:0});
+		}
+	};
+  
+  // Call init Snake
+  this.initSnake();
+  
+  // Init Food  
+  this.initFood = function() {
+		
+    // Add food on stage
+    this.stage.food = {
+			x: Math.round(Math.random() * (this.stage.width - this.stage.conf.cw) / this.stage.conf.cw), 
+			y: Math.round(Math.random() * (this.stage.height - this.stage.conf.cw) / this.stage.conf.cw), 
+		};
+	};
+  
+  // Init Food
+  this.initFood();
+  
+  // Restart Stage
+  this.restart = function() {
+    this.stage.length            = [];
+    this.stage.food              = {};
+    this.stage.score             = 0;
+    this.stage.direction         = 'right';
+    this.stage.keyEvent.pressKey = null;
+    this.initSnake();
+    this.initFood();
+  };
+};
+
+/**
+ * Game Draw
+ */
+Game.Draw = function(context, snake) {
+  
+  // Draw Stage
+  this.drawStage = function() {
+    
+    // Check Keypress And Set Stage direction
+    var keyPress = snake.stage.keyEvent.getKey(); 
+    if (typeof(keyPress) != 'undefined') {
+      snake.stage.direction = keyPress;
+    }
+    
+    // Draw White Stage
+		context.fillStyle = "white";
+		context.fillRect(0, 0, snake.stage.width, snake.stage.height);
+		
+    // Snake Position
+    var nx = snake.stage.length[0].x;
+		var ny = snake.stage.length[0].y;
+		
+    // Add position by stage direction
+    switch (snake.stage.direction) {
+      case 'right':
+        nx++;
+        break;
+      case 'left':
+        nx--;
+        break;
+      case 'up':
+        ny--;
+        break;
+      case 'down':
+        ny++;
+        break;
+    }
+    
+    // Check Collision
+    if (this.collision(nx, ny) == true) {
+      snake.restart();
+      return;
+    }
+    
+   // Logic of Snake food
+if (nx == snake.stage.food.x && ny == snake.stage.food.y) {
+
+  // Add new head
+  snake.stage.length.unshift({x: nx, y: ny});
+
+  // Add 3 extra body parts
+  for (var i = 0; i < 3; i++) {
+    var last = snake.stage.length[snake.stage.length.length - 1];
+
+    snake.stage.length.push({
+      x: last.x,
+      y: last.y
+    });
+  }
+
+  snake.stage.score++;
+  snake.initFood();
+
+} else {
+
+  var tail = snake.stage.length.pop();
+  tail.x = nx;
+  tail.y = ny;
+
+  snake.stage.length.unshift(tail);
+}
+    
+    // Draw Snake
+    for (var i = 0; i < snake.stage.length.length; i++) {
+      var cell = snake.stage.length[i];
+      this.drawCell(cell.x, cell.y);
+    }
+    
+    // Draw Food
+    this.drawCell(snake.stage.food.x, snake.stage.food.y);
+    
+    // Draw Score
+    context.fillText('Score: ' + snake.stage.score, 5, (snake.stage.height - 5));
+  };
+  
+  // Draw Cell
+  this.drawCell = function(x, y) {
+    context.fillStyle = 'rgb(170, 170, 170)';
+    context.beginPath();
+    context.arc((x * snake.stage.conf.cw + 6), (y * snake.stage.conf.cw + 6), 4, 0, 2*Math.PI, false);    
+    context.fill();
+  };
+  
+  // Check Collision with walls
+  this.collision = function(nx, ny) {  
+    if (nx == -1 || nx == (snake.stage.width / snake.stage.conf.cw) || ny == -1 || ny == (snake.stage.height / snake.stage.conf.cw)) {
+      return true;
+    }
+    return false;    
+	}
+};
+
+
+/**
+ * Game Snake
+ */
+Game.Snake = function(elementId, conf) {
+  
+  // Sets
+  var canvas   = document.getElementById(elementId);
+  var context  = canvas.getContext("2d");
+  var snake    = new Component.Snake(canvas, conf);
+  var gameDraw = new Game.Draw(context, snake);
+  
+  // Game Interval
+  setInterval(function() {gameDraw.drawStage();}, snake.stage.conf.fps);
+};
+
+
+/**
+ * Window Load
+ */
+window.onload = function() {
+  var snake = new Game.Snake('stage', {fps: 100, size: 4});
+};
+    </script>
 </head>
 
 <body>
@@ -78,6 +329,154 @@
         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑-->
     </main>
 
+<h3>Simple Snake Game</h3>
+<canvas id="stage" height="400" width="520"></canvas>
+
+
+
+<script language="JavaScript">
+
+var startTime=new Date();
+var endTime=new Date();
+var startPressed=false;
+var bgChangeStarted=false;
+var maxWait=20;
+var timerID;
+
+function startTest()
+{
+ document.body.style.background=document.response.bgColorChange.options[document.response.bgColorChange.selectedIndex].text;
+ bgChangeStarted=true;
+ startTime=new Date();
+}
+
+function remark(responseTime)
+{
+ var responseString="";
+ if (responseTime < 0.20)
+ responseString="Well done!";
+ if (responseTime >= 0.20 && responseTime < 0.30)
+ responseString="Nice!";
+ if (responseTime >=0.40 && responseTime < 0.50)
+ responseString="Could be better...";
+ if (responseTime >=0.50 && responseTime < 0.80)
+ responseString="Keep practicing!";
+ if (responseTime >=0.80 && responseTime < 1.1)
+ responseString="Have you been day dreaming again?";
+ if (responseTime >=1.1)
+ responseString="Did you fall asleep?";
+ return responseString;
+}
+
+function stopTest()
+{
+ if(bgChangeStarted)
+ {
+ endTime=new Date();
+ var responseTime=(endTime.getTime()-startTime.getTime())/1000;
+
+ document.body.style.background="white"; 
+ alert("Your response time is: " + responseTime + " seconds " + "\n" + remark(responseTime));
+ startPressed=false;
+ bgChangeStarted=false;
+ }
+ else
+ {
+ if (!startPressed)
+ {
+ alert("press start first to start test");
+ }
+ else
+ { 
+ clearTimeout(timerID);
+ startPressed=false; 
+ alert("cheater! you pressed too early!");
+ } 
+ }
+}
+
+var randMULTIPLIER=0x015a4e35;
+var randINCREMENT=1;
+var today=new Date();
+var randSeed=today.getSeconds();
+
+function randNumber()
+{
+ randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
+ return((randSeed >> 15) & 0x7fff) / 32767;
+}
+
+function startit()
+{
+ if(startPressed)
+ {
+ alert("Already started. Press stop to stop");
+ return;
+ }
+ else
+ {
+ startPressed=true; 
+ timerID=setTimeout('startTest()', 6000*randNumber());
+ }
+}
+
+</script>
+<p>Test your Response time!</p>
+Click on "Start" first, and wait until the background color changes. As soon as it changes, hit "stop!"
+
+<form name="response">
+Change background color in: 
+<select name="bgColorChange">
+<option selected>deeppink
+<option>aliceblue
+<option>crimson
+<option>darkkhaki
+<option>cadetblue
+<option>darkorchid
+<option>coral
+</select>
+<input type="button" value="start" onClick="startit()">
+<input type="button" value="stop" onClick="stopTest()">
+
+<div class="wrapper">
+  <div class="timer">
+       <span></span>    
+  </div>
+  <div class="gameover">GAME OVER</div>
+  <h1>KILL THE BIRDS <span>(shoot the birds)</span></h1>
+  <h2>PURE CSS GAME - NO JS!</h2>
+  <input class="input-circle input-circle1" type="radio" id="circle1" >
+ <input class="input-circle input-circle2" type="radio" id="circle2" >
+ <input class="input-circle input-circle3" type="radio" id="circle3" >
+ <input class="input-circle input-circle4" type="radio" id="circle4" >
+ <input class="input-circle input-circle5" type="radio" id="circle5" >
+ <input class="input-circle input-circle6" type="radio" id="circle6" >
+  
+  <label for="circle1" class="pajaro pajaro1"><span></span></label>
+  <label for="circle2" class="pajaro pajaro2"><span></span></label>
+  <label for="circle3" class="pajaro pajaro3"><span></span></label>
+  <label for="circle4" class="pajaro pajaro4"><span></span></label>
+  <label for="circle5" class="pajaro pajaro5"><span></span></label>
+  <label for="circle6" class="pajaro pajaro6"><span></span></label>
+  <div class="sum">SCORE:</div>
+  
+  
+  
+  
+  
+  
+  <footer>    
+    <a href="https://twitter.com/eladsc">
+      <svg viewBox="0 0 24 24" style="width:40px; height:40px; fill: rgba(29,161,242,1.00);"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
+      
+      @eladsc
+    </a>
+   
+    
+  </footer>
+</div>
+
+</form>
     <!---------------------------------- Begin the footer ------------------------------------->
     <footer class="small text-center" id="footer">
         <p>

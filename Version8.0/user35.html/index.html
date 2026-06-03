@@ -1,18 +1,52 @@
+<!DOCTYPE html>
 <html lang="en">
-    <!--Version 8.0 
-	Name:
-	Date Completed:
-    -->
-    <head>
-        
-        <title>Web Development User #00</title>
-    
-    </head>
-    
-    <body>
-        
-        <center>My name is User #00</center>
-    
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+    <div class="weather-container">
+        <h2>Live Weather App</h2>
+        
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city name..." autocomplete="off">
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div id="error-message" class="error-msg hidden">City not found. Please try again!</div>
+
+        <div id="weather-box" class="weather-box hidden">
+            <h3 id="location">New York, US</h3>
+            
+            <img id="weather-icon" src="" alt="Weather Icon">
+            
+            <div id="description">Clear Sky</div>
+            <div id="temperature">25°C</div>
+
+            <div class="extra-details">
+                <div class="detail-item">
+                    <span>Feels Like:</span>
+                    <strong id="feels-like">--</strong>
+                </div>
+                <div class="detail-item">
+                    <span>Humidity:</span>
+                    <strong id="humidity">--</strong>
+                </div>
+                <div class="detail-item">
+                    <span>Wind Speed:</span>
+                    <strong id="wind">--</strong>
+                </div>
+                <div class="detail-item">
+                    <span>Pressure:</span>
+                    <strong id="pressure">--</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>

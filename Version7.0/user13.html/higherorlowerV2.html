@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            const answer = Math.floor(Math.random()*100)+1;
+
+            function checkGuess() {
+                let guess = Number(document.getElementById('userIn').value);
+                if (isNaN(guess)) {
+                    alert('Please enter a number');
+                } else if (guess < answer) {
+                    document.getElementById('hint').innerHTML = 'lower';
+                } else if (guess > answer) {
+                    document.getElementById('hint').innerHTML = 'higher';
+                } else if (guess == answer) {
+                    document.getElementById('winText').innerHTML = 'You guessed the correct number! It was '+answer;
+                }
+
+                document.getElementById('userIn').value = '';
+            }
+        </script>
+
+        <style>
+            #winText {
+                color: green;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <main>
+            <h1>Higher or Lower</h1>
+            <input type="text" id="userIn" placeholder="Guess a number between 1-100" style="width: 30%;"/>
+            <input type="button" onclick="checkGuess()" value="Submit"/>
+            <p>Your guess is: <span id="hint">____</span> than the real number</p>
+            <p id="winText"></p>
+        </main>
+    </body>
+</html>

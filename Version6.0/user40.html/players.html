@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <body>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHL - National Hockey League</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        header { background: #000; color: #fff; padding: 1rem; text-align: center; }
+        nav { background: #c41e3a; padding: 1rem; }
+        nav a { color: #fff; text-decoration: none; margin: 0 1.5rem; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        section { margin: 2rem 0; padding: 2rem; border: 1px solid #ddd; }
+        h1, h2 { color: #c41e3a; }
+        h2 a { text-decoration: none; color: #c41e3a; cursor: pointer; }
+        h2 a:hover { text-decoration: underline; }
+        footer { background: #000; color: #fff; text-align: center; padding: 1rem; margin-top: 3rem; }
+    </style>
+ <nav>
+        <script>
+            document.querySelectorAll('h2 a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('href').replace('.html', '');
+                    const imageMap = {
+                        'home': 'https://via.placeholder.com/800x400?text=NHL+Home',
+                        'teams': 'https://via.placeholder.com/800x400?text=NHL+Teams',
+                        'standings': 'https://via.placeholder.com/800x400?text=Standings',
+                        'schedule': 'https://via.placeholder.com/800x400?text=Schedule',
+                        'players': 'https://via.placeholder.com/800x400?text=Players',
+                        'stats': 'https://via.placeholder.com/800x400?text=Statistics',
+                        'about': 'https://via.placeholder.com/800x400?text=About+NHL'
+                    };
+                    const img = document.createElement('img');
+                    img.src = imageMap[page];
+                    img.style.width = '100%';
+                    img.style.marginTop = '1rem';
+                    const section = document.getElementById(page);
+                    const existing = section.querySelector('img');
+                    if(existing) existing.remove();
+                    section.appendChild(img);
+                });
+            });
+        </script>
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="standings.html">Standings</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="players.html">Players</a>
+        <a href="stats.html">Stats</a>
+        <a href="about.html">About</a>
+    </nav>
+    </head>
+<head>
+    <meta charset="UTF-8">
+    <title>NHL Players</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #000000;
+            color: #ffffff;
+        }
+        header {
+            background: linear-gradient(135deg, #ff0000, #800000);
+            padding: 30px 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.4rem;
+        }
+        header p {
+            margin: 10px 0 0;
+            color: #ffffff;
+        }
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px 40px;
+        }
+        .player-grid {
+            display: grid;
+            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        }
+        .player-card {
+            background: #333333;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+        .player-card h2 {
+            margin-top: 0;
+            color: #ffffff;
+            font-size: 1.4rem;
+        }
+        .player-card p {
+            margin: 8px 0;
+            line-height: 1.5;
+            color: #ffffff;
+        }
+        .player-card span {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 6px 10px;
+            background: #ff0000;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 0.9rem;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NHL Players</h1>
+        <p>A quick overview of top National Hockey League players and their roles.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Notable NHL Players</h2>
+            <div class="player-grid">
+                <article class="player-card">
+                    <h2>Auston Matthews</h2>
+                    <p>Center for the Toronto Maple Leafs. Known for his goal-scoring ability and strong offensive presence.</p>
+                    <span>Team: Toronto Maple Leafs</span>
+                </article>
+                <article class="player-card">
+                    <h2>Cale Makar</h2>
+                    <p>Defenseman for the Colorado Avalanche. Elite puck mover and strong two-way defender.</p>
+                    <span>Team: Colorado Avalanche</span>
+                </article>
+                <article class="player-card">
+                    <h2>Connor McDavid</h2>
+                    <p>Center for the Edmonton Oilers. Widely regarded as one of the fastest skaters and top playmakers.</p>
+                    <span>Team: Edmonton Oilers</span>
+                </article>
+                <article class="player-card">
+                    <h2>Auston Matthews</h2>
+                    <p>Center for the Toronto Maple Leafs. Known for his goal-scoring ability and strong offensive presence.</p>
+                    <span>Team: Toronto Maple Leafs</span>
+                </article>
+                <article class="player-card">
+                    <h2>Alex Ovechkin</h2>
+                    <p>Left wing for the Washington Capitals. One of the greatest goal scorers in NHL history.</p>
+                    <span>Team: Washington Capitals</span>
+                </article>
+                <article class="player-card">
+                    <h2>Sidney Crosby</h2>
+                    <p>Center for the Pittsburgh Penguins. Veteran leader with strong playmaking and faceoff skills.</p>
+                    <span>Team: Pittsburgh Penguins</span>
+                </article>
+            </div>
+        </section>
+    </main>
+     <footer style="background: #000; color: #fff; text-align: center; padding: 2rem; margin-top: 3rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 2rem;">
+            <div style="flex: 1; min-width: 200px; margin: 1rem;">
+                <h3>About NHL</h3>
+                <p>The National Hockey League (NHL) is a professional ice hockey league in North America, currently comprising 32 teams—25 in the United States and 7 in Canada.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 1rem;">
+                <h3>Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="index.html" style="color: #fff; text-decoration: none;">Home</a></li>
+                    <li><a href="teams.html" style="color: #fff; text-decoration: none;">Teams</a></li>
+                    <li><a href="standings.html" style="color: #fff; text-decoration: none;">Standings</a></li>
+                    <li><a href="schedule.html" style="color: #fff; text-decoration: none;">Schedule</a></li>
+                    <li><a href="players.html" style="color: #fff; text-decoration: none;">Players</a></li>
+                    <li><a href="stats.html" style="color: #fff; text-decoration: none;">Stats</a></li>
+                    <li><a href="about.html" style="color: #fff; text-decoration: none;">About</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 1rem;">
+                <h3>Contact Us</h3>
+                <p>Email: info@nhl.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 1185 Avenue of the Americas, New York, NY 10036</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 1rem;">
+                <h3>Follow Us</h3>
+                <p>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">Facebook</a>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">Twitter</a>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">Instagram</a>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">YouTube</a>
+                </p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #333; padding-top: 1rem;">
+        
+    </div>
+</footer>
+</body>
+</html>

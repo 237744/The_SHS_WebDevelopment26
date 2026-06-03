@@ -25,6 +25,27 @@
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- JavaScript -->
+     <div class="menu">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" 
+                    data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">       
+                    <a href="#" class="nav-item nav-link active">Home</a>
+                    <a href="aboutMe.html" class="nav-item nav-link">About Me</a>
+                    <a href="music.html" class="nav-item nav-link disabled" tabindex="-1">Music</a>
+                    <a href="mailto:sample@gmail.com?Subject=Hello" 
+                       class="nav-item nav-link disabled" tabindex="-1">Contact</a>
+                </div>
+                <div class="navbar-nav ml-auto">
+                    <a href="#" class="nav-item nav-link disabled">Login</a>
+                </div>
+            </div>
+        </nav>
+    </div>
     <!-- These are needed to get the responsive menu to work -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
@@ -47,7 +68,44 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
-    </style>
+ .navbar {
+  --bs-navbar-padding-x: 0;
+  --bs-navbar-padding-y: 0.5rem;
+  --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
+  --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+  --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
+  --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-brand-padding-y: 0.3125rem;
+  --bs-navbar-brand-margin-end: 1rem;
+  --bs-navbar-brand-font-size: 1.25rem;
+  --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-nav-link-padding-x: 0.5rem;
+  --bs-navbar-toggler-padding-y: 0.25rem;
+  --bs-navbar-toggler-padding-x: 0.75rem;
+  --bs-navbar-toggler-font-size: 1.25rem;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+  --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+  --bs-navbar-toggler-focus-width: 0.25rem;
+  --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+ }
+  .navbar-dark .navbar-nav .show > .nav-link, 
+.navbar-dark .navbar-nav .active > .nav-link, 
+.navbar-dark .navbar-nav .nav-link.show, 
+.navbar-dark .navbar-nav .nav-link.active { 
+    color: #fff; 
+}
+
+
+   
+   </style>
 
     <body>
         <!---------------------------------- Begin the nav-bar ----------------------------------->
@@ -69,16 +127,19 @@
                               Link
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="https://www.google.com">Googol</a></li>
+                                <li><a class="dropdown-item" href="https://www.google.com">Gooble</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="https://www.google.com">Googe/a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                            <a href="302771@shakopeeschools.org?Subject=How are you so cool" class="nav-link" tabindex="-1">Email</a>
+                        </li>
+                         <li class="nav-item">
+                            <a href="https://www.google.com" class="nav-link" tabindex="-1">Google</a>
                         </li>
                         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                     </ul>
@@ -154,11 +215,36 @@
             <!---------Table-Striped------------------------------------------->
             <div class="container mt-3" name="table-striped">
             </div>
-
+ <style>
+            .table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: rgba(255, 0, 0, 0.3)
+}
+   .table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: var(--bs-table-striped-bg);
+}
+</style>
             <!---------List-Group---------------------------------------------->
             <div class="container mt-3" name="list-group">
             </div>
-
+<div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active">
+        <i class="fa fa-home"></i> Home
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-camera"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active">145</span>
+    </a>
+    <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+        <i class="fa fa-music"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active">50</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-film"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right">8</span>
+    </a>
+    <a href="#" class="list-group-item cloud">
+       <i class="fa-solid fa-cloud"></i> 
+    </a>
+</div>
             <!---------Form Button--------------------------------------------->
             <div class="container mt-3 vstack" name="form-button">
             </div>
@@ -166,7 +252,7 @@
 
         <!---------------------------------- Begin the footer ------------------------------------->
         <footer>
-            <span class="title">Example of a Footer Title</span>
+            <span class="title">© 2026 Copyright: Aavash</span>
             <div class="container py-4" id="footerTable">
                 <ul class="list-unstyled d-flex justify-content-center">
                     <li class="mx-3">
@@ -185,6 +271,19 @@
                         <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
                     </li>
                 </ul>
+            <div class="container">
+  <div class="row">
+    <div class="col-md">
+      <a href="https://www.google.com">Sponsor</a>
+    </div>
+    <div class="col-md">
+      <a href="https://www.google.com">Collaborator</a>
+    </div>
+    <div class="col-md">
+        <a href="https://www.google.com">Reference</a>
+    </div>
+  </div>
+</div>
             </div>
         </footer>
         <!---------------------------------- End the footer --------------------------------------->

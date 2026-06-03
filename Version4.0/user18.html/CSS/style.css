@@ -1,14 +1,16 @@
+@import url(rainbow.css);
+
 .button {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	padding: 20px;
-	text-align: center;
-	text-decoration: none;
+	background-color: #b8cd02;
+	color:crimson;
+	padding: 50px;
+	text-decoration: blue;
 	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
+	font-size: 65px;
+	margin: 8px 3px;
 	cursor: pointer;
+	background-size: 100px;
+
 }
 
 .button1 {
@@ -34,4 +36,110 @@ table{
 
 h1, h2, h3, h4, h5, h6{
 	text-align:center;
+}
+
+button:hover {
+  color: rgb(129, 49, 39);
+}
+
+:local-link:visited{
+	color: #3e467c;
+}
+
+:checked{
+	color: coral;
+}
+
+.button3 {
+	box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.button3:hover {
+	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.button3:active {
+	position:relative;
+	top:1px;
+}
+
+.button4 {font-size: 50px;}
+
+.button5{
+	background-color: goldenrod;
+}
+
+.title{
+  color: red;
+  font-family: 'Trebuchet MS', sans-serif; 
+}
+
+.title-large {
+  font-size: 2rem;
+}
+
+.title-small {
+  font-size: .5rem;
+}
+
+.title{
+  color: red;
+  font-family: 'Trebuchet MS', sans-serif; 
+}
+
+.title-large {
+  font-size: 2rem;
+}
+
+.title-small {
+  font-size: .5rem;
+}
+#morecontent {
+  background-color: yellow;
+}
+
+#knowledge > * {
+  border: 3px red solid;
+}
+#amazing + * {
+  background-color: #FFFF00;
+}
+
+div li::marker{
+  color: red;
+}
+
+#knowledge > * ::marker{
+  content:"😜 ";
+}
+
+td:hover {
+  background-color: black;
+}
+
+.nav-link:link{
+	color: purple;
+}
+
+.nav-link:visited{
+	color: chocolate;
+}
+
+.button5 :focus{
+background-color: rgb(32, 173, 93);
+}
+
+#pond{
+	align-content: center;
 }

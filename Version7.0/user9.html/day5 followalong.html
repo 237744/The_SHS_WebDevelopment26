@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            function example() {
+                const userIn = document.getElementById("myText").value;
+                if (userIn == "cake") {
+                    alert("I like cake");
+                } else if (userIn == "ice cream") {
+                    alert("I like ice cream");
+                } else {
+                    alert("Not cake or ice cream");
+                }
+                alert("Done");
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <input id="myText" type="text" />
+            <input onclick="example()" type="button" value="submit" />
+        </main>
+    </body>
+</html>

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Version 5.0
-    Name:
-    Date Completed:
+<!--Version 7.0
+    Name: User 22
+    Date Completed: 2026-05-27
 -->
 
 <head>
@@ -20,19 +20,31 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- Custom -->
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- JavaScript -->
     <!-- These are needed to get the responsive menu to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 
     <!-- Custom styles for this template -->
     <style type="text/css">
-
+        .nav-pills .nav-link.active {
+            background-color: #0d6efd;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .game-btn {
+            min-width: 120px;
+        }
+        .cursor-pointer {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -41,7 +53,7 @@
     <div class="menu">
         <nav class="navbar navbar-expand-md p-2 navbar-dark bg-dark">
             <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -56,7 +68,7 @@
                     <a href="bootstrap.html" class="nav-item nav-link" tabindex="-1">Bootstrap</a>
                     <a href="script.html" class="nav-item nav-link" tabindex="-1">JavaScript</a>
                     <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled" tabindex="-1">Contact</a>
-                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your Menu ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your Menu ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                 </div>
                 <div class="navbar-nav ms-auto">
                     <a href="#" class="nav-item nav-link disabled">Login</a>
@@ -66,25 +78,378 @@
     </div>
     <!---------------------------------- End the nav-bar ------------------------------------->
 
-    <main class="m-3" id="content">
+    <main class="container my-5" id="content">
+        <h1 class="text-center mb-4 text-primary font-weight-bold">Interactive JavaScript Games</h1>
+        
+        <!-- Navigation Pills for Games -->
+        <ul class="nav nav-pills nav-fill mb-4" id="gameTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="reaction-tab" data-bs-toggle="tab" data-bs-target="#reaction" type="button" role="tab" aria-controls="reaction" aria-selected="true">
+                    <i class="fa-solid fa-gauge-high me-2"></i>Reaction Tester
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="guessing-tab" data-bs-toggle="tab" data-bs-target="#guessing" type="button" role="tab" aria-controls="guessing" aria-selected="false">
+                    <i class="fa-solid fa-arrow-up-9-1 me-2"></i>Number Guesser
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="rps-tab" data-bs-toggle="tab" data-bs-target="#rps" type="button" role="tab" aria-controls="rps" aria-selected="false">
+                    <i class="fa-solid fa-hand-scissors me-2"></i>Rock Paper Scissors
+                </button>
+            </li>
+        </ul>
 
-        <h1 class="text-left my-3">Games</h1>
-        <!-- Edit this line for the title of your page -->
+        <!-- Tab Content -->
+        <div class="tab-content border p-4 rounded bg-light shadow-sm" id="gameTabContent">
+            <!-- Game 1: Reaction Tester -->
+            <div class="tab-pane fade show active" id="reaction" role="tabpanel" aria-labelledby="reaction-tab">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h3>Test Your Response Time!</h3>
+                        <p class="text-muted">Click on "Start" first, and wait until the background color changes. As soon as it changes, hit "stop!"</p>
+                        
+                        <div class="card p-3 my-3">
+                            <form name="response" class="row g-3 align-items-center">
+                                <div class="col-auto">
+                                    <label class="col-form-label">Change background color in:</label>
+                                </div>
+                                <div class="col-auto">
+                                    <select name="bgColorChange" class="form-select">
+                                        <option selected>deeppink</option>
+                                        <option>aliceblue</option>
+                                        <option>crimson</option>
+                                        <option>darkkhaki</option>
+                                        <option>cadetblue</option>
+                                        <option>darkorchid</option>
+                                        <option>coral</option>
+                                    </select>
+                                </div>
+                                <div class="col-auto">
+                                    <button type="button" class="btn btn-success game-btn me-2" onClick="startit()">Start</button>
+                                    <button type="button" class="btn btn-danger game-btn" onClick="stopTest()">Stop</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card bg-info text-white p-3 text-center h-100 d-flex flex-column justify-content-center">
+                            <h4>Personal Best</h4>
+                            <p class="display-6" id="bestTime">-</p>
+                            <div>
+                                <button type="button" class="btn btn-outline-light btn-sm" onclick="resetReactionBest()">Reset Best</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-        <p>
-            Come and checkout these awesome JavaScript Games!!!!
-        </p>
-        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑-->
+            <!-- Game 2: Number Guesser -->
+            <div class="tab-pane fade" id="guessing" role="tabpanel" aria-labelledby="guessing-tab">
+                <h3>Number Guessing Game</h3>
+                <p class="text-muted">Guess the secret number within the allowed attempts!</p>
+                
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card p-3 my-2">
+                            <label class="form-label font-weight-bold">Select Difficulty:</label>
+                            <div class="btn-group mb-3" role="group">
+                                <input type="radio" class="btn-check" name="difficulty" id="diffEasy" checked onclick="setDifficulty('easy')">
+                                <label class="btn btn-outline-primary" for="diffEasy">Easy (1-50, 10 attempts)</label>
+                                
+                                <input type="radio" class="btn-check" name="difficulty" id="diffMedium" onclick="setDifficulty('medium')">
+                                <label class="btn btn-outline-warning" for="diffMedium">Medium (1-100, 7 attempts)</label>
+                                
+                                <input type="radio" class="btn-check" name="difficulty" id="diffHard" onclick="setDifficulty('hard')">
+                                <label class="btn btn-outline-danger" for="diffHard">Hard (1-200, 5 attempts)</label>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="userGuess" class="form-label" id="guessLabel">Enter your guess (1-50):</label>
+                                <input type="number" class="form-control" id="userGuess" placeholder="Enter number...">
+                            </div>
+                            <button class="btn btn-primary w-100" onclick="checkGuess()">Submit Guess</button>
+                            <button class="btn btn-secondary w-100 mt-2" onclick="resetGuessGame()">Restart Game</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card bg-dark text-white p-3 h-100 d-flex flex-column justify-content-center align-items-center">
+                            <h5>Game Status</h5>
+                            <p class="lead" id="guessFeedback">Select difficulty and start guessing!</p>
+                            <p class="h6">Attempts Remaining: <span id="attemptsLeft" class="badge bg-danger">10</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Game 3: Rock Paper Scissors -->
+            <div class="tab-pane fade" id="rps" role="tabpanel" aria-labelledby="rps-tab">
+                <h3>Rock Paper Scissors</h3>
+                <p class="text-muted">Play against the computer. First to select wins the round!</p>
+                
+                <div class="row">
+                    <div class="col-md-7 text-center">
+                        <div class="d-flex justify-content-around my-4">
+                            <button class="btn btn-outline-primary btn-lg p-4" onclick="playRPS('rock')">
+                                <i class="fa-regular fa-hand-back-fist fa-3x d-block mb-2"></i>Rock
+                            </button>
+                            <button class="btn btn-outline-primary btn-lg p-4" onclick="playRPS('paper')">
+                                <i class="fa-regular fa-hand fa-3x d-block mb-2"></i>Paper
+                            </button>
+                            <button class="btn btn-outline-primary btn-lg p-4" onclick="playRPS('scissors')">
+                                <i class="fa-regular fa-hand-scissors fa-3x d-block mb-2"></i>Scissors
+                            </button>
+                        </div>
+                        <div class="card bg-light p-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Your Choice</h6>
+                                    <p class="h4 text-primary" id="userRPSChoice">-</p>
+                                </div>
+                                <div class="col-6">
+                                    <h6>Computer's Choice</h6>
+                                    <p class="h4 text-danger" id="compRPSChoice">-</p>
+                                </div>
+                            </div>
+                            <hr>
+                            <p class="lead font-weight-bold text-success" id="rpsResult">Choose Rock, Paper, or Scissors to start!</p>
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="card bg-warning text-dark p-3 text-center h-100 d-flex flex-column justify-content-between">
+                            <div>
+                                <h4>Scoreboard</h4>
+                                <div class="row my-3 bg-white rounded p-3 shadow-sm mx-1">
+                                    <div class="col-4 border-end border-dark">
+                                        <p class="h5">Wins</p>
+                                        <p class="display-6" id="rpsWins">0</p>
+                                    </div>
+                                    <div class="col-4 border-end border-dark">
+                                        <p class="h5">Losses</p>
+                                        <p class="display-6" id="rpsLosses">0</p>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="h5">Ties</p>
+                                        <p class="display-6" id="rpsTies">0</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-dark w-100" onclick="resetRPSScore()">Reset Scoreboard</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <!---------------------------------- Begin the footer ------------------------------------->
-    <footer class="small text-center" id="footer">
-        <p>
-            Webpage made by <a href="index.html" target="_blank">[your name]</a>
+    <footer class="small text-center py-4 bg-dark text-white-50 mt-5" id="footer">
+        <p class="mb-0">
+            Webpage made by <a href="index.html" class="text-white">User 22</a>
         </p>
     </footer>
     <!---------------------------------- End the footer --------------------------------------->
+
+    <script>
+        // --- GAME 1: REACTION TESTER ---
+        var startTime = new Date();
+        var endTime = new Date();
+        var startPressed = false;
+        var bgChangeStarted = false;
+        var maxWait = 20;
+        var timerID;
+
+        // Load high score from localStorage
+        var reactionHighScore = localStorage.getItem('reactionHighScore');
+        if (reactionHighScore) {
+            document.getElementById('bestTime').innerText = reactionHighScore + " s";
+        }
+
+        function startTest() {
+            // Modify background color of document body
+            document.body.style.backgroundColor = document.response.bgColorChange.options[document.response.bgColorChange.selectedIndex].text;
+            bgChangeStarted = true;
+            startTime = new Date();
+        }
+
+        function remark(responseTime) {
+            var responseString = "";
+            if (responseTime < 0.20) responseString = "Well done!";
+            else if (responseTime >= 0.20 && responseTime < 0.30) responseString = "Nice!";
+            else if (responseTime >= 0.30 && responseTime < 0.40) responseString = "Keep practicing!";
+            else if (responseTime >= 0.40 && responseTime < 0.60) responseString = "Could be better...";
+            else if (responseTime >= 0.60 && responseTime < 1.0) responseString = "Have you been daydreaming?";
+            else responseString = "Did you fall asleep?";
+            return responseString;
+        }
+
+        function stopTest() {
+            if (bgChangeStarted) {
+                endTime = new Date();
+                var responseTime = (endTime.getTime() - startTime.getTime()) / 1000;
+                document.body.style.backgroundColor = ""; // Reset body background style
+
+                // Enhancement: High Score Logic
+                if (!reactionHighScore || responseTime < parseFloat(reactionHighScore)) {
+                    reactionHighScore = responseTime.toFixed(3);
+                    localStorage.setItem('reactionHighScore', reactionHighScore);
+                    document.getElementById('bestTime').innerText = reactionHighScore + " s";
+                    alert("New Personal Best: " + responseTime.toFixed(3) + " seconds!\n" + remark(responseTime));
+                } else {
+                    alert("Your response time is: " + responseTime.toFixed(3) + " seconds\n" + remark(responseTime));
+                }
+                startPressed = false;
+                bgChangeStarted = false;
+            } else {
+                if (!startPressed) {
+                    alert("press start first to start test");
+                } else {
+                    clearTimeout(timerID);
+                    startPressed = false;
+                    alert("cheater! you pressed too early!");
+                }
+            }
+        }
+
+        var randMULTIPLIER = 0x015a4e35;
+        var randINCREMENT = 1;
+        var today = new Date();
+        var randSeed = today.getSeconds();
+
+        function randNumber() {
+            randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
+            return ((randSeed >> 15) & 0x7fff) / 32767;
+        }
+
+        function startit() {
+            if (startPressed) {
+                alert("Already started. Press stop to stop");
+                return;
+            } else {
+                startPressed = true;
+                timerID = setTimeout('startTest()', 6000 * randNumber());
+            }
+        }
+
+        function resetReactionBest() {
+            localStorage.removeItem('reactionHighScore');
+            reactionHighScore = null;
+            document.getElementById('bestTime').innerText = "-";
+        }
+
+        // --- GAME 2: NUMBER GUESSING GAME ---
+        var secretNumber;
+        var maxRange = 50;
+        var maxAttempts = 10;
+        var attemptsLeft = 10;
+        var currentDifficulty = 'easy';
+
+        function setDifficulty(diff) {
+            currentDifficulty = diff;
+            if (diff === 'easy') {
+                maxRange = 50;
+                maxAttempts = 10;
+            } else if (diff === 'medium') {
+                maxRange = 100;
+                maxAttempts = 7;
+            } else if (diff === 'hard') {
+                maxRange = 200;
+                maxAttempts = 5;
+            }
+            document.getElementById('guessLabel').innerText = "Enter your guess (1-" + maxRange + "):";
+            resetGuessGame();
+        }
+
+        function resetGuessGame() {
+            secretNumber = Math.floor(Math.random() * maxRange) + 1;
+            attemptsLeft = maxAttempts;
+            document.getElementById('attemptsLeft').innerText = attemptsLeft;
+            document.getElementById('attemptsLeft').className = "badge bg-danger";
+            document.getElementById('guessFeedback').innerText = "New game started! Guess a number between 1 and " + maxRange + ".";
+            document.getElementById('userGuess').value = "";
+        }
+
+        function checkGuess() {
+            var guessInput = document.getElementById('userGuess');
+            var guess = parseInt(guessInput.value);
+
+            if (isNaN(guess) || guess < 1 || guess > maxRange) {
+                document.getElementById('guessFeedback').innerText = "Please enter a valid number between 1 and " + maxRange + "!";
+                return;
+            }
+
+            attemptsLeft--;
+            document.getElementById('attemptsLeft').innerText = attemptsLeft;
+
+            if (guess === secretNumber) {
+                document.getElementById('guessFeedback').innerHTML = "<span class='text-success font-weight-bold'>Correct! You guessed it!</span>";
+                document.getElementById('attemptsLeft').className = "badge bg-success";
+            } else if (attemptsLeft <= 0) {
+                document.getElementById('guessFeedback').innerHTML = "<span class='text-danger'>Game Over! The number was " + secretNumber + ".</span>";
+            } else if (guess < secretNumber) {
+                document.getElementById('guessFeedback').innerText = "Too low! Try again.";
+            } else {
+                document.getElementById('guessFeedback').innerText = "Too high! Try again.";
+            }
+        }
+        // Initialize the Guess Game
+        resetGuessGame();
+
+        // --- GAME 3: ROCK PAPER SCISSORS ---
+        var rpsWins = parseInt(sessionStorage.getItem('rpsWins')) || 0;
+        var rpsLosses = parseInt(sessionStorage.getItem('rpsLosses')) || 0;
+        var rpsTies = parseInt(sessionStorage.getItem('rpsTies')) || 0;
+
+        function updateRPSScoreboard() {
+            document.getElementById('rpsWins').innerText = rpsWins;
+            document.getElementById('rpsLosses').innerText = rpsLosses;
+            document.getElementById('rpsTies').innerText = rpsTies;
+        }
+        updateRPSScoreboard();
+
+        function playRPS(userChoice) {
+            var choices = ['rock', 'paper', 'scissors'];
+            var compChoice = choices[Math.floor(Math.random() * 3)];
+
+            document.getElementById('userRPSChoice').innerText = userChoice.toUpperCase();
+            document.getElementById('compRPSChoice').innerText = compChoice.toUpperCase();
+
+            var resultText = "";
+            if (userChoice === compChoice) {
+                resultText = "It's a tie!";
+                rpsTies++;
+                sessionStorage.setItem('rpsTies', rpsTies);
+            } else if (
+                (userChoice === 'rock' && compChoice === 'scissors') ||
+                (userChoice === 'paper' && compChoice === 'rock') ||
+                (userChoice === 'scissors' && compChoice === 'paper')
+            ) {
+                resultText = "You win this round!";
+                rpsWins++;
+                sessionStorage.setItem('rpsWins', rpsWins);
+            } else {
+                resultText = "Computer wins this round!";
+                rpsLosses++;
+                sessionStorage.setItem('rpsLosses', rpsLosses);
+            }
+
+            document.getElementById('rpsResult').innerText = resultText;
+            updateRPSScoreboard();
+        }
+
+        function resetRPSScore() {
+            rpsWins = 0;
+            rpsLosses = 0;
+            rpsTies = 0;
+            sessionStorage.setItem('rpsWins', 0);
+            sessionStorage.setItem('rpsLosses', 0);
+            sessionStorage.setItem('rpsTies', 0);
+            document.getElementById('userRPSChoice').innerText = "-";
+            document.getElementById('compRPSChoice').innerText = "-";
+            document.getElementById('rpsResult').innerText = "Scoreboard reset! Choose rock, paper, or scissors to start.";
+            updateRPSScoreboard();
+        }
+    </script>
 </body>
 
 </html>

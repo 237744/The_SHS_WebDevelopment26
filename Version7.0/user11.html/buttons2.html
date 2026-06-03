@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Functions</title>
+</head>
+<body>
+
+    <input id="num1">
+    +
+    <input id="num2">
+    <button onclick="addNumbers()">add</button>
+
+    <br><br>
+
+    <input id="num3">
+    *
+    <input id="num4">
+    <button onclick="multiplyNumbers()">multiply</button>
+
+    <h2>Pythagorean Theorem</h2>
+
+    a=<input id="a"><br><br>
+    b=<input id="b"><br><br>
+
+    <button onclick="findC()">Find C</button>
+
+    <p id="result"></p>
+
+<script>
+
+function addNumbers() {
+    let num1 = Number(document.getElementById("num1").value);
+    let num2 = Number(document.getElementById("num2").value);
+
+    let answer = num1 + num2;
+
+    document.getElementById("result").innerHTML = answer;
+}
+
+function multiplyNumbers() {
+    let num3 = Number(document.getElementById("num3").value);
+    let num4 = Number(document.getElementById("num4").value);
+
+    let answer = num3 * num4;
+
+    document.getElementById("result").innerHTML = answer;
+}
+
+function findC() {
+    let a = Number(document.getElementById("a").value);
+    let b = Number(document.getElementById("b").value);
+
+    let c = Math.sqrt((a * a) + (b * b));
+
+    document.getElementById("result").innerHTML = c;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,43 +1,157 @@
+// Variables
+$font-voltaire: 'Voltaire', sans-serif;
+$font-fjalla: 'Fjalla One', sans-serif;
+$font-roboto: Roboto;
+$color-primary: #ffc5a2;
+$color-accent: #dc5f45;
+$color-text: #544027;
+$color-light: #ffa873;
+$color-green: #5f9042;
+$color-bg: #dbe6e6;
+$color-border: black;
+
+@import url('https://fonts.googleapis.com/css?family=Voltaire');
+
 .body-wideMargin {
-    margin: 50px;
-    font-size: 100%;
-    line-height: 1.5;
-    font-family: Roboto;
+  margin: 50px;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: $font-roboto;
 }
 
 button {
-    padding: 5px;
+  padding: 5px;
 }
 
 ol {
-    list-style-type: decimal-leading-zero;
-}
+  list-style-type: decimal-leading-zero;
 
-ol ol {
+  ol {
     margin-left: 0.9em;
-}
+  }
 
-ol li {
+  li {
     line-height: 1.5;
+  }
 }
 
-li li {
+li {
+  li {
     list-style-type: lower-alpha;
-}
 
-li li li {
-    list-style-type: square;
-}
+    li {
+      list-style-type: square;
 
-li li li li {
-    list-style-type: circle;
+      li {
+        list-style-type: circle;
+      }
+    }
+  }
 }
 
 h1 {
-    font-family: "Fjalla One", sans-serif;
-    font-size: 2em;
-    text-transform: uppercase;
-    font-weight: 400;
-    border-bottom: 1px solid black;
-    margin-bottom: 1em;
+  font-family: $font-fjalla;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 400;
+  border-bottom: 1px solid $color-border;
+  margin-bottom: 1em;
+}
+
+#world {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: $color-bg;
+  overflow: hidden;
+}
+
+#gameoverInstructions {
+  position: absolute;
+  font-family: $font-voltaire;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 120px;
+  text-align: center;
+  color: $color-primary;
+  opacity: 0;
+  left: 50%;
+  top: 50%;
+  width: 100%;
+  transform: translate(-50%, -100%);
+  user-select: none;
+  transition: all 500ms ease-in-out;
+
+  &.show {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    transition: all 500ms ease-in-out;
+  }
+}
+
+#dist {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: translate(-50%, 0%);
+  user-select: none;
+}
+
+.label {
+  position: relative;
+  font-family: $font-voltaire;
+  text-transform: uppercase;
+  color: $color-light;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#distValue {
+  position: relative;
+  text-transform: uppercase;
+  color: $color-accent;
+}
+
+#credits {
+  position: absolute;
+  width: 100%;
+  margin: auto;
+  bottom: 0;
+  margin-bottom: 20px;
+  font-family: $font-voltaire;
+  color: $color-text;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-align: center;
+  user-select: none;
+
+  a {
+    color: $color-text;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+#instructions {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin: auto;
+  margin-bottom: 50px;
+  font-family: $font-voltaire;
+  color: $color-accent;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-align: center;
+  user-select: none;
+}
+
+.lightInstructions {
+  color: $color-green;
 }

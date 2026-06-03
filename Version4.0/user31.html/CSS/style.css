@@ -1,3 +1,4 @@
+@import url(rainbow.css);
 .button {
 	background-color: #4CAF50;
 	border: none;
@@ -18,7 +19,32 @@
 .button2 {
 	border-radius: 30%;
 }
-
+.button-smallRadius {
+	width: 100px;
+    height: 50px;
+    background-color: white;
+    color: red;
+    border: 3px solid maroon;
+	border-radius: 9px;
+}
+.button-tall {
+	float: left;
+    border: 3px solid orangered;
+	height: 100px;
+}
+.button5 {
+    display: inline-block;
+    padding: 17px 27px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    background-color: purple;
+    border: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    border-radius: 8px;
+    box-shadow: 0 10px #998;
+}
 .red {
 	background-color: #ff0000;
 }
@@ -34,4 +60,24 @@ table{
 
 h1, h2, h3, h4, h5, h6{
 	text-align:center;
+}
+.title{
+    color: red;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.title-large {
+    font-size: 3rem;
+}
+.title-small {
+    font-size: 1rem;
+}
+#morecontent {
+    background-color: wheat;
+}
+#neveragain{
+	font-size: 5rem;
+}
+*{
+    text-align: center;
+	font-style: oblique;
 }

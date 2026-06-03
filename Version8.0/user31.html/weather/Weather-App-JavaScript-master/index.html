@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App - JavaScript</title>
+    <link rel="stylesheet" href="font/Rimouski.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="weather-outer-container">
+        <div class="app-title">
+            <p>Weather</p>
+        </div>
+        <div class="notification"> </div>
+        <div class="weather-container">
+            <div class="weather-icon">
+                <img src="icons/unknown.png" alt="">
+            </div>
+            <div class="temperature-value">
+                <p>°<span>F</span></p>
+            </div>
+            <div class="temperature-description">
+                <p></p>
+            </div>
+            <div class="location" style="display: flex; justify-content: center;">
+                <p></p>
+            </div>
+            <div style="display: flex; justify-content: center;">
+            <span style="display: inline-block"><input type="text" id="ke"></span>
+            <span style="display: inline-block"><button onclick="swapWeather()">submit</button></span>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
+
+

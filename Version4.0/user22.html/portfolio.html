@@ -40,9 +40,56 @@
             font-size: 12px;
             text-align: center;
         }
-        
+
         #rainbow {
             width: 100%;
+        }
+
+        /* Part I: Using Child Selectors */
+        #knowledge>* {
+            border: 3px red solid;
+            margin-bottom: 5px;
+            padding: 5px;
+        }
+
+        /* Part I: Adjacent selectors */
+        p+* {
+            background-color: #FFFF00;
+        }
+
+        /* Part I: Special List Styling - target only top-level list titles */
+        #knowledge > li::marker {
+            color: red;
+            content: "😜 ";
+        }
+
+        /* Part I: User Action Pseudo-Classes */
+        #rainbow td:hover {
+            background-color: black !important;
+            /* Force black on hover for rainbow cells */
+        }
+
+        /* 4 more pseudo-classes (Part I, Step 13) */
+        /* 1. First child of the list */
+        #knowledge li:first-child {
+            font-weight: bold;
+            color: darkblue;
+        }
+
+        /* 2. Last child of the list */
+        #knowledge li:last-child {
+            font-style: italic;
+        }
+
+        /* 3. Focus state for interactive elements */
+        a:focus {
+            outline: 3px solid #ff00ff;
+            background-color: #eee;
+        }
+
+        /* 4. Visited link state */
+        a:visited {
+            color: #551A8B;
         }
     </style>
 </head>
@@ -72,7 +119,8 @@
                         <a href="gallery.html" class="nav-link">Gallery</a>
                     </li>
                     <li class="nav-item">
-                        <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                        <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled"
+                            tabindex="-1">Contact</a>
                     </li>
                     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                 </ul>

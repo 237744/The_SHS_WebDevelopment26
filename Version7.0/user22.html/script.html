@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Version 5.0
-    Name:
-    Date Completed:
+<!--Version 7.0
+    Name: User 22
+    Date Completed: 2026-05-27
 -->
 
 <head>
-    <title>JavaScript</title>
+    <title>JavaScript Showcase</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,22 +18,26 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!-- Custom -->
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- JavaScript -->
     <!-- These are needed to get the responsive menu to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="JS/script.js"></script>
-
-    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/SampleJS.js"></script>
 
     <!-- Custom styles for this template -->
     <style type="text/css">
-
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .cursor-pointer {
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -42,7 +46,7 @@
     <div class="menu">
         <nav class="navbar navbar-expand-md p-2 navbar-dark bg-dark">
             <a href="http://shakonet.isd720.com/WebDev" class="navbar-brand">WebDev</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -67,25 +71,158 @@
     </div>
     <!---------------------------------- End the nav-bar ------------->
 
-    <main class="m-3" id="content">
-        <h1 class="text-left my-3">My JavaScript Examples</h1>
-        <!-- Edit this line for the title of your page -->
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+    <main class="container my-5" id="content">
+        <h1 class="text-center my-3 text-primary font-weight-bold">My JavaScript Showcase</h1>
+        
+        <!-- Text Change Section (1.7b Assignment) -->
+        <div class="my-4 p-3 bg-light rounded text-center shadow-sm border">
+            <p id="textChange" class="fs-4">My name is User 22</p>
+            <button type="button" class="btn btn-primary btn-md" onclick="changeText()">Click if you like</button>
+        </div>
+
+        <hr class="my-4">
+
+        <h3 class="mb-4 text-center">8 Elements of JavaScript Event Handling</h3>
+
+        <!-- Bootstrap rows for the 8 features -->
         <div class="container-fluid">
+            <!-- Row 1 -->
             <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+                <!-- Feature 1: Hover Image Change -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm border">
+                        <h5 class="text-primary"><i class="fa-regular fa-image me-2"></i>1. Hover to Change Image</h5>
+                        <p class="text-muted small">Move your mouse cursor over the image below to change it dynamically.</p>
+                        <div class="text-center my-2">
+                            <img id="hoverImg" src="images/default_card.png" class="img-fluid rounded border shadow-sm cursor-pointer" style="max-height: 200px; width: 100%; object-fit: cover;" onmouseover="hoverImage(this, true)" onmouseout="hoverImage(this, false)">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 2: Uppercase Converter -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm border d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="text-primary"><i class="fa-solid fa-font me-2"></i>2. Uppercase Text Converter</h5>
+                            <p class="text-muted small">Type text below and click the button to convert it to UPPERCASE.</p>
+                            <input type="text" id="upperInput" class="form-control mb-3" placeholder="Type here...">
+                        </div>
+                        <button class="btn btn-outline-primary w-100" onclick="convertToUpperCase()">Convert Text</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="row">
+                <!-- Feature 3: Color Picker -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm border">
+                        <h5 class="text-primary"><i class="fa-solid fa-palette me-2"></i>3. Background Color Picker</h5>
+                        <p class="text-muted small">Select a button below to change the box's background color.</p>
+                        <div id="colorDiv" class="border rounded p-4 text-center my-2 text-dark font-weight-bold" style="background-color: #f8f9fa; transition: background-color 0.3s ease;">
+                            Interactive Container
+                        </div>
+                        <div class="d-flex justify-content-around mt-2">
+                            <button class="btn btn-sm btn-danger px-3" onclick="changeDivBg('#f8d7da')">Red</button>
+                            <button class="btn btn-sm btn-success px-3" onclick="changeDivBg('#d1e7dd')">Green</button>
+                            <button class="btn btn-sm btn-primary px-3" onclick="changeDivBg('#cff4fc')">Blue</button>
+                            <button class="btn btn-sm btn-dark px-3" onclick="changeDivBg('#f8f9fa')">Reset</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 4: Live Clock -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm border d-flex flex-column justify-content-center align-items-center bg-dark text-white">
+                        <h5 class="text-info"><i class="fa-solid fa-clock me-2"></i>4. Live Digital Clock</h5>
+                        <p class="text-light-50 small text-center">Calculates and updates local time every second using setInterval.</p>
+                        <div class="display-5 my-3 text-warning font-monospace" id="digitalClock">-:--:--</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="row">
+                <!-- Feature 5: Show/Hide Element -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm border d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="text-primary"><i class="fa-solid fa-eye me-2"></i>5. Show/Hide Description</h5>
+                            <p class="text-muted small">Toggle the button to show or hide the paragraph below.</p>
+                            <p id="collapseDetails" class="alert alert-warning my-2" style="display: none;">
+                                This is collapsible content powered by a clean JavaScript function that toggles the element's display style.
+                            </p>
+                        </div>
+                        <button id="toggleBtn" class="btn btn-outline-primary w-100" onclick="toggleDetails()">Show Description</button>
+                    </div>
+                </div>
+
+                <!-- Feature 6: Character Counter -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm border d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="text-primary"><i class="fa-solid fa-list-check me-2"></i>6. Character Counter</h5>
+                            <p class="text-muted small">Type in the textarea below (100 character limit).</p>
+                            <textarea id="countText" class="form-control" rows="2" maxlength="100" oninput="countChars()" placeholder="Start typing..."></textarea>
+                        </div>
+                        <div class="text-end mt-2">
+                            <span id="charCount" class="text-muted small">100 characters left</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="row">
+                <!-- Feature 7: Calculator -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm border">
+                        <h5 class="text-primary"><i class="fa-solid fa-calculator me-2"></i>7. Interactive Calculator</h5>
+                        <p class="text-muted small">Enter two numbers, select an operation, and calculate.</p>
+                        <div class="row g-2 align-items-center">
+                            <div class="col">
+                                <input type="number" id="calcNum1" class="form-control" placeholder="Num 1">
+                            </div>
+                            <div class="col-auto">
+                                <select id="calcOp" class="form-select">
+                                    <option>+</option>
+                                    <option>-</option>
+                                    <option>*</option>
+                                    <option>/</option>
+                                </select>
+                            </div>
+                            <div class="col">
+                                <input type="number" id="calcNum2" class="form-control" placeholder="Num 2">
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <button class="btn btn-sm btn-primary px-3" onclick="calculate()">Calculate</button>
+                            <span class="fs-5 fw-bold text-success">Result: <span id="calcResult">-</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 8: Random Quote Generator -->
+                <div class="col-md-6 mb-4">
+                    <div class="card p-4 h-100 shadow-sm border d-flex flex-column justify-content-between">
+                        <div>
+                            <h5 class="text-primary"><i class="fa-solid fa-quote-left me-2"></i>8. Random Quote Generator</h5>
+                            <p class="text-muted small">Click the button below to display a random motivational quote.</p>
+                            <p id="quoteText" class="fst-italic text-center py-2 text-dark font-weight-bold">
+                                "Click the button below to generate a quote."
+                            </p>
+                        </div>
+                        <button class="btn btn-outline-primary w-100 mt-2" onclick="generateQuote()">New Quote</button>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
-    <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
-
 
     <!---------------------------------- Begin the footer ------------->
-    <footer class="small text-center" id="footer">
-        <p>
-            Webpage made by <a href="index.html" target="_blank">[your name]</a>
+    <footer class="small text-center py-4 bg-dark text-white-50 mt-5" id="footer">
+        <p class="mb-0">
+            Webpage made by <a href="index.html" class="text-white">User 22</a>
         </p>
     </footer>
     <!---------------------------------- End the footer ------------->

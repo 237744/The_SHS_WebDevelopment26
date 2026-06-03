@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA History Vault | NBA Draft</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { 
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: 'Segoe UI', sans-serif; 
+            margin: 0; 
+            padding: 0;
+        }
+        
+        /* Navbar Styling */
+        .nav-link { color: #ffffff !important; }
+        .nav-link:hover { color: #ff0000 !important; }
+        .active-page { color: #ff0000 !important; font-weight: bold; }
+
+        /* Page Header */
+        .page-header {
+            background-color: #034fba; 
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+            border-bottom: 5px solid #ff0000; 
+            margin-bottom: 40px;
+        }
+
+        /* Draft Year Section Headers */
+        .draft-year-title {
+            text-align: center;
+            font-weight: bold;
+            border-bottom: 3px solid #ff0000;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+            margin-top: 50px;
+        }
+
+        /* Card Container (Updated for Grid Layout) */
+        .card-container {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        } 
+        
+        /* The Flip Card */
+        .flip-card {
+            width: 280px; /* Made slightly wider to fit the text */
+            height: 380px; /* Made taller for the profile text */
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        } 
+        
+        .front, .back { 
+            position: absolute;
+            width: 100%;
+            height: 100%; 
+            border-radius: 12px;
+            border: 3px solid #000000;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column; /* Stacks text vertically */
+            justify-content: center; 
+            align-items: center;     
+            text-align: center;
+            padding: 20px;
+        }
+        
+        /* Front Side Styling */
+        .front {
+            background-color: #034fba; 
+            color: #ffffff; 
+        }
+        .front h3 { font-weight: bold; margin-bottom: 5px; }
+        .front h5 { font-weight: bold; }
+        .front p { font-size: 1.1rem; margin-top: 15px; }
+        
+        /* Back Side Styling */
+        .back { 
+            background-color: #000000; 
+            color: #ffffff;
+            transform: rotateY(180deg); 
+        }  
+        .back h4 { color: #ff0000; font-weight: bold; margin-bottom: 15px; border-bottom: 1px solid #ffffff; padding-bottom: 5px;}
+        .back p { font-size: 0.95rem; margin-bottom: 8px; }
+        
+        /* Flip Action */
+        .card-container:hover .flip-card { 
+            transform: rotateY(180deg); 
+        }
+        .front.spurs { background-color: #000000 !important; border-color: #C4CED4 !important; }
+        .back.spurs { background-color: #C4CED4 !important; color: #000000 !important; border-color: #000000 !important; }
+        .front.spurs h3, .front.spurs h5, .front.spurs p { color: #c4ced4 !important; }
+        .back.spurs h4 { color: #000000 !important; }
+        
+        .front.hornets { background-color: #1d1260 !important; border-color: #00788c !important; }
+        .back.hornets { background-color: #00788c !important; color: #ffffff !important; border-color: #1d1260 !important; }
+        .front.hornets h3, .front.hornets h5, .front.hornets p { color: #00788c !important; }
+        .back.hornets h4 { color: #ffffff !important; }
+        
+        .front.mavericks { background-color: #002B5E !important; border-color: #0078c0 !important; }
+        .back.mavericks { background-color: #0078c0 !important; color: #ffffff !important; border-color: #002B5E!important; }
+        .front.mavericks h3, .front.mavericks h5, .front.mavericks p { color: #0078c0 !important; }
+        .back.mavericks h4 { color: #ffffff !important; }
+
+        .front.sixers { background-color: #ED174C !important; border-color: #006BB6 !important; }
+        .back.sixers { background-color: #006BB6 !important; color: #ffffff !important; border-color: #ED174C !important; }
+        .front.sixers h3, .front.sixers h5, .front.sixers p { color: #006BB6 !important; }
+        .back.sixers h4 { color: #ffffff !important; }
+        
+        .front.bulls { background-color: #CE1141 !important; border-color: #000000 !important; }
+        .back.bulls { background-color: #000000 !important; color: #ffffff !important; border-color: #CE1141 !important; }
+        .front.bulls h3, .front.bulls h5, .front.bulls p { color: #000000 !important; }
+        .back.bulls h4 { color: #ffffff !important; }  
+        
+        .front.rockets { background-color: #CE1141 !important; border-color: #000000 !important; }
+        .back.rockets { background-color: #000000 !important; color: #ffffff !important; border-color: #CE1141 !important; }
+        .front.rockets h3, .front.rockets h5, .front.rockets p { color: #000000 !important; }
+        .back.rockets h4 { color: #ffffff !important; }
+
+        .front.magic { background-color: #000000 !important; border-color: #0077C0 !important; }
+        .back.magic { background-color: #0077C0 !important; color: #ffffff !important; border-color: #000000 !important; }
+        .front.magic h3, .front.magic h5, .front.magic p { color: #0077c0 !important; }
+        .back.magic h4 { color: #ffffff !important; }
+
+        .front.thunder { background-color: #007AC1 !important; border-color: #EF3B24 !important; }
+        .back.thunder { background-color: #EF3B24 !important; color: #ffffff !important; border-color: #007AC1 !important; }
+        .front.thunder h3, .front.thunder h5, .front.thunder p { color: #EF3B24  !important; }
+        .back.thunder h4 { color: #ffffff !important; } 
+
+        .front.pistons { background-color: #C8102E !important; border-color: #1D42BA !important; }
+        .back.pistons { background-color: #1D42BA !important; color: #ffffff !important; border-color: #C8102E !important; }
+        .front.pistons h3, .front.pistons h5, .front.pistons p { color: #1D42BA  !important; }
+        .back.pistons h4 { color: #ffffff !important; }
+
+        .front.raptors { background-color: #000000 !important; border-color: #CE1141 !important; }
+        .back.raptors { background-color: #CE1141 !important; color: #ffffff !important; border-color: #000000 !important; }
+        .front.raptors h3, .front.raptors h5, .front.raptors p { color: #CE1141  !important; }
+        .back.raptors h4 { color: #ffffff !important; }
+
+        .front.hawks { background-color: #C1D32F !important; border-color: #E03A3E !important; }
+        .back.hawks { background-color: #E03A3E !important; color: #ffffff !important; border-color: #E03A3E !important; }
+        .front.hawks h3, .front.hawks h5, .front.hawks p { color: #E03A3E  !important; }
+        .back.hawks h4 { color: #ffffff !important; }
+        .footer-bar {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 0;
+    border-top: 2px solid #ffc107; /* The thin Gold line */
+    font-size: 0.85rem;
+    margin-top: auto; /* Helps with sticky footer */
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff0000; /* Red hover to match your page style */
+}
+
+/* This part ensures the footer stays at the bottom of the screen 
+   even if the page doesn't have much content */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning">
+    
+    <div class="container-fluid justify-content-start gap-3">
+        
+        <a class="navbar-brand" href="index.html">Home</a>
+            <div class="navbar-nav flex-row gap-3">
+            <a class="nav-link" href="champions.html">Past Champions</a>
+            <a class="nav-link" href="mvps.html">MVPs</a>
+            <a class="nav-link active-page" href="nbadraft.html">NBA Draft</a>
+            <a class="nav-link" href="teamhistory.html">Team history</a>
+        </div>
+    </div>
+</nav>
+    </style>
+</head>
+<body>
+
+<header class="page-header">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Top Draft Picks</h1>
+        <p class="lead mb-0">Hover over the cards to view player profiles, age, and height.</p>
+    </div>
+</header>
+
+<main class="container mb-5">
+
+    <h2 class="draft-year-title">2025 NBA Draft</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front mavericks">
+                        <h3>Cooper Flagg</h3>
+                        <h5>Pick #1</h5>
+                        <p>Dallas Mavericks</p>
+                    </div>
+                    <div class="back mavericks">
+                        <h4>Cooper Flagg</h4>
+                        <p><strong>Age:</strong> 19</p>
+                        <p><strong>Height:</strong> 6'9"</p>
+                        <p>A generational two-way phenom from Duke with elite defensive instincts and dynamic scoring ability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front hornets">
+                        <h3>Kon Knueppel</h3>
+                        <h5>Pick #4</h5>
+                        <p>Charlotte Hornets</p>
+                    </div>
+                    <div class="back hornets">
+                        <h4>Kon Knueppel</h4>
+                        <p><strong>Age:</strong> 20</p>
+                        <p><strong>Height:</strong> 6'6"</p>
+                        <p>Elite-shooting guard-forward known for his high basketball IQ, polished scoring ability, and high-level, efficient 3-point shooting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front sixers">
+                        <h3>V.J. Edgecombe</h3>
+                        <h5>Pick #3</h5>
+                        <p>Philadelphia 76ers</p>
+                    </div>
+                    <div class="back sixers">
+                        <h4>V.J. Edgecombe</h4>
+                        <p><strong>Age:</strong> 20</p>
+                        <p><strong>Height:</strong> 6'4"</p>
+                        <p>An explosive, high-flying athlete from Baylor known for his electric transition plays and aggressive defense.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="draft-year-title">2024 NBA Draft</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front spurs">
+                        <h3>Stephon Castle</h3>
+                        <h5>Pick #4</h5>
+                        <p>San Antonio Spurs</p>
+                    </div>
+                    <div class="back spurs">
+                        <h4>Stephon Castle</h4>
+                        <p><strong>Age:</strong> 21</p>
+                        <p><strong>Height:</strong> 6'6"</p>
+                        <p>A versatile guard with strong defense, playmaking ability, high basketball IQ, and leadership potential on both ends.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front bulls">
+                        <h3>Matas Buzelis</h3>
+                        <h5>Pick #11</h5>
+                        <p>Chicago Bulls</p>
+                    </div>
+                    <div class="back bulls">
+                        <h4>Matas Buzelis</h4>
+                        <p><strong>Age:</strong> 21</p>
+                        <p><strong>Height:</strong> 6'8"</p>
+                        <p>A versatile forward with guard-like handles, smooth shooting touch, defensive versatility, high upside, and creativity scoring from all three levels.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front rockets">
+                        <h3>Reed Sheppard</h3>
+                        <h5>Pick #3</h5>
+                        <p>Houston Rockets</p>
+                    </div>
+                    <div class="back rockets">
+                        <h4>Reed Sheppard</h4>
+                        <p><strong>Age:</strong> 21</p>
+                        <p><strong>Height:</strong> 6'3"</p>
+                        <p>A hyper-efficient sharpshooter and elite connective playmaker out of Kentucky with great defensive hands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="draft-year-title">2023 NBA Draft</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front spurs">
+                        <h3>Victor Wembanyama</h3>
+                        <h5>Pick #1</h5>
+                        <p>San Antonio Spurs</p>
+                    </div>
+                    <div class="back spurs">
+                        <h4>Victor Wembanyama</h4>
+                        <p><strong>Age:</strong> 22</p>
+                        <p><strong>Height:</strong> 7'4"</p>
+                        <p>A literal alien. Unprecedented size and length combined with guard-like handles and shot-making ability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front hornets">
+                        <h3>Brandon Miller</h3>
+                        <h5>Pick #2</h5>
+                        <p>Charlotte Hornets</p>
+                    </div>
+                    <div class="back hornets">
+                        <h4>Brandon Miller</h4>
+                        <p><strong>Age:</strong> 23</p>
+                        <p><strong>Height:</strong> 6'7"</p>
+                        <p>A smooth, prototypical modern scoring wing modeled after Paul George with an effortless three-point stroke.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front rockets">
+                        <h3>Amen Thompson</h3>
+                        <h5>Pick #4</h5>
+                        <p>Houston Rockets</p>
+                    </div>
+                    <div class="back rockets">
+                        <h4>Amen Thompson</h4>
+                        <p><strong>Age:</strong> 23</p>
+                        <p><strong>Height:</strong> 6'7"</p>
+                        <p>Explosive, athletic guard with elite speed, playmaking instincts, defensive versatility, high motor, and ability to impact both ends consistently.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="draft-year-title">2022 NBA Draft</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front magic">
+                        <h3>Paolo Banchero</h3>
+                        <h5>Pick #1</h5>
+                        <p>Orlando Magic</p>
+                    </div>
+                    <div class="back magic">
+                        <h4>Paolo Banchero</h4>
+                        <p><strong>Age:</strong> 23</p>
+                        <p><strong>Height:</strong> 6'10"</p>
+                        <p>A powerful, versatile offensive engine capable of initiating the offense and overpowering defenders inside.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front thunder">
+                        <h3>Chet Holmgren</h3>
+                        <h5>Pick #2</h5>
+                        <p>Oklahoma City Thunder</p>
+                    </div>
+                    <div class="back thunder">
+                        <h4>Chet Holmgren</h4>
+                        <p><strong>Age:</strong> 24</p>
+                        <p><strong>Height:</strong> 7'1"</p>
+                        <p>An elite defensive anchor and rim protector who also serves as a floor-spacing unicorn on offense.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front thunder">
+                        <h3>Jalen Williams</h3>
+                        <h5>Pick #12</h5>
+                        <p>Oklahoma City Thunder</p>
+                    </div>
+                    <div class="back thunder">
+                        <h4>Jalen Williams</h4>
+                        <p><strong>Age:</strong> 25</p>
+                        <p><strong>Height:</strong> 6'5"</p>
+                        <p>A dynamic, versatile guard with exceptional court vision, playmaking ability, and the capacity to impact the game in multiple ways.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="draft-year-title">2021 NBA Draft</h2>
+    <div class="row g-4 justify-content-center">
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front pistons">
+                        <h3>Cade Cunningham</h3>
+                        <h5>Pick #1</h5>
+                        <p>Detroit Pistons</p>
+                    </div>
+                    <div class="back pistons">
+                        <h4>Cade Cunningham</h4>
+                        <p><strong>Age:</strong> 24</p>
+                        <p><strong>Height:</strong> 6'6"</p>
+                        <p>A jumbo point guard with exceptional pace, vision, and the ability to control the flow of the entire game.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front raptors">
+                        <h3>Scottie Barnes</h3>
+                        <h5>Pick #4</h5>
+                        <p>Toronto Raptors</p>
+                    </div>
+                    <div class="back raptors">
+                        <h4>Scottie Barnes</h4>
+                        <p><strong>Age:</strong> 24</p>
+                        <p><strong>Height:</strong> 6'8"</p>
+                        <p>Versatile forward with elite defense, strong playmaking, athletic scoring ability, and impressive shot-blocking instincts throughout games.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="front hawks">
+                        <h3>Jalen Johnson</h3>
+                        <h5>Pick #20</h5>
+                        <p>Atlanta Hawks</p>
+                    </div>
+                    <div class="back hawks">
+                        <h4>Jalen Johnson</h4>
+                        <p><strong>Age:</strong> 24</p>
+                        <p><strong>Height:</strong> 6'8"</p>
+                        <p>Athletic forward excelling in transition, rebounding, versatile scoring, and energetic defensive play.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<footer class="footer-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <p class="mb-0">© 2026 NBA History Vault</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="champions.html">Champions</a>
+            <a href="mvps.html">MVPs</a>
+            <a href="nbadraft.html">Draft</a>
+            <a href="teamhistory.html">Teams history</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

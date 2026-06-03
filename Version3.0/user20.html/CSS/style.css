@@ -19,3 +19,8 @@ th {
 	color: #ffffff;
 	background-color: #003366;
 }
+body {
+  background-image: url("images/fly_by_nightAlbumCover.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}

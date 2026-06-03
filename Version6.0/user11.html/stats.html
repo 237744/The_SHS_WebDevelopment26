@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Stats - Court Time</title>
+    <link rel="icon" type="image/png" href="images/basketball-favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .game-card {
+            border-left: 5px solid #FF6B35;
+            transition: all 0.3s ease;
+        }
+        
+        .game-card:hover {
+            transform: translateX(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .score-display {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #004E89;
+        }
+        
+        .winner {
+            color: #FF6B35;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-basketball"></i> Court Time
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="players.html">Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header text-white text-center py-5" style="background: linear-gradient(135deg, #004E89 0%, #FF6B35 100%);">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Game Statistics</h1>
+            <p class="lead">Latest scores and detailed game analysis</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <!-- Season Overview -->
+            <section class="mb-5">
+                <h2 class="text-center mb-5 fw-bold">
+                    <i class="fas fa-chart-bar"></i> Season Overview
+                </h2>
+                <div class="row g-4 mb-5">
+                    <div class="col-md-3">
+                        <div class="card feature-card h-100 text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Total Games</h5>
+                                <p class="score-display">82</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card feature-card h-100 text-center">
+                            <div class="card-body">
+                                <h5 class="card-title text-success">Wins</h5>
+                                <p class="score-display text-success">58</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card feature-card h-100 text-center">
+                            <div class="card-body">
+                                <h5 class="card-title text-danger">Losses</h5>
+                                <p class="score-display text-danger">24</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card feature-card h-100 text-center">
+                            <div class="card-body">
+                                <h5 class="card-title">Win %</h5>
+                                <p class="score-display">70.7%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="my-5">
+
+            <!-- Recent Games List -->
+            <section class="mb-5">
+                <h2 class="mb-5 fw-bold">
+                    <i class="fas fa-history"></i> Recent Games
+                </h2>
+                
+                <!-- Game 1 -->
+                <article class="card game-card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="card-title mb-2">Warriors vs. Lakers</h5>
+                                <p class="text-muted mb-2">
+                                    <i class="fas fa-calendar"></i> December 15, 2025 | 
+                                    <i class="fas fa-map-marker-alt"></i> Chase Center, San Francisco
+                                </p>
+                                <div class="mb-3">
+                                    <small>
+                                        <strong>Highlights:</strong> 25 three-pointers made, spectacular defense, strong 4th quarter comeback. Stephen Curry scored 38 points.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <p class="mb-0">
+                                    <span class="winner">Warriors</span> 
+                                    <span style="color: #FF6B35; font-size: 1.5rem; margin: 0 1rem;">124</span>
+                                    <span style="color: #666;">118</span>
+                                    <span style="color: #666;">Lakers</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 2 -->
+                <article class="card game-card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="card-title mb-2">Heat vs. Celtics</h5>
+                                <p class="text-muted mb-2">
+                                    <i class="fas fa-calendar"></i> December 14, 2025 | 
+                                    <i class="fas fa-map-marker-alt"></i> FTX Arena, Miami
+                                </p>
+                                <div class="mb-3">
+                                    <small>
+                                        <strong>Highlights:</strong> Intense defensive battle, clutch free throws in final minute. Bam Adebayo with 16 rebounds.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <p class="mb-0">
+                                    <span style="color: #666;">Celtics</span> 
+                                    <span style="color: #666;">110</span>
+                                    <span style="color: #FF6B35; font-size: 1.5rem; margin: 0 1rem;">116</span>
+                                    <span class="winner">Heat</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 3 -->
+                <article class="card game-card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="card-title mb-2">Mavericks vs. Suns</h5>
+                                <p class="text-muted mb-2">
+                                    <i class="fas fa-calendar"></i> December 13, 2025 | 
+                                    <i class="fas fa-map-marker-alt"></i> Crypto.com Arena, Dallas
+                                </p>
+                                <div class="mb-3">
+                                    <small>
+                                        <strong>Highlights:</strong> Luka Doncic triple-double with 32 points, 11 rebounds, 10 assists. High-scoring affair.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <p class="mb-0">
+                                    <span class="winner">Mavericks</span> 
+                                    <span style="color: #FF6B35; font-size: 1.5rem; margin: 0 1rem;">134</span>
+                                    <span style="color: #666;">128</span>
+                                    <span style="color: #666;">Suns</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 4 -->
+                <article class="card game-card mb-3">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="card-title mb-2">Nuggets vs. Grizzlies</h5>
+                                <p class="text-muted mb-2">
+                                    <i class="fas fa-calendar"></i> December 12, 2025 | 
+                                    <i class="fas fa-map-marker-alt"></i> Ball Arena, Denver
+                                </p>
+                                <div class="mb-3">
+                                    <small>
+                                        <strong>Highlights:</strong> Nikola Jokic dominant performance. Record-breaking passing night with 15 assists.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <p class="mb-0">
+                                    <span class="winner">Nuggets</span> 
+                                    <span style="color: #FF6B35; font-size: 1.5rem; margin: 0 1rem;">121</span>
+                                    <span style="color: #666;">108</span>
+                                    <span style="color: #666;">Grizzlies</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Game 5 -->
+                <article class="card game-card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-8">
+                                <h5 class="card-title mb-2">Bucks vs. 76ers</h5>
+                                <p class="text-muted mb-2">
+                                    <i class="fas fa-calendar"></i> December 11, 2025 | 
+                                    <i class="fas fa-map-marker-alt"></i> Fiserv Forum, Milwaukee
+                                </p>
+                                <div class="mb-3">
+                                    <small>
+                                        <strong>Highlights:</strong> Defensive showcase with 12 steals combined. Giannis Antetokounmpo 35 points and 14 rebounds.
+                                    </small>
+                                </div>
+                            </div>
+                            <div class="col-md-4 text-center">
+                                <p class="mb-0">
+                                    <span class="winner">Bucks</span> 
+                                    <span style="color: #FF6B35; font-size: 1.5rem; margin: 0 1rem;">127</span>
+                                    <span style="color: #666;">112</span>
+                                    <span style="color: #666;">76ers</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <hr class="my-5">
+
+            <!-- Key Statistics -->
+            <section class="bg-light rounded p-5">
+                <h2 class="text-center mb-5 fw-bold">
+                    <i class="fas fa-chart-pie"></i> Key Statistical Leaders
+                </h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-4">
+                            <i class="fas fa-basketball"></i> Scoring Leaders
+                        </h5>
+                        <ol class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Luka Doncic</span>
+                                <strong class="text-warning">32.4 PPG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Kevin Durant</span>
+                                <strong class="text-warning">30.2 PPG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Shai Gilgeous-Alexander</span>
+                                <strong class="text-warning">29.1 PPG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Stephen Curry</span>
+                                <strong class="text-warning">28.5 PPG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Giannis Antetokounmpo</span>
+                                <strong class="text-warning">27.8 PPG</strong>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-4">
+                            <i class="fas fa-repeat"></i> Rebounding Leaders
+                        </h5>
+                        <ol class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Nikola Jokic</span>
+                                <strong class="text-info">11.9 RPG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Giannis Antetokounmpo</span>
+                                <strong class="text-info">11.1 RPG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Bam Adebayo</span>
+                                <strong class="text-info">10.8 RPG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Anthony Davis</span>
+                                <strong class="text-info">10.3 RPG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Jonathan Tatum</span>
+                                <strong class="text-info">9.5 RPG</strong>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5 class="text-center mb-4">
+                            <i class="fas fa-handshake"></i> Assists Leaders
+                        </h5>
+                        <ol class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Nikola Jokic</span>
+                                <strong class="text-success">9.2 APG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Luka Doncic</span>
+                                <strong class="text-success">8.5 APG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Tyrese Haliburton</span>
+                                <strong class="text-success">8.3 APG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Chris Paul</span>
+                                <strong class="text-success">7.9 APG</strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Jrue Holiday</span>
+                                <strong class="text-success">7.6 APG</strong>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h5>Court Time</h5>
+                    <p>Your basketball hub for stats, highlights, and more.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-decoration-none text-warning">About</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none text-warning">Gallery</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-warning">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p class="mb-0">&copy; 2026 Court Time. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

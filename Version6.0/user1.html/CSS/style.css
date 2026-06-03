@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #111;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-section {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url('https://wallpaperaccess.com/full/39625.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar-brand {
+    font-size: 28px;
+}
+
+h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card {
+    transition: transform 0.3s ease;
+    background-color: #1c1c1c;
+    color: white;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    height: 350px;
+    object-fit: cover;
+}
+
+.table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.list-group-item {
+    background-color: #1c1c1c;
+    color: white;
+    border: 1px solid #333;
+}
+
+.icon {
+    color: crimson;
+}
+
+footer {
+    margin-top: 40px;
+}
+
+img {
+    max-width: 100%;
+}
+.dark-mode {
+    background-color: #000 !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.dark-mode section {
+    background-color: #000 !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.dark-mode .card {
+    background-color: #222 !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+.dark-mode .list-group-item {
+    background-color: #222 !important;
+    color: rgb(0, 0, 0) !important;
+}

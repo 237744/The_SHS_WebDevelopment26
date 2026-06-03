@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function isNegative(){
+                const negative = document.getElementById("num").value;
+                if(negative < 0){
+                    alert("negative");
+                }
+            }
+            function isNegOrNon(){
+                const negativeOrNon = document.getElementById("num").value;
+                if(negativeOrNon<0){
+                    alert("negative");
+                }
+                else if(negativeOrNon>0){
+                    alert("nonnegative");
+                }
+            }
+            function isNegOrNonOrNan(){
+                const negativeOrNonOrNan = document.getElementById("num").value;
+                if(negativeOrNonOrNan<0){
+                    alert("negative");
+                }
+                else if(negativeOrNonOrNan>0){
+                    alert("nonnegative")
+                }
+                else if((isNaN(negativeOrNonOrNan))){
+                    alert("Not a number fool!");
+                }
+            }
+            let randNum;
+        function ran(){
+            randNum = Math.floor(Math.random()*100)+1;
+        }
+        ran();
+            function testRandom(){
+                const nums = Number(document.getElementById("nums").value);
+                if(nums<randNum){
+                    alert("too low")
+                }
+                else if (nums>randNum){
+                    alert("too high");
+                }
+                else if (nums==randNum){
+                    alert(randNum);
+                    ran();
+                }
+                else if((isNaN(nums))){
+                    alert("Not a number fool!");
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <main>
+            Number:
+            <input id="num" type="text"/>
+            <input id="exerciseOne" onclick="isNegative()" type="button" value="Exercise One" />
+            <input id="exerciseTwo" onclick="isNegOrNon()" type="button" value="Exercise Two" />
+            <input id="exerciseThree" onclick="isNegOrNonOrNan()" type="button" value="Exercise Three" />
+            <div id="outError"></div>
+            <input id="nums" type="text"/>
+            <input onclick="testRandom()" type="button" value="submit"/>
+        </main>
+    </body>
+</html>

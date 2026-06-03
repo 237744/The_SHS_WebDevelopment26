@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <body>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NHL - National Hockey League</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
+        header { background: #000; color: #fff; padding: 1rem; text-align: center; }
+        nav { background: #c41e3a; padding: 1rem; }
+        nav a { color: #fff; text-decoration: none; margin: 0 1.5rem; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 1200px; margin: 2rem auto; padding: 0 1rem; }
+        section { margin: 2rem 0; padding: 2rem; border: 1px solid #ddd; }
+        h1, h2 { color: #c41e3a; }
+        h2 a { text-decoration: none; color: #c41e3a; cursor: pointer; }
+        h2 a:hover { text-decoration: underline; }
+        footer { background: #000; color: #fff; text-align: center; padding: 1rem; margin-top: 3rem; }
+    </style>
+ <nav>
+        <script>
+            document.querySelectorAll('h2 a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const page = this.getAttribute('href').replace('.html', '');
+                    const imageMap = {
+                        'home': 'https://via.placeholder.com/800x400?text=NHL+Home',
+                        'teams': 'https://via.placeholder.com/800x400?text=NHL+Teams',
+                        'standings': 'https://via.placeholder.com/800x400?text=Standings',
+                        'schedule': 'https://via.placeholder.com/800x400?text=Schedule',
+                        'players': 'https://via.placeholder.com/800x400?text=Players',
+                        'stats': 'https://via.placeholder.com/800x400?text=Statistics',
+                        'about': 'https://via.placeholder.com/800x400?text=About+NHL'
+                    };
+                    const img = document.createElement('img');
+                    img.src = imageMap[page];
+                    img.style.width = '100%';
+                    img.style.marginTop = '1rem';
+                    const section = document.getElementById(page);
+                    const existing = section.querySelector('img');
+                    if(existing) existing.remove();
+                    section.appendChild(img);
+                });
+            });
+        </script>
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+        <a href="standings.html">Standings</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="players.html">Players</a>
+        <a href="stats.html">Stats</a>
+        <a href="about.html">About</a>
+    </nav>
+    </head>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NHL Schedule</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+        }
+        header {
+            background: linear-gradient(135deg, #190000, #480000);
+            padding: 24px 16px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            color: #fff;
+        }
+        header p {
+            margin: 8px 0 0;
+            color: #f5d7d7;
+        }
+        main {
+            max-width: 960px;
+            margin: 24px auto;
+            padding: 0 16px;
+        }
+        .schedule-card {
+            background: rgba(255, 0, 0, 0.08);
+            border: 1px solid rgba(255, 0, 0, 0.4);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        thead {
+            background: rgba(128, 0, 0, 0.95);
+        }
+        th,
+        td {
+            padding: 14px 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            color: #fff;
+        }
+        th {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            font-size: 0.85rem;
+            color: #ffdede;
+        }
+        tbody tr:hover {
+            background: rgba(255, 0, 0, 0.08);
+        }
+        .team {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .team-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #c40000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            color: #fff;
+            text-transform: uppercase;
+        }
+        footer {
+            text-align: center;
+            margin: 28px 0 16px;
+            color: #f1c8c8;
+            font-size: 0.95rem;
+        }
+        @media (max-width: 640px) {
+            th,
+            td {
+                padding: 12px 8px;
+            }
+            .team {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NHL Schedule</h1>
+        <p>Upcoming matchups, dates, and arenas for the week</p>
+    </header>
+
+    <main>
+        <section class="schedule-card">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Matchup</th>
+                        <th>Arena</th>
+                        <th>Time</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Sat, May 10</td>
+                        <td>
+                            <div class="team">
+                                <span class="team-icon">TB</span>
+                                Tampa Bay Lightning
+                                &nbsp;vs&nbsp;
+                                <span class="team-icon">MTL</span>
+                                Montreal Canadiens
+                            </div>
+                        </td>
+                        <td>Amalie Arena</td>
+                        <td>7:00 PM ET</td>
+                    </tr>
+                    <tr>
+                        <td>Sun, May 11</td>
+                        <td>
+                            <div class="team">
+                                <span class="team-icon">NYR</span>
+                                New York Rangers
+                                &nbsp;vs&nbsp;
+                                <span class="team-icon">BOS</span>
+                                Boston Bruins
+                            </div>
+                        </td>
+                        <td>Madison Square Garden</td>
+                        <td>8:00 PM ET</td>
+                    </tr>
+                    <tr>
+                        <td>Mon, May 12</td>
+                        <td>
+                            <div class="team">
+                                <span class="team-icon">TOR</span>
+                                Toronto Maple Leafs
+                                &nbsp;vs&nbsp;
+                                <span class="team-icon">MTL</span>
+                                Montreal Canadiens
+                            </div>
+                        </td>
+                        <td>Scotiabank Arena</td>
+                        <td>7:30 PM ET</td>
+                    </tr>
+                    <tr>
+                        <td>Tue, May 13</td>
+                        <td>
+                            <div class="team">
+                                <span class="team-icon">COL</span>
+                                Colorado Avalanche
+                                &nbsp;vs&nbsp;
+                                <span class="team-icon">DAL</span>
+                                Dallas Stars
+                            </div>
+                        </td>
+                        <td>Pepsi Center</td>
+                        <td>9:00 PM ET</td>
+                    </tr>
+                    <tr>
+                        <td>Wed, May 14</td>
+                        <td>
+                            <div class="team">
+                                <span class="team-icon">VGK</span>
+                                Vegas Golden Knights
+                                &nbsp;vs&nbsp;
+                                <span class="team-icon">SEA</span>
+                                Seattle Kraken
+                            </div>
+                        </td>
+                        <td>T-Mobile Arena</td>
+                        <td>10:00 PM ET</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+  <footer style="background: #000; color: #fff; text-align: center; padding: 2rem; margin-top: 3rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 2rem;">
+            <div style="flex: 1; min-width: 200px; margin: 1rem;">
+                <h3>About NHL</h3>
+                <p>The National Hockey League (NHL) is a professional ice hockey league in North America, currently comprising 32 teams—25 in the United States and 7 in Canada.</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 1rem;">
+                <h3>Quick Links</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li><a href="index.html" style="color: #fff; text-decoration: none;">Home</a></li>
+                    <li><a href="teams.html" style="color: #fff; text-decoration: none;">Teams</a></li>
+                    <li><a href="standings.html" style="color: #fff; text-decoration: none;">Standings</a></li>
+                    <li><a href="schedule.html" style="color: #fff; text-decoration: none;">Schedule</a></li>
+                    <li><a href="players.html" style="color: #fff; text-decoration: none;">Players</a></li>
+                    <li><a href="stats.html" style="color: #fff; text-decoration: none;">Stats</a></li>
+                    <li><a href="about.html" style="color: #fff; text-decoration: none;">About</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 1rem;">
+                <h3>Contact Us</h3>
+                <p>Email: info@nhl.com</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>Address: 1185 Avenue of the Americas, New York, NY 10036</p>
+            </div>
+            <div style="flex: 1; min-width: 200px; margin: 1rem;">
+                <h3>Follow Us</h3>
+                <p>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">Facebook</a>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">Twitter</a>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">Instagram</a>
+                    <a href="#" style="color: #fff; text-decoration: none; margin: 0 0.5rem;">YouTube</a>
+                </p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #333; padding-top: 1rem;">
+           
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> OFM | Shop </title>
+
+        <!--NECESSITIES-->
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!--Animate-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <!--Styling-->
+        <link rel="stylesheet" href="CSS/style.css">
+        <!--JavaScript-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+        <script src="JAVASCRIPT/script.js"></script> <!--My file-->
+        <!---------------------->
+
+        <style>
+            .navbar-brand {
+                border: 2px groove rgb(230, 230, 230);
+                background-color: rgb(255, 255, 255);
+                border-radius: 9px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+
+            .navbar-brand:hover {
+                border: 2px groove rgb(208, 208, 208);
+                background-color: rgb(222, 220, 220);
+            }
+
+            .dropdown-item:hover {
+                text-decoration: underline;
+            }
+
+            .nav-link:hover {
+                text-decoration: underline;
+            }
+
+
+            
+        </style>
+    </head>
+
+    <body>
+        <!-----------NAVBAR----------->
+        <nav class="navbar navbar-expand-lg py-3">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    OFM
+                </a>
+
+                <!--Button for Collapse-->
+                <button 
+                    class="navbar-toggler" 
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#NavMenu">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="NavMenu">
+                    <ul class="navbar-nav me-auto bg-light">
+                        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+                        <!--Dropdown-->
+                        <li class="nav-item dropdown">
+                            <a 
+                                class="nav-link dropdown-toggle" 
+                                href="#" role="button" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                                >Shop
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="shopA.html" class="dropdown-item disabled">Pet Fish</a>
+                                </li>
+                                <li>
+                                    <a href="shopB.html" class="dropdown-item">Fillet Fish</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider"></hr>
+                                </li>
+                                <li>
+                                    <a href="cart.html" class="dropdown-item">
+                                        <i class="fas fa-shopping-cart" style="color: black;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+                    </ul>
+                </div>
+            </div>    
+        </nav>
+
+        <!----------CONTENT------------>
+        <main>
+            <div class="row justify-content-center">
+                <div id="titleCard">
+                    <h1>Online Fish Market</h1>
+                    <hr></hr>
+                    <h4>Pet Shop: Take Care of Our Fish!</h4>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div id="contentBlock">
+                    <div class="card">
+                        <img src="https://aquaforest.eu/wp-content/uploads/2025/06/blazenek-scaled.jpg" alt="clownfish picture"/>
+                        <h5>Clownfish</h5>
+                        <p class="card-price">$28.99</p>
+                        <input type="button" class="buybutton" value="buy" id="Clownfish" onclick="addtoCart(this.id, 29)"/>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://cdn.britannica.com/34/240534-050-B8C4B11E/Porcupine-fish-Diodon-hystox.jpg" alt="porcupine fish picture"/>
+                        <h5>Porcupine Fish</h5>
+                        <p class="card-price">$34.99</p>
+                        <input type="button" class="buybutton" value="buy" id="Porcupine Fish" onclick="addtoCart(this.id, 35)"/>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://th-thumbnailer.cdn-si-edu.com/UNmAeCkWNSsFDl4GPHw_YmZXZwI=/1026x684/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/bf/4e/bf4ec3eb-669f-4a1d-87ad-dd83f81c384d/4694899147_fcd4b69350_o.jpg" alt="goldfish picture"/>
+                        <h5>Goldfish</h5>
+                        <p class="card-price">$14.99</p>
+                        <input type="button" class="buybutton" value="buy" id="Goldfish" onclick="addtoCart(this.id, 15); buyindicator(this, this.id)"/>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://a-z-animals.com/media/2021/09/Koi-header.jpg" alt="koi fish picture"/>
+                        <h5>Koi Fish</h5>
+                        <p class="card-price">$39.99</p>
+                        <input type="button" class="buybutton" value="buy" id="Koi Fish" onclick="addtoCart(this.id, 40)"/>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuJSfpK2eKm2ooASXDrkRQzWbdE_jkrq0rGw&s" alt="betta fish picture"/>
+                        <h5>Betta Fish</h5>
+                        <p class="card-price">$19.99</p>
+                        <input type="button" class="buybutton" value="buy" id="Betta Fish" onclick="addtoCart(this.id, 20)"/>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a2/Guppy_pho_0048.jpg" alt="guppy picture"/>
+                        <h5>Guppies</h5>
+                        <p class="card-price">$10.99</p>
+                        <input type="button" class="buybutton" value="buy" id="Guppies" onclick="addtoCart(this.id, 11)"/>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://www.thesprucepets.com/thmb/InY3TyLjpawOreZ2w0dkJ7QmJGE=/4040x0/filters:no_upscale():strip_icc()/cardinal-tetra-1378417-hero-485f0034557a4a67bb0b63cea50ac917.jpg" alt="tetra picture"/>
+                        <h5>Tetra Fish</h5>
+                        <p class="card-price">$13.99</p>
+                        <input type="button" class="buybutton" value="buy" id="Tetra Fish" onclick="addtoCart(this.id, 14)"/>
+                    </div>
+
+                    <div class="card">
+                        <img src="https://www.algaebarn.com/wp-content/uploads/2020/10/shutterstock_93857989-scaled.jpg" alt="goby picture"/>
+                        <h5>Gobies</h5>
+                        <p class="card-price">$16.99</p>
+                        <input type="button" class="buybutton" value="buy" id="Gobies" onclick="addtoCart(this.id, 17)"/>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-------------FOOTER-------------->
+        <footer>
+            <div class="container-fluid">
+                <div class="row justify-content-left py-3">
+                    <div class="col-lg-3">
+                        <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank" class="footer-link">Cookie Policy</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="https://www.collinsdictionary.com/us/dictionary/english/fish/related" target="_blank" class="footer-link">Affilates</a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-left py-3">
+                    <div class="col-lg-3">
+                        <a href="https://en.wikipedia.org/wiki/Fish" target="_blank" class="footer-link">FAQ</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="https://www.mallofamerica.com/directory/sea-life-minnesota-aquarium" target="_blank" class="footer-link">Aquariums</a>
+                    </div>
+                </div>
+
+
+                <!----Line Break------>
+                <div class="row justify-content-left">
+                    <div class="col-lg-9">
+                         <hr></hr>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <span>
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-pinterest"></i>
+                            <i class="fab fa-youtube"></i>
+                        </span>
+                        <h6>Online Fish Market © 2026</h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

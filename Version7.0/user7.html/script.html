@@ -28,6 +28,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
+    
 
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
@@ -48,6 +49,7 @@
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
+        
                     <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
                     <a href="index.html" class="nav-item nav-link">Home</a>
                     <a href="#" class="nav-item nav-link">About Me</a>
@@ -63,6 +65,7 @@
                     <a href="#" class="nav-item nav-link disabled">Login</a>
                 </div>
             </div>
+            
         </nav>
     </div>
     <!---------------------------------- End the nav-bar ------------->
@@ -73,9 +76,129 @@
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+  <div class="col-*-*"></div>
+</div>
+
+<!-- Or let Bootstrap automatically handle the layout -->
+<div class="row">
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+  <div class="col"></div>
+</div>
+            <div class="row">
+                <div class="col-sm-4" style="background-color:yellow;">Enter your name: <input type="text" id="fname" onchange="upperCase()">
+
+<script>
+function upperCase() {
+  const x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+</script></div>
+                <div class="col-sm-4" style="background-color:orange;"><script>
+function myFunction() {
+  alert("You pressed a key inside the input field");
+}
+</script><p>A function is triggered when the user is pressing a key in the input field.</p>
+
+<input type="text" onkeydown="myFunction()"></div>
+                <div class="col-sm-4" style="background-color:rgb(0, 255, 64);"><p>Enter names in the fields, then click "Submit" to submit the form:</p>
+
+<form id="frm1" action="/action_page.php">
+  First name: <input type="text" name="fname"><br>
+  Last name: <input type="text" name="lname"><br><br>
+  <input type="button" onclick="myFunction()" value="Submit">
+</form>
+
+<script>
+function myFunction() {
+  document.getElementById("frm1").submit();
+}
+</script>
+</div>
+                 <div class="col-sm-4" style="background-color:rgb(193, 85, 199);"><script>
+function myFunction() {
+  document.getElementById("demo").innerHTML = "Hello World";
+}
+</script><p ondblclick="myFunction()">Doubleclick this paragraph to trigger a function.</p>
+
+<p id="demo"></p></div>
+                  <div class="col-sm-4" style="background-color:rgb(184, 184, 184);"><script>
+function selectMultiple() {
+  document.getElementById("mySelect").multiple = true;
+}
+</script>
+</head>
+<body>
+
+<form>
+<select id="mySelect" size="4">
+  <option>Cat</option>
+  <option>Fish</option>
+  <option>Dog</option>
+  <option>Mouse</option>
+</select>
+<input type="button" onclick="selectMultiple()" value="Select multiple">
+</form>
+
+<p>Before you click "Select multiple", you cannot select more than one option (by holding down the Shift or Ctrl key).</p>
+<p>After you have clicked "Select multiple", you can.</p></div>
+                   <div class="col-sm-4" style="background-color:rgba(219, 99, 99, 0.93);"><script>
+function myFunction() {
+  let w = window.outerWidth;
+  let h = window.outerHeight;
+  let txt = "Window size: width=" + w + ", height=" + h;
+  document.getElementById("demo").innerHTML = txt;
+}
+</script>
+</head>
+
+<body onresize="myFunction()">
+<h1>JavaScript HTML Events</h1>
+<h2>The onresize Attribute</h2>
+
+<p>Try to resize the browser window.</p>
+
+<p id="demo"> </p>
+
+<p>Note: this example will not work properly in IE8 and earlier. IE8 and earlier do not support the outerWidth/outerHeight propery of the window object.</p>
+</div>
+                    <div class="col-sm-4" style="background-color:rgb(199, 199, 81);"><script>
+function WhichButton(event) {
+  alert("You pressed button: " + event.button)
+}
+</script>
+</head>
+<body>
+
+
+<div onmousedown="WhichButton(event);">Click this text (with one of your mouse-buttons)
+<p>
+0 Specifies the left mouse-button<br>
+1 Specifies the middle mouse-button<br>
+2 Specifies the right mouse-button</p>
+<p><strong>Note:</strong> Internet Explorer 8, and earlier, returns another result:<br>
+1 Specifies the left mouse-button<br>
+4 Specifies the middle mouse-button<br>
+2 Specifies the right mouse-button</p></div>
+                    
+<div class="col-sm-4" style="background-color:rgb(0, 128, 255);"><script>
+function confirmInput() {
+  fname = document.forms[0].fname.value;
+  alert("Hello " + fname + "! You will now be redirected to www.w3Schools.com");
+}
+</script>
+</head>
+<body>
+<h1>JavaScript HTML Events</h1>
+<h2>The onsubmit Attribute</h2>
+
+<form onsubmit="confirmInput()" action="https://www.w3schools.com/">
+  Enter your name: <input id="fname" type="text" size="20">
+  <input type="submit">
+</form></div>
             </div>
         </div>
     </main>

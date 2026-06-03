@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Higher or Lower</h1>
+    <p>Guess a number between 1 and 100:</p>
+    
+    <input type="number" id="userGuess">
+    <button onclick="checkGuess()">Submit</button>
+
+    <script>
+        
+        let answer = Math.floor(Math.random() * 100) + 1;
+
+        
+        function checkGuess() {
+           
+            alert("The secret answer is: " + answer);
+            let guess = document.getElementById("userGuess").value;
+
+            
+            if (guess < answer) {
+                alert("higher");
+            } 
+            else if (guess > answer) {
+                alert("lower");
+            } 
+            else {
+                alert("Success");
+            }
+
+            
+            document.getElementById("userGuess").value = "";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,76 +1,66 @@
-@import url(https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap);
-* {
-  box-sizing: border-box;
-}
-
+/* GALLERY ROW (FLASHCARD STYLE) */
 #gallery {
-  font-family: "Orbitron", sans-serif;
-  line-height: 1.5em;
-  text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
 }
 
+/* CARD SIZE */
 .container {
-  display: inline-block;
-  margin: 3%;
-  perspective: 1000px;
+    width: 220px;
+    height: 300px;
+    perspective: 1000px;
+    flex: 0 0 auto;
 }
 
+/* FLIP ANIMATION WRAPPER */
 .flipper {
-  position: relative;
-  transition: 0.6s;
-  transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
 }
 
-.front, .back {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 250px;
-  height: 320px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  backface-visibility: hidden;
-}
-
-.front {
-  z-index: 2;
-}
-
-.back {
-  transform: rotateY(180deg);
-}
-
-img {
-  width: 100%;
-}
-
-.container, .front, .back {
-  width: 250px;
-  height: 320px;
-}
-
+/* FLIP ON HOVER */
 .container:hover .flipper {
-  transform: rotateY(180deg);
+    transform: rotateY(180deg);
 }
 
-a {
-  color: black;
+/* FRONT + BACK BASE */
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
 }
 
-.caption, .back h1 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.7em;
-  padding: 10px 10px 0 10px;
-  margin: 0;
-  text-align: center;
+/* FRONT SIDE */
+.front {
+    background: white;
 }
 
-p.caption {
-  position: absolute;
-  bottom: 1vh;
+.front img {
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
 }
 
-.description {
-  font-size: 0.9em;
-  padding: 0 20px 20px 20px;
-  text-align: left;
+.caption {
+    font-weight: bold;
+}
+
+/* BACK SIDE */
+.back {
+    background: #222;
+    color: white;
+    transform: rotateY(180deg);
+    padding: 10px;
 }

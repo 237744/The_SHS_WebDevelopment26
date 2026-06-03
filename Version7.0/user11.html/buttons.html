@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Alerts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      background-color: #f0f4f8;
+    }
+    .button-container {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      border-radius: 8px;
+      background-color: #007acc;
+      color: white;
+      transition: background-color 0.2s ease;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+    h1 {
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Button Alerts</h1>
+  <div class="button-container">
+    <button type="button" onclick="showOneAlert()">One</button>
+    <button type="button" onclick="showTwoAlerts()">Two</button>
+    <button type="button" onclick="showThreeAlerts()">Three</button>
+  </div>
+
+  <script>
+    function showOneAlert() {
+      alert('This is one alert.');
+    }
+
+    function showTwoAlerts() {
+      alert('This is alert one of two.');
+      alert('This is alert two of two.');
+    }
+
+    function showThreeAlerts() {
+      alert('This is alert one of three.');
+      alert('This is alert two of three.');
+      alert('This is alert three of three.');
+    }
+  </script>
+</body>
+</html>

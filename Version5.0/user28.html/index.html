@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 5.0
-    Name:
-    Date Completed:
+    Name: Antonio Stromberg
+    Date Completed: 5/1/2026
 -->
 
 <head>
@@ -47,48 +47,113 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+
+                * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        height: 100vh;
+        }
+
+        .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.0rem 5%;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px); /* Frosted glass effect */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        }
+
+        .logo {
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        }
+
+        .logo span { color: #ffeb3b; }
+
+        .nav-links {
+        display: flex;
+        list-style: none;
+        }
+
+        .nav-links li { padding: 0 20px; }
+
+        .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        position: relative;
+        transition: 0.3s;
+        }
+
+        /* Cool animated underline on hover */
+        .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        background: #ffeb3b;
+        bottom: -5px;
+        left: 0;
+        transition: 0.3s;
+        }
+
+        .nav-links a:hover::after {
+        width: 100%;
+        }
     </style>
 
     <body>
-        <!---------------------------------- Begin the nav-bar ----------------------------------->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <!-- NAVBAR -->
+            <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container-fluid">
+                    <a href="#" class="navbar-brand">WebDev</a>
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav me-auto">
-                        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                        <li class="nav-item">
+                    <!-- Toggle Button -->
+                    <button class="navbar-toggler" type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Nav Links -->
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav">
                             <a href="#" class="nav-link active">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
-                        </li>
-                        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </form>
+                            <a href="aboutMe.html" class="nav-link">About Me</a>
+
+                            <!-- 🔽 DROPDOWN -->
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" 
+                                data-bs-toggle="dropdown">
+                                    More
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Music</a></li>
+                                    <li><a class="dropdown-item" href="#">Projects</a></li>
+                                    <li><a class="dropdown-item" href="#">Contact</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right side -->
+                        <div class="navbar-nav ms-auto">
+                            <a href="#" class="nav-link">Login</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </nav>
-        <!---------------------------------- End the nav-bar ------------------------------------->
+            </nav>
         <!---------Jumbotron---------------------------------------------->
         <header class="p-5 bg-primary-subtle text-black" name="Jumbotron">
             <h4> Bootstrap Examples</h4>

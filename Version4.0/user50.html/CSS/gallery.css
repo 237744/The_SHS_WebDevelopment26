@@ -3,6 +3,12 @@
   box-sizing: border-box;
 }
 
+.text-left.my-3.title {
+  font-family: "Playwrite NZ Guides", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
 #gallery {
   font-family: "Orbitron", sans-serif;
   line-height: 1.5em;
@@ -17,7 +23,7 @@
 
 .flipper {
   position: relative;
-  transition: 0.6s;
+  transition: 1s;
   transform-style: preserve-3d;
 }
 
@@ -49,18 +55,18 @@ img {
 }
 
 .container:hover .flipper {
-  transform: rotateY(180deg);
+  transform: rotateY(270deg);
 }
 
 a {
-  color: black;
+  color: rgb(16, 10, 169);
 }
 
 .caption, .back h1 {
-  font-family: "Orbitron", sans-serif;
-  font-size: 1.7em;
-  padding: 10px 10px 0 10px;
-  margin: 0;
+  font-family: 'times new roman', serif;
+  font-size: 2em;
+  padding: 10px 10px 10px 10px;
+  margin: 0.1em 0 0 0;
   text-align: center;
 }
 

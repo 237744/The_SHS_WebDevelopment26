@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WNBA</title>
+
+ <style>
+* {
+    margin: 0;
+    padding: 0;
+}       
+
+body {
+    font-family: Impact, sans-serif;
+    background-color: #e6e5e5;
+    color: white;
+    text-align: center;
+}
+        
+html, body {
+    width: 100%;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #000000;
+    padding: 15px 30px;
+    position: relative;
+    left: 0;
+    right: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+.nav-left, .nav-right {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-left a, .nav-right a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.nav-left a:hover, .nav-right a:hover {
+    color: orange;
+}
+
+.logo-section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    }
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+}
+footer {
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 53px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 50px;
+    box-sizing: border-box;
+}
+
+.page-title {
+    color: rgb(255, 255, 255);
+    font-size: 100px;
+    margin: 40px 0;
+}
+
+.section-title {
+    color: black;
+    font-size: 50px;
+    margin: 40px 0 20px 0;
+    text-align: center;
+    width: 100%;
+}
+
+
+.players-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+
+.player-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.player-card {
+    width: 250px;
+    height: 320px;
+    perspective: 1000px;
+}
+
+/* FLIP CARD SIZE */
+.player-card {
+    width: 250px;
+    height: 320px;
+    perspective: 1000px;
+}
+
+/* FLIP WRAPPER */
+.flipper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* FLIP ON HOVER */
+.player-card:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+/* FRONT + BACK MATCH SIZE */
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* FRONT */
+.front {
+    background: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.front img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.front h3 {
+    margin-top: 10px;
+}
+
+/* BACK */
+.back {
+    background: black;
+    color: white;
+    transform: rotateY(180deg);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+}
+
+/* TEXT */
+.description {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+
+ </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+
+    <div class="nav-left">
+        <a href="index.html">Home</a>
+        <a href="teams.html">Teams</a>
+    </div>
+
+
+
+    <div class="logo-section">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="Basketball">
+        Professional Women's Basketball
+    </div>
+
+    <div class="nav-right">
+        <a href="players.html">Players</a>
+        <a href="expansion.html">Expansion</a>
+    </div>
+
+</div>
+
+
+ <h1 class="page-title">Known Players</h1>
+
+<h2 class="section-title">Current Stars</h2>
+
+<div class="players-container">
+
+    <!-- Caitlin Clark -->
+    <div class="player-card">
+        <div class="flipper">
+
+            <div class="front">
+                <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/1642286.png">
+                <h3>Caitlin Clark</h3>
+            </div>
+
+            <div class="back">
+                <h2>Caitlin Clark</h2>
+                <p>
+                    Indiana Fever <br>
+                    Guard <br>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Paige Bueckers -->
+    <div class="player-card">
+        <div class="flipper">
+
+            <div class="front">
+                <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/1642784.png">
+                <h3>Paige Bueckers</h3>
+            </div>
+
+            <div class="back">
+                <h2>Paige Bueckers</h2>
+                <p>
+                    Dallas Wings <br>
+                    Guard
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Angel Reese -->
+<div class="player-card">
+    <div class="flipper">
+
+        <div class="front">
+            <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/1642291.png">
+            <h3>Angel Reese</h3>
+        </div>
+
+        <div class="back">
+            <h2>Angel Reese</h2>
+
+            <p class="description">
+                Chicago Sky <br>
+                Forward <br>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- A'ja Wilson -->
+<div class="player-card">
+    <div class="flipper">
+
+        <div class="front">
+            <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/1628932.png">
+            <h3>A'ja Wilson</h3>
+        </div>
+
+        <div class="back">
+            <h2>A'ja Wilson</h2>
+
+            <p class="description">
+                Las Vegas Aces <br>
+                Center <br>
+            </p>
+        </div>
+
+    </div>
+</div>
+     
+
+<!-- Sabrina Ionescu -->
+<div class="player-card">
+    <div class="flipper">
+
+        <div class="front">
+            <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/1629477.png">
+            <h3>Sabrina Ionescu</h3>
+        </div>
+
+        <div class="back">
+            <h2>Sabrina Ionescu</h2>
+
+            <p class="description">
+                New York Liberty <br>
+                Guard <br>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Napheesa Collier -->
+<div class="player-card">
+    <div class="flipper">
+
+        <div class="front">
+            <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/1629483.png">
+            <h3>Napheesa Collier</h3>
+        </div>
+
+        <div class="back">
+            <h2>Napheesa Collier</h2>
+
+            <p class="description">
+                Minnesota Lynx <br>
+                Forward <br>
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<h2 class="section-title">Retired Stars</h2>
+
+<div class="players-container">
+
+    <!-- Diana Taurasi -->
+    <div class="player-card">
+        <div class="flipper">
+
+            <div class="front">
+                <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/100940.png">
+                <h3>Diana Taurasi</h3>
+            </div>
+
+            <div class="back">
+                <h2>Diana Taurasi</h2>
+                <p>
+                    Legend <br>
+                    Guard
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Sue Bird -->
+    <div class="player-card">
+        <div class="flipper">
+
+            <div class="front">
+                <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/100720.png">
+                <h3>Sue Bird</h3>
+            </div>
+
+            <div class="back">
+                <h2>Sue Bird</h2>
+                <p>
+                    Legend <br>
+                    Guard
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Maya Moore -->
+    <div class="player-card">
+        <div class="flipper">
+
+            <div class="front">
+                <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/202632.png">
+                <h3>Maya Moore</h3>
+            </div>
+
+            <div class="back">
+                <h2>Maya Moore</h2>
+                <p>
+                    Legend <br>
+                    Forward
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Candace Parker -->
+    <div class="player-card">
+        <div class="flipper">
+
+            <div class="front">
+                <img src="https://cdn.wnba.com/headshots/wnba/latest/1040x760/201496.png">
+                <h3>Candace Parker</h3>
+            </div>
+
+            <div class="back">
+                <h2>Candace Parker</h2>
+                <p>
+                    Legend <br>
+                    Forward
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<footer>
+    <p>© 2026 WNBA Website. All Rights Reserved.</p>
+</footer> 
+</body>

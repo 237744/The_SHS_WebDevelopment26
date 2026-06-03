@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        const answer = Math.floor(Math.random() * 1000) + 1;
+
+        function checkGuess() {
+
+            // Shows random number for testing
+            alert(answer);
+
+            // Gets user input
+            let guess = document.getElementById("guessBox").value;
+
+            // Checks the guess
+            if (guess < answer) {
+                alert("higher");
+            }
+            else if (guess > answer) {
+                alert("lower");
+            }
+            else {
+                alert("Success");
+            }
+
+            // Clears the input box
+            document.getElementById("guessBox").value = "";
+        }
+    </script>
+</head>
+
+<body>
+    <main>
+        <input type="text" id="guessBox">
+
+        <input type="button"
+               value="Submit"
+               onclick="checkGuess()">
+    </main>
+</body>
+</html>

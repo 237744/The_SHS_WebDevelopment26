@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+                function answer(){
+                    const ans = Math.floor(100*Math.random());
+                }
+
+                function checkGuess(){
+                    const ans = Math.floor(100*Math.random());
+                    const guess = document.getElementById("choseValue").value;
+                    if (guess == ans) {
+                        alert("You got it")
+                    }
+                    else if (guess<ans) {
+                        alert("Higher")
+                    }
+                    else {
+                        alert("Lower")
+                    }
+                    
+                    document.getElementById("choseValue").value = "";
+                }
+        </script>
+
+    </head>
+
+    <body>
+        <br>
+        <h1 style="text-align: center;">Higher or Lower</h1>
+        <br>
+        <br>
+        <header style="text-align: center;">Guess number from 1 to 100</header>
+        
+        <span style="display: flex; justify-content: center; align-items: center;">
+            <input type="text" id="choseValue">
+            <input type="button" onclick="checkGuess()" value="Submit">
+            <input type="button" onclick="answer()" value="Generate new number">
+        </span>
+    </body>
+</html>

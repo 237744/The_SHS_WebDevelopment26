@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Fillout</title>
+
+
+  </head>
+  <body>
+    <main>
+      <!--User Sees-->
+      <form name="submit-to-goole-sheet">
+        <input type="text" placeholder="Email" id="emailIn" required/>
+        <input type="text" placeholder="Name" id="nameIn" required/>
+        <input type="text" placeholder="Favorite Color" id="favcolorIn" required/>
+        <input type="text" placeholder="Comments" id="commentIn"/>
+        <button type="submit" onclick="">Submit</button>
+      </form>
+
+    </main>
+    <!--Submit to form-->
+    <script>
+      const scriptURL = '<https://docs.google.com/spreadsheets/d/1mEmwlFh9eKiHmHUk6HeoiTP0u4ivcZT5M__zZ_TGiqg/edit?gid=0#gid=0>';
+      const form = document.forms['submit-to-google-sheet'];
+
+      form.addEventListener('submit')
+    </script>
+
+  </body>
+
+</html>

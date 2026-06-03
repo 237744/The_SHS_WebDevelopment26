@@ -29,6 +29,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
 
+
+    <script src="JS/SampleJS.js"></script>
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
     <!-- Custom styles for this template -->
@@ -37,7 +39,7 @@
     </style>
 </head>
 
-<body>
+<body onresize="resized()">
     <!---------------------------------- Begin the nav-bar ------------->
     <div class="menu">
         <nav class="navbar navbar-expand-md p-2 navbar-dark bg-dark">
@@ -73,9 +75,54 @@
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+                <div class="col-sm-4" style="background-color:yellow;">
+                    <p id="textChange"> My name is User 13</p>
+                </div>
+                <div class="col-sm-4" style="background-color:orange;">
+                    <button type="button" onclick="changeText()">Click if you like</button>
+                </div>
+                <div class="col-sm-4" style="background-color:yellow;"> <!--#2-->
+                    <button type="button" onclick="scoreInc()">Click me</button>
+                    <p id="scoreCount">Score: </p>
+                </div>
+            </div>
+            <!--Contributions-->
+            <div class="row">
+                <div class="col-sm-4" style="background-color: orange;"> <!--#1-->
+                    <span>Color:</span>
+                    <input type="color" id="userColor"/>
+                </div>
+
+                <div class="col-sm-4" style="background-color: yellow;"> <!--#3-->
+                    <input type="text" id='pressed' onkeypress="texting()" placeholder="Type here"/>
+                </div>
+
+                <div class="col-sm-4" style="background-color: orange;"> <!--#4-->
+                    <input type="text" id="focused" onfocus="inputFocused(this)" placeholder="Cool background"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4" style="background-color: yellow;"> <!--#5-->
+                    <p onmouseover="texthovered(this)">Hover over this not psuedo class</p>
+                </div>
+
+                <div class="col-sm-4" style="background-color: orange;"> <!--#6-->
+                    <p ondblclick="doubleclicked(this)">Double click this text</p>
+                </div>
+
+                <div class="col-sm-4" style="background-color: yellow;"> <!--#7-->
+                    <form onreset="reseted()">
+                        <input type="text" placeholder="type in this form"/>
+                        <input type="reset"/>
+                    </form>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4" style="background-color: orange;"> <!--#8-->
+                    <p>Resize the window</p>
+                </div>
             </div>
         </div>
     </main>

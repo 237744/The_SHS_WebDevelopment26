@@ -1,249 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Version 7.0 
-    Name:  
-    Date Completed: 
--->
 
 <head>
-    <title>Dynamic Webpage</title>
-
-    <!-- Meta data -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Introduction to JavaScript">
-
-    <!-- CSS -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Custom -->
-    <link rel="stylesheet" href="CSS/style.css">
-
-    <!-- JavaScript -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <meta charset="UTF-8">
+    <title>JavaScript Math</title>
 
     <style>
-        /* Internal Styling Here */
-    </style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
 
+        /* Matches the large input style from your screenshot */
+        input {
+            width: 300px;
+            height: 40px;
+            font-size: 28px;
+            margin: 5px;
+        }
+
+        button {
+            height: 48px;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 0 15px;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 30px;
+            margin: 10px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .symbol {
+            font-size: 40px;
+            vertical-align: middle;
+        }
+
+        .result-text {
+            color: blue;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav me-auto">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="games.html" class="nav-link">Games</a>
-                    </li>
-                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-primary" type="button">Login</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-
-    <main class="container-fluid mt-3">
-        <div id="built-in-functions">
-            <!-- ALERT-->
-            <script>
-                alert('Go Sabers!');
-            </script>
-            <!--PRINT-->
-            <script>
-                function printWindow() {
-                    window.print();
-                }
-            </script>
-            <!--LENGTH-->
-            <script>
-                function getLength() {
-                    document.getElementById("length").innerHTML = document.title.length;
-                }
-            </script>
-            <!-- FOCUS-->
-            <script>
-                function getFocus() {
-                    document.getElementById("focusButton").focus();
-                }
-            </script>
-            <!-- CLICK-->
-            <script>
-                function clickSimulation() {
-                    document.getElementById("Check").click();
-                }
-            </script>
-            <script>
-                function getDate() {
-                    document.getElementById("date").innerHTML = Date();
-                }
-            </script>
-
-            <div class="container-fluid mt-3 mb-3">
-                <div class="row">
-                    <!--PRINT-->
-                    <div class="col-md-1">
-                        <button class="btn btn-dark btn-md" value="print this page" onclick="printWindow()">Print this
-                            page</button>
-                    </div>
-                    <!--LENGTH-->
-                    <div class="col-md-3">
-                        <button class="btn btn-dark btn-md" onclick="getLength()">The title has this many
-                            characters</button>
-                    </div>
-                    <div class="col-md-1">
-                        <p id="length"></p>
-                    </div>
-                    <!--FOCUS-->
-                    <div class="col-md-1">
-                        <button class="btn btn-dark btn-md" onclick="getFocus()">Focus</button>
-                    </div>
-                    <!-- CLICK-->
-                    <div class="col-md-1">
-                        <form>
-                            <input type="checkbox" id="Check" onmouseover="clickSimulation()">
-                            <input type="checkbox" id="Check" onmouseover="clickSimulation()">
-                        </form>
-                    </div>
-                    <!--DATE-->
-                    <div class="col-md-1">
-                        <button class="btn btn-dark btn-md" onclick="getDate()">Get Date</button>
-                    </div>
-                    <div class="col-md-3">
-                        <p id="date"></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <hr>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-5">
-                    <h1>Heading for a long list</h1>
-                    <ol id="nestedList">
-                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        <li>Vestibulum auctor dapibus neque.
-                            <ol>
-                                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-                                <li>Aliquam tincidunt mauris eu risus.
-                                    <ol>
-                                        <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                                            <ol>
-                                                <li>Lorem ipsum dolor sit amet, consectetuer.</li>
-                                            </ol>
-                                        </li>
-                                        <li>Aliquam tincidunt mauris eu risus.</li>
-                                        <li>Vestibulum auctor dapibus neque.</li>
-                                    </ol>
-                                </li>
-                                <li>Vestibulum auctor dapibus neque.</li>
-                                <li>Aliquam tincidunt mauris eu risus.</li>
-                            </ol>
-                        </li>
-                        <li>Aliquam tincidunt mauris eu risus.</li>
-                        <li>Vestibulum auctor dapibus neque.</li>
-                    </ol>
-
-                </div>
-
-                <div class="col-md-2 text-center">
-                    <button class="btn btn-danger btn-lg mt-3 container" onclick="firstSelector()">Try it
-                        1</button>
-
-                    <button class="btn btn-info btn-lg mt-3 container" onclick="secondSelector()">Try it
-                        2</button>
-
-                    <button class="btn btn-secondary btn-lg mt-3 container" onclick="thirdSelector()">Try it
-                        3</button>
-
-                    <button class="btn btn-primary btn-lg mt-3 container" onclick="window.location.reload()">Try
-                        it
-                        4</button>
-                </div>
-
-                <div class="col-md-5" id="shoppingList">
-                    <h1>My shopping list</h1>
-
-                    <div>
-                        <label for="item">Enter a new item:</label>
-                        <input type="text" name="item" id="item">
-                        <button id="aggregating-list">Add item</button>
-                    </div>
-
-                    <ul>
-
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-        <script id="lists">
-            function firstSelector() {
-                document.querySelector("#nestedList>li").style.backgroundColor = "#dc3545";
-            }
-
-            function secondSelector() {
-                var x = document.querySelectorAll("#nestedList>li");
-                var i;
-                for (i = 0; i < x.length; i++) {
-                    x[i].style.backgroundColor = "#17a2b8";
-                }
-            }
-
-            function thirdSelector() {
-                document.querySelector("#nestedList ol li").style.backgroundColor = "#6c757d";
-            }
-        </script>
-        <script id="shopping">
-            const list = document.querySelector('#shoppingList');
-            const input = document.getElementById('item');
-            const button = document.getElementById('aggregating-list');
-
-            button.onclick = function() {
-                let myItem = input.value;
-                input.value = '';
-
-                const listItem = document.createElement('li');
-                const listText = document.createElement('span');
-                const listBtn = document.createElement('button');
-
-                listItem.appendChild(listText);
-                listText.textContent = myItem;
-                listItem.appendChild(listBtn);
-                listBtn.textContent = 'Delete';
-                list.appendChild(listItem);
-
-                listBtn.onclick = function(e) {
-                    list.removeChild(listItem);
-                }
-
-                input.focus();
-            }
-        </script>
-    </main>
-    <div id="container" style="height: 3000px; width: 1000px;">
-        <a href="#"><button type="button" id="focusButton" style="margin-top: 3000px;">You focused on me!</button></a>
+    <div class="section">
+        <input id="add1" type="number">
+        <span class="symbol"> + </span>
+        <input id="add2" type="number">
+        <button onclick="addNumbers()">add</button>
+        <p id="addOutput" class="result-text"></p>
     </div>
-</body>
 
+    <div class="section">
+        <input id="multiply1" type="number">
+        <span class="symbol"> * </span>
+        <input id="multiply2" type="number">
+        <button onclick="multiplyNumbers()">multiply</button>
+        <p id="multiplyOutput" class="result-text"></p>
+    </div>
+
+    <div class="section">
+        <h1>Pythagorean Theorem</h1>
+        <p>
+            a= <input id="aValue" type="number">
+        </p>
+        <p>
+            b= <input id="bValue" type="number">
+        </p>
+        <button onclick="findC()">Find C</button>
+        <p id="cOutput" class="result-text"></p>
+    </div>
+
+    <script>
+        // Addition Logic
+        function addNumbers() {
+            let num1 = Number(document.getElementById("add1").value);
+            let num2 = Number(document.getElementById("add2").value);
+            let answer = num1 + num2;
+            document.getElementById("addOutput").innerHTML = "Result: " + answer;
+        }
+
+        // Multiplication Logic
+        function multiplyNumbers() {
+            let num1 = Number(document.getElementById("multiply1").value);
+            let num2 = Number(document.getElementById("multiply2").value);
+            let answer = num1 * num2;
+            document.getElementById("multiplyOutput").innerHTML = "Result: " + answer;
+        }
+
+        // Pythagorean Logic: c = √(a² + b²)
+        function findC() {
+            let a = Number(document.getElementById("aValue").value);
+            let b = Number(document.getElementById("bValue").value);
+           
+            if (a > 0 && b > 0) {
+                let c = Math.sqrt((a * a) + (b * b));
+                // toFixed(2) limits the result to 2 decimal places for neatness
+                document.getElementById("cOutput").innerHTML = "c = " + c.toFixed(2);
+            } else {
+                document.getElementById("cOutput").innerHTML = "Please enter values for a and b";
+            }
+        }
+    </script>
+
+</body>
 </html>
+Shakopee High School 
+9th Grade Academy Omega

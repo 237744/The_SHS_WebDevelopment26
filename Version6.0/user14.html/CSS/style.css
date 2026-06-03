@@ -1,0 +1,22 @@
+body {
+  background-color: #f0f8ff;
+}
+
+h1 {
+  color: #2c3e50;
+}
+
+p {
+  color: #555;
+}
+.card {
+  margin-bottom: 20px;
+}
+
+.card img {
+  height: 250px;
+  object-fit: cover;
+}
+table {
+  background-color: white;
+}

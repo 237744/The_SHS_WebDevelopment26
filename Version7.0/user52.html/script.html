@@ -35,9 +35,14 @@
     <style type="text/css">
 
     </style>
+
+    <script src="JS/SampleJS.js">
+
+
+    </script>
 </head>
 
-<body>
+<body onload="thisIsCool()" onresize="thisMakesSize()" onmousedown="isKeyPressed(event)">
     <!---------------------------------- Begin the nav-bar ------------->
     <div class="menu">
         <nav class="navbar navbar-expand-md p-2 navbar-dark bg-dark">
@@ -71,11 +76,33 @@
         <h1 class="text-left my-3">My JavaScript Examples</h1>
         <!-- Edit this line for the title of your page -->
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+        <center><p id="textChange"> My name is User ##</p></center>
+        <center><button type="button" onclick="changeText()">Click if you like</button></center>
+
+
+
+
+
+
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+                <div class="col-sm-6" style="background-color:yellow;" onmousedown="WhichButton(event);" >Click here</div>
+                <div class="col-sm-6" style="background-color:yellow;" onmouseover="style.color='red'" onmouseout="style.color='black'"> This changes color</div>
+                <p id="demo"></p>
+                 <p id="Shift"></p>
+                <div class="col-sm-6">Try to resize the browser window.</div>
+                <div class="col-sm-6">Try clicking with and without shift key.</div>
+                <p onmousedown="show_coords(event)">
+                Click this paragraph to display the x and y coordinates of the mouse pointer.</p>
+                <p> Left copies to right but not the other way round</p>
+                <form>
+                Enter your name:
+                <input type="text" name="myInput" onkeyup="writeMessage()" size="20">
+                <input type="text" name="mySecondInput" size="20">
+                </form>
+                <p ondblclick="myFunction()">Doubleclick.</p>
+                <p>The function transforms the input character to upper case.</p>
+                Enter your name: <input type="text" id="fname" onkeyup="upperCase()">
             </div>
         </div>
     </main>

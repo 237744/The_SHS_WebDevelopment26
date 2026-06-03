@@ -1,18 +1,92 @@
+<!doctype html>
 <html lang="en">
-    <!--Version 9.0 
-	Name:
-	Date Completed:
-    -->
-    <head>
-        
-        <title>Web Development User #00</title>
-    
-    </head>
-    
-    <body>
-        
-        <center>My name is User #00</center>
-    
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TripHub | Road Trip Planner</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/product.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">TripHub</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="destinations.html">Plan Trip</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
+    <header class="hero text-white text-center py-5">
+      <div class="container">
+        <h1 class="display-5 fw-bold">Weekend road trips made easy.</h1>
+        <p class="lead mb-4">Plan routes, estimate your budget, and preview weather for top destinations — all in one travel planner.</p>
+        <a href="destinations.html" class="btn btn-primary btn-lg">Start Planning</a>
+      </div>
+    </header>
+
+    <main class="container py-5">
+      <section class="row align-items-center mb-5">
+        <div class="col-lg-6">
+          <h2>Why TripHub?</h2>
+          <p>TripHub keeps your travel content focused on road trip planning with a consistent theme across pages.</p>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Interactive route cards</li>
+            <li class="list-group-item">Weather API previews for destinations</li>
+            <li class="list-group-item">Budget calculations for fuel and lodging</li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="card shadow-sm bg-secondary text-white">
+            <div class="card-body">
+              <h3 class="card-title">Travel planner theme</h3>
+              <p class="card-text">Everything from the homepage to the planner page shares the same road trip theme and responsive Bootstrap layout.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-5">
+        <h2 class="mb-4">Featured road trips</h2>
+        <div id="featuredTrips" class="row g-4"></div>
+      </section>
+
+      <section id="how-it-works" class="mb-5">
+        <h2>How it works</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="p-4 border rounded shadow-sm h-100">Choose a destination and review the route details from our featured trip cards.</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 border rounded shadow-sm h-100">Use the planner page to get live weather and cost estimates for your selected trips.</div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-4 border rounded shadow-sm h-100">Compare budgets, choose lodging, and keep the theme consistent for every tab.</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-light p-4 rounded-3">
+        <h2>Travel tip</h2>
+        <p id="travelTip" class="mb-0">Use the “Plan Trip” page to compare destinations and get a travel-ready estimate.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer py-4 bg-dark text-white">
+      <div class="container text-center">
+        <p class="mb-1">TripHub | Dynamic version 9.0 website</p>
+        <p class="small mb-0">Uses Bootstrap, external CSS, and JavaScript with an API call for travel weather.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/site.js"></script>
+  </body>
 </html>

@@ -1,12 +1,13 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+date_default_timezone_set("US/Central");
+$apiKey = "06c3169478896fd243a8fb79dd84545b"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
-if ($units == 'metric'){//Changes the $temp varaible to match 
-    $temp = "C";
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
+if ($units == 'imperial'){//Changes the $temp varaible to match 
+    $temp = "F";
 }
 else {
-    $temp = "F";
+    $temp = "C";
 }
 $googleApiUrl = "http://api.openweathermap.org/data/2.5/weather?id=" . $cityId . "&lang=en&units=" . $units . "&APPID=" . $apiKey;
 
@@ -23,9 +24,21 @@ $response = curl_exec($ch);
 curl_close($ch);
 $data = json_decode($response);
 $currentTime = time();
+$currentTemp = $data->main->temp_max; 
+$bgColor = "#ffffff"; 
+
+if ($currentTemp >= 85) {
+    $bgColor = "#ffcccc"; 
+} elseif ($currentTemp >= 60) {
+    $bgColor = "#ffe6cc"; 
+} elseif ($currentTemp >= 40) {
+    $bgColor = "#e6f2ff"; 
+} else {
+    $bgColor = "#ccd9ff"; 
+}
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Forecast Weather using OpenWeatherMap with PHP</title>

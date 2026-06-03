@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Time - Basketball Hub</title>
+    <link rel="icon" type="image/png" href="images/basketball-favicon.png">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-basketball"></i> Court Time
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="players.html">Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">
+                <i class="fas fa-basketball"></i> Court Time
+            </h1>
+            <p class="lead fs-5 mb-4">Your Ultimate Basketball Resource</p>
+            <p class="fs-6 mb-4">Discover tips, players, highlights, and everything basketball</p>
+            <a href="#featured" class="btn btn-warning btn-lg me-2">
+                <i class="fas fa-arrow-down"></i> Explore
+            </a>
+            <a href="about.html" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-info-circle"></i> Learn More
+            </a>
+        </div>
+    </header>
+
+    <!-- Featured Section -->
+    <section id="featured" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold text-dark">
+                <i class="fas fa-star"></i> Featured Content
+            </h2>
+            
+            <!-- Animated Cards -->
+            <div class="row g-4">
+                <!-- Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <div class="card-icon mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h5 class="card-title">Top Players</h5>
+                            <p class="card-text">Explore profiles of legendary and rising basketball stars from around the world.</p>
+                            <a href="players.html" class="btn btn-sm btn-primary">
+                                <i class="fas fa-arrow-right"></i> View Players
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <div class="card-icon mb-3">
+                                <i class="fas fa-images"></i>
+                            </div>
+                            <h5 class="card-title">Photo Gallery</h5>
+                            <p class="card-text">Browse amazing action shots, game highlights, and memorable basketball moments.</p>
+                            <a href="gallery.html" class="btn btn-sm btn-success">
+                                <i class="fas fa-arrow-right"></i> View Gallery
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card feature-card h-100">
+                        <div class="card-body">
+                            <div class="card-icon mb-3">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <h5 class="card-title">Game Stats</h5>
+                            <p class="card-text">Check out detailed statistics from recent games and season performances.</p>
+                            <a href="stats.html" class="btn btn-sm btn-danger">
+                                <i class="fas fa-arrow-right"></i> View Stats
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Facts Section -->
+    <section class="py-5 bg-white">
+        <div class="container">
+            <h2 class="text-center mb-5 fw-bold text-dark">Basketball Basics</h2>
+            <div class="row text-center g-4">
+                <div class="col-md-3">
+                    <div class="stat-box p-4">
+                        <h3 class="text-warning">5</h3>
+                        <p>Players Per Team</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box p-4">
+                        <h3 class="text-info">48</h3>
+                        <p>Minutes Per Game</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box p-4">
+                        <h3 class="text-success">94</h3>
+                        <p>Feet Court Length</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="stat-box p-4">
+                        <h3 class="text-danger">10</h3>
+                        <p>Feet Hoop Height</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-primary text-white text-center">
+        <div class="container">
+            <h2 class="mb-3">Ready to Dive Deeper?</h2>
+            <p class="lead mb-4">Explore our complete collection of basketball resources, tips, and highlights.</p>
+            <a href="gallery.html" class="btn btn-warning btn-lg me-2">
+                <i class="fas fa-image"></i> View Gallery
+            </a>
+            <a href="contact.html" class="btn btn-light btn-lg">
+                <i class="fas fa-envelope"></i> Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h5>Court Time</h5>
+                    <p>Your basketball hub for stats, highlights, and more.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-decoration-none text-warning">About</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none text-warning">Gallery</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-warning">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p class="mb-0">&copy; 2026 Court Time. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

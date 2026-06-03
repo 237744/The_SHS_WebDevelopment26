@@ -16,6 +16,10 @@ tr {
 
 th {
 	text-align: center;
-	color: #ffffff;
+	color: #aa49ab;
 	background-color: #003366;
+}
+body{
+	background-image: url("../images/DAMN.jpeg");
+	background-repeat: no-repeat;
 }

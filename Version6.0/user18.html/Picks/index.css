@@ -1,0 +1,50 @@
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+.draft{
+font-family: "Roboto Slab";
+    text-align: center;
+color: rgb(255, 255, 255);
+text-shadow:
+   -2px -1px 0 #000,  
+    2px -1px 0 #000,
+    -2px 1px 0 #000,
+     2px 1px 0 #000;
+}
+table {
+	font-family: "Roboto Slab";
+	color: #125740;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
+	border-collapse: collapse;
+	border-spacing: 0px;
+    
+}
+
+tr {
+	border: 2px solid #000000;
+	text-align: center;
+	background-color:#ffffff; 
+}
+
+th {
+	text-align: center;
+	color: #ffffff;
+	background-color: #125740;
+}
+
+body {
+  background-image: url(https://visit-pittsburgh-2023.s3.amazonaws.com/images/Draft26_PR01_approved_Jan28.jpg?v=1770072193);
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+td {
+  text-align: center;
+}
+
+table, th, td {
+  border: 5px solid rgb(0, 0, 0);
+}
+th, td {
+  vertical-align: middle;
+}

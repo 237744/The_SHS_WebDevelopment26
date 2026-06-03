@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="CSS/style.css">
 
     <!-- JavaScript -->
-    <!-- These are needed to get the responsive menu to work -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
@@ -51,7 +50,6 @@
 
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav me-auto">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
                     <li class="nav-item">
                         <a href="#" class="nav-link active">Home</a>
                     </li>
@@ -67,7 +65,6 @@
                     <li class="nav-item">
                         <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
                     </li>
-                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                 </ul>
                 <form class="d-flex">
                     <button class="btn btn-primary" type="button">Login</button>
@@ -79,10 +76,8 @@
 
     <main class="container-fluid mt-3">
 
-        <h1 class="text-left my-3 title" tabindex="0">Check out my work!</h1>
-        <!-- Edit this line for the title of your page -->
+        <h1 class="text-left my-3 title title-large" tabindex="0">Check out my work!</h1>
 
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
         <h3 id="topHeading">I'm a Web Developer</h3>
         <table id="hireButtons">
             <tr>
@@ -93,31 +88,34 @@
                     <button class="button">Hire me</button>
                 </td>
                 <td>
-                    <button class="button button1">Hire me</button>
+                    <!-- Part II: Using subclasses instead of button1/button2 -->
+                    <button class="button button-largeRadius">Hire me</button>
                 </td>
                 <td>
-                    <button class="button button2">Hire me</button>
+                    <button class="button button-smallRadius">Hire me</button>
                 </td>
             </tr>
             <tr>
                 <td>
-                    <button class="button button2 red">Hire me</button>
+                    <button class="button button-smallRadius red">Hire me</button>
                 </td>
                 <td>
-                    <!-- New button 1 here-->
+                    <!-- New button 1: glow effect -->
+                    <button class="button button-glow">Hire me</button>
                 </td>
                 <td>
-                    <!-- New button 2 here-->
+                    <!-- New button 2: outline style -->
+                    <button class="button button-outline">Hire me</button>
                 </td>
                 <td>
-                    <!-- New button 3 here-->
+                    <!-- New button 3: shadow/raised style -->
+                    <button class="button button-raised">Hire me</button>
                 </td>
             </tr>
         </table>
         <div class="pt-3">
-            <!-- spacing div-->
 
-            <span class="title">Example of a Heading Title</span>
+            <span class="title title-large">Example of a Heading Title</span>
 
             <div class="content">
 
@@ -135,12 +133,11 @@
                 Even more content
             </p>
 
-            <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑-->
     </main>
 
     <!---------------------------------- Begin the footer ------------->
     <footer>
-        <span class="title">Example of a Footer Title</span>
+        <span class="title title-small">Example of a Footer Title</span>
         <div class="container py-4" id="footerTable">
             <ul class="list-unstyled d-flex justify-content-center">
                 <li class="mx-3">

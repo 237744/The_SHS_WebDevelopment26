@@ -28,7 +28,51 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/SampleJS.js"></script>
+    <script>
+        function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+        }
+    </script>
+    <script>
+        function displayDate() {
+        document.getElementById("demo").innerHTML = Date();
+        }
 
+        function changeText() {
+        document.getElementById("textChange").innerHTML = "JavaScript is awesome!";
+        }
+
+        function changeColor() {
+        document.body.style.backgroundColor = "lightblue";
+        }
+
+        function showAlert() {
+        alert("Welcome to my webpage!");
+        }
+
+        function changeImage() {
+        document.getElementById("myImage").src =
+            "https://www.w3schools.com/js/pic_bulbon.gif";
+        }
+
+        function turnOffImage() {
+        document.getElementById("myImage").src =
+            "https://www.w3schools.com/js/pic_bulboff.gif";
+        }
+
+        function changeSize() {
+        document.getElementById("sizeText").style.fontSize = "35px";
+        }
+
+        function hideText() {
+        document.getElementById("hideMe").style.display = "none";
+        }
+
+        function showText() {
+        document.getElementById("hideMe").style.display = "block";
+        }
+    </script>
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
     <!-- Custom styles for this template -->
@@ -73,19 +117,51 @@
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+                <div class="col-sm-4" style="background-color:yellow;">
+    <center>
+
+        <button onclick="changeColor()">Change Background</button>
+        <br><br>
+
+        <button onclick="showAlert()">Show Alert</button>
+        <br><br>
+
+        <img id="myImage"
+            src="https://www.w3schools.com/js/pic_bulboff.gif"
+            width="100">
+
+        <br><br>
+
+        <button onclick="changeImage()">Break</button>
+        <button onclick="turnOffImage()">Repair</button>
+        
+        <br><br>
+
+        <p id="sizeText">Make this text bigger!</p>
+        <button onclick="changeSize()">Change Size</button>
+
+        <br><br>
+
+        <p id="hideMe">You can hide and show this text.</p>
+        <button onclick="hideText()">Hide</button>
+        <button onclick="showText()">Show</button>
+
+    </center>
+</div>
             </div>
         </div>
     </main>
+    <p id="demo">Click to reveal the date</p>
+
+    <button type="button" onclick="displayDate()">Display Date</button>
+
     <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
 
 
     <!---------------------------------- Begin the footer ------------->
     <footer class="small text-center" id="footer">
         <p>
-            Webpage made by <a href="index.html" target="_blank">[your name]</a>
+            Webpage made by <a href="index.html" target="_blank">AJ Mercer</a>
         </p>
     </footer>
     <!---------------------------------- End the footer ------------->

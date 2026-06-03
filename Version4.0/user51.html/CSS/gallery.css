@@ -17,7 +17,7 @@
 
 .flipper {
   position: relative;
-  transition: 0.6s;
+  transition: 1.6s;
   transform-style: preserve-3d;
 }
 
@@ -74,3 +74,28 @@ p.caption {
   padding: 0 20px 20px 20px;
   text-align: left;
 }
+
+a {
+  color: black;
+}
+
+.caption, .back h1 {
+  font-family: "Orbitron", sans-serif;
+  font-size: 1.7em;
+  padding: 10px 10px 0 10px;
+  margin: 0;
+  text-align: center;
+}
+
+p.caption {
+  position: absolute;
+  bottom: 1vh;
+}
+
+.description {
+  font-size: 0.9em;
+  padding: 0 20px 20px 20px;
+  text-align: left;
+}
+
+@import url(https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap);

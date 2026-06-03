@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Name:
+    Date:
+-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Day 3</title>
+</head>
+
+<body>
+
+    <!-- Addition -->
+
+    <input type="text" id="num1">
+    +
+    <input type="text" id="num2">
+
+    <button onclick="add()">add</button>
+
+    <br><br>
+
+    <!-- Multiplication -->
+
+    <input type="text" id="mult1">
+    *
+    <input type="text" id="mult2">
+
+    <button onclick="multiply()">multiply</button>
+
+    <br><br>
+
+    <!-- Pythagorean Theorem -->
+
+    <h2>Pythagorean Theorem</h2>
+
+    a=
+    <input type="text" id="a">
+
+    <br>
+
+    b=
+    <input type="text" id="b">
+
+    <br><br>
+
+    <button onclick="findC()">Find C</button>
+
+    <script>
+
+        function add() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+
+            alert(num1 + num2);
+        }
+
+        function multiply() {
+            var mult1 = Number(document.getElementById("mult1").value);
+            var mult2 = Number(document.getElementById("mult2").value);
+
+            alert(mult1 * mult2);
+        }
+
+        function findC() {
+            var a = Number(document.getElementById("a").value);
+            var b = Number(document.getElementById("b").value);
+
+            var c = Math.sqrt((a * a) + (b * b));
+
+            alert(c);
+        }
+
+    </script>
+
+</body>
+
+</html>

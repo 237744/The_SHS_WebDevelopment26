@@ -1,37 +1,155 @@
+@import url(rainbow.css);
+/* =============================================
+   UNIVERSAL SELECTOR (Part IV)
+   Changes every element on the page
+   ============================================= */
+* {
+    font-family: 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+/* =============================================
+   ORIGINAL BUTTON CLASSES
+   ============================================= */
 .button {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	padding: 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
-.button1 {
-	border-radius: 8px;
+.button-largeRadius {
+    border-radius: 8px;
 }
 
-.button2 {
-	border-radius: 30%;
+.button-smallRadius {
+    border-radius: 30%;
 }
 
 .red {
-	background-color: #ff0000;
+    background-color: #ff0000;
 }
 
-td{
-	padding:20px;
+/* =============================================
+   NEW BUTTON CLASSES (Part I - 3 new buttons)
+   ============================================= */
+
+.button-glow {
+    background-color: #9b59b6;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #9b59b6, 0 0 20px #9b59b6;
+    transition: box-shadow 0.3s ease;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 13px;
 }
 
-table{
-	margin-left: auto;
-	margin-right: auto;
+.button-glow:hover {
+    box-shadow: 0 0 20px #9b59b6, 0 0 40px #9b59b6, 0 0 60px #9b59b6;
 }
 
-h1, h2, h3, h4, h5, h6{
-	text-align:center;
+.button-outline {
+    background-color: transparent;
+    border: 3px solid #4CAF50;
+    color: #4CAF50;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-outline:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button-raised {
+    background-color: #e67e22;
+    border-radius: 5px;
+    box-shadow: 0 6px 0 #b9570e;
+    position: relative;
+    top: 0;
+    transition: top 0.1s ease, box-shadow 0.1s ease;
+}
+
+.button-raised:hover {
+    top: 3px;
+    box-shadow: 0 3px 0 #b9570e;
+}
+
+.button-raised:active {
+    top: 6px;
+    box-shadow: none;
+}
+
+/* =============================================
+   TABLE & LAYOUT
+   ============================================= */
+td {
+    padding: 20px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-align: center;
+}
+
+/* =============================================
+   TITLE CLASSES + SUBCLASSES (Part II)
+   ============================================= */
+.title {
+    color: red;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.title-large {
+    font-size: 2rem;
+}
+
+.title-small {
+    font-size: .5rem;
+}
+
+/* =============================================
+   ID SELECTORS (Part III)
+   ============================================= */
+
+#hireButtons {
+    background-color: #f0f8ff;
+    border: 2px solid #4CAF50;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#footerTable {
+    background-color: #222222;
+    border-radius: 8px;
+    color: white;
+}
+
+#footerTable i {
+    color: #aaaaaa;
+    transition: color 0.3s ease;
+}
+
+#footerTable i:hover {
+    color: #4CAF50;
+}
+
+#morecontent {
+    background-color: yellow;
 }

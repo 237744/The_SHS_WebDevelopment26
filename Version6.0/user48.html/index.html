@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Mario 3D Land — Power-Ups</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <div class="nav-container">
+      <span class="nav-logo">★ MARIO 3D LAND ★</span>
+      <ul class="nav-links">
+        <li><a href="index.html"> Home</a></li>
+        <li><a href="story.html"> Story</a></li>
+        <li><a href="worlds.html"> Worlds</a></li>
+        <li><a href="powerups.html" class="active"> Power-Ups</a></li>
+        <li><a href="characters.html"> Characters</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="page-wrapper">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <h1> Power-Ups</h1>
+      <p>From iconic mushrooms to the signature Tanooki Suit — discover every power-up that helps Mario conquer the Koopa Kingdom!</p>
+    </header>
+
+    <!-- Intro -->
+    <section aria-label="Power-up introduction">
+      <div class="card">
+        <h2> Mario's Arsenal</h2>
+        <p>Super Mario 3D Land features a focused but incredibly satisfying lineup of power-ups. Rather than overwhelming the player, each ability is introduced gradually and used cleverly throughout the 16 worlds.</p>
+        <p>Most power-ups can be stored in an <strong>Item Box</strong> at the bottom of the screen and used at any time — a lifesaver in tight situations!</p>
+        <span class="badge">5 Core Power-Ups</span>
+        <span class="badge badge-blue">Item Box System</span>
+        <span class="badge badge-red">White Variants!</span>
+      </div>
+    </section>
+
+    <div class="star-divider">★ ★ ★</div>
+
+    <!-- Power-Up Cards -->
+    <section aria-label="Detailed power-up descriptions">
+
+      <!-- Tanooki Suit -->
+      <div class="card card-yellow">
+        <div class="card-media">
+          <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Super_Mario_3D_Land_box_art.png"
+               alt="Tanooki Mario artwork" style="height:190px;object-fit:cover;" />
+          <div>
+            <h2> Super Leaf / Tanooki Suit</h2>
+            <p>The <strong>star of the show</strong>. Collecting a Super Leaf transforms Mario into Tanooki Mario — complete with furry ears, a raccoon tail, and a full-body Tanooki Suit.</p>
+            <p>The tail can be used to <strong>spin-attack enemies</strong>, deflect projectiles, and most importantly — perform a slow-fall glide after jumping, letting Mario cross huge gaps.</p>
+            <p>The White Tanooki Suit (from an Invincibility Leaf) makes Mario temporarily invincible — a mercy mechanic for struggling players.</p>
+            <div>
+              <span class="badge">Spin Attack</span>
+              <span class="badge">Slow-Fall Glide</span>
+              <span class="badge badge-red">White = Invincible</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Super Mushroom -->
+      <div class="card card-red">
+        <div class="card-media">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Mario_Kart_Wii.jpg/250px-Mario_Kart_Wii.jpg"
+               alt="Super Mushroom" style="height:190px;object-fit:cover;" />
+          <div>
+            <h2> Super Mushroom</h2>
+            <p>The classic power-up that started it all. A Super Mushroom transforms <strong>Small Mario</strong> into <strong>Super Mario</strong> — doubling his size and allowing him to break Brick Blocks with his fist.</p>
+            <p>More importantly, being Super Mario gives you an extra hit before dying — essential for surviving trickier levels.</p>
+            <p>Every veteran Mario player knows: always grab the mushroom before you need it!</p>
+            <div>
+              <span class="badge">Doubles Size</span>
+              <span class="badge">Break Brick Blocks</span>
+              <span class="badge badge-green">Extra Hit Point</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fire Flower -->
+      <div class="card card-red">
+        <div class="card-media">
+          <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Super_Mario_3D_Land_box_art.png"
+               alt="Fire Mario" style="height:190px;object-fit:cover;" />
+          <div>
+            <h2> Fire Flower</h2>
+            <p>The beloved Fire Flower transforms Mario into <strong>Fire Mario</strong>, letting him hurl bouncing fireballs at enemies from a distance. Fireballs defeat most regular enemies in a single hit.</p>
+            <p>Fire Mario's projectiles bounce off walls and floors, making them useful for hitting enemies around corners or across gaps.</p>
+            <p>Particularly effective against the Hammer Bros. scattered throughout castles!</p>
+            <div>
+              <span class="badge badge-red">Fireball Throws</span>
+              <span class="badge">Bouncing Shots</span>
+              <span class="badge badge-blue">Ranged Combat</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Boomerang Flower -->
+      <div class="card card-blue">
+        <h2> Boomerang Flower</h2>
+        <p>New to 3D Land! The Boomerang Flower turns Mario into <strong>Boomerang Mario</strong>, arming him with the same weapon used by Boomerang Bros. enemies.</p>
+        <p>Boomerangs can be thrown and then <strong>caught on the return trip</strong> — up to three can be in the air at once. They can also collect distant coins and Star Medals!</p>
+        <p>This power-up requires more skill than the Fire Flower but rewards patient, strategic players.</p>
+        <div>
+          <span class="badge badge-blue">Returning Projectile</span>
+          <span class="badge">Triple Throw</span>
+          <span class="badge">Collects Items!</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="star-divider">⭐ ⭐ ⭐</div>
+
+    <!-- ===== BOOTSTRAP FEATURE 3: CARD DECK with Bootstrap grid ===== -->
+    <section aria-label="Quick power-up reference">
+      <div class="card">
+        <h2> Quick Reference Table</h2>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="card card-yellow h-100 mb-0">
+              <h3> Tanooki</h3>
+              <p>Tail spin + slow fall glide. Best all-round power-up in the game.</p>
+              <span class="badge"> Signature</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-red h-100 mb-0">
+              <h3> Fire</h3>
+              <p>Ranged fireball attacks. Great for clearing groups of enemies.</p>
+              <span class="badge badge-red"> Offensive</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-blue h-100 mb-0">
+              <h3> Boomerang</h3>
+              <p>Returning throws that collect coins. High skill, high reward.</p>
+              <span class="badge badge-blue"> Skilful</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-green h-100 mb-0">
+              <h3> Super</h3>
+              <p>Extra hit point and brick-breaking. Never leave home without it.</p>
+              <span class="badge badge-green"> Defense</span>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card card-red h-100 mb-0">
+              <h3> Invincibility</h3>
+              <p>White Tanooki makes Mario briefly invincible. Mercy mode!</p>
+              <span class="badge badge-red"> Mercy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>★ SUPER MARIO 3D LAND FAN SITE ★</p>
+    <p style="font-family:var(--font-body);color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:8px;">
+      Not affiliated with Nintendo. All characters and trademarks belong to Nintendo Co., Ltd.
+    </p>
+    <nav style="margin-top:14px;">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="worlds.html">Worlds</a>
+      <a href="powerups.html">Power-Ups</a>
+      <a href="characters.html">Characters</a>
+    </nav>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

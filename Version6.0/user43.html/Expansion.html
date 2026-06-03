@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WNBA</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Impact, sans-serif;
+}
+
+body {
+    background: #e6e5e5;
+    text-align: center;
+}
+
+/* NAVBAR */
+.navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #000000;
+            padding: 15px 30px;
+            width: 100vw;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-left a, .nav-right a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-left a:hover, .nav-right a:hover {
+            color: orange;
+        }
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.logo-section img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* TITLE */
+h1 {
+    font-size: 70px;
+    margin: 30px 0;
+    color: white
+}
+
+/* GRID */
+.expansion-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.note {
+    font-size: 14px;
+    color: gray;
+}
+footer {
+    text-align: center;
+    color: white;
+    padding: 50px;
+     background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 90px;
+}
+
+table {
+    margin: 30px auto;
+    border-collapse: collapse;
+    background: white;
+    color: black;
+    width: 90%;
+}
+
+th, td {
+    border: 1px solid rgb(220, 219, 219);
+    padding: 25px;
+    font-size: 25px;
+}
+
+th {
+    background: black;
+    color: white;
+}
+
+td img {
+    width: 120px;
+}
+
+</style>
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <div class="navbar">
+
+        <div class="nav-left">
+            <a href="index.html">Home</a>
+            <a href="Teams.html">Teams</a>
+        </div>
+
+        <div class="logo-section">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="Basketball">
+            Professional Women's Basketball
+        </div>
+
+        <div class="nav-right">
+            <a href="Players.html">Players</a>
+            <a href="Expansion.html">Expansion</a>
+        </div>
+
+    </div>
+    <!-- Heading Section  -->
+   <h1 class="page-title">Expansion Teams</h1>
+<table>
+    <tr>
+        <th>Logo</th>
+        <th>Team</th>
+        <th>Year</th>
+    </tr>
+
+    <tr>
+        <td><img src="https://wnbacleveland.com/wp-content/uploads/2024/10/WCLE_horizontal3.png"></td>
+        <td>Cleveland</td>
+        <td>2028</td>
+    </tr>
+
+    <tr>
+        <td><img src="https://www.freep.com/gcdn/authoring/authoring-images/2025/06/30/PDTF/84415198007-um-lawsuit.png?crop=875,451,x104,y418&width=875&height=451&format=pjpg&auto=webp"></td>
+        <td>Detroit</td>
+        <td>2029</td>
+    </tr>
+
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/en/8/87/WNBA_Philadelphia_Logo.png"></td>
+        <td>Philadelphia</td>
+        <td>2030</td>
+    </tr>
+
+</table>
+    
+    
+<footer>
+<p>© 2026 WNBA Website. All Rights Reserved.</p>
+</footer>

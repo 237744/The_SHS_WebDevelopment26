@@ -37,7 +37,17 @@ h1 {
     font-family: "Fjalla One", sans-serif;
     font-size: 2em;
     text-transform: uppercase;
-    font-weight: 400;
-    border-bottom: 1px solid black;
-    margin-bottom: 1em;
+}
+
+/* Highlight text class for changeText() function */
+.highlight-text {
+    background: linear-gradient(135deg, #0d6efd, #00f2fe);
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(13, 110, 253, 0.3);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
 }

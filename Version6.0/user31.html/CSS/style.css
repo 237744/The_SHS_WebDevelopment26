@@ -1,0 +1,117 @@
+@import url(https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap);
+* {
+    box-sizing: border-box;
+}
+
+#gallery {
+    font-family: "Orbitron", sans-serif;
+    line-height: 1.5em;
+    text-align: center;
+}
+
+.container {
+    display: inline-block;
+    margin: 3%;
+    perspective: 1000px;
+}
+
+.flipper {
+    position: relative;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    backface-visibility: hidden;
+}
+
+.front {
+    z-index: 2;
+}
+
+.back {
+    transform: rotateY(180deg);
+    background-color: lightblue;
+}
+
+.img {
+    width: 600px;
+    height: 700px;
+}
+
+.container, .front, .back {
+    width: 600px;
+    height: 700px;
+}
+
+.container:hover .flipper {
+    transform: rotateY(180deg);
+}
+
+a {
+    color: black;
+}
+
+.caption, .back h1 p {
+    font-family: "Orbitron", sans-serif;
+    font-size: 1.7em;
+    padding: 10px 10px 0 10px;
+    margin: 0;
+    text-align: center;
+}
+
+p.caption {
+    position: absolute;
+    bottom: 1vh;
+}
+
+.description {
+    font-size: 2.3em;
+    padding: 0 20px 20px 20px;
+    text-align: center;
+}
+
+.annoying{
+    max-height: fit-content;
+}
+.big{
+    font-size: 18px;
+}
+.blue{
+    background-color: rgb(246, 246, 246);
+}
+.toptext{
+    margin: 10px;
+    padding: 5px;
+    font-size: 25px;
+    width:800px;
+    max-height: fit-content;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    background-color: rgb(232, 232, 232);
+}
+.images{
+    margin: 10px;
+    padding: 20px;
+    max-width: 660px;
+}
+.contaidner {
+    display: flex;
+    align-items: center; /* aligns them vertically */
+    gap: 10px; /* space between image and text */
+}
+.flex{
+    display:flex;
+}
+.size{
+    width: 800px;
+    list-style:upper-roman;
+    line-height: 60px;
+    
+}

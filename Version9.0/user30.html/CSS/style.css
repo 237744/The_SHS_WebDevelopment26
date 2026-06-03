@@ -1,0 +1,210 @@
+/* ===== GENERAL ===== */
+
+body {
+    background: #f4f6f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar {
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav-link {
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+    transform: translateY(-2px);
+}
+
+/* ===== HEADINGS ===== */
+
+h1 {
+    color: #0d6efd;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-weight: 600;
+}
+
+h3 {
+    font-weight: 600;
+}
+
+/* ===== CONTAINERS ===== */
+
+.container {
+    margin-top: 30px;
+}
+
+/* ===== CARDS ===== */
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* ===== TEAM CARDS ===== */
+
+.team {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.team:hover {
+    transform: scale(1.02);
+}
+
+/* ===== BUTTONS ===== */
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ===== FORMS ===== */
+
+.form-control {
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 10px rgba(13,110,253,.25);
+}
+
+/* ===== API RESULTS ===== */
+
+#teamInfo {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+}
+
+#teamInfo img {
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+
+/* ===== FAN SCORE ===== */
+
+#score {
+    margin-top: 20px;
+    color: #198754;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+/* ===== DATE DISPLAY ===== */
+
+#date {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #555;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    background: #212529;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* ===== DARK MODE ===== */
+
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode label {
+    color: white;
+}
+
+.dark-mode .card,
+.dark-mode .team,
+.dark-mode #teamInfo {
+    background: #1f1f1f;
+    color: white;
+}
+
+.dark-mode .form-control {
+    background: #2b2b2b;
+    color: white;
+    border: 1px solid #444;
+}
+
+.dark-mode .form-control::placeholder {
+    color: #bbb;
+}
+
+.dark-mode .navbar {
+    background: #000 !important;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card {
+        margin-bottom: 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+}

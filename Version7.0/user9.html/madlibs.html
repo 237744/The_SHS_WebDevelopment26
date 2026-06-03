@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        
+        <main>
+            <form id="madlibsForm">
+                <div class="sentence 1">
+                    <input name="name1" type="text" placeholder="Name" required>
+                    <input name="verb1" type="text" placeholder="Verb" required>
+                    <input name="place1" type="text" placeholder="Place" required>
+                    <p></p>
+                    <input name="weather1" type="text" placeholder="Weather" required>
+                    <input name="weather2" type="text" placeholder="Weather" required>
+                    <input name="verb2" type="text" placeholder="Verb" required>
+                </div>
+                <div class="sentence 2">
+                    <input name="verb3" type="text" placeholder="Verb" required>
+                    <input name="place2" type="text" placeholder="Place" required>
+                    <input name="food1" type="text" placeholder="Food" required>
+                    <p></p>
+                    <input name="food2" type="text" placeholder="Food" required>
+                    <input name="place3" type="text" placeholder="Place" required>
+                    <input name="verb4" type="text" placeholder="Verb" required>
+                </div>
+                <div class="sentence 3">
+                    <input name="place4" type="text" placeholder="Place" required>
+                    <input name="emotion1" type="text" placeholder="Emotion" required>
+                    <input name="ingverb1" type="text" placeholder="-ing Verb" required>
+                    <p></p>
+                    <input name="place5" type="text" placeholder="Place" required>
+                    <input name="adjective1" type="text" placeholder="Adjective" required>
+                    <input name="place6" type="text" placeholder="Place" required>
+                    <p></p>
+                    <input name="food3" type="text" placeholder="Food" required>
+                    <input name="food4" type="text" placeholder="Food" required>
+                    <input name="adjective2" type="text" placeholder="Adjective" required>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+
+            <p id="story"></p>
+
+        </main>
+        <script>
+            const form = document.getElementById('madlibsForm');
+            const story = document.getElementById('story');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+                const data = new FormData(form);
+                const finishedStory = `${data.get('name1')} really wanted to ${data.get('verb1')} to the ${data.get('place1')}, but it was ${data.get('weather1')} and ${data.get('weather2')} outside, so he wasn’t able to ${data.get('verb2')} there in time. But he was able to ${data.get('verb3')} to the ${data.get('place2')} and get some ${data.get('food1')} and ${data.get('food2')} so he could stay in his ${data.get('place3')} and ${data.get('verb4')} it from there. And, even though he wasn’t at the ${data.get('place4')}, he was still ${data.get('emotion1')} that he could spend his night ${data.get('ingverb1')} the ${data.get('place5')} and being ${data.get('adjective1')} at ${data.get('place6')}. His favorite snacks were ${data.get('food3')} and ${data.get('food4')} because he’s ${data.get('adjective2')}.`;
+                story.textContent = finishedStory;
+                form.reset(); 
+            });
+        </script>
+    </body>
+</html>

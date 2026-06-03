@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> OFM | Cart </title>
+
+        <!--NECESSITIES-->
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!--Animate-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <!--Styling-->
+        <link rel="stylesheet" href="CSS/style.css">
+        <!--JavaScript-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+        <script src="JAVASCRIPT/script.js"></script> <!--My file-->
+        <!---------------------->
+
+        <style>
+            .navbar-brand {
+                border: 2px groove rgb(230, 230, 230);
+                background-color: rgb(255, 255, 255);
+                border-radius: 9px;
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-bottom: 10px;
+                padding-top: 10px;
+            }
+
+            .navbar-brand:hover {
+                border: 2px groove rgb(208, 208, 208);
+                background-color: rgb(222, 220, 220);
+            }
+
+            .dropdown-item:hover {
+                text-decoration: underline;
+            }
+
+            .nav-link:hover {
+                text-decoration: underline;
+            }
+
+            #contentBlock > * {
+                text-align: left;
+                color: white;
+
+                margin-left: 15px;
+                margin-top: 10px;
+            }
+
+
+            
+        </style>
+    </head>
+
+    <body onload="loadCart()">
+        <!-----------NAVBAR----------->
+        <nav class="navbar navbar-expand-lg py-3">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand">
+                    OFM
+                </a>
+
+                <!--Button for Collapse-->
+                <button 
+                    class="navbar-toggler" 
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#NavMenu">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="NavMenu">
+                    <ul class="navbar-nav me-auto bg-light">
+                        <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+                        <!--Dropdown-->
+                        <li class="nav-item dropdown">
+                            <a 
+                                class="nav-link dropdown-toggle" 
+                                href="#" role="button" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                                >Shop
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="shopA.html" class="dropdown-item">Pet Fish</a>
+                                </li>
+                                <li>
+                                    <a href="shopB.html" class="dropdown-item">Fillet Fish</a>
+                                </li>
+                                <li>
+                                    <hr class="dropdown-divider"></hr>
+                                </li>
+                                <li>
+                                    <a href="cart.html" class="dropdown-item disabled">
+                                        <i class="fas fa-shopping-cart" style="color: rgb(159, 159, 159);"></i>
+                                    </a>
+                                </li>
+                            </ul>
+
+                        </li>
+                        <li class="nav-item"><a href="recipes.html" class="nav-link">Recipes</a></li>
+                    </ul>
+                </div>
+            </div>    
+        </nav>
+
+        <!----------CONTENT------------>
+        <main>
+            </div>
+            <div class="row justify-content-center">
+                <div id="contentBlock">
+                    <h1 id="listdisplay"></h1> 
+                    <hr></hr>
+                   <input type="button" class="buybutton" value="checkout" onclick="emptyLocalStorage()"/>
+
+                    
+                </div>
+            </div>
+        <!-------------FOOTER-------------->
+        <footer>
+            <div class="container-fluid">
+                <div class="row justify-content-left py-3">
+                    <div class="col-lg-3">
+                        <a href="https://orteil.dashnet.org/cookieclicker/" target="_blank" class="footer-link">Cookie Policy</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="https://www.collinsdictionary.com/us/dictionary/english/fish/related" target="_blank" class="footer-link">Affilates</a>
+                    </div>
+                </div>
+
+                <div class="row justify-content-left py-3">
+                    <div class="col-lg-3">
+                        <a href="https://en.wikipedia.org/wiki/Fish" target="_blank" class="footer-link">FAQ</a>
+                    </div>
+                    <div class="col-lg-3">
+                        <a href="https://www.mallofamerica.com/directory/sea-life-minnesota-aquarium" target="_blank" class="footer-link">Aquariums</a>
+                    </div>
+                </div>
+
+
+                <!----Line Break------>
+                <div class="row justify-content-left">
+                    <div class="col-lg-9">
+                         <hr></hr>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <span>
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-pinterest"></i>
+                            <i class="fab fa-youtube"></i>
+                        </span>
+                        <h6>Online Fish Market © 2026</h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Mad Libs</title>
+    <style>
+        body {
+            font-family: Times New Roman, serif;
+            padding: 20px;
+            background: #fff;
+            color: #000;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            width: 80px;
+            font-size: 16px;
+        }
+
+        .form-group input {
+            width: 220px;
+            height: 24px;
+            border: 1px solid #000;
+            padding: 2px 6px;
+            font-size: 14px;
+            font-family: Times New Roman, serif;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 12px;
+            font-size: 14px;
+            background: #f0f0f0;
+            border: 1px solid #888;
+            cursor: pointer;
+            font-family: Times New Roman, serif;
+        }
+
+        #output,
+        #madlib-box {
+            margin-top: 16px;
+            font-size: 16px;
+        }
+
+        #madlib-box {
+            border: 1px solid #000;
+            padding: 10px;
+            min-height: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-group">
+        <label>Noun:</label>
+        <input type="text" id="noun" placeholder="e.g. tree">
+    </div>
+    <div class="form-group">
+        <label>Adjective:</label>
+        <input type="text" id="adjective" placeholder="e.g. green">
+    </div>
+    <div class="form-group">
+        <label>Verb:</label>
+        <input type="text" id="verb" placeholder="e.g. run">
+    </div>
+
+    <button onclick="submitForm()">Submit</button>
+
+    <div id="output"></div>
+    <div id="madlib-box"></div>
+
+    <script>
+        function submitForm() {
+            const noun = document.getElementById('noun').value.trim();
+            const adjective = document.getElementById('adjective').value.trim();
+            const verb = document.getElementById('verb').value.trim();
+
+            document.getElementById('output').textContent =
+                `These are my output words: ${noun || '______'}, ${adjective || '______'}, ${verb || '______'}.`;
+
+            document.getElementById('madlib-box').textContent =
+                `Once upon a time, there was a ${adjective || '______'} ${noun || '______'} who loved to ${verb || '______'} every day.`;
+        }
+    </script>
+
+</body>
+
+</html>

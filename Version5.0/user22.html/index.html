@@ -47,6 +47,12 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+
+        /* Part IV: Customizing Bootstrap striped table row background */
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            --bs-table-color-type: var(--bs-table-striped-color);
+            --bs-table-bg-type: rgba(255, 0, 0, 0.15); /* Tint with red overlay at 15% opacity */
+        }
     </style>
 
     <body>
@@ -151,40 +157,123 @@
                 </div>
             </div>
 
-            <!---------Table-Striped------------------------------------------->
-            <div class="container mt-3" name="table-striped">
+            <!---------Table-Striped (Part IV)---------------------------------->
+            <div class="container mt-4" name="table-striped">
+                <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-table-list text-primary"></i> Team Directory (Striped Table)</h5>
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Row</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Clark</td>
+                            <td>Kent</td>
+                            <td>clarkkent@mail.com</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>John</td>
+                            <td>Carter</td>
+                            <td>johncarter@mail.com</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Peter</td>
+                            <td>Parker</td>
+                            <td>peterparker@mail.com</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <!---------List-Group---------------------------------------------->
-            <div class="container mt-3" name="list-group">
+            <!---------List-Group (Part V)------------------------------------->
+            <div class="container mt-5" name="list-group">
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-list-check text-primary"></i> Navigation Directory</h5>
+                        <div class="list-group">
+                            <a href="#" class="list-group-item list-group-item-action active">
+                                <i class="fa fa-home"></i> Home
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fa fa-camera"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active ms-auto float-end">145</span>
+                            </a>
+                            <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+                                <i class="fa fa-music"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active ms-auto float-end">50</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fa fa-film"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right ms-auto float-end">8</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <h5 class="fw-bold text-dark mb-3"><i class="fa-solid fa-folder-open text-primary"></i> Custom Resource Group</h5>
+                        <div class="list-group">
+                            <a href="https://github.com" target="_blank" class="list-group-item list-group-item-action">
+                                <i class="fa-brands fa-github"></i> GitHub Projects <span class="badge bg-dark ms-auto float-end">12</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fa-solid fa-cloud-arrow-down"></i> Downloads <span class="badge bg-info ms-auto float-end text-dark">4</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fa-solid fa-chart-line"></i> Analytics <span class="badge bg-success ms-auto float-end">Live</span>
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action">
+                                <i class="fa-solid fa-sliders"></i> Settings
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <!---------Form Button--------------------------------------------->
-            <div class="container mt-3 vstack" name="form-button">
+            <!---------Form Button (Part VI)----------------------------------->
+            <div class="container mt-4 mb-5 text-center" name="form-button">
+                <a href="form.html" class="btn btn-success btn-lg px-5 py-3 shadow-sm" role="button" aria-pressed="true"><i class="fa-solid fa-right-to-bracket me-2"></i>Go to Sign-In Form</a>
             </div>
         </main>
 
-        <!---------------------------------- Begin the footer ------------------------------------->
-        <footer>
-            <span class="title">Example of a Footer Title</span>
-            <div class="container py-4" id="footerTable">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
+        <!---------------------------------- Begin the footer (Part 1.5b) -------------------------->
+        <footer class="bg-dark text-light py-5 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase fw-bold text-white mb-3">About WebDev</h5>
+                        <p class="text-muted">A showcase of modern responsive layouts, tables, interactive components, and CSS animations built using the Bootstrap 5 framework.</p>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase fw-bold text-white mb-3">Quick Navigation</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-muted d-block py-1">Home</a></li>
+                            <li><a href="form.html" class="text-muted d-block py-1">Sign In Form</a></li>
+                            <li><a href="confirmation.html" class="text-muted d-block py-1">Confirmation</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5 class="text-uppercase fw-bold text-white mb-3">Connect With Me</h5>
+                        <div class="d-flex gap-3">
+                            <a href="https://facebook.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://x.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                            <a href="https://instagram.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://github.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://tiktok.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr class="border-secondary my-4">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start">
+                        <p class="text-muted mb-0">&copy; 2026 Bauke Nijs. All rights reserved.</p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <p class="text-muted mb-0">Web Development (Teut Q4 2026)</p>
+                    </div>
+                </div>
             </div>
         </footer>
         <!---------------------------------- End the footer --------------------------------------->

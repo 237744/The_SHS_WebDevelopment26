@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Court Time</title>
+    <link rel="icon" type="image/png" href="images/basketball-favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .form-control, .form-select {
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: #FF6B35;
+            box-shadow: 0 0 0 0.2rem rgba(255, 107, 53, 0.25);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .btn-submit {
+            background: linear-gradient(135deg, #FF6B35, #004E89);
+            border: none;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.4s ease;
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.3);
+        }
+        
+        .contact-info-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FF6B35, #004E89);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-basketball"></i> Court Time
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="players.html">Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header text-white text-center py-5" style="background: linear-gradient(135deg, #004E89 0%, #FF6B35 100%);">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Get In Touch</h1>
+            <p class="lead">We'd love to hear from you</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <!-- Contact Info Cards -->
+            <section class="mb-5">
+                <h2 class="text-center mb-5 fw-bold">Contact Information</h2>
+                <div class="row g-4 mb-5">
+                    <div class="col-md-4">
+                        <article class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt fa-lg"></i>
+                            </div>
+                            <h5 class="mt-3 mb-2 fw-bold">Location</h5>
+                            <p class="text-muted">
+                                123 very cool Street<br>
+                                shakopee, BC 12345<br>
+                                United States
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone fa-lg"></i>
+                            </div>
+                            <h5 class="mt-3 mb-2 fw-bold">Phone</h5>
+                            <p class="text-muted">
+                                Main: (555) 123-4567<br>
+                                Support: (555) 123-4568<br>
+                                Hours: 9AM - 6PM CST
+                            </p>
+                        </article>
+                    </div>
+                    <div class="col-md-4">
+                        <article class="contact-info-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope fa-lg"></i>
+                            </div>
+                            <h5 class="mt-3 mb-2 fw-bold">Email</h5>
+                            <p class="text-muted">
+                                General: 318108@shakopeeschools.org<br>
+                                Support: 318108@shakopeeschools.org<br>
+                                Business: 318108@shakopeeschools.org
+                            </p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <hr class="my-5">
+
+            <!-- Contact Form -->
+            <section class="mb-5">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="text-center mb-5 fw-bold">Send us a Message</h2>
+                        
+                        <form action="#" method="POST" novalidate>
+                            <!-- Name Field -->
+                            <div class="mb-4">
+                                <label for="fullName" class="form-label">
+                                    <i class="fas fa-user"></i> Full Name
+                                </label>
+                                <input type="text" class="form-control" id="fullName" name="fullName" placeholder="John Doe" required>
+                                <small class="form-text text-muted">Enter your complete name</small>
+                            </div>
+
+                            <!-- Email Field -->
+                            <div class="mb-4">
+                                <label for="email" class="form-label">
+                                    <i class="fas fa-envelope"></i> Email Address
+                                </label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com" required>
+                                <small class="form-text text-muted">We'll never share your email with anyone else</small>
+                            </div>
+
+                            <!-- Phone Field -->
+                            <div class="mb-4">
+                                <label for="phone" class="form-label">
+                                    <i class="fas fa-phone"></i> Phone Number
+                                </label>
+                                <input type="tel" class="form-control" id="phone" name="phone" placeholder="(555) 123-4567">
+                                <small class="form-text text-muted">Optional - for faster response</small>
+                            </div>
+
+                            <!-- Subject Selection -->
+                            <div class="mb-4">
+                                <label for="subject" class="form-label">
+                                    <i class="fas fa-tag"></i> Subject
+                                </label>
+                                <select class="form-select" id="subject" name="subject" required>
+                                    <option selected disabled>Choose a subject...</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="player-info">Player Information Request</option>
+                                    <option value="stats">Statistics Question</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="content-request">Content Request</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Message Field -->
+                            <div class="mb-4">
+                                <label for="message" class="form-label">
+                                    <i class="fas fa-comment"></i> Message
+                                </label>
+                                <textarea class="form-control" id="message" name="message" rows="6" placeholder="Tell us about your inquiry..." required></textarea>
+                                <small class="form-text text-muted">Minimum 20 characters</small>
+                            </div>
+
+                            <!-- Checkbox Group (Lists) -->
+                            <div class="mb-4">
+                                <label class="form-label">
+                                    <i class="fas fa-list"></i> I'm interested in (Check all that apply)
+                                </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="interest1" name="interests">
+                                    <label class="form-check-label" for="interest1">
+                                        <i class="fas fa-star"></i> Player Statistics & Analysis
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="interest2" name="interests">
+                                    <label class="form-check-label" for="interest2">
+                                        <i class="fas fa-images"></i> Gallery & Highlights
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="interest3" name="interests">
+                                    <label class="form-check-label" for="interest3">
+                                        <i class="fas fa-book"></i> Basketball Tips & Tutorials
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="interest4" name="interests">
+                                    <label class="form-check-label" for="interest4">
+                                        <i class="fas fa-bell"></i> News & Updates
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Agreement Checkbox -->
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="agreement" name="agreement" required>
+                                    <label class="form-check-label" for="agreement">
+                                        I agree to be contacted about my inquiry
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="d-grid gap-2">
+                                <button type="submit" class="btn btn-submit btn-lg text-white">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </div>
+
+                            <!-- Cancel Button -->
+                            <div class="mt-3 text-center">
+                                <a href="index.html" class="btn btn-outline-secondary">
+                                    <i class="fas fa-arrow-left"></i> Back to Home
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="bg-light rounded p-5">
+                <h2 class="text-center mb-5 fw-bold">Frequently Asked Questions</h2>
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <i class="fas fa-question-circle me-2"></i> How often is the website updated?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Court Time is updated regularly with new player statistics, game highlights, and content. We typically add new gallery items and statistics after each game day.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <i class="fas fa-question-circle me-2"></i> Can I download player statistics?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes! Visit our Players page to download detailed statistics in PDF or CSV format. These files can be easily imported into spreadsheet applications.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <i class="fas fa-question-circle me-2"></i> How can I submit photos to the gallery?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Use the contact form below and select "Content Request" as your subject. Include details about your photos and we'll get back to you shortly!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h5>Court Time</h5>
+                    <p>Your basketball hub for stats, highlights, and more.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-decoration-none text-warning">About</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none text-warning">Gallery</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-warning">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p class="mb-0">&copy; 2026 Court Time. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

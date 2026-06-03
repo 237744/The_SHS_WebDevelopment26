@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA History Vault | Past Champions</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body { 
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        
+        /* Navbar matching your Home Page */
+        .nav-link { 
+            color: #ffffff !important; 
+        }
+        
+        .nav-link:hover { 
+            color: #ff0000 !important; 
+        }
+
+        /* Highlights the current page link in the navbar */
+        .active-page {
+            color: #ff0000 !important;
+            font-weight: bold;
+        }
+
+        /* Header Styling */
+        .page-header {
+            background-color: #034fba; /* The blue from your homepage cards */
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid #ff0000; /* Red border from your cards */
+        }
+
+        /* Table Styling */
+        .table-custom {
+            border: 2px solid #ff0000;
+        }
+        
+        .table-custom thead {
+            background-color: #034fba;
+            color: #ffffff;
+        }
+        
+        /* Adds a light blue tint to alternating rows for readability */
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            background-color: rgba(3, 79, 186, 0.1); /* Light blue tint */
+        }
+        .Thunder {color: #ffffff !important;background-color: #007AC1 !important; font-weight: bold; }
+        .celtics { color: #ffffff !important;background-color: #007A33 !important; font-weight: bold; }
+.nuggets { color: #ffffff !important;background-color: #0E2240 !important; font-weight: bold; }
+.warriors { color: #ffffff !important;background-color: #1D428A !important; font-weight: bold;  }
+.bucks { color: #ffffff !important;background-color: #00471B !important; font-weight: bold;  }
+.lakers { color: #ffffff !important;background-color: #552583 !important; font-weight: bold;  }
+.raptors { color: #ffffff !important;background-color: #CE1141 !important; font-weight: bold; }
+.pacers { color: #ffffff !important;background-color: #002D62 !important; font-weight: bold; }
+.mavericks { color: #ffffff !important;background-color: #00538C !important; font-weight: bold; }
+.heat { color: #ffffff !important;background-color: #98002E !important; font-weight: bold; }
+.suns { color: #ffffff !important;background-color: #1D1160 !important; font-weight: bold; }
+.cavs { color: #ffffff !important;background-color: #6F263D !important; font-weight: bold; }
+.spurs { color: #ffffff !important;background-color: #000000 !important; font-weight: bold; }
+.magic { color: #ffffff !important;background-color: #0077C0 !important; font-weight: bold; }
+.pistons { color: #ffffff !important;background-color: #C8102E !important; font-weight: bold; }
+.nets { color: #ffffff !important;background-color: #003d7a !important; font-weight: bold; }
+.sixers { color: #ffffff !important;background-color: #006BB6 !important; font-weight: bold; }
+.knicks { color: #ffffff !important;background-color: #006BB6 !important; font-weight: bold; }
+.bulls { color: #ffffff !important;background-color: #CE1141 !important; font-weight: bold; }
+.jazz { color: #ffffff !important;background-color: #00471B !important; font-weight: bold; }
+.wizards { color: #ffffff !important;background-color: #002B5C !important; font-weight: bold; }
+.sonics { color: #ffffff !important;background-color: #007A33 !important; font-weight: bold; }
+.rockets { color: #ffffff !important;background-color: #CE1141 !important; font-weight: bold; }
+.trialblazers { color: #ffffff !important;background-color: #E03A3E !important; font-weight: bold; }
+.table-custom td.Thunder, 
+.table-custom td.celtics, 
+.table-custom td.nuggets, 
+.table-custom td.warriors, 
+.table-custom td.bucks, 
+.table-custom td.lakers, 
+.table-custom td.raptors, 
+.table-custom td.pacers,
+.table-custom td.mavericks, 
+.table-custom td.heat, 
+.table-custom td.suns,
+.table-custom td.cavs,
+.table-custom td.spurs,
+.table-custom td.magic,
+.table-custom td.pistons,
+.table-custom td.nets,
+.table-custom td.knicks,
+.table-custom td.bulls,
+.table-custom td.jazz,
+.table-custom td.wizards,
+.table-custom td.sonics,
+.table-custom td.rockets,
+.table-custom td.trialblazers {
+    background-color: inherit;
+    opacity: 1 !important;
+}
+
+{
+    background-color: inherit; 
+    opacity: 1 !important;
+}
+.table-custom th, 
+.table-custom td {
+    border-left: 4px solid #000000 !important;
+}
+
+.table-custom th:first-child, 
+.table-custom td:first-child {
+    border-left: none !important;
+}
+.footer-bar {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 0;
+    border-top: 2px solid #ffc107; /* The thin Gold line */
+    font-size: 0.85rem;
+    margin-top: auto; /* Helps with sticky footer */
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff0000; /* Red hover to match your page style */
+}
+
+/* This part ensures the footer stays at the bottom of the screen 
+   even if the page doesn't have much content */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning">
+    <div class="container-fluid justify-content-start gap-3">
+        <a class="navbar-brand" href="index.html">Home</a>
+        
+        <div class="navbar-nav flex-row gap-3">
+            <a class="nav-link active-page" href="champions.html">Past Champions</a>
+            <a class="nav-link" href="mvps.html">MVPs</a>
+            <a class="nav-link" href="nbadraft.html">NBA Draft</a>
+            <a class="nav-link" href="teamhistory.html">Team history</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-header mb-5">
+    <div class="container">
+        <h1 class="display-3 fw-bold">Past Champions</h1>
+        <p class="lead">The legendary teams that took home the Larry O'Brien Trophy.</p>
+    </div>
+</header>
+
+<main class="container mb-5">
+    <div class="table-responsive shadow">
+        <table class="table table-hover table-striped table-custom align-middle text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">Champion</th>
+                    <th scope="col">Runner-Up</th>
+                    <th scope="col">Finals MVP</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">2025</th>
+                    <td class="Thunder">Oklahoma City Thunder</td>
+                    <td class="pacers">Indiana Pacers</td>
+                    <td>Shai Gilgeous-Alexander</td>
+                </tr>
+                <tr>
+                    <th scope="row">2024</th>
+                    <td class="celtics">Boston Celtics</td>
+                    <td class="mavericks">Dallas Mavericks</td>
+                    <td>Jaylen Brown</td>
+                </tr>
+                <tr>
+                    <th scope="row">2023</th>
+                    <td class="nuggets">Denver Nuggets</td>
+                    <td class="heat">Miami Heat</td>
+                    <td>Nikola Jokić</td>
+                </tr>
+                <tr>
+                    <th scope="row">2022</th>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td class="celtics">Boston Celtics</td>
+                    <td>Stephen Curry</td>
+                </tr>
+                <tr>
+                    <th scope="row">2021</th>
+                    <td class="bucks">Milwaukee Bucks</td>
+                    <td class="suns">Phoenix Suns</td>
+                    <td>Giannis Antetokounmpo</td>
+                </tr>
+                <tr>
+                    <th scope="row">2020</th>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="heat">Miami Heat</td>
+                    <td>LeBron James</td>
+                </tr>
+                <tr>
+                    <th scope="row">2019</th>
+                    <td class="raptors">Toronto Raptors</td>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td>Kawhi Leonard</td>
+                </tr>
+                <tr>
+                    <th scope="row">2018</th>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td class="cavs">Cleveland Cavaliers</td>
+                    <td>Kevin Durant</td>
+                </tr>
+                <tr>
+                    <th scope="row">2017</th>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td class="cavs">Cleveland Cavaliers</td>
+                    <td>Kevin Durant</td>
+                </tr>
+                <tr>
+                    <th scope="row">2016</th>
+                    <td class="cavs">Cleveland Cavaliers</td>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td>LeBron James</td>
+                </tr>
+                <tr>
+                    <th scope="row">2015</th>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td class="cavs">Cleveland Cavaliers</td>
+                    <td>Andre Iguodala</td>
+                </tr>
+                <tr>
+                    <th scope="row">2014</th>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td class="heat">Miami Heat</td>
+                    <td>Kawhi Leonard</td>
+                </tr>
+                <tr>
+                    <th scope="row">2013</th>
+                    <td class="heat">Miami Heat</td>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td>LeBron James</td>
+                </tr>
+                <tr>
+                    <th scope="row">2012</th>
+                    <td class="heat">Miami Heat</td>
+                    <td class="Thunder">Oklahoma City Thunder</td>
+                    <td>LeBron James</td>
+                </tr>
+                <tr>
+                    <th scope="row">2011</th>
+                    <td class="mavericks">Dallas Mavericks</td>
+                    <td class="heat">Miami Heat</td>
+                    <td>Dirk Nowitzki</td>
+                </tr>
+                <tr>
+                    <th scope="row">2010</th>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="celtics">Boston Celtics</td>
+                    <td>Kobe Bryant</td>
+                </tr>
+                <tr>
+                    <th scope="row">2009</th>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="magic">Orlando Magic</td>
+                    <td>Kobe Bryant</td>
+                </tr>
+                <tr>
+                    <th scope="row">2008</th>
+                    <td class="celtics">Boston Celtics</td>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td>Paul Pierce</td>
+                </tr>
+                <tr>
+                    <th scope="row">2007</th>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td class="cavs">Cleveland Cavaliers</td>
+                    <td>Tony Parker</td>
+                </tr>
+                <tr>
+                    <th scope="row">2006</th>
+                    <td class="heat">Miami Heat</td>
+                    <td class="mavericks">Dallas Mavericks</td>
+                    <td>Dwyane Wade</td>
+                </tr>
+                <tr>
+                    <th scope="row">2005</th>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td class="pistons">Detroit Pistons</td>
+                    <td>Tim Duncan</td>
+                </tr>
+                <tr>
+                    <th scope="row">2004</th>
+                    <td class="pistons">Detroit Pistons</td>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td>Chauncey Billups</td>
+                </tr>
+                <tr>
+                    <th scope="row">2003</th>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td class="nets">New Jersey Nets</td> 
+                    <td>Tim Duncan</td>
+                </tr>
+                <tr>
+                    <th scope="row">2002</th>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="nets">New Jersey Nets</td> 
+                    <td>Shaquille O'Neal</td>
+                </tr>
+                <tr>
+                    <th scope="row">2001</th>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="sixers">Philadelphia 76ers</td>
+                    <td>Shaquille O'Neal</td>
+                </tr>
+                <tr>
+                    <th scope="row">2000</th>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="pacers">Indiana Pacers</td>
+                    <td>Shaquille O'Neal</td>
+                </tr>
+                <tr>
+                    <th scope="row">1999</th>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td class="knicks">New York Knicks</td>
+                    <td>Tim Duncan</td>
+                </tr>
+                <tr>
+                    <th scope="row">1998</th>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td class="jazz">Utah Jazz</td>
+                    <td>Michael Jordan</td>
+                </tr>
+                <tr>
+                    <th scope="row">1997</th>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td class="jazz">Utah Jazz</td>
+                    <td>Michael Jordan</td>
+                </tr>
+                <tr>
+                    <th scope="row">1996</th>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td class="sonics">Seattle SuperSonics</td>
+                    <td>Michael Jordan</td>
+                </tr>
+                <tr>
+                    <th scope="row">1995</th>
+                    <td class="rockets">Houston Rockets</td>
+                    <td class="magic">Orlando Magic</td>
+                    <td>Hakeem Olajuwon</td>
+                </tr>
+                <tr>
+                    <th scope="row">1994</th>
+                    <td class="rockets">Houston Rockets</td>
+                    <td class="knicks">New York Knicks</td>
+                    <td>Hakeem Olajuwon</td>
+                </tr>
+                <tr>
+                    <th scope="row">1993</th>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td class="suns">Phoenix Suns</td>
+                    <td>Michael Jordan</td>
+                </tr>
+                <tr>
+                    <th scope="row">1992</th>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td class="trialblazers">Portland Trail Blazers</td>
+                    <td>Michael Jordan</td>
+                </tr>
+                <tr>
+                    <th scope="row">1991</th>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td>Michael Jordan</td>
+                </tr>
+                <tr>
+                    <th scope="row">1990</th>
+                    <td class="pistons">Detroit Pistons</td>
+                    <td class="trialblazers">Portland Trail Blazers</td>
+                    <td>Isiah Thomas</td>
+                </tr>
+                <tr>
+                    <th scope="row">1989</th>
+                    <td class="pistons">Detroit Pistons</td>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td>Joe Dumars</td>
+                </tr>
+                <tr>
+                    <th scope="row">1988</th>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="pistons">Detroit Pistons</td>
+                    <td>James Worthy</td>
+                </tr>
+                <tr>
+                    <th scope="row">1987</th>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="celtics">Boston Celtics</td>
+                    <td>Magic Johnson</td>
+            </tbody>
+        </table>
+    </div>
+</main>
+<footer class="footer-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <p class="mb-0">© 2026 NBA History Vault</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="champions.html">Champions</a>
+            <a href="mvps.html">MVPs</a>
+            <a href="nbadraft.html">Draft</a>
+            <a href="teamhistory.html">Teams history</a>
+        </div>
+    </div>
+</footer>
+</html>

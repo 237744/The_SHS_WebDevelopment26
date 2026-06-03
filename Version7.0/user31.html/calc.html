@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function addNums(){
+                const a = document.getElementById("addNum1").value;
+                const b = document.getElementById("addNum2").value;
+                document.write(a+b);
+            }
+            function multiplyNums(){
+                const a = document.getElementById("multiNum1").value;
+                const b = document.getElementById("multiNum2").value;
+                document.write(a*b);
+            }
+            function abcNums(){
+                const a = document.getElementById("aNum1").value;
+                const b = document.getElementById("bNum2").value;
+                document.write(Math.sqrt((a*a)+(b*b)))
+            }
+        </script>
+    </head>
+
+    <body>
+        <main>
+            <div">
+                <input id="addNum1" type="text" />
+                <input id="addNum2" type="text" />
+                <input id="sumButton" onclick="addNums()" type="button" value="add" />
+            </div>
+            <div>
+            <input id="multiNum1" type="text"/>
+            <input id="multiNum2" type="text"/>
+            <input id="sumButton" onclick="multiplyNums()" type="button" value="multiply" />
+            </div>
+            <div>
+            <input id="aNum1" type="text"/>
+            <input id="bNum2" type="text"/>
+            <input id="sumButton" onclick="abcNums()" type="button" value="c" />
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+
+body{
+    background-color: #1c1c1c;
+    color: white;
+    font-family: Arial;
+}
+
+.hero{
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    padding: 120px;
+}
+
+.card{
+    margin-bottom: 20px;
+}
+
+.dark{
+    background-color: white;
+    color: black;
+}
+
+img{
+    height: 250px;
+    object-fit: cover;
+}
+

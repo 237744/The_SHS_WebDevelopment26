@@ -47,6 +47,10 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: rgba(255, 0, 0, 0.3)
+        }
     </style>
 
     <body>
@@ -57,28 +61,29 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                	
+<a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a>
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav me-auto">
                         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">Home</a>
+                            <a href="file:///Users/237628/Documents/GitHub/The_SHS_WebDevelopment48/Version5.0/user48.html/index.html" class="nav-link active">Home</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Link
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="file:///Users/237628/Documents/GitHub/The_SHS_WebDevelopment48/Version5.0/user48.html/index.html#">Loop</a></li>
+                                <li><a class="dropdown-item" href="file:///Users/237628/Documents/GitHub/The_SHS_WebDevelopment48/Version5.0/user48.html/index.html#">not this one</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="file:///Users/237628/Documents/GitHub/The_SHS_WebDevelopment48/Version5.0/user48.html/index.html#">nope i guess none of these work</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="1">Contact</a>
                         </li>
                         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                     </ul>
@@ -87,6 +92,20 @@
                     </form>
                 </div>
             </div>
+            <div class="list-group">
+                 <a href="https://fontawesome.com/icons/caret-up?f=classic&s=solid" class="list-group-item list-group-item-action active">
+                    <i class="fa-solid fa-caret-up"></i> Home
+                 </a>
+                 <a href="https://fontawesome.com/icons/stripe?f=brands&s=solid" class="list-group-item list-group-item-action">
+                    <i class="fa-brands fa-stripe"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active">145</span>
+                </a>
+                 <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+                    <i class="fa fa-music"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active">50</span>
+                 </a>
+                 <a href="#" class="list-group-item list-group-item-action">
+                    <i class="fa fa-film"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right">8</span>
+                 </a>
+</div>
         </nav>
         <!---------------------------------- End the nav-bar ------------------------------------->
         <!---------Jumbotron---------------------------------------------->
@@ -170,19 +189,11 @@
             <div class="container py-4" id="footerTable">
                 <ul class="list-unstyled d-flex justify-content-center">
                     <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
+                    <a href="https://www.youtube.com/@imarealdoor9" class="youtube"></a>
+                        <i class="fa-brands fa-youtube fa-3x" aria-hidden="true"></i>
                     <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
+                    <a href="https://github.com/237628-afk" class="github"></a>
                         <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
                     </li>
                 </ul>
             </div>

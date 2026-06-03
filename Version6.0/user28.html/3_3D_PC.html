@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #canvas {
+      width: 800px;
+      height: 600px;
+      border: 1px solid black; /* To visually confirm canvas is attached */
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="canvas"></div>
+  <canvas id="testCanvas"></canvas>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    // WebGL fallback test
+    const testCanvas = document.getElementById('testCanvas');
+    const gl = testCanvas.getContext('webgl') || testCanvas.getContext('experimental-webgl');
+    if (gl) {
+      console.log('WebGL is working!');
+      testCanvas.style.backgroundColor = 'lightgreen'; // Visual confirmation
+    } else {
+      console.error('WebGL is not supported or could not initialize.');
+      testCanvas.style.backgroundColor = 'red'; // Visual indication of failure
+    }
+
+    // Proceed with Three.js rendering only if WebGL is available
+    if (gl) {
+      // Scene
+      const scene = new THREE.Scene();
+
+      // Renderer
+      const renderer = new THREE.WebGLRenderer({ antialias: true });
+      const canvasDiv = document.getElementById('canvas');
+      const width = canvasDiv.offsetWidth;
+      const height = canvasDiv.offsetHeight;
+      renderer.setSize(width, height);
+      renderer.setClearColor(0x202020); // Set background color to dark gray
+      canvasDiv.appendChild(renderer.domElement);
+
+      // Camera
+      const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+      camera.position.z = 5;
+
+      // PC Case
+      const caseGeometry = new THREE.BoxGeometry(2.5, 3, 1.5);
+      const caseMaterial = new THREE.MeshPhongMaterial({ color: 0x808080, shininess: 30, transparent: true, opacity: 0.5 });
+      const pcCase = new THREE.Mesh(caseGeometry, caseMaterial);
+      scene.add(pcCase);
+
+      // Motherboard
+      const motherboardGeometry = new THREE.BoxGeometry(1.50, 1.50, 0.1);
+      const motherboardMaterial = new THREE.MeshStandardMaterial({ color: 0x0000ff });
+      const motherboard = new THREE.Mesh(motherboardGeometry, motherboardMaterial);
+      motherboard.position.set(0.40, 0.50, 0.55);
+      pcCase.add(motherboard);
+
+      // CPU
+      const cpuGeometry = new THREE.BoxGeometry(0.3, 0.3, 0.09);
+      const cpuMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+      const cpu = new THREE.Mesh(cpuGeometry, cpuMaterial);
+      cpu.position.set(0.20, 0.30, -0.05);
+      motherboard.add(cpu);
+
+      // GPU
+      const gpuGeometry = new THREE.BoxGeometry(0.90, 0.2, 0.25);
+      const gpuMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+      const gpu = new THREE.Mesh(gpuGeometry, gpuMaterial);
+      gpu.position.set(0.30, -0.35, -0.17);
+      motherboard.add(gpu);
+
+      // RAM
+      const ramGeometry = new THREE.BoxGeometry(0.05, 0.5, 0.2);
+      const ramMaterial = new THREE.MeshStandardMaterial({ color: 0xffffff });
+      const ram1 = new THREE.Mesh(ramGeometry, ramMaterial);
+      ram1.position.set(-0.1, 0.3, -0.1);
+      motherboard.add(ram1);
+
+      const ram2 = new THREE.Mesh(ramGeometry, ramMaterial);
+      ram2.position.set(-0.2, 0.3, -0.1);
+      motherboard.add(ram2);
+
+      // Lights
+      const ambientLight = new THREE.AmbientLight(0xffffff, 0.5); // Soft ambient light
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+      directionalLight.position.set(5, 5, 5);
+      scene.add(directionalLight);
+
+      const spotLight = new THREE.SpotLight(0xffffff, 1);
+      spotLight.position.set(0, 5, 5);
+      spotLight.castShadow = true;
+      scene.add(spotLight);
+
+      // Animation
+      function animate() {
+        requestAnimationFrame(animate);
+        pcCase.rotation.y += 0.01; // Rotate the case for better visibility
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        const newWidth = canvasDiv.offsetWidth;
+        const newHeight = canvasDiv.offsetHeight;
+        renderer.setSize(newWidth, newHeight);
+        camera.aspect = newWidth / newHeight;
+        camera.updateProjectionMatrix();
+      });
+    } else {
+      console.error('Three.js rendering cannot proceed due to WebGL issues.');
+    }
+  </script>
+</body>
+</html>

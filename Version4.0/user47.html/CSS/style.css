@@ -1,3 +1,4 @@
+@import url(rainbow.css);
 .button {
 	background-color: #4CAF50;
 	border: none;
@@ -10,17 +11,100 @@
 	margin: 4px 2px;
 	cursor: pointer;
 }
-
-.button1 {
-	border-radius: 8px;
+.button5:hover {
+	background-color: goldenrod;
+	border-radius: 0%;
 }
-
-.button2 {
-	border-radius: 30%;
+.button5:active {
+	background-color: blueviolet;
+	border-radius: 0%;
 }
-
-.red {
-	background-color: #ff0000;
+.button6:hover {
+	background-color: rgb(63, 218, 32);
+	border-radius: 0%;
+}
+.button6:active {
+	background-color: rgb(43, 83, 226);
+	border-radius: 0%;
+}
+.button6 { 
+	background-color: #4c9eaf;
+	border: none;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.button7:hover {
+	background-color: rgb(32, 218, 79);
+	border-radius: 0%;
+}
+.button7:active {
+	background-color: red;
+	border-radius: 0%;
+}
+.button7 { 
+	background-color: #af4c9e;
+	border: none;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.button8:hover {
+	background-color: goldenrod;
+	border-radius: 0%;
+}
+.button8:active {
+	background-color: blueviolet;
+	border-radius: 0%;
+}
+.button8 { 
+	background-color: #ec0b0b;
+	border: none;
+	color: white;
+	padding: 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: goldenrod;
+	border-radius: 0%;
+}
+.button:active {
+	background-color: blueviolet;
+	border-radius: 0%;
+}
+.button1:hover {
+	background-color: red;
+	border-radius: 0px;
+}
+.button1:active {
+	background-color:lightblue;
+	border-radius: 0px;
+}
+.button2:hover {
+	background-color: bisque;
+	border-radius: 0%;
+}
+.button2:active {
+	background-color: purple;
+	border-radius: 0%;
+}
+.red :hover{
+	background-color: #00aeff;
 }
 
 td{
@@ -34,4 +118,32 @@ table{
 
 h1, h2, h3, h4, h5, h6{
 	text-align:center;
+}
+title{
+  color: rgb(0, 217, 255);
+  font-family: 'Trebuchet MS', sans-serif; 
+}
+.title-large {
+  font-size: 2rem;
+}
+.title-small {
+  font-size: .5rem;
+}
+#morecontent {
+  background-color: yellow;
+}
+*{
+    text-align:left;
+    border: 0px solid black;
+}
+#knowledge > * {
+  border: 3px red solid;
+}　p + * {
+  background-color: #FFFF00;
+}
+#knowledge li::marker{
+  content:"😜 ";
+}
+td:hover {
+  background-color: black;
 }

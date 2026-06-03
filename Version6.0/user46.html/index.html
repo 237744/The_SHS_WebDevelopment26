@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Version 6.0
+        Name: Zak
+        Date Completed:
+    -->
+<head>
+    <title>Zak - Web Developer Portfolio</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Zak's Web Development Portfolio - Creative & Responsive Websites">
+
+    <!-- CSS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/atree.jpg">
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+  body {
+    background-color: #0066ff;
+  }
+</style>
+
+    <!-- Custom styles -->
+    <style type="text/css">
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .hero-section {
+            background: #252525;
+            color: white;
+            padding: 100px 0;
+        }
+        .nav-link {
+            color: rgb(255, 255, 255);
+            transition: all 0.3s;
+        }
+        .nav-link:hover {
+            color: hsl(0, 0%, 24%);
+            transform: translateY(-2px);
+        }
+        .card {
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: none;
+            color: #000000;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .gallery-img {
+            border-radius: 10px;
+            overflow: hidden;
+            height: 300px;
+            object-fit: cover; 
+            background: #000000;
+        }
+        footer {
+            font-size: 14px;
+            margin-top: 60px;
+        }
+        .btn-custom {
+            background: #333;
+            border: 2px solid #666;
+            transition: all 0.3s;
+        }
+        .btn-custom:hover {
+            background: #555;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand fw-bold"><i class="fas fa-code"></i> WebDev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+    <a href="index.html" class="nav-link active">Home</a>
+</li>
+<li class="nav-item">
+    <a href="Display.html" class="nav-link">Display</a>
+</li>
+<li class="nav-item">
+    <a href="rankings.html" class="nav-link">Rankings</a>
+</li>
+                    <li class="nav-item">
+                        <a href="skills.html" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="https://www.google.com" class="nav-link">Visit Google (why not?)</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h1 class="display-4 fw-bold mb-3 animate__animated animate__fadeInUp">Hello... Weclome</h1>
+                    <p class="lead mb-4 animate__animated animate__fadeInUp" style="animation-delay: 0.2s;">The "best" Developer in the World</p>
+                    <a href="https://shakopee.instructure.com/courses/165732/assignments/1271687?module_item_id=2266936" class="btn btn-custom btn-lg text-white"><i class="fas fa-star"></i> 1.6 Build Your Static Website</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <h2 class="mb-3"><i class="fas fa-user"></i> About Me</h2>
+                <p class="fs-5">My name is Zak, and I'm a Freshman web developer with a passion for creating beautiful, responsive websites. I code to deliver projects that stand out.</p> <sub>(No bias)</sub>
+                <ul class="list-unstyled">
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-light">
+                    <div class="card-body">
+                        <h5 class="card-title">Quick Facts</h5>
+                        <p><strong>Level:</strong> Freshman Developer</p>
+                        <p><strong>Specialization:</strong> Web Development</p>
+                        <p><strong>Focus:</strong> Responsive & Interactive Sites</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Section -->
+    <div class="container my-5">
+        <class="bg-dark text-black mt-5 py-5>
+        <h2 class="text-center mb-5"><i class="fas fa-images"></i> Gallery - Paris, France</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <img src="images/download.jpeg" alt="Paris" class="img-fluid gallery-img">
+            </div>
+            <div class="col-md-6 mb-4">
+                <img src="images/paris.jpeg" alt="Paris Scenic" class="img-fluid gallery-img">
+            </div>
+        </div>
+        <p class="text-center text-muted">Here are some cool pictures of Paris, France - check <a href="display.html" class="text-decoration-none"><u>"display.html"</u></a> for more!</p>
+
+    <!-- CTA Section -->
+    <div class="bg-light py-5 my-5">
+        <div class="container text-center">
+            <h3 class="mb-4">Ready to View Some <i><b>Cool</b></i>  Stuff?</h3>
+            <p class="mb-4">Click the other links to explore more!</p>
+            <a href="#" class="btn btn-custom btn-lg text-white"><i class="fas fa-star"></i></a>
+        </div>
+    </div>
+<!-- Advanced Responsive Card Component -->
+<div class="card-grid">
+  <article class="card">
+    <h3>Shop</h3>
+    <p>Everything is not on sale</p><p style="font-size: 10px; transform: scale(0.2); transform-origin: left;">
+  Ok fine, We are selling Stuff. Wait.. how are you even reading this?
+</p>
+    <a href="http://127.0.0.1:5500/Version6.0/user46.html/products.html" class="btn">Explore</a>
+  </article>
+</div>
+<div class="table-container">
+    <footer class="bg-dark text-white mt-5 py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h5><i class="fas fa-code"></i> WebDev</h5>
+                    <p>Creating responsive, beautiful web experiences</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white-50 text-decoration-none">Home</a></li>
+                        <li><a href="display.html" class="text-white-50 text-decoration-none">Display</a></li>
+                        <li><a href="skills.html" class="text-white-50 text-decoration-none">Skills</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>More</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="rankings.html" class="text-white-50 text-decoration-none">Rankings</a></li>
+                        <li><a href="products.html" class="text-white-50 text-decoration-none">Products</a></li>
+                        <li><a href="https://www.google.com" class="text-white-50 text-decoration-none">Visit Google (why not?)</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-white-50">
+        </div>
+        <p>&copy; 2026 WebDev. All rights reserved. <b>Copy me and i will Copyright-strike you.</b></p>
+    </footer>
+</body>
+</html>

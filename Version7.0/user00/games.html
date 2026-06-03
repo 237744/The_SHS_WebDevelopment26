@@ -29,6 +29,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/1.0.6/hammer.min.js"></script>
 
     <!-- Custom styles for this template -->
     <style type="text/css">
@@ -65,7 +66,6 @@
         </nav>
     </div>
     <!---------------------------------- End the nav-bar ------------------------------------->
-
     <main class="m-3" id="content">
 
         <h1 class="text-left my-3">Games</h1>
@@ -77,6 +77,1039 @@
         </p>
         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑-->
     </main>
+    <script language="JavaScript">
+
+        var startTime=new Date();
+        var endTime=new Date();
+        var startPressed=false;
+        var bgChangeStarted=false;
+        var maxWait=20;
+        var timerID;
+
+        function startTest()
+            {
+            document.body.style.background=document.response.bgColorChange.options[document.response.bgColorChange.selectedIndex].text;
+            bgChangeStarted=true;
+            startTime=new Date();
+        }
+
+        function remark(responseTime)
+        {
+            var responseString="";
+                if (responseTime < 0.20)
+                responseString="Well done!";
+                if (responseTime >= 0.20 && responseTime < 0.30)
+                responseString="Nice!";
+                if (responseTime >= 0.30 && responseTime < 0.40)
+                responseString="Not bad!";
+                if (responseTime >=0.40 && responseTime < 0.50)
+                responseString="Could be better...";
+                if (responseTime >=0.50 && responseTime < 0.80)
+                responseString="Keep practicing!";
+                if (responseTime >=0.80 && responseTime < 1.1)
+                responseString="Have you been day dreaming again?";
+                if (responseTime >=1.1)
+                responseString="Did you fall asleep?";
+            return responseString;
+        }
+
+        function stopTest()
+        {
+            if(bgChangeStarted)
+        {
+        endTime=new Date();
+        var responseTime=(endTime.getTime()-startTime.getTime())/1000;
+
+            document.body.style.background="white"; 
+            alert("Your response time is: " + responseTime + " seconds " + "\n" + remark(responseTime));
+            startPressed=false;
+            bgChangeStarted=false;
+        }
+            else
+        {
+            if (!startPressed)
+        {
+            alert("press start first to start test");
+        }
+            else
+        { 
+            clearTimeout(timerID);
+            startPressed=false; 
+            alert("cheater! you pressed too early!");
+        } 
+        }
+        }
+
+        var randMULTIPLIER=0x015a4e35;
+        var randINCREMENT=1;
+        var today=new Date();
+        var randSeed=today.getSeconds();
+
+        function randNumber()
+        {
+            randSeed = (randMULTIPLIER * randSeed + randINCREMENT) % (1 << 31);
+            return((randSeed >> 15) & 0x7fff) / 32767;
+        }
+
+        function startit()
+        {
+            if(startPressed)
+        {
+            alert("Already started. Press stop to stop");
+            return;
+        }
+            else
+        {
+            startPressed=true; 
+            timerID=setTimeout('startTest()', 6000*randNumber());
+        }
+        }
+
+    </script>
+<p>Test your Response time!</p>
+Click on "Start" first, and wait until the background color changes. As soon as it changes, hit "stop!"
+
+<form name="response">
+Change background color in: 
+<select name="bgColorChange">
+<option selected>deeppink
+<option>aliceblue
+<option>crimson
+<option>darkkhaki
+<option>cadetblue
+<option>darkorchid
+<option>coral
+</select>
+<input type="button" value="start" onClick="startit()">
+<input type="button" value="stop" onClick="stopTest()">
+</form>
+
+<div class="2048">
+    <div class="container">
+        <div class="heading">
+            <h1 class="title">2048</h1>
+                <div class="score-container">0</div>
+                
+                </div>
+            <p class="game-intro">Join the numbers and get to the <strong>2048 tile!</strong></p>
+
+        <div class="game-container">
+        <div class="game-message">
+            <p></p>
+            <div class="lower">
+            <a class="retry-button">Try again</a>
+            </div>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+            <div class="grid-row">
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+                <div class="grid-cell"></div>
+            </div>
+        </div>
+
+        <div class="tile-container">
+
+        </div>
+        </div>
+
+        <p class="game-explanation">
+        <strong class="important">How to play:</strong> Use your <strong>arrow keys</strong> to move the tiles. When two tiles with the same number touch, they <strong>merge into one!</strong>
+        </p>
+        <hr>
+        <p>
+            Created by <a href="http://gabrielecirulli.com" target="_blank">Gabriele Cirulli.</a> Based on <a href="https://itunes.apple.com/us/app/1024!/id823499224" target="_blank">1024 by Veewo Studio</a> and conceptually similar to <a href="http://asherv.com/threes/" target="_blank">Threes by Asher Vollmer.</a>
+        </p>
+    </div>
+</div>
+<main>
+<!--div>
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+
+<div id="container">
+    <div id="game"></div>
+        <div id="score">0</div>
+            <div id="instructions">Click (or press the spacebar) to place the block</div>
+    <div class="game-over">
+        <h2>Game Over</h2>
+        <p>You did great, you're the best.</p>
+        <p>Click or spacebar to start again</p>
+    </div>
+    <div class="game-ready">
+        <div id="start-button">Start</div>
+        <div></div>
+        </div>
+    </div>
+</div>
+</main-->    
+
+<script language="JavaScript">
+        document.addEventListener("DOMContentLoaded", function () {
+  // Wait till the browser is ready to render the game (avoids glitches)
+        window.requestAnimationFrame(function () {
+            var manager = new GameManager(4, KeyboardInputManager, HTMLActuator);
+        });
+        });
+
+
+    function GameManager(size, InputManager, Actuator) {
+        this.size         = size; // Size of the grid
+        this.inputManager = new InputManager;
+        this.actuator     = new Actuator;
+
+        this.startTiles   = 2;
+
+        this.inputManager.on("move", this.move.bind(this));
+        this.inputManager.on("restart", this.restart.bind(this));
+
+        this.setup();
+    }
+
+// Restart the game
+    GameManager.prototype.restart = function () {
+        this.actuator.restart();
+        this.setup();
+    };
+
+// Set up the game
+    GameManager.prototype.setup = function () {
+        this.grid         = new Grid(this.size);
+
+        this.score        = 0;
+        this.over         = false;
+        this.won          = false;
+
+  // Add the initial tiles
+        this.addStartTiles();
+
+  // Update the actuator
+        this.actuate();
+    };
+
+// Set up the initial tiles to start the game with
+    GameManager.prototype.addStartTiles = function () {
+        for (var i = 0; i < this.startTiles; i++) {
+            this.addRandomTile();
+        }
+    };
+
+// Adds a tile in a random position
+    GameManager.prototype.addRandomTile = function () {
+        if (this.grid.cellsAvailable()) {
+            var value = Math.random() < 0.9 ? 2 : 4;
+            var tile = new Tile(this.grid.randomAvailableCell(), value);
+
+            this.grid.insertTile(tile);
+            }
+    };
+
+// Sends the updated grid to the actuator
+    GameManager.prototype.actuate = function () {
+        this.actuator.actuate(this.grid, {
+        score: this.score,
+        over:  this.over,
+        won:   this.won
+        });
+    };
+
+// Save all tile positions and remove merger info
+    GameManager.prototype.prepareTiles = function () {
+        this.grid.eachCell(function (x, y, tile) {
+            if (tile) {
+                tile.mergedFrom = null;
+                tile.savePosition();
+            }
+        });
+    };
+
+// Move a tile and its representation
+    GameManager.prototype.moveTile = function (tile, cell) {
+        this.grid.cells[tile.x][tile.y] = null;
+        this.grid.cells[cell.x][cell.y] = tile;
+        tile.updatePosition(cell);
+    };
+
+// Move tiles on the grid in the specified direction
+    GameManager.prototype.move = function (direction) {
+  // 0: up, 1: right, 2:down, 3: left
+        var self = this;
+
+        if (this.over || this.won) return; // Don't do anything if the game's over
+
+            var cell, tile;
+
+            var vector     = this.getVector(direction);
+            var traversals = this.buildTraversals(vector);
+            var moved      = false;
+
+  // Save the current tile positions and remove merger information
+        this.prepareTiles();
+
+  // Traverse the grid in the right direction and move tiles
+            traversals.x.forEach(function (x) {
+            traversals.y.forEach(function (y) {
+            cell = { x: x, y: y };
+            tile = self.grid.cellContent(cell);
+
+        if (tile) {
+            var positions = self.findFarthestPosition(cell, vector);
+            var next      = self.grid.cellContent(positions.next);
+
+        // Only one merger per row traversal?
+        if (next && next.value === tile.value && !next.mergedFrom) {
+            var merged = new Tile(positions.next, tile.value * 2);
+                merged.mergedFrom = [tile, next];
+
+                self.grid.insertTile(merged);
+                self.grid.removeTile(tile);
+
+          // Converge the two tiles' positions
+                tile.updatePosition(positions.next);
+
+          // Update the score
+                self.score += merged.value;
+
+          // The mighty 2048 tile
+        if (merged.value === 2048) self.won = true;
+        } 
+            else {
+                self.moveTile(tile, positions.farthest);
+            }
+
+        if (!self.positionsEqual(cell, tile)) {
+          moved = true; // The tile moved from its original cell!
+        }
+        }
+        });
+    });
+
+        if (moved) {
+            this.addRandomTile();
+
+        if (!this.movesAvailable()) {
+            this.over = true; // Game over!
+        }
+
+        this.actuate();
+        }
+        };
+
+// Get the vector representing the chosen direction
+    GameManager.prototype.getVector = function (direction) {
+  // Vectors representing tile movement
+        var map = {
+            0: { x: 0,  y: -1 }, // up
+            1: { x: 1,  y: 0 },  // right
+            2: { x: 0,  y: 1 },  // down
+            3: { x: -1, y: 0 }   // left
+    };
+
+    return map[direction];
+    };
+
+// Build a list of positions to traverse in the right order
+    GameManager.prototype.buildTraversals = function (vector) {
+        var traversals = { x: [], y: [] };
+
+    for (var pos = 0; pos < this.size; pos++) {
+    traversals.x.push(pos);
+    traversals.y.push(pos);
+    }
+
+  // Always traverse from the farthest cell in the chosen direction
+    if (vector.x === 1) traversals.x = traversals.x.reverse();
+    if (vector.y === 1) traversals.y = traversals.y.reverse();
+
+    return traversals;
+    };
+
+    GameManager.prototype.findFarthestPosition = function (cell, vector) {
+        var previous;
+
+  // Progress towards the vector direction until an obstacle is found
+            do {
+                previous = cell;
+                cell     = { x: previous.x + vector.x, y: previous.y + vector.y };
+            } while (this.grid.withinBounds(cell) &&
+                this.grid.cellAvailable(cell));
+
+            return {
+                farthest: previous,
+                next: cell // Used to check if a merge is required
+            };
+    };
+
+    GameManager.prototype.movesAvailable = function () {
+        return this.grid.cellsAvailable() || this.tileMatchesAvailable();
+    };
+
+// Check for available matches between tiles (more expensive check)
+    GameManager.prototype.tileMatchesAvailable = function () {
+        var self = this;
+
+        var tile;
+
+        for (var x = 0; x < this.size; x++) {
+            for (var y = 0; y < this.size; y++) {
+                tile = this.grid.cellContent({ x: x, y: y });
+
+                if (tile) {
+                    for (var direction = 0; direction < 4; direction++) {
+                        var vector = self.getVector(direction);
+                        var cell   = { x: x + vector.x, y: y + vector.y };
+
+                        var other  = self.grid.cellContent(cell);
+                    if (other) {
+                    }
+
+                    if (other && other.value === tile.value) {
+            return true; // These two tiles can be merged
+                    }
+                    }
+                }
+            }
+        }
+
+        return false;
+    };
+
+    GameManager.prototype.positionsEqual = function (first, second) {
+        return first.x === second.x && first.y === second.y;
+    };
+
+
+
+    function Grid(size) {
+        this.size = size;
+
+        this.cells = [];
+
+        this.build();
+    }
+
+// Build a grid of the specified size
+    Grid.prototype.build = function () {
+        for (var x = 0; x < this.size; x++) {
+            var row = this.cells[x] = [];
+
+        for (var y = 0; y < this.size; y++) {
+            row.push(null);
+        }
+        }
+    };
+
+// Find the first available random position
+    Grid.prototype.randomAvailableCell = function () {
+        var cells = this.availableCells();
+
+        if (cells.length) {
+        return cells[Math.floor(Math.random() * cells.length)];
+        }
+    };
+
+    Grid.prototype.availableCells = function () {
+        var cells = [];
+
+        this.eachCell(function (x, y, tile) {
+            if (!tile) {
+                cells.push({ x: x, y: y });
+            }
+        });
+
+        return cells;
+    };
+
+// Call callback for every cell
+    Grid.prototype.eachCell = function (callback) {
+        for (var x = 0; x < this.size; x++) {
+            for (var y = 0; y < this.size; y++) {
+                callback(x, y, this.cells[x][y]);
+            }
+        }
+    };
+
+// Check if there are any cells available
+    Grid.prototype.cellsAvailable = function () {
+        return !!this.availableCells().length;
+    };
+
+// Check if the specified cell is taken
+    Grid.prototype.cellAvailable = function (cell) {
+        return !this.cellOccupied(cell);
+    };
+
+    Grid.prototype.cellOccupied = function (cell) {
+        return !!this.cellContent(cell);
+    };
+
+    Grid.prototype.cellContent = function (cell) {
+        if (this.withinBounds(cell)) {
+        return this.cells[cell.x][cell.y];
+        } 
+        else {
+        return null;
+        }
+    };
+
+// Inserts a tile at its position
+    Grid.prototype.insertTile = function (tile) {
+        this.cells[tile.x][tile.y] = tile;
+    };
+
+    Grid.prototype.removeTile = function (tile) {
+        this.cells[tile.x][tile.y] = null;
+    };
+
+    Grid.prototype.withinBounds = function (position) {
+        return position.x >= 0 && position.x < this.size &&
+        position.y >= 0 && position.y < this.size;
+    };
+
+
+    function HTMLActuator() {
+        this.tileContainer    = document.getElementsByClassName("tile-container")[0];
+        this.scoreContainer   = document.getElementsByClassName("score-container")[0];
+        this.messageContainer = document.getElementsByClassName("game-message")[0];
+
+        this.score = 0;
+    }
+
+    HTMLActuator.prototype.actuate = function (grid, metadata) {
+        var self = this;
+
+    window.requestAnimationFrame(function () {
+        self.clearContainer(self.tileContainer);
+
+        grid.cells.forEach(function (column) {
+            column.forEach(function (cell) {
+                if (cell) {
+                    self.addTile(cell);
+                }
+            });
+        });
+
+        self.updateScore(metadata.score);
+
+        if (metadata.over) self.message(false); // You lose
+            if (metadata.won) self.message(true); // You win!
+            });
+        };
+
+    HTMLActuator.prototype.restart = function () {
+        this.clearMessage();
+    };
+
+    HTMLActuator.prototype.clearContainer = function (container) {
+        while (container.firstChild) {
+            container.removeChild(container.firstChild);
+        }
+    };
+
+    HTMLActuator.prototype.addTile = function (tile) {
+        var self = this;
+
+        var element   = document.createElement("div");
+        var position  = tile.previousPosition || { x: tile.x, y: tile.y };
+        positionClass = this.positionClass(position);
+
+  // We can't use classlist because it somehow glitches when replacing classes
+        var classes = ["tile", "tile-" + tile.value, positionClass];
+            this.applyClasses(element, classes);
+
+            element.textContent = tile.value;
+
+        if (tile.previousPosition) {
+    // Make sure that the tile gets rendered in the previous position first
+            window.requestAnimationFrame(function () {
+            classes[2] = self.positionClass({ x: tile.x, y: tile.y });
+            self.applyClasses(element, classes); // Update the position
+            });
+        } 
+        else if (tile.mergedFrom) {
+            classes.push("tile-merged");
+            this.applyClasses(element, classes);
+
+    // Render the tiles that merged
+            tile.mergedFrom.forEach(function (merged) {
+            self.addTile(merged);
+            });
+        } 
+        else {
+            classes.push("tile-new");
+            this.applyClasses(element, classes);
+        }
+
+  // Put the tile on the board
+        this.tileContainer.appendChild(element);
+    };
+
+    HTMLActuator.prototype.applyClasses = function (element, classes) {
+        element.setAttribute("class", classes.join(" "));
+    };
+
+    HTMLActuator.prototype.normalizePosition = function (position) {
+        return { x: position.x + 1, y: position.y + 1 };
+    };
+
+    HTMLActuator.prototype.positionClass = function (position) {
+        position = this.normalizePosition(position);
+        return "tile-position-" + position.x + "-" + position.y;
+    };
+
+    HTMLActuator.prototype.updateScore = function (score) {
+        this.clearContainer(this.scoreContainer);
+
+        var difference = score - this.score;
+        this.score = score;
+
+        this.scoreContainer.textContent = this.score;
+
+        if (difference > 0) {
+            var addition = document.createElement("div");
+            addition.classList.add("score-addition");
+            addition.textContent = "+" + difference;
+
+        this.scoreContainer.appendChild(addition);
+        }
+    };
+
+    HTMLActuator.prototype.message = function (won) {
+        var type    = won ? "game-won" : "game-over";
+        var message = won ? "You win!" : "Game over!"
+
+  // if (ga) ga("send", "event", "game", "end", type, this.score);
+
+        this.messageContainer.classList.add(type);
+        this.messageContainer.getElementsByTagName("p")[0].textContent = message;
+    };
+
+    HTMLActuator.prototype.clearMessage = function () {
+        this.messageContainer.classList.remove("game-won", "game-over");
+    };
+
+
+
+    function KeyboardInputManager() {
+        this.events = {};
+
+        this.listen();
+    }
+
+    KeyboardInputManager.prototype.on = function (event, callback) {
+        if (!this.events[event]) {
+            this.events[event] = [];
+        }
+        this.events[event].push(callback);
+    };
+
+    KeyboardInputManager.prototype.emit = function (event, data) {
+        var callbacks = this.events[event];
+            if (callbacks) {
+                callbacks.forEach(function (callback) {
+            callback(data);
+            });
+            }
+    };
+
+    KeyboardInputManager.prototype.listen = function () {
+        var self = this;
+
+        var map = {
+            38: 0, // Up
+            39: 1, // Right
+            40: 2, // Down
+            37: 3, // Left
+            75: 0, // vim keybindings
+            76: 1,
+            74: 2,
+            72: 3
+        };
+
+        document.addEventListener("keydown", function (event) {
+        var modifiers = event.altKey || event.ctrlKey || event.metaKey ||
+                    event.shiftKey;
+        var mapped    = map[event.which];
+
+        if (!modifiers) {
+            if (mapped !== undefined) {
+                event.preventDefault();
+                self.emit("move", mapped);
+            }
+
+            if (event.which === 32) self.restart.bind(self)(event);
+            }
+        });
+
+        var retry = document.getElementsByClassName("retry-button")[0];
+            retry.addEventListener("click", this.restart.bind(this));
+
+  // Listen to swipe events
+        var gestures = [Hammer.DIRECTION_UP, Hammer.DIRECTION_RIGHT,
+            Hammer.DIRECTION_DOWN, Hammer.DIRECTION_LEFT];
+
+        var gameContainer = document.getElementsByClassName("game-container")[0];
+        var handler       = Hammer(gameContainer, {
+            drag_block_horizontal: true,
+            drag_block_vertical: true
+        });
+
+            handler.on("swipe", function (event) {
+            event.gesture.preventDefault();
+            mapped = gestures.indexOf(event.gesture.direction);
+
+        if (mapped !== -1) self.emit("move", mapped);
+        });
+    };
+
+    KeyboardInputManager.prototype.restart = function (event) {
+        event.preventDefault();
+        this.emit("restart");
+    };
+
+
+
+
+
+    function Tile(position, value) {
+        this.x                = position.x;
+        this.y                = position.y;
+        this.value            = value || 2;
+
+        this.previousPosition = null;
+        this.mergedFrom       = null; // Tracks tiles that merged together
+    }
+
+    Tile.prototype.savePosition = function () {
+        this.previousPosition = { x: this.x, y: this.y };
+    };
+
+    Tile.prototype.updatePosition = function (position) {
+        this.x = position.x;
+        this.y = position.y;
+    };
+</script>
+
+<script>
+    "use strict";
+console.clear();
+class Stage {
+    constructor() {
+        // container
+        this.render = function () {
+            this.renderer.render(this.scene, this.camera);
+        };
+        this.add = function (elem) {
+            this.scene.add(elem);
+        };
+        this.remove = function (elem) {
+            this.scene.remove(elem);
+        };
+        this.container = document.getElementById('game');
+        // renderer
+        this.renderer = new THREE.WebGLRenderer({
+            antialias: true,
+            alpha: false
+        });
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.renderer.setClearColor('#D0CBC7', 1);
+        this.container.appendChild(this.renderer.domElement);
+        // scene
+        this.scene = new THREE.Scene();
+        // camera
+        let aspect = window.innerWidth / window.innerHeight;
+        let d = 20;
+        this.camera = new THREE.OrthographicCamera(-d * aspect, d * aspect, d, -d, -100, 1000);
+        this.camera.position.x = 2;
+        this.camera.position.y = 2;
+        this.camera.position.z = 2;
+        this.camera.lookAt(new THREE.Vector3(0, 0, 0));
+        //light
+        this.light = new THREE.DirectionalLight(0xffffff, 0.5);
+        this.light.position.set(0, 499, 0);
+        this.scene.add(this.light);
+        this.softLight = new THREE.AmbientLight(0xffffff, 0.4);
+        this.scene.add(this.softLight);
+        window.addEventListener('resize', () => this.onResize());
+        this.onResize();
+    }
+    setCamera(y, speed = 0.3) {
+        TweenLite.to(this.camera.position, speed, { y: y + 4, ease: Power1.easeInOut });
+        TweenLite.to(this.camera.lookAt, speed, { y: y, ease: Power1.easeInOut });
+    }
+    onResize() {
+        let viewSize = 30;
+        this.renderer.setSize(window.innerWidth, window.innerHeight);
+        this.camera.left = window.innerWidth / -viewSize;
+        this.camera.right = window.innerWidth / viewSize;
+        this.camera.top = window.innerHeight / viewSize;
+        this.camera.bottom = window.innerHeight / -viewSize;
+        this.camera.updateProjectionMatrix();
+    }
+}
+class Block {
+    constructor(block) {
+        // set size and position
+        this.STATES = { ACTIVE: 'active', STOPPED: 'stopped', MISSED: 'missed' };
+        this.MOVE_AMOUNT = 12;
+        this.dimension = { width: 0, height: 0, depth: 0 };
+        this.position = { x: 0, y: 0, z: 0 };
+        this.targetBlock = block;
+        this.index = (this.targetBlock ? this.targetBlock.index : 0) + 1;
+        this.workingPlane = this.index % 2 ? 'x' : 'z';
+        this.workingDimension = this.index % 2 ? 'width' : 'depth';
+        // set the dimensions from the target block, or defaults.
+        this.dimension.width = this.targetBlock ? this.targetBlock.dimension.width : 10;
+        this.dimension.height = this.targetBlock ? this.targetBlock.dimension.height : 2;
+        this.dimension.depth = this.targetBlock ? this.targetBlock.dimension.depth : 10;
+        this.position.x = this.targetBlock ? this.targetBlock.position.x : 0;
+        this.position.y = this.dimension.height * this.index;
+        this.position.z = this.targetBlock ? this.targetBlock.position.z : 0;
+        this.colorOffset = this.targetBlock ? this.targetBlock.colorOffset : Math.round(Math.random() * 100);
+        // set color
+        if (!this.targetBlock) {
+            this.color = 0x333344;
+        }
+        else {
+            let offset = this.index + this.colorOffset;
+            var r = Math.sin(0.3 * offset) * 55 + 200;
+            var g = Math.sin(0.3 * offset + 2) * 55 + 200;
+            var b = Math.sin(0.3 * offset + 4) * 55 + 200;
+            this.color = new THREE.Color(r / 255, g / 255, b / 255);
+        }
+        // state
+        this.state = this.index > 1 ? this.STATES.ACTIVE : this.STATES.STOPPED;
+        // set direction
+        this.speed = -0.1 - (this.index * 0.005);
+        if (this.speed < -4)
+            this.speed = -4;
+        this.direction = this.speed;
+        // create block
+        let geometry = new THREE.BoxGeometry(this.dimension.width, this.dimension.height, this.dimension.depth);
+        geometry.applyMatrix(new THREE.Matrix4().makeTranslation(this.dimension.width / 2, this.dimension.height / 2, this.dimension.depth / 2));
+        this.material = new THREE.MeshToonMaterial({ color: this.color, shading: THREE.FlatShading });
+        this.mesh = new THREE.Mesh(geometry, this.material);
+        this.mesh.position.set(this.position.x, this.position.y + (this.state == this.STATES.ACTIVE ? 0 : 0), this.position.z);
+        if (this.state == this.STATES.ACTIVE) {
+            this.position[this.workingPlane] = Math.random() > 0.5 ? -this.MOVE_AMOUNT : this.MOVE_AMOUNT;
+        }
+    }
+    reverseDirection() {
+        this.direction = this.direction > 0 ? this.speed : Math.abs(this.speed);
+    }
+    place() {
+        this.state = this.STATES.STOPPED;
+        let overlap = this.targetBlock.dimension[this.workingDimension] - Math.abs(this.position[this.workingPlane] - this.targetBlock.position[this.workingPlane]);
+        let blocksToReturn = {
+            plane: this.workingPlane,
+            direction: this.direction
+        };
+        if (this.dimension[this.workingDimension] - overlap < 0.3) {
+            overlap = this.dimension[this.workingDimension];
+            blocksToReturn.bonus = true;
+            this.position.x = this.targetBlock.position.x;
+            this.position.z = this.targetBlock.position.z;
+            this.dimension.width = this.targetBlock.dimension.width;
+            this.dimension.depth = this.targetBlock.dimension.depth;
+        }
+        if (overlap > 0) {
+            let choppedDimensions = { width: this.dimension.width, height: this.dimension.height, depth: this.dimension.depth };
+            choppedDimensions[this.workingDimension] -= overlap;
+            this.dimension[this.workingDimension] = overlap;
+            let placedGeometry = new THREE.BoxGeometry(this.dimension.width, this.dimension.height, this.dimension.depth);
+            placedGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(this.dimension.width / 2, this.dimension.height / 2, this.dimension.depth / 2));
+            let placedMesh = new THREE.Mesh(placedGeometry, this.material);
+            let choppedGeometry = new THREE.BoxGeometry(choppedDimensions.width, choppedDimensions.height, choppedDimensions.depth);
+            choppedGeometry.applyMatrix(new THREE.Matrix4().makeTranslation(choppedDimensions.width / 2, choppedDimensions.height / 2, choppedDimensions.depth / 2));
+            let choppedMesh = new THREE.Mesh(choppedGeometry, this.material);
+            let choppedPosition = {
+                x: this.position.x,
+                y: this.position.y,
+                z: this.position.z
+            };
+            if (this.position[this.workingPlane] < this.targetBlock.position[this.workingPlane]) {
+                this.position[this.workingPlane] = this.targetBlock.position[this.workingPlane];
+            }
+            else {
+                choppedPosition[this.workingPlane] += overlap;
+            }
+            placedMesh.position.set(this.position.x, this.position.y, this.position.z);
+            choppedMesh.position.set(choppedPosition.x, choppedPosition.y, choppedPosition.z);
+            blocksToReturn.placed = placedMesh;
+            if (!blocksToReturn.bonus)
+                blocksToReturn.chopped = choppedMesh;
+        }
+        else {
+            this.state = this.STATES.MISSED;
+        }
+        this.dimension[this.workingDimension] = overlap;
+        return blocksToReturn;
+    }
+    tick() {
+        if (this.state == this.STATES.ACTIVE) {
+            let value = this.position[this.workingPlane];
+            if (value > this.MOVE_AMOUNT || value < -this.MOVE_AMOUNT)
+                this.reverseDirection();
+            this.position[this.workingPlane] += this.direction;
+            this.mesh.position[this.workingPlane] = this.position[this.workingPlane];
+        }
+    }
+}
+class Game {
+    constructor() {
+        this.STATES = {
+            'LOADING': 'loading',
+            'PLAYING': 'playing',
+            'READY': 'ready',
+            'ENDED': 'ended',
+            'RESETTING': 'resetting'
+        };
+        this.blocks = [];
+        this.state = this.STATES.LOADING;
+        this.stage = new Stage();
+        this.mainContainer = document.getElementById('container');
+        this.scoreContainer = document.getElementById('score');
+        this.startButton = document.getElementById('start-button');
+        this.instructions = document.getElementById('instructions');
+        this.scoreContainer.innerHTML = '0';
+        this.newBlocks = new THREE.Group();
+        this.placedBlocks = new THREE.Group();
+        this.choppedBlocks = new THREE.Group();
+        this.stage.add(this.newBlocks);
+        this.stage.add(this.placedBlocks);
+        this.stage.add(this.choppedBlocks);
+        this.addBlock();
+        this.tick();
+        this.updateState(this.STATES.READY);
+        document.addEventListener('keydown', e => {
+            if (e.keyCode == 32)
+                this.onAction();
+        });
+        document.addEventListener('click', e => {
+            this.onAction();
+        });
+        document.addEventListener('touchstart', e => {
+            e.preventDefault();
+            // this.onAction();
+            // ☝️ this triggers after click on android so you
+            // insta-lose, will figure it out later.
+        });
+    }
+    updateState(newState) {
+        for (let key in this.STATES)
+            this.mainContainer.classList.remove(this.STATES[key]);
+        this.mainContainer.classList.add(newState);
+        this.state = newState;
+    }
+    onAction() {
+        switch (this.state) {
+            case this.STATES.READY:
+                this.startGame();
+                break;
+            case this.STATES.PLAYING:
+                this.placeBlock();
+                break;
+            case this.STATES.ENDED:
+                this.restartGame();
+                break;
+        }
+    }
+    startGame() {
+        if (this.state != this.STATES.PLAYING) {
+            this.scoreContainer.innerHTML = '0';
+            this.updateState(this.STATES.PLAYING);
+            this.addBlock();
+        }
+    }
+    restartGame() {
+        this.updateState(this.STATES.RESETTING);
+        let oldBlocks = this.placedBlocks.children;
+        let removeSpeed = 0.2;
+        let delayAmount = 0.02;
+        for (let i = 0; i < oldBlocks.length; i++) {
+            TweenLite.to(oldBlocks[i].scale, removeSpeed, { x: 0, y: 0, z: 0, delay: (oldBlocks.length - i) * delayAmount, ease: Power1.easeIn, onComplete: () => this.placedBlocks.remove(oldBlocks[i]) });
+            TweenLite.to(oldBlocks[i].rotation, removeSpeed, { y: 0.5, delay: (oldBlocks.length - i) * delayAmount, ease: Power1.easeIn });
+        }
+        let cameraMoveSpeed = removeSpeed * 2 + (oldBlocks.length * delayAmount);
+        this.stage.setCamera(2, cameraMoveSpeed);
+        let countdown = { value: this.blocks.length - 1 };
+        TweenLite.to(countdown, cameraMoveSpeed, { value: 0, onUpdate: () => { this.scoreContainer.innerHTML = String(Math.round(countdown.value)); } });
+        this.blocks = this.blocks.slice(0, 1);
+        setTimeout(() => {
+            this.startGame();
+        }, cameraMoveSpeed * 1000);
+    }
+    placeBlock() {
+        let currentBlock = this.blocks[this.blocks.length - 1];
+        let newBlocks = currentBlock.place();
+        this.newBlocks.remove(currentBlock.mesh);
+        if (newBlocks.placed)
+            this.placedBlocks.add(newBlocks.placed);
+        if (newBlocks.chopped) {
+            this.choppedBlocks.add(newBlocks.chopped);
+            let positionParams = { y: '-=30', ease: Power1.easeIn, onComplete: () => this.choppedBlocks.remove(newBlocks.chopped) };
+            let rotateRandomness = 10;
+            let rotationParams = {
+                delay: 0.05,
+                x: newBlocks.plane == 'z' ? ((Math.random() * rotateRandomness) - (rotateRandomness / 2)) : 0.1,
+                z: newBlocks.plane == 'x' ? ((Math.random() * rotateRandomness) - (rotateRandomness / 2)) : 0.1,
+                y: Math.random() * 0.1,
+            };
+            if (newBlocks.chopped.position[newBlocks.plane] > newBlocks.placed.position[newBlocks.plane]) {
+                positionParams[newBlocks.plane] = '+=' + (40 * Math.abs(newBlocks.direction));
+            }
+            else {
+                positionParams[newBlocks.plane] = '-=' + (40 * Math.abs(newBlocks.direction));
+            }
+            TweenLite.to(newBlocks.chopped.position, 1, positionParams);
+            TweenLite.to(newBlocks.chopped.rotation, 1, rotationParams);
+        }
+        this.addBlock();
+    }
+    addBlock() {
+        let lastBlock = this.blocks[this.blocks.length - 1];
+        if (lastBlock && lastBlock.state == lastBlock.STATES.MISSED) {
+            return this.endGame();
+        }
+        this.scoreContainer.innerHTML = String(this.blocks.length - 1);
+        let newKidOnTheBlock = new Block(lastBlock);
+        this.newBlocks.add(newKidOnTheBlock.mesh);
+        this.blocks.push(newKidOnTheBlock);
+        this.stage.setCamera(this.blocks.length * 2);
+        if (this.blocks.length >= 5)
+            this.instructions.classList.add('hide');
+    }
+    endGame() {
+        this.updateState(this.STATES.ENDED);
+    }
+    tick() {
+        this.blocks[this.blocks.length - 1].tick();
+        this.stage.render();
+        requestAnimationFrame(() => { this.tick(); });
+        }
+    }
+    let game = new Game();
+</script>
+    
 
     <!---------------------------------- Begin the footer ------------------------------------->
     <footer class="small text-center" id="footer">

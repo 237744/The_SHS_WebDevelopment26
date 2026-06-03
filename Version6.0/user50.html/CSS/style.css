@@ -1,0 +1,55 @@
+.navbar{
+    font-size: 25px;
+    background-color: hsl(88, 96%, 29%);
+    color:black;
+    font-family: "Fraunces", serif;
+}
+header img {
+    mix-blend-mode: color-burn;
+    width: 60px;
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #ccde83;
+}
+
+h1{
+    color: rgb(8, 77, 8);
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 20px;
+}
+
+.final {
+    background-color: #4d8e50;
+    color: rgb(191, 240, 156);
+    text-align: center;
+    font-style: bold;
+    padding: 5px;
+}
+
+body {
+  font: 1.2em sans-serif;
+}
+
+.inicio h2{
+        text-align: center;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: rgb(42, 106, 42)
+    }
+
+.inicio p {
+        font-family: "Supermercado One", sans-serif;
+        text-align: center;
+        font-size: 25px;
+        margin-right:200px;
+        margin-left:200px;
+}
+h2{
+        font-family: 'Times New Roman', Times, serif;
+        color: rgb(0, 0, 0);
+    }
+p{
+        font-family: "Dancing Script", cursive;
+    }

@@ -1,17 +1,160 @@
 <html lang="en">
     <!--Version 9.0 
-	Name:
-	Date Completed:
+    Name:
+    Date Completed:
     -->
     <head>
         
-        <title>Web Development User #00</title>
+        <title>Web Development User #47</title>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            .container { max-width: 800px; margin: 0 auto; }
+            button { padding: 10px 20px; cursor: pointer; margin: 10px 5px; }
+            #data { margin-top: 20px; padding: 15px; border: 5px solid #000000; }
+            body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #b8b8b8 0%, #b8b8b8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 10px;
+        }
+        </style>
     
     </head>
-    
+    <nav>
+        <div style="background-color: rgb(0, 0, 0); padding: 10px;">
+             <a href="index.html" style="color: rgb(250, 5, 5); text-decoration: none; margin-right: 10px;">Home</a>
+             <a href="games.html" style="color: rgb(5, 155, 254); text-decoration: none; margin-right: 10px;">Games</a>
+             <a href="carousel.html" style="color: rgb(8, 252, 240); text-decoration: none;">Carousel</a>
+         </div>
+     </nav>
     <body>
-        
-        <center>My name is User #00</center>
+        <div class="container">
+            <center>
+                <h1>Welcome! Enjoy these JS features!</h1>
+                <button onclick="fetchQuote()">Get Random Quote</button>
+                <button onclick="displayTime()">Show Current Time</button>
+                <button onclick="calculateSum()">Calculate 1+2+3 (<b>Difficult Calculus)</b></button>
+                <button onclick="fetchUserData()">Fetch Random User (why not)</button>
+            </center>
+            
+            <div id="data">
+                <p id="quote">Click the button to fetch a quote...</p>
+                <p id="time"></p>
+                <p id="sum"></p>
+                <p id="user"></p>
+            </div>
+        </div>
+
+        <script>
+            // Array of fallback quotes
+            const fallbackQuotes = [
+                {
+                    content: "The only way to do great work is to love what you do.",
+                    author: "Steve Jobs"
+                },
+                {
+                    content: "Innovation distinguishes between a leader and a follower.",
+                    author: "Steve Jobs"
+                },
+                {
+                    content: "Life is what happens when you're busy making other plans.",
+                    author: "John Lennon"
+                },
+                {
+                    content: "The future belongs to those who believe in the beauty of their dreams.",
+                    author: "Eleanor Roosevelt"
+                },
+                {
+                    content: "It is during our darkest moments that we must focus to see the light.",
+                    author: "Aristotle"
+                },
+                {
+                    content: "The way to get started is to quit talking and begin doing.",
+                    author: "Walt Disney"
+                },
+                {
+                    content: "Even the strrongest have weaknesses, and the wisest have doubts.",
+                    author: "By <b>justice</b>"
+                },
+                {
+                    content: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+                    author: "Winston Churchill"
+                },
+                {
+                    content: "Believe you can and you're halfway there.",
+                    author: "Theodore Roosevelt"
+                }
+            ];
+
+            // Main function to fetch data from API
+            function fetchQuote() {
+                fetch('https://api.quotable.io/random')
+                    .then(response => {
+                        if (!response.ok) throw new Error('Network response was not ok');
+                        return response.json();
+                    })
+                    .then(data => {
+                        displayQuote(data);
+                        logQuoteInfo(data);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        // Fallback quote if API fails
+                        const fallbackQuote = fallbackQuotes[Math.floor(Math.random() * fallbackQuotes.length)];
+                        displayQuote(fallbackQuote);
+                    });
+            }
+
+            // Embedded function 1: Display quote from API
+            function displayQuote(data) {
+                const quoteElement = document.getElementById('quote');
+                quoteElement.innerHTML = `<strong>Quote:</strong> "${data.content}" - ${data.author || 'Unknown'}`;
+            }
+
+            // Embedded function 2: Log quote information
+            function logQuoteInfo(data) {
+                console.log('Quote length:', data.content.length);
+            }
+
+            // Embedded function 3: Display current time
+            function displayTime() {
+                const timeElement = document.getElementById('time');
+                const now = new Date().toLocaleTimeString();
+                timeElement.innerHTML = `<strong>Current Time:</strong> ${now}`;
+            }
+
+            // Embedded function 4: Calculate sum
+            function calculateSum() {
+                const sum = add(1, add(2, 3));
+                document.getElementById('sum').innerHTML = `<strong>Sum (1+2+3):</strong> ${sum}`;
+            }
+
+            // Embedded function 5: Add numbers
+            function add(a, b) {
+                return a + b;
+            }
+
+            // Embedded function 6: Fetch random user data from API
+            function fetchUserData() {
+                fetch('https://randomuser.me/api/')
+                    .then(response => response.json())
+                    .then(data => {
+                        const user = data.results[0];
+                        displayUserData(user);
+                    })
+                    .catch(error => console.error('Error:', error));
+            }
+
+            // Embedded function 7: Display user data
+            function displayUserData(user) {
+                const userElement = document.getElementById('user');
+                userElement.innerHTML = `<strong>Random User:</strong> ${user.name.first} ${user.name.last} from ${user.location.country}`;
+            }
+        </script>
     
     </body>
 

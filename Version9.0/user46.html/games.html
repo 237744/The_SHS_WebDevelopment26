@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games</title>
+    <nav>
+        <div style="background-color: rgb(0, 0, 0); padding: 10px;">
+            <a href="index.html" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 10px;">Home</a>
+            <a href="games.html" style="color: rgb(255, 255, 255); text-decoration: none; margin-right: 10px;">Games</a>
+            <a href="carousel.html" style="color: rgb(255, 255, 255); text-decoration: none;">Carousel</a>
+        </div>
+    </nav>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #b8b8b8 0%, #b8b8b8 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding: 10px;
+        }
+        h1 {
+            color: rgb(255, 255, 255);
+            margin-bottom: 10px;
+            text-shadow: 3px 3px 0px rgb(0, 0, 0);
+            font-size: 48px;
+        }
+        .games-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            width: 100%;
+            max-width: none;
+        }
+        .game-card {
+            background: rgb(255, 255, 250);
+            border-radius: 0px;
+            padding: 10px;
+            box-shadow: none;
+            border: 3px solid rgb(0, 0, 0);
+            cursor: pointer;
+            transition: none;
+        }
+        .game-card:hover {
+            transform: none;
+            box-shadow: none;
+            background: rgb(109, 109, 109);
+        }
+        .game-card h2 {
+            color: rgb(0, 0, 0);
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .game-card p {
+            color: rgb(0, 0, 0);
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+        button {
+            background: rgb(212, 212, 212);
+            color: rgb(0, 0, 0);
+            border: 2px solid rgb(0, 0, 0);
+            padding: 5px 10px;
+            border-radius: 0px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: none;
+        }
+        button:hover {
+            background: rgb(127, 127, 127);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal.show {
+            display: flex;
+        }
+        .modal-content {
+            background-color: rgb(255, 255, 255);
+            padding: 15px;
+            border-radius: 0px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: none;
+            border: 5px solid rgb(0, 0, 0);
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+        .close:hover {
+            color: #000;
+        }
+        #tictactoeboard {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 5px;
+            margin: 20px auto;
+        }
+        .cell {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border: 3px solid rgb(0, 0, 0);
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        .cell.animate {
+            animation: popIn 0.5s ease-out;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+        @keyframes spin {
+            0% { transform: rotateY(0); }
+            100% { transform: rotateY(720deg); }
+        }
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.2) rotate(-5deg); }
+            75% { transform: scale(1.2) rotate(5deg); }
+        }
+        .score {
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>GAMES HUB</h1>
+    
+    <div class="games-container">
+        <div class="game-card">
+            <h2>Tic Tac Toe</h2>
+            <p>Play classic Tic Tac Toe against the computer</p>
+            <button onclick="openGame('tictactoe')">Play</button>
+        </div>
+        
+        <div class="game-card">
+            <h2>Guess the Number</h2>
+            <p>Guess the random number between 1 and 100</p>
+            <button onclick="openGame('guessing')">Play</button>
+        </div>
+        
+        <div class="game-card">
+            <h2>Rock Paper Scissors</h2>
+            <p>Play Rock Paper Scissors against the computer</p>
+            <button onclick="openGame('rps')">Play</button>
+        </div>
+    </div>
+
+    <!-- Tic Tac Toe Modal -->
+    <div id="tictactoeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGame('tictactoe')">&times;</span>
+            <h2>Tic Tac Toe</h2>
+            <p>You are X, Computer is O</p>
+            <div id="tictactoeboard"></div>
+            <button onclick="resetTicTacToe()">Restart</button>
+        </div>
+    </div>
+
+    <!-- Guessing Game Modal -->
+    <div id="guessingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGame('guessing')">&times;</span>
+            <h2>Guess the Number</h2>
+            <p>Guess a number between 1 and 100</p>
+            <input type="number" id="guessInput" min="1" max="100" placeholder="Enter your guess">
+            <button onclick="submitGuess()">Guess</button>
+            <p id="guessResult"></p>
+            <p class="score" id="attemptCount">Attempts: 0</p>
+            <button onclick="resetGuessing()">New Game</button>
+        </div>
+    </div>
+
+    <!-- Rock Paper Scissors Modal -->
+    <div id="rpsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeGame('rps')">&times;</span>
+            <h2>Rock Paper Scissors</h2>
+            <div id="rpsGameArea" style="text-align: center; margin: 20px 0;">
+                <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+                    <div>
+                        <h3>You</h3>
+                        <div id="playerHand" style="font-size: 80px; height: 100px; display: flex; align-items: center; justify-content: center;">👊</div>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <h3 id="vsText">VS</h3>
+                    </div>
+                    <div>
+                        <h3>Computer</h3>
+                        <div id="computerHand" style="font-size: 80px; height: 100px; display: flex; align-items: center; justify-content: center;">👊</div>
+                    </div>
+                </div>
+                <p id="rpsResult" style="font-size: 18px; font-weight: bold; min-height: 30px; color: blue;"></p>
+                <p class="score" id="rpsScore" style="font-size: 16px;">You: 0 | Computer: 0</p>
+            </div>
+            <div style="text-align: center; margin: 15px 0;">
+                <button onclick="playRPS('rock')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">🪨 Rock</button>
+                <button onclick="playRPS('paper')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">📄 Paper</button>
+                <button onclick="playRPS('scissors')" style="margin: 5px; padding: 10px 15px; font-size: 16px;">✂️ Scissors</button>
+            </div>
+            <button onclick="resetRPS()" style="width: 100%; margin-top: 10px;">Reset Score</button>
+        </div>
+    </div>
+
+    <script>
+        // Tic Tac Toe
+        let tictactoeBoard = ['', '', '', '', '', '', '', '', ''];
+        let tictactoeGameOver = false;
+        let playerSymbol = 'X';
+        let computerSymbol = 'O';
+
+        function initTicTacToe() {
+            tictactoeBoard = ['', '', '', '', '', '', '', '', ''];
+            tictactoeGameOver = false;
+            // 50/50 chance for player to be X or O
+            if (Math.random() < 0.5) {
+                playerSymbol = 'X';
+                computerSymbol = 'O';
+            } else {
+                playerSymbol = 'O';
+                computerSymbol = 'X';
+            }
+            // Update the instruction text
+            const instructionEl = document.querySelector('#tictactoeModal p');
+            if (instructionEl) {
+                instructionEl.textContent = `You are ${playerSymbol}, Computer is ${computerSymbol}`;
+            }
+            renderTicTacToe();
+        }
+
+        function renderTicTacToe(animateIndex = -1) {
+            const board = document.getElementById('tictactoeboard');
+            board.innerHTML = '';
+            tictactoeBoard.forEach((cell, index) => {
+                const div = document.createElement('div');
+                div.className = 'cell';
+                if (animateIndex === index && cell) {
+                    div.classList.add('animate');
+                }
+                div.textContent = cell;
+                div.onclick = () => playTicTacToe(index);
+                board.appendChild(div);
+            });
+        }
+
+        function playTicTacToe(index) {
+            if (tictactoeBoard[index] === '' && !tictactoeGameOver) {
+                tictactoeBoard[index] = playerSymbol;
+                renderTicTacToe(index);
+                if (checkWinner()) {
+                    tictactoeGameOver = true;
+                    alert('You Win!');
+                } else if (tictactoeBoard.every(cell => cell !== '')) {
+                    tictactoeGameOver = true;
+                    alert('It\'s a Draw!');
+                } else {
+                    setTimeout(() => computerPlayTicTacToe(), 500);
+                }
+            }
+        }
+
+        function computerPlayTicTacToe() {
+            const emptyIndices = tictactoeBoard.map((cell, idx) => cell === '' ? idx : null).filter(val => val !== null);
+            if (emptyIndices.length > 0) {
+                const randomIndex = emptyIndices[Math.floor(Math.random() * emptyIndices.length)];
+                tictactoeBoard[randomIndex] = computerSymbol;
+                renderTicTacToe(randomIndex);
+                if (checkWinner()) {
+                    tictactoeGameOver = true;
+                    alert('Computer Wins!');
+                } else if (tictactoeBoard.every(cell => cell !== '')) {
+                    tictactoeGameOver = true;
+                    alert('It\'s a Draw!');
+                }
+            }
+        }
+
+        function checkWinner() {
+            const lines = [[0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]];
+            for (let i = 0; i < lines.length; i++) {
+                const [a, b, c] = lines[i];
+                if (tictactoeBoard[a] && tictactoeBoard[a] === tictactoeBoard[b] && tictactoeBoard[a] === tictactoeBoard[c]) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function resetTicTacToe() {
+            initTicTacToe();
+        }
+
+        // Guessing Game
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function submitGuess() {
+            const guess = parseInt(document.getElementById('guessInput').value);
+            const resultEl = document.getElementById('guessResult');
+            attempts++;
+            
+            if (isNaN(guess)) {
+                resultEl.textContent = 'Please enter a valid number';
+                resultEl.style.color = 'red';
+            } else if (guess === secretNumber) {
+                resultEl.textContent = `Correct! It took ${attempts} attempts!`;
+                resultEl.style.color = 'green';
+                document.getElementById('guessInput').disabled = true;
+            } else if (guess < secretNumber) {
+                resultEl.textContent = 'Too low, try higher';
+                resultEl.style.color = 'orange';
+            } else {
+                resultEl.textContent = 'Too high, try lower';
+                resultEl.style.color = 'orange';
+            }
+            document.getElementById('attemptCount').textContent = `Attempts: ${attempts}`;
+            document.getElementById('guessInput').value = '';
+        }
+
+        function resetGuessing() {
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            document.getElementById('guessInput').disabled = false;
+            document.getElementById('guessInput').value = '';
+            document.getElementById('guessResult').textContent = '';
+            document.getElementById('attemptCount').textContent = 'Attempts: 0';
+        }
+
+        // Rock Paper Scissors
+        let rpsScore = { player: 0, computer: 0 };
+        let rpsGameInProgress = false;
+        const rpsEmojis = {
+            rock: '🪨',
+            paper: '📄',
+            scissors: '✂️'
+        };
+        const rpsHands = {
+            rock: '✊',
+            paper: '✋',
+            scissors: '🤘'
+        };
+
+        function playRPS(choice) {
+            if (rpsGameInProgress) return;
+            rpsGameInProgress = true;
+            
+            const choices = ['rock', 'paper', 'scissors'];
+            let computerChoice = '';
+            let result = '';
+            let resultColor = 'blue';
+            let resultEmoji = '❓';
+
+            // Animate player choice
+            document.getElementById('playerHand').textContent = rpsHands[choice];
+            document.getElementById('playerHand').style.animation = 'none';
+            setTimeout(() => {
+                document.getElementById('playerHand').style.animation = 'bounce 0.6s';
+            }, 10);
+
+            // Animate computer thinking
+            document.getElementById('computerHand').style.animation = 'spin 0.8s';
+            document.getElementById('vsText').textContent = '🎲';
+
+            setTimeout(() => {
+                computerChoice = choices[Math.floor(Math.random() * 3)];
+                document.getElementById('computerHand').textContent = rpsHands[computerChoice];
+                document.getElementById('computerHand').style.animation = 'none';
+                document.getElementById('vsText').textContent = 'VS';
+
+                // Determine winner
+                if (choice === computerChoice) {
+                    result = ` It's a Tie!`;
+                    resultColor = 'orange';
+                    resultEmoji = '';
+                } else if (
+                    (choice === 'rock' && computerChoice === 'scissors') ||
+                    (choice === 'paper' && computerChoice === 'rock') ||
+                    (choice === 'scissors' && computerChoice === 'paper')
+                ) {
+                    result = ` You Win! ${rpsEmojis[choice]} beats ${rpsEmojis[computerChoice]}`;
+                    rpsScore.player++;
+                    resultColor = 'green';
+                    resultEmoji = '';
+                    document.getElementById('playerHand').style.animation = 'celebrate 0.8s';
+                } else {
+                    result = ` Computer Wins! ${rpsEmojis[computerChoice]} beats ${rpsEmojis[choice]}`;
+                    rpsScore.computer++;
+                    resultColor = 'red';
+                    resultEmoji = '';
+                    document.getElementById('computerHand').style.animation = 'celebrate 0.8s';
+                }
+
+                document.getElementById('rpsResult').textContent = result;
+                document.getElementById('rpsResult').style.color = resultColor;
+                updateRPSScore();
+                rpsGameInProgress = false;
+            }, 800);
+        }
+
+        function updateRPSScore() {
+            document.getElementById('rpsScore').textContent = `You: ${rpsScore.player} | Computer: ${rpsScore.computer}`;
+        }
+
+        function resetRPS() {
+            rpsScore = { player: 0, computer: 0 };
+            document.getElementById('rpsResult').textContent = '';
+            document.getElementById('playerHand').textContent = '👊';
+            document.getElementById('computerHand').textContent = '👊';
+            document.getElementById('playerHand').style.animation = 'none';
+            document.getElementById('computerHand').style.animation = 'none';
+            updateRPSScore();
+        }
+
+        // Modal functions
+        function openGame(game) {
+            const modalId = game === 'tictactoe' ? 'tictactoeModal' : game === 'guessing' ? 'guessingModal' : 'rpsModal';
+            document.getElementById(modalId).classList.add('show');
+            if (game === 'tictactoe') initTicTacToe();
+            if (game === 'guessing') resetGuessing();
+            if (game === 'rps') resetRPS();
+        }
+
+        function closeGame(game) {
+            const modalId = game === 'tictactoe' ? 'tictactoeModal' : game === 'guessing' ? 'guessingModal' : 'rpsModal';
+            document.getElementById(modalId).classList.remove('show');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('show');
+            }
+        }
+    </script>
+</body>
+</html>

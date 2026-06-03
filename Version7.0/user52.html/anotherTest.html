@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="submit-to-google-sheet">
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="email" type="email" placeholder="Name" required>
+        <input name="email" type="email" placeholder="Favorite color" required>
+        <input name="email" type="email" placeholder="Comments" required>
+        <button type="submit">Send</button>
+     </form>
+      
+      <script>
+        const scriptURL = '<your script url>';
+        const form = document.forms['submit-to-google-sheet'];
+        
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault();
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => alert('Success!', response))
+            .catch(error => alert('Error!', error.message));
+        });
+      </script>
+    
+</body>
+</html>

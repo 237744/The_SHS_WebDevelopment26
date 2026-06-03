@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Park Overview - Roller Amusement Park</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-color: #e6f2ff;
+            font-family: Arial, sans-serif;
+            transition: 0.3s;
+        }
+        main {
+            flex: 1;
+        }
+        .navbar, footer {
+            background-color: #002060 !important;
+        }
+        footer {
+            margin-top: auto;
+        }
+        
+        .overview-card {
+            border: 4px solid #00b3ff !important;
+            border-radius: 20px !important;
+            background-color: white;
+        }
+
+        .filter-btn {
+            border: 2px solid #003399;
+            background-color: white;
+            color: #003399;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 5px 15px;
+        }
+        .filter-btn.active {
+            background-color: #003399;
+            color: white;
+        }
+
+        .dark-mode {
+            background-color: #222 !important;
+            color: #fff !important;
+        }
+        .dark-mode p {
+            color: #e6f2ff !important;
+        }
+        .dark-mode .overview-card {
+            background-color: #333 !important;
+            border-color: #002060 !important;
+            color: #fff;
+        }
+        .dark-mode .filter-btn {
+            background-color: #444;
+            color: #fff;
+            border-color: #00b3ff;
+        }
+        .dark-mode .filter-btn.active {
+            background-color: #00b3ff;
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html" style="color: #00b3ff;">🎢 Roller Amusement Park</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="carousel.html">🎠 Rides</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Overview.html">📋 Overview</a></li>
+                    <li class="nav-item"><button class="btn btn-outline-light btn-sm ms-2 mt-1" onclick="toggleDarkMode()">🌙 Night Mode</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <h2 class="text-center fw-bold mb-4" style="color: #003399;">Park Map and Info</h2>
+        <p class="text-center mb-4">Click the buttons to sort the park areas.</p>
+
+        <div class="text-center mb-5">
+            <button class="filter-btn mx-1 active" onclick="filterParkZones('all', this)">Show All</button>
+            <button class="filter-btn mx-1" onclick="filterParkZones('thrill', this)">Rollercoasters</button>
+            <button class="filter-btn mx-1" onclick="filterParkZones('family', this)">Food and Fun</button>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4 park-zone-card thrill">
+                <div class="card overview-card shadow p-3 h-100">
+                    <div class="card-body">
+                        <h4 class="fw-bold" style="color: #003399;">Rollercoasters</h4>
+                        <p class="mb-0">This area has the fast rides with big drops.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4 park-zone-card family">
+                <div class="card overview-card shadow p-3 h-100">
+                    <div class="card-body">
+                        <h4 class="fw-bold" style="color: #003399;">Food Court</h4>
+                        <p class="mb-0">This is where you can buy burgers and hot dogs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4 park-zone-card family">
+                <div class="card overview-card shadow p-3 h-100">
+                    <div class="card-body">
+                        <h4 class="fw-bold" style="color: #003399;">Ferris Wheel</h4>
+                        <p class="mb-0">A slow ride where you can see the whole park.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4 park-zone-card family">
+                <div class="card overview-card shadow p-3 h-100">
+                    <div class="card-body">
+                        <h4 class="fw-bold" style="color: #003399;">Arcade</h4>
+                        <p class="mb-0">An indoor room with video games and prizes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-light text-center py-3">
+        <p class="mb-0">&copy; 2026 Roller Amusement Park Project.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="JS/standard.js"></script>
+</body>
+</html>

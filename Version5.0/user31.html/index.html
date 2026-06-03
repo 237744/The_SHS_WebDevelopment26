@@ -47,8 +47,15 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
-    </style>
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+        --bs-table-color-type: var(--bs-table-striped-color);
+        --bs-table-bg-type: rgba(255, 0, 0, 0.3)
+        --
+        
+}
 
+    </style>
+</head>
     <body>
         <!---------------------------------- Begin the nav-bar ----------------------------------->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -62,23 +69,23 @@
                     <ul class="navbar-nav me-auto">
                         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">Home</a>
+                            <a href="https://en.wikipedia.org/wiki/Poland" target="_blank" class="nav-link active">Poland</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
+                            <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Link
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="https://www.dndbeyond.com/characters" target="_blank">DND</a></li>
+                                <li><a class="dropdown-item" href="https://en.wikipedia.org/wiki/Ibn_Battuta" target="_blank">Ibn Batutta</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="https://wordleunlimited.org/" target="_blank">Wordle</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                            <a href="https://en.wikipedia.org/wiki/Domer" target="_blank" class="nav-link active" tabindex="-1">domer</a>
                         </li>
                         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                     </ul>
@@ -163,31 +170,50 @@
             <div class="container mt-3 vstack" name="form-button">
             </div>
         </main>
-
+        <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+                <i class="fa fa-home"></i> Home
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <i class="fa fa-camera"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active">145</span>
+            </a>
+            <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+                <i class="fa fa-music"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active">50</span>
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">
+                <i class="fa fa-film"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right">8</span>
+            </a>
+        </div>
+        <div class="list">
+            </a>
+            <a href="https://en.wikipedia.org/wiki/Ibn_Battuta" onclick="window.open('https://en.wikipedia.org/wiki/Ibn_Battuta', 'newwindow', 'width=800,height=600'); return false;" class="list-group-item list-group-item-action">
+                <i class="fa-solid fa-book-quran"></i> Ibn Batutta <span class="badge bg-secondary badge-pill badge-primary pull-right active">1</span>
+            </a>
+            <a href="https://www.dndbeyond.com/characters" target="_blank" class="list-group-item list-group-item-action">
+                <i class="fa-brands fa-d-and-d"></i> Dnd <span class="badge bg-secondary badge-pill badge-primary pull-right active">1</span>
+            </a>
+            <a href="https://www.nytimes.com/games/wordle/index.html" target="_blank" class="list-group-item list-group-item-action">
+                <i class="fa-brands fa-wordpress"></i> Wordle <span class="badge bg-secondary badge-pill badge-primary pull-right">1</span>
+            </a>
+        </div>
+        <a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a>
         <!---------------------------------- Begin the footer ------------------------------------->
-        <footer>
-            <span class="title">Example of a Footer Title</span>
-            <div class="container py-4" id="footerTable">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
-            </div>
+        <footer class="text-center bg-body-tertiary">
+        <div class="container pt-4" >
+            <section class="mb-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                <a
+                data-mdb-ripple-init
+                class="btn btn-link btn-floating btn-lg text-body m-1"
+                href="https://www.dndbeyond.com/characters" target=""
+                role="button"
+                data-mdb-ripple-color="dark">
+                    <i class="fa-brands fa-d-and-d"></i>
+        </section>
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2020 Copyright:
+            <a class="text-body" href="file:///Users/311717/Documents/GitHub/The_SHS_WebDevelopment26/Version5.0/user31.html/index.html#">Mohameds Website</a>
+        </div>
         </footer>
         <!---------------------------------- End the footer --------------------------------------->
     </body>
-
 </html>

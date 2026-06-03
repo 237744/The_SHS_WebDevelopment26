@@ -8,6 +8,7 @@
 <head>
     <title>Bootstrap Examples</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Homepage meta data -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,47 +48,57 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+           --bs-table-color-type: var(--bs-table-striped-color);
+           --bs-table-bg-type: rgba(92, 102, 241, 0.15)
+            }
     </style>
+
+    </head>
 
     <body>
         <!---------------------------------- Begin the nav-bar ----------------------------------->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+ <nav class="navbar navbar-expand-md navbar-dark" style="background: linear-gradient(90deg, #1a1a2e 0%, #16213e 100%); padding: 10px 16px;">
+    <div class="container-fluid">
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav me-auto">
-                        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">Home</a>
+        <a class="navbar-brand fw-bold" href="#" style="color: #e94560; letter-spacing: 1px; font-size: 1.3rem;">
+            <i class="fa fa-code me-2"></i>WebDev
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Link
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">About Me</a></li>
+                        <li><a class="dropdown-item" href="#">Music</a></li>
+                        <li>
+                            <hr class="dropdown-divider">
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
-                        </li>
-                        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+                        <li><a class="dropdown-item" href="#">Videos</a></li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </form>
-                </div>
+                </li>
+                <li class="nav-item">
+                    <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                </li>
+            </ul>
+            <div class="d-flex gap-2 align-items-center">
+                <a href="form.html" class="btn btn-success btn-lg" role="button">Login</a>
+                <button class="btn btn-primary" type="button">Form Page</button>
             </div>
-        </nav>
+        </div>
+
+    </div>
+</nav>
         <!---------------------------------- End the nav-bar ------------------------------------->
         <!---------Jumbotron---------------------------------------------->
         <header class="p-5 bg-primary-subtle text-black" name="Jumbotron">
@@ -162,11 +173,29 @@
             <!---------Form Button--------------------------------------------->
             <div class="container mt-3 vstack" name="form-button">
             </div>
+
+            <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">
+            <i class="fa fa-home"></i> Home
+             </a>
+    <a href="#" class="list-group-item list-group-item-action">
+    <i class="fa fa-camera"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active">145</span>
+        </a>
+            <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+            <i class="fa fa-music"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active">50</span>
+         </a>
+        <a href="#" class="list-group-item list-group-item-action">
+      <i class="fa fa-film"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right">8</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+    <i class="fa-solid fa-headphones"></i> Headphones
+</a>
+</div>
         </main>
 
         <!---------------------------------- Begin the footer ------------------------------------->
-        <footer>
-            <span class="title">Example of a Footer Title</span>
+        <footer class="bg-dark text-white text-center p-3 mt-5">
+            <span class="title d-block mb-2">Example of a Footer Title</span>
             <div class="container py-4" id="footerTable">
                 <ul class="list-unstyled d-flex justify-content-center">
                     <li class="mx-3">
@@ -186,6 +215,7 @@
                     </li>
                 </ul>
             </div>
+            <p class="mb-0"></p>
         </footer>
         <!---------------------------------- End the footer --------------------------------------->
     </body>

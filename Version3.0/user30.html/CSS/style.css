@@ -19,3 +19,17 @@ th {
 	color: #ffffff;
 	background-color: #003366;
 }
+ol {
+    color: blue;
+}
+
+ul {
+    color: green;
+}
+ol {
+    background-color: lightgray;
+}
+
+ul {
+    font-size: 20px;
+}

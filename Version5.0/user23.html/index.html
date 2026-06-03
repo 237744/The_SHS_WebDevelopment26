@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 5.0
-    Name:
-    Date Completed:
+    Name: Sheillah Onditi
+    Date Completed: April 29
 -->
 
 <head>
@@ -29,8 +29,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom styles for this template -->
+    
     <style type="text/css">
         footer {
             font-size: 12px;
@@ -47,48 +46,76 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+  .fa-facebook { color: #1877F2; }
+  .fa-instagram { color: #E4405F; }
+  .fa-twitter, .fa-x-twitter { color: #1DA1F2; }
+  .fa-github { color: #60438b; }
+  .fa-tiktok { color: #000000; }
+  .fa-linkedin { color: #0A66C2; }
+  .fa-youtube { color: #FF0000; }
+  .btn-outline-dark:hover .fa-facebook { color: white; }
+  .btn-outline-dark:hover .fa-instagram { color: white; }
+  .fa-tiktok-box { 
+    background-color: #000000 !important; 
+    color: white !important; 
+}
+ 
+</style>
     </style>
 
     <body>
         <!---------------------------------- Begin the nav-bar ----------------------------------->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark border-bottom">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="index.html">SHEILLAH</a>
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav me-auto">
-                        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
-                        </li>
-                        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+            <a class="nav-link active" href="index.html"><i class="fas fa-home me-1"></i> Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="galleries.html"><i class="fas fa-images me-1"></i> Galleries</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fas fa-envelope me-1"></i> Contact</a>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html"><i class="fas fa-user me-1"></i> About</a>
+        <li class="nav-item">
+            <a class="nav-link" href="journeys.html"><i class="fas fa-map-marked-alt me-1"></i> Journeys</a>
+        <li class="nav-item">
+            <a class="nav-link" href="form.html"><i class="fas fa-paper-plane me-1"></i> Form</a>   
+        </li>
+    </ul>
+
+    <div class="d-flex align-items-center">
+          <form class="d-flex me-2" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          
+          <a href="login.html" class="btn btn-primary ms-lg-3"><i class="fas fa-user-circle me-1"></i> Sign In</a>
+      </div>
+    </form>
+</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+                    
         <!---------------------------------- End the nav-bar ------------------------------------->
+        <div class="container mt-5">
+    <div class="row">
+        <div class="col">
+             <h1 class="text-center">This is my first Bootstrap column!</h1>
+        </div>
+    </div>
+</div>
         <!---------Jumbotron---------------------------------------------->
         <header class="p-5 bg-primary-subtle text-black" name="Jumbotron">
             <h4> Bootstrap Examples</h4>
@@ -117,7 +144,57 @@
                         <div class="demo-content bg-alt">.col-md-8</div>
                     </div>
                 </div>
+                <div class="container mt-5">
+    <h3>Part IV: Striped Table</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Row</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Clark</td>
+                <td>Kent</td>
+                <td>clarkkent@mail.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>John</td>
+                <td>Carter</td>
+                <td>johncarter@mail.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Peter</td>
+                <td>Parker</td>
+                <td>peterparker@mail.com</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
                 <!--Row with two columns divided in 1:3 ratio-->
+                <div class="container mt-5">
+    <h3>Part V: My Custom List Group</h3>
+<div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+            <i class="fa fa-home"></i> Home
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="fa fa-camera"></i> Pictures <span class="badge bg-secondary rounded-pill float-end">145</span>
+        </a>
+        <a href="https://spotify.com" target="_blank" class="list-group-item list-group-item-action">
+            <i class="fa fa-music"></i> Music <span class="badge bg-primary rounded-pill float-end">50</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="fa fa-film"></i> Videos <span class="badge bg-dark rounded-pill float-end">8</span>
+        </a>
+    </div>
+</div>
                 <div class="row">
                     <div class="col-md-3">
                         <div class="demo-content">.col-md-3</div>
@@ -126,7 +203,13 @@
                         <div class="demo-content bg-alt">.col-md-9</div>
                     </div>
                 </div>
-
+<div class="container mt-5 mb-5 text-center">
+    <hr>
+    <p class="lead">Ready to submit your information?</p>
+    <a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a>
+        <i class="fa fa-paper-plane"></i> Go to Form Page
+    </a>
+</div>
                 <!---------Auto Layout Columns--------->
                 <div class="row">
                     <div class="col demo-content">Column one</div>
@@ -165,29 +248,59 @@
         </main>
 
         <!---------------------------------- Begin the footer ------------------------------------->
-        <footer>
-            <span class="title">Example of a Footer Title</span>
-            <div class="container py-4" id="footerTable">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-        <!---------------------------------- End the footer --------------------------------------->
+        
+<footer class="bg-light text-dark text-center mt-5 border-top">
+  <div class="container p-4">
+    <div class="row">
+      
+      <div class="col-lg-4 col-md-12 mb-4">
+        <h5 class="text-uppercase text-dark">Sign up for updates</h5>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control border-dark" placeholder="Email address">
+          <button class="btn btn-outline-dark" type="button">></button>
+        </div>
+      </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+    <h5 class="text-uppercase text-dark">Follow Us</h5>
+    
+    <a class="btn btn-floating m-1" href="#!"><i class="fab fa-facebook fa-lg"></i></a>
+
+    <a class="btn btn-floating m-1" href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+
+    <a class="btn github-box m-1" href="#!" role="button" style="width: 40px; height: 40px; padding: 0; line-height: 40px; display: inline-flex; align-items: center; justify-content: center;">
+        <i class="fab fa-github fa-lg"></i>
+    </a>
+
+    <a class="btn tiktok-box m-1" href="#!" role="button" style="width: 40px; height: 40px; padding: 0; line-height: 40px; display: inline-flex; align-items: center; justify-content: center;">
+        <i class="fab fa-tiktok fa-lg"></i>
+    </a>
+
+    <a class="btn btn-floating m-1" href="#!"><i class="fab fa-youtube fa-lg"></i></a>
+    <a class="btn btn-floating m-1" href="#!"><i class="fab fa-linkedin fa-lg"></i></a>
+    <a class="btn btn-floating m-1" href="#!"><i class="fab fa-x-twitter fa-lg"></i></a>
+</div>
+
+      <div class="col-lg-4 col-md-6 mb-4">
+        <h5 class="text-uppercase text-dark">Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#!" class="text-dark">HOME</a></li>
+            <li><a href="#!" class="text-dark">ABOUT</a></li>
+          <li><a href="#!" class="text-dark">JOURNEYS</a></li>
+          <li><a href="#!" class="text-dark">CONTACT</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="text-center p-3 text-dark" style="background-color: rgba(0, 0, 0, 0.1);">
+    © 2026 Copyright: Sheillah - Web Dev 1
+  </div>
+</footer>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <!---------------------------------- End the footer ------------------------------------->
     </body>
 
 </html>

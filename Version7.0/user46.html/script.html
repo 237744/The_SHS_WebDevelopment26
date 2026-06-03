@@ -28,6 +28,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
+    <script src="JS/SampleJS.js"></script>
+    <script>
+function myFunction() {
+  const x = document.getElementById("fname");
+  x.value = x.value.toUpperCase();
+}
+</script>
 
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
@@ -76,9 +83,31 @@
                 <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
                 <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
                 <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+                <div class="row">
+      <div class="col" style="background-color:yellow;">25%</div>
+      <div class="col" style="background-color:orange;">25%</div>
+      <div class="col" style="background-color:yellow;">25%</div>
+      <div class="col" style="background-color:orange;">25%</div>
+    </div>
+  </div>
             </div>
         </div>
     </main>
+    <center><p id="textChange"> Hello Welcome </p></center>
+<center><button type="button" onclick="changeText()">Click if you love pizza</button></center>
+<h1>JavaScript HTML Events</h1>
+<h2>The Upper Case Machine</h2>
+
+Enter your name: <input type="text" id="fname" onkeyup="myFunction()">
+
+<p>Type, and everything you type will be converted to upper case.</p>
+
+ <b><p id="hideMe">Hello</p></b>
+                <button onclick="showAlert()">Alert</button>
+                <button onclick="changeColor()">Red Background</button>
+                <button onclick="resetColor()">Reset Background</button>
+                <button onclick="hideText()">Hide Text</button>
+                <button onclick="showText()">Show Text</button>
     <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
 
 

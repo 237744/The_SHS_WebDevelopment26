@@ -1,193 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Version 5.0
-    Name:
-    Date Completed:
--->
-
 <head>
-    <title>Bootstrap Examples</title>
-
-    <!-- Homepage meta data -->
+    <title>WebDev | The Final Master Project</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Version 5.0 - Index Bootstrap Examples">
 
-    <!-- CSS -->
-    <!-- Bootstrap -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Custom -->
-    <link rel="stylesheet" href="CSS/style.css">
-
-    <!-- JavaScript -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Custom styles for this template -->
+    
     <style type="text/css">
-        footer {
-            font-size: 12px;
-            text-align: center;
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f4f7f6;
         }
-        
+        main { flex: 1; }
+
+        /* --- RAINBOW FADE ANIMATION --- */
+        @keyframes rainbow-fade {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .rainbow-animated {
+            background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1, #84fab0, #a1c4fd);
+            background-size: 400% 400%;
+            animation: rainbow-fade 10s ease infinite;
+            color: white !important;
+            border: none !important;
+        }
+
+        /* --- DARK GRADIENT BOX --- */
+        .gray-gradient-box {
+            background: linear-gradient(180deg, #32383e 0%, #1e2125 100%);
+            color: #ffffff !important;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* --- THE SATISFYING FLIP ANIMATION --- */
+        .btn-flip {
+            transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+            perspective: 1000px;
+        }
+        .btn-flip:hover {
+            transform: rotateX(360deg) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
         .demo-content {
             padding: 15px;
             font-size: 18px;
             background: #dbdfe5;
             margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
         }
-        
-        .demo-content.bg-alt {
-            background: #abb1b8;
+        .demo-content.bg-alt { background: #abb1b8; }
+
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            --bs-table-bg-type: rgba(255, 0, 0, 0.1) !important;
         }
     </style>
+</head>
 
-    <body>
-        <!---------------------------------- Begin the nav-bar ----------------------------------->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<body>
+    <audio id="bg-music" src="aquatic.mp3" loop></audio>
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav me-auto">
-                        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
-                        </li>
-                        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </form>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark bg-gradient shadow">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="http://shakonet.isd720.com">WebDev</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto"> 
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="aboutMe.html">About Me</a>
+                    <a class="nav-link disabled" href="music.html" tabindex="-1" aria-disabled="true">Music</a>
+                    <a class="nav-link disabled" href="mailto:sample@gmail.com" tabindex="-1" aria-disabled="true">Contact</a>
+                    
+                    <button class="btn btn-primary rounded-pill px-4 btn-flip ms-md-3 mt-2 mt-md-0" type="button">Login</button>
                 </div>
             </div>
-        </nav>
-        <!---------------------------------- End the nav-bar ------------------------------------->
-        <!---------Jumbotron---------------------------------------------->
-        <header class="p-5 bg-primary-subtle text-black" name="Jumbotron">
-            <h4> Bootstrap Examples</h4>
-            <p class="lead"> Let's look at the man different examples of how we can use bootstrap and what bootstrap can do!
-            </p>
-        </header>
+        </div>
+    </nav>
 
-        <main>
-            <!---------Three Column Layouts------------------------------------>
-            <div class="container mt-3">
-                <!--Row with two equal columns-->
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="demo-content">.col-md-6</div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="demo-content bg-alt">.col-md-6</div>
-                    </div>
-                </div>
-                <!--Row with two columns divided in 1:2 ratio-->
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="demo-content">.col-md-4</div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="demo-content bg-alt">.col-md-8</div>
-                    </div>
-                </div>
-                <!--Row with two columns divided in 1:3 ratio-->
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="demo-content">.col-md-3</div>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="demo-content bg-alt">.col-md-9</div>
-                    </div>
-                </div>
+    <header class="p-5 rainbow-animated text-center shadow-sm">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-white">Bootstrap Examples</h1>
+            <p class="lead text-white">Layouts, Tables, Lists, and Interactive Components</p>
+        </div>
+    </header>
 
-                <!---------Auto Layout Columns--------->
-                <div class="row">
-                    <div class="col demo-content">Column one</div>
-                    <div class="col demo-content bg-alt">Column two</div>
-                    <div class="col demo-content">Column three</div>
-                    <div class="col demo-content bg-alt">Column four</div>
-                    <div class="col demo-content">Column five</div>
-                    <div class="col demo-content bg-alt">Column six</div>
-                </div>
+    <main class="container mt-5 mb-5">
+        <h3 class="mb-3">Grid System</h3>
+        <div class="row">
+            <div class="col-md-6"><div class="demo-content">.col-md-6</div></div>
+            <div class="col-md-6"><div class="demo-content bg-alt">.col-md-6</div></div>
+        </div>
 
-                <!---------Flexible Layouts--------->
-                <div class="row">
-                    <div class="col-md-4 col-lg-3">
-                        <div class="demo-content">.col-md-4 .col-lg-3</div>
-                    </div>
-                    <div class="col-md-8 col-lg-6">
-                        <div class="demo-content bg-alt">.col-md-8 .col-lg-6</div>
-                    </div>
-                    <div class="col-md-12 col-lg-3">
-                        <div class="demo-content">.col-md-12 .col-lg-3</div>
-                    </div>
-                </div>
+        <div class="row">
+            <div class="col-md-4"><div class="demo-content">.col-md-4</div></div>
+            <div class="col-md-8"><div class="demo-content bg-alt">.col-md-8</div></div>
+        </div>
+
+        <h3 class="mt-5 mb-3">Data Table</h3>
+        <div class="table-responsive shadow-sm rounded">
+            <table class="table table-striped table-hover border">
+                <thead class="table-dark">
+                    <tr><th>Row</th><th>First Name</th><th>Last Name</th><th>Email</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Clark</td><td>Kent</td><td>clarkkent@mail.com</td></tr>
+                    <tr><td>2</td><td>John</td><td>Carter</td><td>johncarter@mail.com</td></tr>
+                    <tr><td>3</td><td>Peter</td><td>Parker</td><td>peterparker@mail.com</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h3 class="mt-5 mb-3">Actions</h3>
+        <div class="row g-3">
+            <div class="col-6 col-md-3">
+                <button class="btn btn-outline-primary w-100 btn-flip py-3 fw-bold">Update</button>
             </div>
-
-            <!---------Table-Striped------------------------------------------->
-            <div class="container mt-3" name="table-striped">
+            <div class="col-6 col-md-3">
+                <button class="btn btn-outline-danger w-100 btn-flip py-3 fw-bold">Delete</button>
             </div>
-
-            <!---------List-Group---------------------------------------------->
-            <div class="container mt-3" name="list-group">
+            <div class="col-md-6">
+                <a href="form.html" class="btn btn-success w-100 btn-flip py-3 shadow fw-bold bg-gradient" role="button">
+                    🚀 Launch Form Page
+                </a>
             </div>
+        </div>
+    </main>
 
-            <!---------Form Button--------------------------------------------->
-            <div class="container mt-3 vstack" name="form-button">
-            </div>
-        </main>
+    <footer class="rainbow-animated pt-5 pb-4">
+        <div class="container text-center text-white">
+            <section class="mb-4">
+                <a class="btn btn-outline-light btn-floating m-1 rounded-circle btn-flip" href="#!"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1 rounded-circle btn-flip" href="#!"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1 rounded-circle btn-flip" href="#!"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-light btn-floating m-1 rounded-circle btn-flip" href="#!"><i class="fab fa-github"></i></a>
+            </section>
+            <p class="fw-bold mb-1">Includes cool satisfying buttons and cool gradient colors!</p>
+            <p class="small mb-4">Took a while to figure this out but I hope you enjoy!</p>
+            
+            <h5 class="text-uppercase fw-bold mt-2">Quick Links</h5>
+            <ul class="list-inline mb-0">
+                <li class="list-inline-item mx-3"><a href="#" class="text-white text-decoration-none small">Home</a></li>
+                <li class="list-inline-item mx-3"><a href="#" class="text-white text-decoration-none small">About Us</a></li>
+                <li class="list-inline-item mx-3"><a href="#" class="text-white text-decoration-none small">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
 
-        <!---------------------------------- Begin the footer ------------------------------------->
-        <footer>
-            <span class="title">Example of a Footer Title</span>
-            <div class="container py-4" id="footerTable">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
-            </div>
-        </footer>
-        <!---------------------------------- End the footer --------------------------------------->
-    </body>
+    <div class="gray-gradient-box py-4 text-center">
+        <div class="container">
+            <p class="mb-1 fw-bold" style="font-style: italic;">Used with Bootstrap 5 to make this footer</p>
+            <p class="small mb-0">© 2026 Kaden D. | All Rights Reserved</p>
+        </div>
+    </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Music play on first click
+        document.addEventListener('click', function() {
+            var audio = document.getElementById("bg-music");
+            audio.play();
+        }, { once: true });
+    </script>
+</body>
 </html>

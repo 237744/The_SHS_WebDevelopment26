@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <script>
+            function greetMsg() {
+                alert("Hello, welcome to Shakopee High School!");
+                //Teut said to add a comment here, so here it is. This is a comment.
+            }
+        </script>
+        
+    
+        
+    </head>
+    <d>
+        <main>
+            <div class="container">
+            <input type="text" id="num"/>
+            <input type="text" id="num2"/> 
+            <button class="btn btn-danger btn-lg" value="Save" onclick="saveNum()">Save  </button>
+            <span id="savedNum">Saved number will be displayed here</span>
+            <script>
+                function saveNum() {
+                    let num = Number(document.getElementById("num").value);
+                    let num2 = Number(document.getElementById("num2").value);
+                    document.getElementById("savedNum").innerHTML = "Saved number: " + num + " and " + num2;
+                    
+                }
+            </script>
+            </div>
+            <div class="container">
+                <h2>Simple Calculator</h2>
+            <input type="text" id="numb"/> + <input type="text" id="numbe"/> 
+            <button class="btn btn-danger btn-lg" value="Calculate" onclick="calcSum">Calculate</button>
+            <span id="sumedResult">The sum will be displayed here</span>
+            <script>
+                function calcSum() {
+                    let numb = Number(document.getElementById("numb").value);
+                    let numbe = Number(document.getElementById("numbe").value);
+                    let sum = Number(document.write(numb + numbe));
+                    document.getElementById("sumedResult").innerHTML = numb + " + " + numbe + " = " + sum;
+                    
+            }
+            </script>
+            </div>
+            <div class="container">
+            <input type="text" id="num3" placeholder="Enter a third number" />*<input type="text" id="num4" placeholder="Enter a fourth number" /> <button class="btn btn-danger btn-lg" value="Calculate" onclick="calcProd">Calculate</button>
+            <span id="prodResult">product will be displayed here</span>
+            <script>
+                function calcProd() {
+                    let num3 = document.getElementById("num3").value;
+                    let num4 = document.getElementById("num4").value;
+                    let prod = num3 * num4;
+                    document.getElementById("prodResult").innerHTML = "The product is: " + prod;
+            }
+            </script>
+            </div>
+            <div class="container">
+            Pythagorean Theorem: a^2 + b^2 = c^2
+            a = <input type="text" id="sideA" placeholder="Enter side a" />; 
+            b = <input type="text" id="sideB" placeholder="Enter side b" />; 
+            <button class="btn btn-danger btn-lg" value="Calculate" onclick="calcHypotenuse">Calculate</button>
+            <span id="hypotenuseResult">hypotenuse will be displayed here</span>
+        </main>
+        
+        <script>
+            function calcHypotenuse() {
+                let sideA = document.getElementById("sideA").value;
+                let sideB = document.getElementById("sideB").value;
+                let hypotenuse = Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+                document.getElementById("hypotenuseResult").innerHTML = "The hypotenuse is: " + hypotenuse;
+            }
+        </script>
+        </div>
+        
+    </body>
+</html>

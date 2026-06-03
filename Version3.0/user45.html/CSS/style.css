@@ -19,3 +19,14 @@ th {
 	color: #ffffff;
 	background-color: #003366;
 }
+
+ul {
+    list-style-image: url('sqpurple.gif');
+    list-style-type: square; 
+}
+
+
+ol {
+    list-style-image: url('smiley.gif');
+    list-style-type: decimal; 
+}

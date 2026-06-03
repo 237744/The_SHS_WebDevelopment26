@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Website with a Navbar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            padding: 0.75rem 1rem;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 0.75rem;
+            font-size: 0.95rem;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .brand {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .container {
+            padding: 2rem;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="brand">My Website</div>
+        <div class="menu">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="home">
+            <h1>Welcome</h1>
+            <p>This is a simple website layout with a navigation bar at the top.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p> 318108@shakopeeschools.org</p>
+        </section>
+    </main>
+    <footer>
+        <div class="social-links">
+            <a href="https://facebook.com">Facebook</a>
+            <a href="https://twitter.com">Twitter</a>
+            <a href="https://instagram.com">Instagram</a>
+        </div>
+        <div class="contact-info">
+            <p>Email: 318108@shakopeeschools.org | Phone: (123) 456-7890</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 A Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

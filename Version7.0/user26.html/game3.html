@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game 3 - Guess The Number</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Number Guessing Game">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="menu">
+        <nav class="navbar navbar-expand-md p-2 navbar-dark bg-dark">
+            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="games.html" class="nav-item nav-link">Games</a>
+                    <a href="game2.html" class="nav-item nav-link">Target Clicker</a>
+                    <a href="game3.html" class="nav-item nav-link active">Number Guess</a>
+                    <a href="bootstrap.html" class="nav-item nav-link" tabindex="-1">Bootstrap</a>
+                    <a href="script.html" class="nav-item nav-link" tabindex="-1">JavaScript</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main class="m-3" id="content">
+        <h1 class="text-left my-3">Guess The Number</h1>
+        <p>Try to guess the secret number. Use the score and lives display to track your progress.</p>
+        <div class="mb-3">
+            <label for="guessInput" class="form-label">Your guess (1–20):</label>
+            <input type="number" id="guessInput" class="form-control" min="1" max="20" placeholder="Enter a number">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary me-2" onclick="checkGuess()">Submit Guess</button>
+            <button class="btn btn-secondary me-2" onclick="resetGame()">Reset Game</button>
+            <button class="btn btn-outline-info me-2" onclick="setDifficulty('easy')">Easy</button>
+            <button class="btn btn-outline-danger" onclick="setDifficulty('hard')">Hard</button>
+        </div>
+        <div class="mb-3">
+            <p>Round: <strong><span id="roundNumber">1</span></strong> / <strong><span id="maxRounds">5</span></strong></p>
+            <p>Attempts left: <strong><span id="attemptsLeft">5</span></strong></p>
+            <p>Wins this session: <strong><span id="wins">0</span></strong></p>
+        </div>
+        <div id="message" class="alert alert-secondary" role="alert">Pick a number and press Guess.</div>
+        <script>
+            let secretNumber = 0;
+            let attemptsLeft = 5;
+            let round = 1;
+            let maxRounds = 5;
+            let wins = 0;
+            let difficulty = 'easy';
+
+            function newSecret() {
+                secretNumber = Math.floor(Math.random() * 20) + 1;
+            }
+
+            function updateUi() {
+                document.getElementById('roundNumber').textContent = round;
+                document.getElementById('maxRounds').textContent = maxRounds;
+                document.getElementById('attemptsLeft').textContent = attemptsLeft;
+                document.getElementById('wins').textContent = wins;
+            }
+
+            function setDifficulty(level) {
+                difficulty = level;
+                if (level === 'hard') {
+                    attemptsLeft = 3;
+                    maxRounds = 7;
+                    document.getElementById('message').textContent = 'Hard mode: fewer attempts, more rounds.';
+                } else {
+                    attemptsLeft = 5;
+                    maxRounds = 5;
+                    document.getElementById('message').textContent = 'Easy mode: more attempts, fewer rounds.';
+                }
+                round = 1;
+                wins = 0;
+                newSecret();
+                updateUi();
+            }
+
+            function checkGuess() {
+                const guess = Number(document.getElementById('guessInput').value);
+                if (!guess || guess < 1 || guess > 20) {
+                    document.getElementById('message').textContent = 'Enter a valid number between 1 and 20.';
+                    return;
+                }
+                if (guess === secretNumber) {
+                    wins += 1;
+                    document.getElementById('message').textContent = 'Correct! You guessed the number. Starting next round.';
+                    nextRound();
+                    return;
+                }
+                attemptsLeft -= 1;
+                if (attemptsLeft <= 0) {
+                    document.getElementById('message').textContent = 'Out of attempts. The number was ' + secretNumber + '. Starting next round.';
+                    nextRound();
+                    return;
+                }
+                document.getElementById('message').textContent = guess < secretNumber ? 'Too low!' : 'Too high!';
+                updateUi();
+            }
+
+            function nextRound() {
+                round += 1;
+                if (round > maxRounds) {
+                    document.getElementById('message').textContent = 'Game finished! You won ' + wins + ' rounds out of ' + maxRounds + '.';
+                    attemptsLeft = 0;
+                    updateUi();
+                    return;
+                }
+                attemptsLeft = (difficulty === 'hard') ? 3 : 5;
+                newSecret();
+                document.getElementById('guessInput').value = '';
+                updateUi();
+            }
+
+            function resetGame() {
+                difficulty = 'easy';
+                round = 1;
+                wins = 0;
+                attemptsLeft = 5;
+                maxRounds = 5;
+                newSecret();
+                document.getElementById('guessInput').value = '';
+                document.getElementById('message').textContent = 'Pick a number and press Guess.';
+                updateUi();
+            }
+
+            resetGame();
+        </script>
+    </main>
+</body>
+</html>

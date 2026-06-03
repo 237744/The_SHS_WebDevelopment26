@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial Black', Arial, sans-serif;
+    background-color: white;
+    margin: 0;
+}
+
+.navbar, footer {
+    background-color: #111;
+}
+
+.navbar-brand {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-link {
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+footer {
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero h1 {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 22px;
+}
+
+.team-logo {
+    width: 140px;
+    margin: 15px;
+}
+
+.stadium {
+    width: 80%;
+    max-width: 800px;
+    border-radius: 12px;
+    margin: 30px auto;
+    display: block;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 30%;
+    margin: 1%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+}
+
+.nameplate {
+    padding: 15px;
+    text-align: center;
+}
+
+.nameplate h4 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nameplate p {
+    font-size: 18px;
+}
+
+.section {
+    text-align: center;
+    padding: 40px 20px;
+}

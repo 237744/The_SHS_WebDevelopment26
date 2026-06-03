@@ -27,13 +27,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="JS/script.js"></script>
+    <script src="JS/SampleJS.js"></script>
 
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
     <!-- Custom styles for this template -->
     <style type="text/css">
-
+        .favorite {
+            background-color: #fff3cd;
+            color: #856404;
+            border: 2px solid #ffeeba;
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+        }
+        .page-highlight {
+            background: linear-gradient(135deg, #e8f0ff, #f8e8ff);
+        }
+        .js-box {
+            min-height: 260px;
+        }
+        .small-note {
+            font-size: 0.95rem;
+            color: #555;
+        }
     </style>
 </head>
 
@@ -72,10 +88,46 @@
         <!-- Edit this line for the title of your page -->
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
+            <div class="row gy-4">
+                <div class="col-sm-4">
+                    <div class="p-3 js-box border rounded bg-light" id="highlightBox">
+                        <h2>Text + Class</h2>
+                        <p id="textChange">My name is User 26</p>
+                        <button type="button" class="btn btn-primary mb-2" onclick="changeText()">Click if you like</button>
+                        <button type="button" class="btn btn-secondary mb-2" onclick="toggleHighlight()">Toggle highlight</button>
+                        <p class="small-note">Uses <code>getElementById</code>, <code>innerHTML</code>, and <code>classList</code>.</p>
+                    </div>
+                    <div class="p-3 mt-3 border rounded bg-light">
+                        <h2>Live Date/Time</h2>
+                        <p id="dateDisplay">Click the button to show the current date and time.</p>
+                        <button type="button" class="btn btn-info" onclick="showDate()">Show current date</button>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="p-3 js-box border rounded bg-light">
+                        <h2>Random Quote</h2>
+                        <p id="quoteDisplay">Click for a new quote.</p>
+                        <button type="button" class="btn btn-success mb-2" onclick="showRandomQuote()">New quote</button>
+                        <button type="button" class="btn btn-warning mb-2" onclick="countClicks()">Count clicks</button>
+                        <p id="clickCount">Button clicked 0 times.</p>
+                    </div>
+                    <div class="p-3 mt-3 border rounded bg-light">
+                        <h2>Hover Event</h2>
+                        <p id="hoverText" onmouseover="hoverMessage()" onmouseout="resetHover()">Hover over this sentence.</p>
+                        <p id="hoverNote" class="small-note">Move your mouse over the text to see a message.</p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="p-3 js-box border rounded bg-light">
+                        <h2>Color Switch</h2>
+                        <div class="p-3 mb-3 border rounded" id="colorBox" style="background-color:#e9ecef;">
+                            <p id="colorLabel">Current color: default</p>
+                        </div>
+                        <button type="button" class="btn btn-danger mb-2" onclick="swapBoxColor()">Swap box color</button>
+                        <button type="button" class="btn btn-dark mb-2" onclick="toggleBackground()">Toggle page style</button>
+                        <p id="status" class="small-note">JavaScript is loading...</p>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

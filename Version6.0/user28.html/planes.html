@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Version 6.0
+        Name:
+        Date Completed:
+    -->
+
+<head>
+
+    <title>My Website</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="SHS WebDev Version 4.0 - Tanks">
+
+    <!-- CSS -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- Custom -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/gallery.css">
+
+    <!-- JavaScript -->
+    <!-- These are needed to get the responsive menu to work -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Custom styles for this template -->
+    <style type="text/css">
+        footer {
+            font-size: 12px;
+            text-align: center;
+        }
+        
+        #rainbow {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <!---------------------------------- Begin the nav-bar ------------->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="display.html" class="nav-link">Display</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="planes.html" class="nav-link">Planes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tanks.html" class="nav-link active">Tanks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                    </li>
+                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-primary" type="button">Login</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!---------------------------------- End the nav-bar ------------------------------------->
+
+    <main class="container-fluid mt-3">
+
+        <h1 class="text-left my-3 title" tabindex="0">Check out my favorite Silly Planes</h1>
+        <!-- Edit this line for the title of your page -->
+
+        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+
+        <div id="gallery">
+            <p>Hover over the images to get the answer</p>
+            <div class="container">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStURuu2zY2vjZYO5ghI8S3_5AgXq_ZnIn_YQ&s" alt="ATX_Motherboard">
+                        <p class="caption">The Ear Drum Eviscerator</p>
+                    </div>
+                    <div class="back">
+                        <a href="https://en.wikipedia.org/wiki/Republic_XF-84H_Thunderscreech" target="_blank">
+                            <h4 class="mh-100">XF-84H Thunderscreech</h4>
+                        </a>
+                        <p class="description">The XF-84H Thunderscreech is an American experimental turboprop aircraft derived from the F-84F Thunderstreak. Powered by a turbine engine that was mated to a supersonic propeller.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="https://scalespot.com/reviews/kits/treibflugel-ah/image00C.jpg" alt="RAM Stick">
+                        <p class="caption">Vomit Comet</p>
+                    </div>
+                    <div class="back">
+                        <a href="https://en.wikipedia.org/wiki/Focke-Wulf_Triebfl%C3%BCgel" target="_blank">
+                            <h4>Focke-Wulf Triebflügel</h4>
+                        </a>
+                        <p class="description">The Focke-Wulf Triebflügel, literally meaning "thrust-wing fighter", was a German concept for an aircraft designed in 1944, during the final phase of World War II, as a defence against the ever-increasing Allied bombing raids on central Germany.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/AntonovA40.jpg" alt="NVIDIA GPU">
+                        <p class="caption">When flying tank, enemy not know to use anti tank or anti air.</p>
+                    </div>
+                    <div class="back">
+                        <a href="https://en.wikipedia.org/wiki/Antonov_A-40" target="_blank">
+                            <h4 class="">Antonov A-40</h4>
+                        </a>
+                        <p class="description">The Antonov A-40 Krylya Tanka was a Soviet attempt to allow a tank to glide onto a battlefield after being towed aloft by an airplane, to support airborne forces or partisans. A prototype was built and tested in 1942, but was found to be unworkable. This vehicle is sometimes called the A-40T or KT.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="flipper">
+                    <div class="front">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMctZUwNkZHsZV-JS70c-ol_HayZ7YADFI9w&s" alt="NVIDIA GPU">
+                        <p class="caption">Flying Pancake</p>
+                    </div>
+                    <div class="back">
+                        <a href="https://en.wikipedia.org/wiki/Vought_V-173" target="_blank">
+                            <h4 class="">Vought V-173</h4>
+                        </a>
+                        <p class="description">The Flying Pancake" is an American experimental test aircraft built as part of the Vought XF5U program during World War II. Both the V-173 and the XF5U featured an unorthodox "all-wing" design consisting of a flat, somewhat disk-shaped body serving as the lifting surface. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑-->
+    </main>
+
+    <!---------------------------------- Begin the footer ------------->
+    <footer>
+        <span class="title d-block">Example of a Footer Title</span>
+        <div class="container py-1" id="footerTable">
+            <ul class="list-unstyled d-flex justify-content-center">
+                <li class="mx-3">
+                    <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
+                </li>
+                <li class="mx-3">
+                    <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
+                </li>
+                <li class="mx-3">
+                    <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
+                </li>
+                <li class="mx-3">
+                    <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
+                </li>
+                <li class="mx-3">
+                    <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <!---------------------------------- End the footer ------------->
+</body>
+
+</html>

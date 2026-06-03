@@ -41,12 +41,100 @@
     </style>
 </head>
 
-<body class="mt-5">
-    <main class="text-center text-success pb-3">
-        <i class="icon-box text-success bg-light d-inline-block fs-2"><span class="fa-regular fa-circle-check" aria-hidden="true"></span></i>
-        <h1 class="fw-bold">Confirmation</h1>
-        <p class="fs-5 text-secondary">Form submitted successfully. It's just for testing purpose, data not saved.</p>
-    </main>
-</body>
+<body>
+    <!---------------------------------- Begin the nav-bar ----------------------------------->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Link
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-primary" type="button">Login</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!---------------------------------- End the nav-bar ------------------------------------->
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow border-0 rounded-4 text-center p-4">
+                    <div class="card-body">
+                        <div class="mb-4">
+                            <i class="fa-regular fa-circle-check text-success display-1 animate__animated animate__bounceIn"></i>
+                        </div>
+                        <h1 class="fw-bold text-success mb-3">Confirmation</h1>
+                        <p class="fs-5 text-secondary mb-4">Your form has been submitted successfully! This is for testing purposes only, and no data was saved.</p>
+                        <a href="index.html" class="btn btn-primary btn-lg px-4"><i class="fa-solid fa-house me-2"></i>Return to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!---------------------------------- Begin the footer (Part 1.5b) -------------------------->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">About WebDev</h5>
+                    <p class="text-muted">A showcase of modern responsive layouts, tables, interactive components, and CSS animations built using the Bootstrap 5 framework.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">Quick Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted d-block py-1">Home</a></li>
+                        <li><a href="form.html" class="text-muted d-block py-1">Sign In Form</a></li>
+                        <li><a href="#" class="text-muted d-block py-1">Confirmation</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">Connect With Me</h5>
+                    <div class="d-flex gap-3">
+                        <a href="https://facebook.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-secondary my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">&copy; 2026 Bauke Nijs. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-muted mb-0">Web Development (Teut Q4 2026)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!---------------------------------- End the footer --------------------------------------->
+</body>
 </html>

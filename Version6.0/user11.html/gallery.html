@@ -1,0 +1,287 @@
+2<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Court Time</title>
+    <link rel="icon" type="image/png" href="images/basketball-favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.15) rotate(2deg);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 107, 53, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-icon {
+            font-size: 2.5rem;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-basketball"></i> Court Time
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="players.html">Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header text-white text-center py-5" style="background: linear-gradient(135deg, #004E89 0%, #FF6B35 100%);">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Basketball Gallery</h1>
+            <p class="lead">Explore stunning action shots and amazing moments</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <!-- Gallery Filter -->
+            <section class="mb-5 text-center">
+                <h2 class="mb-4 fw-bold">Photo Collections</h2>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-outline-primary active">All</button>
+                    <button type="button" class="btn btn-outline-warning">Action Shots</button>
+                    <button type="button" class="btn btn-outline-success">Game Highlights</button>
+                    <button type="button" class="btn btn-outline-danger">Player Profiles</button>
+                </div>
+            </section>
+
+            <!-- Photo Gallery Grid -->
+            <section class="mb-5">
+                <div class="row g-4">
+                    <!-- Gallery Item 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Basketball+Action" alt="Basketball action shot with dynamic play">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Dynamic Action Shot</h5>
+                        <p class="text-center text-muted small">Professional gameplay photography</p>
+                    </div>
+
+                    <!-- Gallery Item 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Game+Highlight" alt="Exciting game highlight moment">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Game Highlight</h5>
+                        <p class="text-center text-muted small">Peak moment of the season</p>
+                    </div>
+
+                    <!-- Gallery Item 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Jump+Shot" alt="Perfect jump shot technique">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Perfect Jump Shot</h5>
+                        <p class="text-center text-muted small">Classic basketball technique</p>
+                    </div>
+
+                    <!-- Gallery Item 4 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Team+Play" alt="Coordinated team play">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Team Coordination</h5>
+                        <p class="text-center text-muted small">Teamwork in action</p>
+                    </div>
+
+                    <!-- Gallery Item 5 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Slam+Dunk" alt="Impressive slam dunk performance">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Slam Dunk</h5>
+                        <p class="text-center text-muted small">Power and athleticism</p>
+                    </div>
+
+                    <!-- Gallery Item 6 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Defense+Play" alt="Intense defensive play">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Defensive Play</h5>
+                        <p class="text-center text-muted small">Skill and strategy</p>
+                    </div>
+
+                    <!-- Gallery Item 7 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Celebration" alt="Team celebration moment">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Victory Celebration</h5>
+                        <p class="text-center text-muted small">Pure joy on the court</p>
+                    </div>
+
+                    <!-- Gallery Item 8 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Fast+Break" alt="Quick fast break play">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Fast Break</h5>
+                        <p class="text-center text-muted small">Speed and precision</p>
+                    </div>
+
+                    <!-- Gallery Item 9 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="gallery-item">
+                            <img src="https://via.placeholder.com/400x400?text=Three+Pointer" alt="Three-point shot attempt">
+                            <div class="gallery-overlay">
+                                <i class="fas fa-eye gallery-icon"></i>
+                            </div>
+                        </article>
+                        <h5 class="mt-3 text-center">Three-Point Shot</h5>
+                        <p class="text-center text-muted small">Long-range accuracy</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Gallery Stats -->
+            <section class="bg-light rounded p-5">
+                <h2 class="text-center mb-5 fw-bold">Gallery Statistics</h2>
+                <div class="row text-center g-4">
+                    <div class="col-md-3">
+                        <div class="stat-box p-4">
+                            <h3 class="text-warning">250+</h3>
+                            <p>High Quality Photos</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-box p-4">
+                            <h3 class="text-info">50+</h3>
+                            <p>Game Collections</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-box p-4">
+                            <h3 class="text-success">10+</h3>
+                            <p>Seasons Featured</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-box p-4">
+                            <h3 class="text-danger">100K+</h3>
+                            <p>Total Views</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h5>Court Time</h5>
+                    <p>Your basketball hub for stats, highlights, and more.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-decoration-none text-warning">About</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none text-warning">Gallery</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-warning">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p class="mb-0">&copy; 2026 Court Time. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

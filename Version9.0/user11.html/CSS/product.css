@@ -79,3 +79,33 @@
 }
 
 .overflow-hidden { overflow: hidden; }
+
+.hero {
+  background: linear-gradient(120deg, rgba(11, 87, 153, 0.88), rgba(27, 131, 236, 0.82)), url('../images/a1.jpg') center/cover no-repeat;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.weather-card, .budget-card {
+  min-height: 220px;
+}
+
+.weather-day {
+  min-height: 120px;
+}
+
+.site-footer {
+  background-color: #111;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 45vh;
+  }
+}
+

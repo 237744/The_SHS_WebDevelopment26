@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Higher or Lower</title>
+
+    <style>
+        body{
+            background-color:black;
+            color:white;
+            text-align:center;
+            font-family:Times New Roman;
+        }
+
+        h1{
+            margin-top:50px;
+            font-size:50px;
+        }
+    </style>
+
+    <script>
+        // Random number between 1 and 100
+        let answer = Math.floor(Math.random() * 100) + 1;
+
+        function checkGuess(){
+
+            let guess = document.getElementById("guess").value;
+
+            // Test random number
+            // alert(answer);
+
+            if(guess < answer){
+                alert("higher");
+            }
+            else if(guess > answer){
+                alert("lower");
+            }
+            else{
+                alert("Success");
+            }
+
+            // Clear textbox
+            document.getElementById("guess").value = "";
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Higher or Lower</h1>
+
+    <p>Guess a number between 1 and 100:</p>
+
+    <input type="text" id="guess">
+
+    <button onclick="checkGuess()">Submit</button>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function isNegative(){
+                const userIn = document.getElementById("num").value;
+                let x = 0;
+                if (userIn < x) {
+                    alert("negative");
+                }
+            }
+
+            function isNegOrNon(){
+                const userIn = document.getElementById("num").value;
+                let x = 0;
+                if (userIn < x) {
+                    alert("negative");
+                } else if (userIn >= x) {
+                    alert("nonnegative");
+                }
+            }
+
+            function isNegOrNonOrNan() {
+                const userIn = parseFloat(document.getElementById("num").value);
+                let x = 0;
+                if (isNaN(userIn)) {
+                    alert("Not a Number");
+                } else if (userIn < x) {
+                    alert("negative");
+                } else {
+                    alert("nonnegative");
+                }
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <main>
+            Number:
+            <input id="num" type="text"/>
+            <input id="exerciseOne" onclick="isNegative()" type="button" value="Exercise One" />
+            <input id="exerciseTwo" onclick="isNegOrNon()" type="button" value="Exercise Two" />
+            <input id="exerciseThree" onclick="isNegOrNonOrNan()" type="button" value="Exercise Three" />
+            <div id="outError"></div>
+
+        </main>
+    </body>
+</html>

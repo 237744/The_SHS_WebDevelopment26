@@ -28,6 +28,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
+    <script>
+        var answer = Math.floor(Math.random() * 100) + 1;
+        function checkGuess() {
+    alert(answer);
+}
+function checkGuess() {
+    var guess = document.getElementById("num").value;
+
+    if (guess < answer) {
+        alert("higher");
+    } else if (guess > answer) {
+        alert("lower");
+    } else {
+        alert("Success");
+    }
+}
+    </script>
 
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
@@ -35,6 +52,15 @@
     <style type="text/css">
 
     </style>
+    <script>
+        const randNum = Math.floor(Mathrandom()*10)+1;
+
+        function testRandom(){
+            alert(randNum);
+        }
+
+    </script>
+    
 </head>
 
 <body>
@@ -89,6 +115,11 @@
         </p>
     </footer>
     <!---------------------------------- End the footer ------------->
+</body>
+<body>
+   <main>
+     <input onclick="testRandom()" type="button" value="submit" />
+   </main>
 </body>
 
 </html>

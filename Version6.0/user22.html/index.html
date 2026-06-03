@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="style.css">
+<script src="tailwind-config.js"></script>
+</head>
+<body class="page-fade-in font-body-md text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50 h-16">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+<a href="index.html" class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight hover:opacity-80 transition-opacity">SkyGuide</a>
+<nav class="hidden md:flex items-center gap-gutter h-full">
+<a class="font-label-md text-label-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="index.html">Intro</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="journey.html">Journey</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="hardware.html">Hardware</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="styles.html">Styles</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html">Safety</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-all">Join Community</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden bg-primary text-on-primary">
+<div class="absolute inset-0 z-0 opacity-40">
+<img alt="FPV Drone Perspective" class="w-full h-full object-cover" src="images/fpvheropage.jpg"/>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-24 md:py-48 flex flex-col items-center text-center">
+<span class="font-label-md text-label-md uppercase tracking-[0.2em] mb-6 text-on-primary-container">Welcome to the cockpit</span>
+<h1 class="font-display-lg text-display-lg mb-8 max-w-[800px]">The Pure Sensation of Flight</h1>
+<p class="font-body-lg text-body-lg mb-12 max-w-[640px] text-on-primary-container">Experience the world through the lens of a high-performance drone. FPV isn't just flying; it's a digital out-of-body experience that merges human intuition with mechanical precision.</p>
+<div class="flex flex-col sm:flex-row gap-gutter">
+<button class="bg-on-primary text-primary px-8 py-4 rounded-lg font-label-md text-label-md font-bold transition-all hover:bg-inverse-primary" onclick="window.location.href='journey.html'">Start Your Flight Path</button>
+<button class="border border-on-primary text-on-primary px-8 py-4 rounded-lg font-label-md text-label-md font-bold transition-all hover:bg-on-primary/10">Watch Flight Reel</button>
+</div>
+</div>
+</section>
+<!-- What is FPV Section -->
+<section class="bg-surface py-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div>
+<h2 class="font-headline-xl text-headline-xl mb-6">Through the Goggles</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                            First Person View (FPV) is a method used to control a radio-controlled vehicle from the driver or pilot's view point. In the context of drones, this means wearing a set of digital or analog goggles that stream a low-latency video feed directly from the drone's front-facing camera.
+                        </p>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                            The result is a visceral connection to the machine. When the drone tilts, your horizon tilts. When it dives, you feel the rush. It transforms the act of piloting into a seamless extension of your own vision.
+                        </p>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined icon-fill" data-icon="speed">speed</span>
+<span class="font-label-md text-label-md">Zero Latency Experience</span>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden border border-outline-variant bg-surface-container">
+<img alt="FPV Goggles" class="w-full h-auto" src="images/fpvgoggles.jpg"/>
+</div>
+</div>
+</div>
+</section>
+<!-- The Trinity Section (Bento Grid) -->
+<section class="bg-white py-24 px-margin-mobile md:px-margin-desktop border-t border-outline-variant">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-xl text-headline-xl mb-4">The Trinity of Flight</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">The three essential components that make the FPV experience possible.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- The Drone -->
+<div class="md:col-span-8 group bg-surface-container-low border border-outline-variant rounded-xl p-8 transition-all hover:border-primary">
+<div class="flex flex-col md:flex-row gap-8 h-full">
+<div class="flex-1">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm mb-4">Core 01</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">The Drone</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Built for speed and durability, FPV drones are often custom-assembled. They lack the automated GPS features of standard consumer drones, giving the pilot 100% manual control over every movement.</p>
+<ul class="space-y-3">
+<li class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span> Carbon Fiber Frame
+                                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[18px]" data-icon="check_circle">check_circle</span> High-KV Brushless Motors
+                                    </li>
+</ul>
+</div>
+<div class="flex-1 rounded-lg overflow-hidden border border-outline-variant">
+<img alt="Racing Drone" class="w-full h-full object-cover" src="images/fpvracing.jpeg"/>
+</div>
+</div>
+</div>
+<!-- The Goggles -->
+<div class="md:col-span-4 group bg-surface-container-low border border-outline-variant rounded-xl p-8 transition-all hover:border-primary">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm mb-4">Core 02</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">The Goggles</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">Your window into the air. Modern digital goggles provide high-definition, 120fps video for absolute immersion and precision.</p>
+<div class="aspect-video rounded-lg overflow-hidden border border-outline-variant mb-4">
+<img alt="FPV Goggles Interface" class="w-full h-full object-cover" src="images/fpvgogglesonhead.jpg"/>
+</div>
+</div>
+<!-- The Radio -->
+<div class="md:col-span-4 group bg-surface-container-low border border-outline-variant rounded-xl p-8 transition-all hover:border-primary">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-sm text-label-sm mb-4">Core 03</span>
+<h3 class="font-headline-lg text-headline-lg mb-4">The Radio</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The interface between your hands and the sky. Ultra-sensitive gimbals allow for millimeter-perfect adjustments mid-flight.</p>
+</div>
+<!-- The Software -->
+<div class="md:col-span-8 group bg-primary text-on-primary rounded-xl p-8 transition-all relative overflow-hidden">
+<div class="relative z-10">
+<h3 class="font-headline-lg text-headline-lg mb-4">The Learning Curve</h3>
+<p class="font-body-sm text-body-sm text-on-primary-container mb-8 max-w-md">FPV has a steep learning curve. We recommend starting with simulators to build muscle memory before taking to the real skies.</p>
+<button class="bg-on-primary text-primary px-6 py-2 rounded-lg font-label-md text-label-md">Explore Training Modules</button>
+</div>
+<div class="absolute right-0 bottom-0 top-0 w-1/3 opacity-20 hidden md:block">
+<span class="material-symbols-outlined text-[240px]" data-icon="model_training">model_training</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-surface-container-lowest py-24 px-margin-mobile md:px-margin-desktop text-center">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-display-lg text-headline-xl md:text-display-lg mb-6">Ready to take the first step?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-2xl mx-auto">Our structured curriculum takes you from simulator basics to professional cinematic flight and racing techniques.</p>
+<div class="flex flex-wrap justify-center gap-gutter">
+<div class="flex flex-col items-center p-6 border border-outline-variant rounded-xl bg-white w-64">
+<span class="material-symbols-outlined text-primary mb-4 text-[32px]" data-icon="menu_book">menu_book</span>
+<span class="font-label-md text-label-md mb-2">Free Curriculum</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">24 Core Lessons</span>
+</div>
+<div class="flex flex-col items-center p-6 border border-outline-variant rounded-xl bg-white w-64">
+<span class="material-symbols-outlined text-primary mb-4 text-[32px]" data-icon="groups">groups</span>
+<span class="font-label-md text-label-md mb-2">Pilot Mentorship</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Direct Expert Support</span>
+</div>
+<div class="flex flex-col items-center p-6 border border-outline-variant rounded-xl bg-white w-64">
+<span class="material-symbols-outlined text-primary mb-4 text-[32px]" data-icon="workspace_premium">workspace_premium</span>
+<span class="font-label-md text-label-md mb-2">Certification</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Validated Skill Levels</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-high full-width mt-auto border-t border-outline-variant dark:border-outline flat no shadows">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="font-label-md text-label-md font-bold text-primary dark:text-inverse-primary">SkyGuide</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#safety-manual">Safety Manual</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#flight-logs">Flight Logs</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#find-spots">Find Spots</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#community-code">Community Code</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface opacity-80">
+                © 2024 SkyGuide. Professional FPV Education.
+            </div>
+</div>
+</footer>
+</body></html>

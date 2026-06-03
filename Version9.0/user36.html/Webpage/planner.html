@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Planner</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="index.html">Explore Hawaii</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="destinations.html">Islands</a></li>
+                <li class="nav-item"><a class="nav-link active" href="planner.html">Flight Planner</a></li>
+                <li class="nav-item"><a class="nav-link" href="traveltips.html">Travel Tips</a></li>
+                <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+</nav>
+
+
+<div class="container text-center mt-5">
+
+    <h1> Hawaii Flight Cost Estimator</h1>
+    <p>Use this to estimate your total flight cost based on base ticket price, distance , and additional travel fees.
+
+</p>
+
+</div>
+
+
+<div class="container mt-4">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+
+            <div class="card p-4 shadow planner-card">
+
+                <h4 class="text-center mb-3">Estimate Your Flight Cost</h4>
+
+                <input id="distance" class="form-control mb-2" type="number" placeholder="Flight distance (miles)">
+
+                <input id="basePrice" class="form-control mb-2" type="number" placeholder="Base flight price ($)">
+
+                <input id="fees" class="form-control mb-3" type="number" placeholder="Extra fees (tax, baggage, etc.)">
+
+                <button class="btn btn-primary w-100" onclick="calculateFlightCost()">
+                    Calculate Flight Cost
+                </button>
+
+                <h3 id="flightCost" class="text-center mt-3"></h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="container text-center mt-5">
+
+
+
+</div>
+
+<footer class="bg-dark text-white mt-5 pt-5 pb-3">
+
+    <div class="container">
+
+       
+        <div class="text-center mb-4">
+
+            <h4 class="mb-2"> Explore Hawaii</h4>
+
+            <p class="mb-0">
+                A travel guide website showcasing Hawaii’s islands, culture, and adventure destinations.
+            </p>
+
+        </div>
+
+        <hr style="background-color: rgba(255,255,255,0.3);">
+
+       
+        <div class="row text-center text-md-start mt-4">
+
+           
+            <div class="col-md-4 mb-3">
+                <h6>Quick Links</h6>
+                <p><a href="index.html" class="text-white text-decoration-none">Home</a></p>
+                <p><a href="destinations.html" class="text-white text-decoration-none">Islands</a></p>
+                <p><a href="planner.html" class="text-white text-decoration-none">Trip Planner</a></p>
+                <p><a href="traveltips.html" class="text-white text-decoration-none">Travel Tips</a></p>
+            </div>
+
+            
+            <div class="col-md-4 mb-3">
+                <h6>Contact Info</h6>
+                <p>📍 Shakopee, Minnesota</p>
+                <p> student@hawaiiproject.com</p>
+                <p>📞 (123) 456-7890</p>
+            </div>
+
+
+        </div>
+
+        <hr style="background-color: rgba(255,255,255,0.3);">
+
+        
+        <div class="text-center">
+
+            <p class="mb-1">🌴 Mahalo for visiting Hawaii Travel Guide</p>
+
+            <small>© 2026 Explore Hawaii. All Rights Reserved.</small>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="JS/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Kevins Navbar</title>
+
+        <!-- CSS -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!-- Animate -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <!-- Custom -->
+        <link rel="stylesheet" href="CSS/style.css">
+
+        <!-- JavaScript -->
+        <!-- These are needed to get the responsive menu to work -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    </head>
+
+    <body>
+        <!---------------------------------- Begin the nav-bar ----------------------------------->
+        <nav class="navbar navbar-expand-xxl" style="background-color: rgb(182, 22, 22);">
+            <div class="container-fluid">
+                <!--Brand: Online Fish Market-->
+                <a href="#" class="navbar-brand">
+                    <img src="https://www.thesprucecrafts.com/thmb/qeFgUbvC5zFik0eKdUCB75aM9w4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/fish-clipart-kcMbe6x5i-5b1ed094a474be0038540369.png" width="40px" height="35px"/>
+                    <span style="color: white;">|</span>
+                </a>
+
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#" class="nav-link">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <!--Button for Collapse-->
+                <button 
+                    class="navbar-toggler " 
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#NavMenu">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="NavMenu">
+                    <ul class="navbar-nav me-auto bg-light">
+                        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Recipes</a></li>
+                    </ul>
+                </div>
+            </div>    
+        </nav>
+    </body>
+</html>

@@ -58,7 +58,7 @@ a {
 
 .caption, .back h1 {
   font-family: "Orbitron", sans-serif;
-  font-size: 1.7em;
+  font-size: 1.5em;
   padding: 10px 10px 0 10px;
   margin: 0;
   text-align: center;
@@ -70,7 +70,7 @@ p.caption {
 }
 
 .description {
-  font-size: 0.9em;
+  font-size: 0.8em;
   padding: 0 20px 20px 20px;
   text-align: left;
 }

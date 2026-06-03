@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #f7f9fc 0%, #e8eef5 100%);
+    color: #1e293b;
+}
+
+body.dark-mode {
+    background: linear-gradient(180deg, #0f172a 0%, #1f2937 100%);
+    color: #e5e7eb;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #0f172a 0%, #334155 100%);
+    color: white;
+    padding: 40px 0;
+}
+
+.hero-image {
+    width: 100%;
+    object-fit: cover;
+    max-height: 420px;
+}
+
+.page-section {
+    background: rgba(255, 255, 255, 0.72);
+    backdrop-filter: blur(6px);
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    margin-bottom: 1.5rem;
+}
+
+body.dark-mode .page-section,
+body.dark-mode .mini-panel,
+body.dark-mode .info-card {
+    background: rgba(15, 23, 42, 0.82);
+    color: #e5e7eb;
+}
+
+.info-card {
+    border: none;
+    border-radius: 22px;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+    overflow: hidden;
+    background: white;
+}
+
+.info-card img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.section-title {
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.fact-box,
+.mini-panel,
+.weather-result {
+    border-radius: 20px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 10px 20px rgba(15, 23, 42, 0.08);
+}
+
+.feature-list {
+    margin-bottom: 0;
+    padding-left: 1.2rem;
+}
+
+.feature-list li {
+    margin-bottom: 0.55rem;
+}
+
+.site-footer {
+    background: #111827;
+    color: white;
+    margin-top: 2rem;
+}
+
+a {
+    color: #0f172a;
+}
+
+body.dark-mode a {
+    color: #93c5fd;
+}
+
+.table {
+    background: white;
+}
+
+body.dark-mode .table {
+    color: #e5e7eb;
+    background: #111827;
+}
+
+body.dark-mode .table-striped > tbody > tr:nth-of-type(odd) > * {
+    color: #e5e7eb;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .table-bordered > :not(caption) > * > * {
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+@media (max-width: 767px) {
+    .page-section {
+        padding: 20px;
+    }
+
+    .hero-section {
+        padding: 24px 0;
+    }
+
+    .hero-image {
+        max-height: 280px;
+    }
+}

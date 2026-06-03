@@ -6,6 +6,7 @@
 -->
 
 <head>
+    <script src="JS/SampleJS.js"></script>
     <title>JavaScript</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,12 +73,102 @@
         <!-- Edit this line for the title of your page -->
         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-            </div>
+
+    <div class="row text-center">
+
+        
+        <div class="col-sm-4 p-3 bg-warning">
+            <p id="textChange">My name is User ##</p>
+
+            <button class="btn btn-dark"
+                onclick="changeText()">
+                Change Text
+            </button>
         </div>
+
+        
+        <div class="col-sm-4 p-3 bg-warning">
+            <button class="btn btn-primary"
+                onclick="changeColor()">
+                Change Background
+            </button>
+        </div>
+
+        
+        <div class="col-sm-4 p-3 bg-warning">
+            <p id="date"></p>
+
+            <button class="btn btn-success"
+                onclick="showDate()">
+                Show Date
+            </button>
+        </div>
+
+    </div>
+
+    <div class="row text-center mt-3">
+
+        
+        <div class="col-sm-4 p-3 bg-warning">
+            <p id="bigText">Make me bigger!</p>
+
+            <button class="btn btn-danger"
+                onclick="makeBig()">
+                Bigger Text
+            </button>
+        </div>
+
+        
+        <div class="col-sm-4 p-3 bg-warning">
+            <p id="hideMe">Hide this text</p>
+
+            <button class="btn btn-secondary"
+                onclick="hideText()">
+                Hide Text
+            </button>
+        </div>
+
+       
+        <div class="col-sm-4 p-3 bg-warning">
+            <button class="btn btn-info"
+                onclick="showAlert()">
+                Alert
+            </button>
+        </div>
+
+    </div>
+
+    <div class="row text-center mt-3">
+
+        
+        <div class="col-sm-6 p-3 bg-warning">
+
+            <img id="myImage"
+                src="https://upload.wikimedia.org/wikipedia/commons/6/6d/Good_Food_Display_-_NCI_Visuals_Online.jpg"
+                width="300">
+
+            <br><br>
+
+            <button class="btn btn-dark"
+                onclick="changeImage()">
+                Change Image
+            </button>
+        </div>
+
+        
+        <div class="col-sm-6 p-3 bg-warning">
+
+            <p id="hoverText"
+                onmouseover="hoverEffect()">
+
+                Hover over this text!
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
     </main>
     <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
 

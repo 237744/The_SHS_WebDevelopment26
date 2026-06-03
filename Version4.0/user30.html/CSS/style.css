@@ -1,37 +1,123 @@
+@import url(rainbow.css);
+
 .button {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	padding: 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 .button1 {
-	border-radius: 8px;
+  border-radius: 8px;
 }
 
 .button2 {
-	border-radius: 30%;
+  border-radius: 30%;
 }
 
 .red {
-	background-color: #ff0000;
+  background-color: #ff0000;
 }
 
-td{
-	padding:20px;
+td {
+  padding: 20px;
 }
 
-table{
-	margin-left: auto;
-	margin-right: auto;
+table {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-h1, h2, h3, h4, h5, h6{
-	text-align:center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+}
+
+.coolButton {
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+}
+
+.roundButton {
+  background-color: purple;
+  color: white;
+  border-radius: 50px;
+}
+
+.bigButton {
+  background-color: orange;
+  font-size: 20px;
+  padding: 15px;
+}
+.title {
+  color: red;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+.title-large {
+  font-size: 2rem;
+}
+
+.title-small {
+  font-size: .5rem;
+}
+#hireButtons {
+  background-color: lightgray;
+  padding: 10px;
+}
+
+#footerTable {
+  background-color: black;
+  color: white;
+}
+* {
+  font-family: Arial;
+}
+footer {
+  font-size: 12px;
+  text-align: center;
+}
+    
+#rainbow {
+  width: 100%;
+}
+
+#knowledge > * {
+  border: 3px red solid;
+}
+
+p + * {
+  background-color: #FFFF00;
+}
+
+#knowledge li::marker {
+  color: red;
+  content: "😜 ";
+}
+
+#rainbow td:hover {
+  background-color: black;
+}
+
+a:hover {
+  color: blue;
+}
+
+a:visited {
+  color: purple;
+}
+
+button:active {
+  background-color: gray;
 }

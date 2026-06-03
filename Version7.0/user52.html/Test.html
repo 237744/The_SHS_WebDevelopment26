@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script>
+                function greetMsg(){
+                    alert ("Hello World");
+                }
+                function OneMsg(){
+                    alert ("This is One");
+                }
+                function TwoMsg(){
+                    alert ("This is One");
+                    alert ("This is Two");
+                }
+                function ThreeMsg(){
+                    alert ("This is One");
+                    alert ("This is Two");
+                    alert ("This is Three");
+                }
+
+                const birthMonth = "February";
+                document.write("My birthday is in ")
+                document.write(birthMonth);
+                document.write(".");
+
+                let x, y, z;
+                x=3;
+                y=4*x;
+                x=7;
+                z=x*y;
+                alert(z);
+
+                function addNums(){
+                    const a = Number(document.getElementById("addNum1").value);
+                    let b = document.getElementById("addNum2").value;
+                    b=Number(b);
+                    document.write(a+b);
+                }
+
+                function multiNums(){
+                    const a = Number(document.getElementById("multiNum1").value);
+                    let b = document.getElementById("multiNum2").value;
+                    b=Number(b);
+                    document.write(a*b);
+                }
+                function pathNums(){
+                    const a = Number(document.getElementById("pathNum1").value);
+                    let b = document.getElementById("pathNum2").value;
+                    b=Number(b);
+                    document.write(Math.sqrt(a**2+b**2));
+                }
+
+
+                function example(){
+                    const userIn = document.getElementById("myText").value;
+                        if(userIn == "cake"){
+                            alert("I like cake")
+                        } else if (userIn == "ice cream"){
+                            alert('I like ice cream');
+                        } else{
+                            alert("Not cake or ice cream");
+                        }
+                    alert("done");
+
+                }
+
+
+
+
+
+            </script>
+    </head>
+
+    <body>
+        <main>
+            <input onclick="OneMsg()" type="button" value="One"/>
+            <input onclick="TwoMsg()" type="button" value="Two"/>
+            <input onclick="ThreeMsg()" type="button" value="Three"/>
+            <input onclick="greetMsg()" type="button" value="greet"/>
+            <nav></nav>
+            <input id="addNum1" type="text"/>
+            <input id="addNum2" type="text"/>
+            <input id="sumButton" onclick="addNums()" type="button" value="add"/>
+            <nav></nav>
+            <input id="multiNum1" type="text"/>
+            <input id="multiNum2" type="text"/>
+            <input id="sumButton" onclick="multiNums()" type="button" value="multiply"/>
+            <nav></nav>
+            <input id="pathNum1" type="text"/>
+            <input id="pathNum2" type="text"/>
+            <input id="sumButton" onclick="pathNums()" type="button" value="c"/>
+            <div>Favorite desert?</div>
+            <input id="myText" type="text"/>
+            <input onclick="example()" type="button" value="submit"/>
+        </main>
+    </body>
+</html>
+

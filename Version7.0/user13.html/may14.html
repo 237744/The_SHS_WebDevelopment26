@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function addNums() {
+                const a = Number(document.getElementById('addNum1').value);
+                let b = document.getElementById('addNum2').value;
+                b = Number(b);
+                document.getElementById('output').innerHTML = "Output: " + (a+b);
+            }
+
+            function mulNums() {
+                const a = Number(document.getElementById('mulNum1').value);
+                const b = Number(document.getElementById('mulNum2').value);
+
+                document.write(a*b);
+            }
+
+            function pythagorean() {
+                let a = Number(document.getElementById('side1').value);
+                let b = Number(document.getElementById('side2').value);
+
+                // Sides to the power of 2
+                a = a**2;
+                b = b**2;
+
+                document.write(Math.sqrt(a+b));
+            }
+        </script>
+    </head>
+
+    <body>
+        <!--Add-->
+        <input id="addNum1" type="text" />
+        <input id="addNum2" type="text" />
+        <input id="sumButton" onclick="addNums()" type="button" value="add"/>
+        <p> </p>
+
+
+        <!--Multiply-->
+        <input id="mulNum1" type="text" />
+        <input id="mulNum2" type="text" />
+        <input id="mulButton" onclick="mulNums()" type="button" value="multiply"/>
+
+
+        <p> Pythagorean Theorem </p>
+        <input id="side1" type="text" />
+        <input id="side2" type="text" />
+        <input id="formulaButton" onclick="pythagorean()" type="button" value="find C"/>
+
+        <div id="output">Output:  </div>
+
+
+    </body>
+
+
+
+
+
+
+
+</html>

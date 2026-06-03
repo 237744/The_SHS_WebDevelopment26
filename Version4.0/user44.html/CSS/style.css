@@ -1,3 +1,4 @@
+@import url(rainbow.css);
 .button {
 	background-color: #4CAF50;
 	border: none;
@@ -35,3 +36,158 @@ table{
 h1, h2, h3, h4, h5, h6{
 	text-align:center;
 }
+
+
+.pinkbutton2{
+	box-shadow:inset 0px 1px 0px 0px #fbafe3;
+	background:linear-gradient(to bottom, #ff5bb0 5%, #ef027d 100%);
+	background-color:  #ff5bb0;
+	border-radius: 6px;
+	border:1px solid #ee1eb6;
+	display:inline-block;
+	cursor:pointer;
+	color: #fbafe3;
+	font-family:Arial;
+	font-size: 15px;
+	font-weight:bold;
+	padding: 6px 24px;
+	text-decoration:none;
+	text-shadow: 0px 1px 0px #c70067;
+	
+}
+.pinkbutton2:hover {
+	background:linear-gradient(to bottom, #ef027d 5%, #ff5bb0 100%);
+	background-color: #ef027d; 
+}
+.pinkbutton2:active {
+	position:relative;
+	top:1px;
+}
+
+ /* bold  italic
+Size
+Vertical Size: 
+6px
+Horizontal Size: 
+24px
+Border
+Border Radius: 
+6px
+Border Size: 
+1px
+ Box Shadow   /   inset
+Vertical Position: 
+1px
+Horizontal Position: 
+0px
+Blur Radius: 
+0px
+Spread Radius: 
+0px
+ Text Shadow
+Vertical Position: 
+1px
+Horizontal Position: 
+0px
+Blur Radius: 
+0px
+ prefix
+<a href="#" class="myButton">light orange</a> */
+
+.PastExperience2 {
+	box-shadow:inset 0px 1px 0px 0px #fce2c1;
+	background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+	background-color:#ffc477;
+	border-radius:6px;
+	border:1px solid #eeb44f;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #cc9f52;
+}
+.PastExperience2:hover {
+	background:linear-gradient(to bottom, #fb9e25 5%, #ffc477 100%);
+	background-color:#fb9e25;
+}
+.PastExperience2.button {
+	position:relative;
+	top:1px;
+}
+
+
+
+.Hours and Salary Expectations3 {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #f9f9f9 5%, #e9e9e9 100%);
+	background-color:#f9f9f9;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.Hours and Salary Expectations3:hover {
+	background:linear-gradient(to bottom, #e9e9e9 5%, #f9f9f9 100%);
+	background-color:#e9e9e9;
+}
+.Hours and Salary Expectations3:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+.title{
+  color: red;
+  font-family: 'Trebuchet MS', sans-serif; 
+}
+
+.title-large {
+  font-size: 2rem;
+}
+
+.title-small {
+  font-size: .5rem;
+}
+
+
+#morecontent {
+  background-color: yellow;
+}
+
+*{
+   font-family: 'Inter', sans-serif;
+  line-height: 1.6; /* Improves readability */
+  color: #333; /* Dark gray is softer than pure black */
+  background-color: #a4a493; /* Light, clean background */ 
+}
+#rainbow td:hover {
+    background-color: black;
+}
+
+.button:active {
+    transform: scale(0.95);
+    background-color: darkgreen;
+}
+
+.nav-link:focus {
+    outline: 3px solid #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+a:visited {
+    color: purple;
+}
+
+()

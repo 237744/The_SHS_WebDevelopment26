@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function addNums() {
+                const a = Number(document.getElementById("addNum1").value);
+                let b = document.getElementById("addNum2").value;
+                b=Number(b);
+                const c = (a+b);
+                document.getElementById("output1").textContent = c.toFixed(2);
+            }
+            function multNums() {
+                const a = Number(document.getElementById("multNum1").value);
+                let b = document.getElementById("multNum2").value;
+                b=Number(b);
+                const c = (a*b);
+                document.getElementById("output2").textContent = c.toFixed(2);
+            }
+            function pythagoreanNums() {
+                const a = Number(document.getElementById("sideA").value);
+                let b = document.getElementById("sideB").value;
+                b=Number(b);
+                const c = Math.hypot(a, b);
+                document.getElementById("output3").textContent = c.toFixed(2);
+            }
+        </script>
+    </head>
+    <body>
+        <main>
+            <input id="addNum1" type="text" />
+            +
+            <input id="addNum2" type="text" />
+            <input id="sumButton" onclick="addNums()" type="button" value="add" />
+            <span id="output1"></span>
+            <p></p>
+            <input id="multNum1" type="text" />
+            *
+            <input id="multNum2" type="text" />
+            <input id="multButton" onclick="multNums()" type="button" value="multiply" />
+            <span id="output2"></span>
+            <p></p>
+            a=<input id="sideA" type="text" />
+            <p></p>
+            b=<input id="sideB" type="text" />
+            <p></p>
+            c=<input id="cButton" onclick="pythagoreanNums()" type="button" value="find" />
+            <span id="output3"></span>
+        </main>
+    </body>
+</html>

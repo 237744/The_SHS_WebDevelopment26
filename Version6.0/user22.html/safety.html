@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pilot Essentials | SkyGuide FPV Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="style.css">
+<script src="tailwind-config.js"></script>
+</head>
+<body class="page-fade-in bg-surface text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar Component -->
+<header class="bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50 h-16">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+<a href="index.html" class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight hover:opacity-80 transition-opacity">SkyGuide</a>
+<nav class="hidden md:flex items-center gap-gutter h-full">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="index.html">Intro</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="journey.html">Journey</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="hardware.html">Hardware</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="styles.html">Styles</a>
+<a class="font-label-md text-label-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="safety.html">Safety</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-all">Join Community</button>
+</div>
+</header>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-all">Join Community</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Hero Section -->
+<section class="mb-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Pilot Essentials: Safety &amp; Compliance</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                        Technical clarity in flight starts with a deep understanding of the environment. Master the etiquette, legal requirements, and tools needed to fly with precision and professionalism.
+                    </p>
+</div>
+<div class="md:col-span-5 rounded-xl overflow-hidden border border-outline-variant aspect-video md:aspect-square">
+<img class="w-full h-full object-cover" src="images/fpvdrone.png"/>
+</div>
+</div>
+</section>
+<!-- Safety Etiquette: Bento Grid Layout -->
+<section class="mb-20" id="etiquette">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-8">Flight Etiquette &amp; Safety</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-unit">
+<!-- Main Safety Rule 1 -->
+<div class="md:col-span-2 p-10 bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col justify-between">
+<div>
+<span class="material-symbols-outlined text-primary mb-4 icon-lg">group_off</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">Maintain Separation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Never fly directly over unprotected people, moving vehicles, or public events. Maintaining a safe horizontal distance (minimum 30ft) is the hallmark of a professional pilot. Avoid the "cowboy" aesthetic; focus on disciplined, predictable flight paths.</p>
+</div>
+</div>
+<!-- Secondary Rule 2 -->
+<div class="p-10 bg-surface-container border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary mb-4 icon-lg">height</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">The 400ft Ceiling</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The legal altitude limit in most regions is 400ft (120m) above ground level. This ensures you remain clear of manned aircraft flight paths.</p>
+</div>
+<!-- Secondary Rule 3 -->
+<div class="p-10 bg-surface-container-low border border-outline-variant rounded-lg">
+<span class="material-symbols-outlined text-primary mb-4 icon-lg">visibility</span>
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">Visual Line of Sight</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Even when flying FPV, a visual observer is often required to maintain VLOS with the craft to identify potential hazards.</p>
+</div>
+<!-- Detailed Text Focus 4 -->
+<div class="md:col-span-2 p-10 bg-surface-container-lowest border border-outline-variant rounded-lg flex flex-col md:flex-row gap-gutter items-center">
+<div class="flex-1">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-4">Respecting Privacy</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">FPV drones are equipped with cameras that can be intrusive. Respect private property boundaries and avoid lingering near windows or backyards. Clarity in intent builds community trust.</p>
+</div>
+<div class="w-full md:w-48 aspect-square rounded-lg bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-fixed icon-xl">privacy_tip</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Finding Flying Spots Section -->
+<section class="mb-20 py-16 px-margin-mobile md:px-16 bg-surface-container-high rounded-xl" id="find-spots">
+<div class="max-w-4xl mx-auto text-center mb-12">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-4">Finding Your Training Grounds</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Knowing where to fly is as important as knowing how to fly. Use professional tools to identify legal airspace and community-approved spots.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- App Detail Card 1 -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant rounded-lg">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-weight="fill">map</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-primary">B4UFLY &amp; LAANC</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">The essential toolkit for US pilots. Use B4UFLY to check for temporary flight restrictions (TFRs) and controlled airspace. Use LAANC-enabled apps for near-instant authorization to fly in controlled zones.</p>
+<a class="font-label-md text-label-md text-primary flex items-center gap-2 hover:opacity-70 transition-opacity" href="safety.html">
+                        Official FAA Link <span class="material-symbols-outlined icon-sm">open_in_new</span>
+</a>
+</div>
+<!-- App Detail Card 2 -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant rounded-lg">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded bg-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary" data-weight="fill">explore</span>
+</div>
+<h4 class="font-headline-lg text-headline-lg text-primary">AirData &amp; DroneScene</h4>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Community-driven maps that highlight safe parks, designated model airfields, and scenic spots where FPV pilots are welcomed. Always check local bylaws listed in these apps before taking off.</p>
+<a class="font-label-md text-label-md text-primary flex items-center gap-2 hover:opacity-70 transition-opacity" href="safety.html">
+                        Explore Local Spots <span class="material-symbols-outlined icon-sm">open_in_new</span>
+</a>
+</div>
+</div>
+<div class="mt-12 w-full h-[300px] rounded-lg overflow-hidden border border-outline-variant">
+<div class="relative w-full h-full" data-location="California">
+<img class="w-full h-full object-cover" src="images/fpvheropage.jpg"/>
+<div class="absolute inset-0 bg-primary/10 flex items-center justify-center pointer-events-none">
+<div class="bg-surface-container-lowest p-4 rounded shadow-lg border border-outline-variant">
+<p class="font-label-md text-label-md text-primary">Regional Flight Data Overlay</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Resources -->
+<section class="mb-20" id="resources">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-8 text-center">Professional Resources</h2>
+<div class="flex flex-wrap justify-center gap-gutter">
+<div class="w-full md:w-80 bg-surface p-8 border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer group" id="safety-manual">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-4 icon-lg">menu_book</span>
+<h5 class="font-headline-lg text-headline-lg text-primary mb-2">Safety Manual</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Our comprehensive PDF guide on lithium polymer battery safety and pre-flight checklists.</p>
+</div>
+<div class="w-full md:w-80 bg-surface p-8 border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer group" id="community-code">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-4 icon-lg">forum</span>
+<h5 class="font-headline-lg text-headline-lg text-primary mb-2">Community Code</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The ethical standard for our community of pilots. Learn how to represent the hobby well.</p>
+</div>
+<div class="w-full md:w-80 bg-surface p-8 border border-outline-variant rounded-lg hover:border-primary transition-colors cursor-pointer group" id="flight-logs">
+<span class="material-symbols-outlined text-outline group-hover:text-primary mb-4 icon-lg">history_edu</span>
+<h5 class="font-headline-lg text-headline-lg text-primary mb-2">Flight Logs</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Downloadable flight log templates to track your gear performance and maintenance cycles.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="bg-surface-container-low dark:bg-surface-container-high border-t border-outline-variant dark:border-outline full-width mt-auto">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="font-label-md text-label-md font-bold text-primary dark:text-inverse-primary">SkyGuide</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface">© 2024 SkyGuide. Professional FPV Education.</p>
+</div>
+<nav class="flex flex-wrap justify-center gap-gutter">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="safety.html#safety-manual">Safety Manual</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="safety.html#flight-logs">Flight Logs</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="safety.html#find-spots">Find Spots</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 opacity-80 hover:opacity-100" href="safety.html#community-code">Community Code</a>
+</nav>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">language</span>
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">verified_user</span>
+</div>
+</div>
+</footer>
+</body></html>

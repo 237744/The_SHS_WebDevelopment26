@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
 * {
   box-sizing: border-box;
 }
 
 #gallery {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Madimi One", sans-serif;
   line-height: 1.5em;
   text-align: center;
 }
@@ -17,7 +18,7 @@
 
 .flipper {
   position: relative;
-  transition: 0.6s;
+  transition: 2s;
   transform-style: preserve-3d;
 }
 
@@ -49,7 +50,7 @@ img {
 }
 
 .container:hover .flipper {
-  transform: rotateY(180deg);
+  transform: rotateY(150deg);
 }
 
 a {
@@ -74,3 +75,4 @@ p.caption {
   padding: 0 20px 20px 20px;
   text-align: left;
 }
+

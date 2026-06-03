@@ -28,6 +28,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="JS/script.js"></script>
+<script src="JS/SampleJS.js"></script>
+
+
+
+<p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+
+
 
     <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Put your .js files here ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
@@ -35,6 +42,7 @@
     <style type="text/css">
 
     </style>
+    
 </head>
 
 <body>
@@ -66,7 +74,7 @@
         </nav>
     </div>
     <!---------------------------------- End the nav-bar ------------->
-
+        
     <main class="m-3" id="content">
         <h1 class="text-left my-3">My JavaScript Examples</h1>
         <!-- Edit this line for the title of your page -->
@@ -74,10 +82,58 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
-                <div class="col-sm-4" style="background-color:orange;">PUT YOUR CODE HERE</div>
+                <div class="col-sm-4" style="background-color:orange;"><center><p id="textChange"> My name is User ##</p></center>
+        <center><button type="button" onclick="changeText()">Click if you like</button></center></div>
                 <div class="col-sm-4" style="background-color:yellow;">PUT YOUR CODE HERE</div>
             </div>
         </div>
+        
+        
+<h1>JavaScript HTML Events</h1>
+<h2>The onblur Attribute</h2>
+
+Enter your name: <input type="text" id="fname" onblur="myFunction(this)">
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onfocus Attribute</h2>
+
+Enter your name: <input type="text" onfocus="myFunction(this)">
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onselect Attribute</h2>
+
+Some text: <input type="text" value="Hello world!" onselect="myFunction()">
+<h1>JavaScript HTML Events</h1>
+<h2>The onmousedown and onmouseup Attributes</h2>
+
+<p onmousedown="myFunction(this,'red')" onmouseup="myFunction(this,'green')">
+Click the text to change the color. A function, with parameters, is triggered when the mouse button is pressed down, and again, with other parameters, when the mouse button is released.
+</p>
+<h1>JavaScript HTML Events</h1>
+<h2>The onselect Attribute</h2>
+
+Some text: <input type="text" value="My name is Ryan!" onselect="myFunction()">
+<p id="demo"></p>
+
+<h1>JavaScript HTML Events</h1>
+<h2>The onchange Attribute</h2>
+
+<form>
+Choose which browser you prefer:
+  <select id="browsers" onchange="preferedBrowser()">
+    <option value="Chrome">Chrome</option>
+    <option value="Internet Explorer">Internet Explorer</option>
+    <option value="Firefox">Firefox</option>
+  </select>
+ <body onload="myFunction()">
+<h1>JavaScript HTML Events</h1>
+<h2>The onload Attribute</h2>
+<body onmousedown="isKeyPressed(event)">
+
+<p>Click on this paragraph. An alert box will tell you if you pressed the shift key or not.</p>
+
+<p id="demo"></p>
+
     </main>
     <!--↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑-->
 

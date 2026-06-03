@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+<script>
+function addNums(){
+const a = Number(document.getElementById("addNum1").value);
+let b = document.getElementById("addNum2").value;
+b=Number(b);
+document.write(a+b);
+}
+</script>
+<script>
+function multNums(){
+const a = Number(document.getElementById("addNum3").value);
+let b = document.getElementById("addNum4").value;
+b=Number(b);
+document.write(a*b);
+}
+</script>
+<script>
+function sqrtNums(){
+const a = Number(document.getElementById("addNum5").value);
+let b = document.getElementById("addNum6").value;
+b=Number(b);
+document.write(Math.sqrt(a*a+b*b));
+}
+</script>
+    </head>
+    <body>
+        <main>
+           <div style="column-count: 3;">
+            <input id="addNum1" type="text"/>
+            <p>+</p>
+            <input id="addNum2" type="text" />
+            <button type="button" onclick="addNums()">Add</button>
+           </div>
+        <div style="column-count: 3;">
+            <input id="addNum3" type="text"/>
+            <p>*</p>
+            <input id="addNum4" type="text" />
+            <button type="button" onclick="multNums()">Mult</button>
+           </div>
+       <div style="column-count: 3;">
+            <input id="addNum5" type="text"/>
+            <p>and</p>
+            <input id="addNum6" type="text" />
+            <button type="button" onclick="sqrtNums()">Find C</button>
+           </div>
+       
+        </main>
+    </body>
+
+
+
+    </head>
+</html>

@@ -135,6 +135,17 @@
             </div>
         </div>
         <hr>
+
+<div class="container mt-4">
+    <h2>Alert Buttons</h2>
+
+    <button class="btn btn-primary m-2" onclick="oneAlert()">One</button>
+
+    <button class="btn btn-warning m-2" onclick="twoAlerts()">Two</button>
+
+    <button class="btn btn-danger m-2" onclick="threeAlerts()">Three</button>
+</div>
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-5">
@@ -240,6 +251,24 @@
                 input.focus();
             }
         </script>
+
+<script>
+    function oneAlert() {
+        alert("Go Wolves! #1");
+    }
+
+    function twoAlerts() {
+        alert("Go Wolves! #1");
+        alert("Go Wolves! #2");
+    }
+
+    function threeAlerts() {
+        alert("Go Wolves! #1");
+        alert("Go Wolves! #2");
+        alert("Go Wolves! #3");
+    }
+</script>
+
     </main>
     <div id="container" style="height: 3000px; width: 1000px;">
         <a href="#"><button type="button" id="focusButton" style="margin-top: 3000px;">You focused on me!</button></a>

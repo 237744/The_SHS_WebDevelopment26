@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 5.0
-    Name:
-    Date Completed:
+    Name: Brayden Hensler
+    Date Completed: May 5th
 -->
 
 <head>
@@ -47,13 +47,23 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: rgba(200, 50, 160, 0.3)
+}
+
+button {
+  margin-left: auto;}
+
+
+.nav-link {flex-flow: row-reverse nowrap;}
     </style>
 
     <body>
         <!---------------------------------- Begin the nav-bar ----------------------------------->
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
-                <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
+                <a href="http://shakonet.isd720.com" class="navbar-brand">MN Basketball</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -64,35 +74,48 @@
                         <li class="nav-item">
                             <a href="#" class="nav-link active">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Games
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><a class="dropdown-item" href="#">Watch Now</a></li>
+                                <li><a class="dropdown-item" href="#">Showtimes</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Live</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                            <a href="#" class="nav-link">Merchandise</a>
                         </li>
+                       
+                        <li class="nav-item">
+                            <a href="mailto:241381@shakopeeschools.org?Subject=Hello" class="nav-link" tabindex="-1">Contact</a>
+                        </li>
+                        
+                   
+        
+            
+                
+            </div>
+        </nav>
+    </div>
                         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                     </ul>
                     <form class="d-flex">
                         <button class="btn btn-primary" type="button">Login</button>
                     </form>
-                </div>
+                
+    
+             
             </div>
         </nav>
         <!---------------------------------- End the nav-bar ------------------------------------->
         <!---------Jumbotron---------------------------------------------->
         <header class="p-5 bg-primary-subtle text-black" name="Jumbotron">
-            <h4> Bootstrap Examples</h4>
-            <p class="lead"> Let's look at the man different examples of how we can use bootstrap and what bootstrap can do!
+            <h4> Playoffs</h4>
+            <p class="lead"> TimberWolves!!
             </p>
         </header>
 
@@ -150,41 +173,116 @@
                     </div>
                 </div>
             </div>
+        <div class="container text-center">
+        <div class="demo-content bg-alt">col-sm-8</div>
+    <div class="col-sm">col-sm</div>
+    <div class="col-sm">col-sm</div>
+    <div class="col-sm">col-sm</div>
+  </div>
+</div>
+</div>
 
             <!---------Table-Striped------------------------------------------->
             <div class="container mt-3" name="table-striped">
+                <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Row</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Clark</td>
+                    <td>Kent</td>
+                    <td>clarkkent@mail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>John</td>
+                    <td>Carter</td>
+                    <td>johncarter@mail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Peter</td>
+                    <td>Parker</td>
+                    <td>peterparker@mail.com</td>
+                </tr>
+            </tbody>
+        </table>
+
             </div>
 
             <!---------List-Group---------------------------------------------->
             <div class="container mt-3" name="list-group">
+                
+                <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active">
+        <i class="fa fa-home"></i> Home
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-camera"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active">145</span>
+    </a>
+    <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+        <i class="fa fa-music"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active">50</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-film"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right">8</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa-solid fa-circle-user"></i> Socials <span class="badge bg-secondary badge-pill badge-primary pull-right">12</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa-brands fa-rebel"></i> Star Wars <span class="badge bg-secondary badge-pill badge-primary pull-right">89</span>
+    </a>
+</div>
+
             </div>
 
             <!---------Form Button--------------------------------------------->
             <div class="container mt-3 vstack" name="form-button">
+                 <li class="nav-item">
+                            <a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a>
+                        </li>
             </div>
         </main>
 
         <!---------------------------------- Begin the footer ------------------------------------->
         <footer>
-            <span class="title">Example of a Footer Title</span>
+            <span class="title">MY Footer</FOOTER></span>
             <div class="container py-4" id="footerTable">
                 <ul class="list-unstyled d-flex justify-content-center">
                     <li class="mx-3">
                         <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
                     </li>
                     <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
                         <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
                     </li>
                     <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
+                        <i class="fa-brands fa-youtube fa-3x" aria-hidden="false"></i>
                     </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
+                    <footer class="bg-body-tertiary text-center text-lg-start">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled mb-0">
+            <li><a href="https://about.youtube/.com">About Us</a></li>
+          <li>
+            <a href="#!" class="text-body">Link 2</a>
+          </li>
+          <li>
+            <a href="#!" class="text-body">Link 3</a>
+          </li>
+       </ul>
             </div>
         </footer>
         <!---------------------------------- End the footer --------------------------------------->

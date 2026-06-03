@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Testing </title>
+
+        <!--NECESSITIES-->
+        <!--Bootstrap-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+        <!--Font Awesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!--Animate-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <!--Styling-->
+        <link rel="stylesheet" href="CSS/style.css">
+        <!--JavaScript-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+        <script src="JAVASCRIPT/script.js"></script> <!--My file-->
+        <!---------------------->
+
+        <style>
+            .buybutton {
+                background-color: green;
+                color: white;
+                border-radius: 6px;
+                text-transform: uppercase;
+                
+                width: 100px;
+                height: 35px;
+            }
+        </style>
+
+    </head>
+    <body>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="shopA.html">Pet Fish</a>
+            <a href="shopB.html">Fillet</a>
+            <a href="shopA.html">Pet Fish</a>
+            <a href="cart.html">Cart</a>
+            <a href="recipes.html">Recipes</a>
+        </nav>
+
+        <main>
+            <div class="card">
+                <img src="https://aquaforest.eu/wp-content/uploads/2025/06/blazenek-scaled.jpg" alt="clownfish picture"/>
+                <h5>Clownfish</h5>
+                <p class="card-price">$28.99</p>
+                <input type="button" class="buybutton" value="buy" id="Clownfish" onclick="addtoCart(this.id, 29)"/>
+            </div>
+            <div class="card">
+                <img src="https://a-z-animals.com/media/2021/09/Koi-header.jpg" alt="koi fish picture"/>
+                <h5>Koi Fish</h5>
+                <p class="card-price">$39.99</p>
+                <input type="button" class="buybutton" value="buy" id="Koi Fish" onclick="addtoCart(this.id, 40)"/>
+            </div>
+            <input type="button" value="Check local storage" onclick="checkLocalStorage()"/>
+            <input type="button" value="Empty local storage" onclick="emptyLocalStorage()"/>
+
+            <div ondblclick="checked(this)" class="card">
+                <img src="https://www.seriouseats.com/thmb/cU8x361dQjH3w8d30Xm7D2rakP4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20211201-fish-piccata-vicky-wasik-17-205e3c62dd94410f9fae9418417b4459.jpg" alt="recipe image"/>
+                <h5>Fish Piccata</h5>
+                <ul class="card-desc">
+                    <li>All-purpose flour</li>
+                    <li>Fish fillet</li>
+                    <li>Vegetable oil</li>
+                    <li>Parsley leaves</li>
+                    <li>White wine</li>
+                </ul>
+            </div>
+        </main>
+    </body>
+
+
+
+
+
+</html>

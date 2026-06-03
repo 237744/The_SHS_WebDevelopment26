@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Mario 3D Land — Story</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <div class="nav-container">
+      <span class="nav-logo">★ MARIO 3D LAND ★</span>
+      <ul class="nav-links">
+        <li><a href="index.html"> Home</a></li>
+        <li><a href="story.html" class="active"> Story</a></li>
+        <li><a href="worlds.html"> Worlds</a></li>
+        <li><a href="powerups.html"> Power-Ups</a></li>
+        <li><a href="characters.html"> Characters</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="page-wrapper">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <h1> The Story</h1>
+      <p>A stormy night, a stolen princess, and a determined plumber — follow Mario on his most personal rescue mission yet.</p>
+    </header>
+
+    <!-- Intro -->
+    <section aria-label="Story introduction">
+      <div class="card">
+        <h2>🌪️ A Dark & Stormy Night</h2>
+        <div class="card-media">
+          <img src="https://upload.wikimedia.org/wikipedia/en/0/03/Super_Mario_3D_Land_box_art.png"
+               alt="Super Mario 3D Land artwork" style="height:200px;object-fit:cover;" />
+          <div>
+            <p>In the Mushroom Kingdom, a massive <strong>Super Leaf Tree</strong> stood proudly near Peach's Castle — its leaves scattered across the land, giving rise to countless Tanooki Suits.</p>
+            <p>Then one night, a violent storm swept through. When morning came, the tree was stripped bare — and <strong>Princess Peach had vanished</strong>.</p>
+            <p>A calling card was left behind. Bowser, King of the Koopas, had struck again.</p>
+            <span class="badge badge-red">Kidnapping Alert!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="star-divider">★ ★ ★</div>
+
+    <!-- ===== BOOTSTRAP FEATURE: ACCORDION ===== -->
+    <section aria-label="Story chapters">
+      <div class="card">
+        <h2> Story Chapters</h2>
+        <div class="accordion" id="storyAccordion">
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#ch1">
+                Chapter 1 — The Chase Begins
+              </button>
+            </h2>
+            <div id="ch1" class="accordion-collapse collapse show" data-bs-parent="#storyAccordion">
+              <div class="accordion-body">
+                <p>Mario discovers a postcard from Bowser — a taunt showing Peach locked in a cage with the stolen Super Leaves. Furious and determined, Mario sets off across the first worlds.</p>
+                <p>The early worlds serve as a warm-up: Bowser's minions guard rolling hills, desert dunes, and underground caves. Mario must recover Star Medals to progress.</p>
+                <span class="badge">Worlds 1–2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch2">
+                Chapter 2 — Deeper Into Enemy Territory
+              </button>
+            </h2>
+            <div id="ch2" class="accordion-collapse collapse" data-bs-parent="#storyAccordion">
+              <div class="accordion-body">
+                <p>Mario storms through airships, haunted ghost houses, and scorching lava castles. Bowser sends his Koopalings and elite troops to stop the plumber at every turn.</p>
+                <p>At the end of each world's castle, a massive boss awaits — and each Bowser encounter raises the stakes. Mario must use his doging abilitys to deflect fireballs and reach the button.</p>
+                <span class="badge badge-blue">Worlds 3–5</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch3">
+                Chapter 3 — The Final Showdown
+              </button>
+            </h2>
+            <div id="ch3" class="accordion-collapse collapse" data-bs-parent="#storyAccordion">
+              <div class="accordion-body">
+                <p>Mario battles through treacherous icy peaks and sky-high towers. Finally, he reaches Bowser's massive fortress — a multi-stage gauntlet of fire, traps, and acrobatics.</p>
+                <p>The climax sees a massive Bowser battle across a crumbling bridge over a lava pit. Mario must dodge fireballs to hit the final button.</p>
+                <span class="badge badge-red">Worlds 6–8</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#ch4">
+                Chapter 4 — Special Worlds & True Ending
+              </button>
+            </h2>
+            <div id="ch4" class="accordion-collapse collapse" data-bs-parent="#storyAccordion">
+              <div class="accordion-body">
+                <p>After rescuing Peach, a surprise twist reveals Luigi has been captured! Mario must power through 8 brutal <strong>Special Worlds</strong> — remixed levels with new challenges and harder enemies.</p>
+                <p>When you compolite world one yoy unlock the ultimate reward: playing as <strong>Luigi</strong> in the main game and in the Special World!</p>
+                <span class="badge badge-green">Special Worlds S1–S8</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="star-divider">⭐ ⭐ ⭐</div>
+
+    <!-- Peach's Role -->
+    <section aria-label="Princess Peach's role">
+      <div class="card card-yellow">
+        <h2> Princess Peach</h2>
+        <p>As always, Princess Peach is the driving force behind Mario's adventure. Captured by Bowser, she sends Mario letters and photos — taunts crafted by Bowser to demoralize the hero.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>★ SUPER MARIO 3D LAND FAN SITE ★</p>
+    <p style="font-family:var(--font-body);color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:8px;">
+      Not affiliated with Nintendo. All characters and trademarks belong to Nintendo Co., Ltd.
+    </p>
+    <nav style="margin-top:14px;">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="worlds.html">Worlds</a>
+      <a href="powerups.html">Power-Ups</a>
+      <a href="characters.html">Characters</a>
+    </nav>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Game 2 - Target Clicker</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Target Clicker Game">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        #playArea {
+            position: relative;
+            width: 100%;
+            max-width: 420px;
+            height: 320px;
+            background: #f8f9fa;
+            border: 2px solid #343a40;
+            border-radius: 8px;
+            margin: auto;
+            overflow: hidden;
+        }
+        #target {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: firebrick;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 12px rgba(0,0,0,.25);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <nav class="navbar navbar-expand-md p-2 navbar-dark bg-dark">
+            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <a href="games.html" class="nav-item nav-link">Games</a>
+                    <a href="game2.html" class="nav-item nav-link active">Target Clicker</a>
+                    <a href="game3.html" class="nav-item nav-link">Number Guess</a>
+                    <a href="bootstrap.html" class="nav-item nav-link" tabindex="-1">Bootstrap</a>
+                    <a href="script.html" class="nav-item nav-link" tabindex="-1">JavaScript</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <main class="m-3" id="content">
+        <h1 class="text-left my-3">Target Clicker</h1>
+        <p>Click the moving target as many times as you can before the timer runs out.</p>
+        <div class="mb-3">
+            <button class="btn btn-primary me-2" onclick="startGame()">Start Game</button>
+            <button class="btn btn-secondary me-2" onclick="resetGame()">Reset</button>
+            <button class="btn btn-outline-success me-2" onclick="setSpeed('fast')">Fast Mode</button>
+            <button class="btn btn-outline-warning" onclick="setSpeed('slow')">Slow Mode</button>
+        </div>
+        <div id="playArea" onclick="miss()">
+            <div id="target" onclick="hit(event)"></div>
+        </div>
+        <div class="mt-3">
+            <p>Time left: <strong><span id="countDown">30</span> sec</strong></p>
+            <p>Score: <strong><span id="score">0</span></strong> | Hits: <strong><span id="hits">0</span></strong> | Misses: <strong><span id="misses">0</span></strong></p>
+            <p>Current speed: <strong><span id="speedLabel">Normal</span></strong></p>
+            <p id="gameMessage" class="text-muted"></p>
+        </div>
+        <script>
+            let score = 0;
+            let hits = 0;
+            let misses = 0;
+            let timeLeft = 30;
+            let gameActive = false;
+            let moveTimer = null;
+            let countdownTimer = null;
+            let moveDelay = 800;
+            const playArea = document.getElementById('playArea');
+            const target = document.getElementById('target');
+
+            function updateStatus() {
+                document.getElementById('countDown').textContent = timeLeft;
+                document.getElementById('score').textContent = score;
+                document.getElementById('hits').textContent = hits;
+                document.getElementById('misses').textContent = misses;
+            }
+
+            function randomPosition() {
+                const areaRect = playArea.getBoundingClientRect();
+                const targetSize = 60;
+                const x = Math.floor(Math.random() * (areaRect.width - targetSize));
+                const y = Math.floor(Math.random() * (areaRect.height - targetSize));
+                target.style.left = x + 'px';
+                target.style.top = y + 'px';
+                target.style.backgroundColor = ['crimson', 'darkorange', 'mediumseagreen', 'dodgerblue'][Math.floor(Math.random() * 4)];
+            }
+
+            function startGame() {
+                if (gameActive) {
+                    document.getElementById('gameMessage').textContent = 'Game already running. Keep clicking!';
+                    return;
+                }
+                score = 0;
+                hits = 0;
+                misses = 0;
+                timeLeft = 30;
+                gameActive = true;
+                document.getElementById('gameMessage').textContent = 'Game started! Click the red target.';
+                updateStatus();
+                randomPosition();
+                moveTimer = setInterval(randomPosition, moveDelay);
+                countdownTimer = setInterval(() => {
+                    timeLeft -= 1;
+                    updateStatus();
+                    if (timeLeft <= 0) {
+                        endGame();
+                    }
+                }, 1000);
+            }
+
+            function hit(event) {
+                event.stopPropagation();
+                if (!gameActive) {
+                    document.getElementById('gameMessage').textContent = 'Press Start first.';
+                    return;
+                }
+                score += 10;
+                hits += 1;
+                document.getElementById('gameMessage').textContent = 'Nice hit!';
+                updateStatus();
+                randomPosition();
+            }
+
+            function miss() {
+                if (!gameActive) {
+                    return;
+                }
+                misses += 1;
+                score = Math.max(0, score - 5);
+                document.getElementById('gameMessage').textContent = 'Missed the target!';
+                updateStatus();
+            }
+
+            function endGame() {
+                clearInterval(moveTimer);
+                clearInterval(countdownTimer);
+                gameActive = false;
+                document.getElementById('gameMessage').textContent = 'Game over! Your final score is ' + score + '.';
+                target.style.left = '-100px';
+            }
+
+            function resetGame() {
+                clearInterval(moveTimer);
+                clearInterval(countdownTimer);
+                gameActive = false;
+                score = 0;
+                hits = 0;
+                misses = 0;
+                timeLeft = 30;
+                target.style.left = '0';
+                target.style.top = '0';
+                document.getElementById('gameMessage').textContent = 'Reset ready. Press Start to play again.';
+                updateStatus();
+            }
+
+            function setSpeed(level) {
+                if (level === 'fast') {
+                    moveDelay = 400;
+                    document.getElementById('speedLabel').textContent = 'Fast';
+                } else {
+                    moveDelay = 1000;
+                    document.getElementById('speedLabel').textContent = 'Slow';
+                }
+                if (gameActive) {
+                    clearInterval(moveTimer);
+                    moveTimer = setInterval(randomPosition, moveDelay);
+                }
+            }
+        </script>
+    </main>
+</body>
+</html>

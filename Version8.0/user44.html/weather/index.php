@@ -1,7 +1,7 @@
 <?php
-$apiKey = "API KEY"; //You will need to add in the 
+$apiKey = "3b3d7ee928112590da0656922ffe4c02"; //You will need to add in the 
 $cityId = "5046997"; //5046997 Shakopee City Id
-$units = "metric";//metric-Celcius  imperial-Farhenheit
+$units = "imperial";//metric-Celcius  imperial-Farhenheit
 if ($units == 'metric'){//Changes the $temp varaible to match 
     $temp = "C";
 }
@@ -20,9 +20,21 @@ curl_setopt($ch, CURLOPT_VERBOSE, 0);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 $response = curl_exec($ch);
 
-curl_close($ch);
+//curl_close($ch);
 $data = json_decode($response);
 $currentTime = time();
+
+$currentTemp = $data->main->temp;
+
+if ($currentTemp < 32) {
+    $bgColor = "#a3d5ff"; // cold
+} elseif ($currentTemp < 60) {
+    $bgColor = "#b2f2bb"; // cool
+} elseif ($currentTemp < 80) {
+    $bgColor = "#ffd8a8"; // warm
+} else {
+    $bgColor = "#ff8787"; // hot
+}
 ?>
 
 <!doctype html>
@@ -38,7 +50,7 @@ body {
 }
 
 .report-container {
-    border: #E0E0E0 1px solid;
+    border: #E0E0E0 3px solid;
     padding: 20px 40px 40px 40px;
     border-radius: 2px;
     width: 550px;
@@ -69,8 +81,11 @@ span.min-temperature {
 
 </head>
 <body>
+    <!-- <body style="background-color: <?php echo $bgColor; ?>;"><body style="background-color: <?php echo $bgColor; ?>;"> -->
 
-    <div class="report-container">
+    <!-- <div class="report-container" style="background-color: <?php echo $bgColor; ?>;">
+<div class="report-container"> -->
+    <div class="report-container" style="background-color: <?php echo $bgColor; ?>;">
         <h2><?php echo $data->name; ?> Weather Status</h2>
         <div class="time">
             <div><?php echo date("l g:i a", $currentTime); ?></div>

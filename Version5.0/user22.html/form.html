@@ -38,34 +38,116 @@
 </head>
 
 <body>
-    <div class="m-4">
-        <form action="confirmation.html" method="">
-            <div class="form-group row">
-                <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                    <input type="text" readonly class="form-control-plaintext" id="inputEmail" value="example@example.com">
-                </div>
+    <!---------------------------------- Begin the nav-bar ----------------------------------->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Link
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-primary" type="button">Login</button>
+                </form>
             </div>
-            <div class="form-group row">
-                <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                <div class="col-sm-10">
-                    <input type="password" class="form-control" id="inputPassword" placeholder="Password" required>
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-sm-10 offset-sm-2">
-                    <div class="checkbox">
-                        <label><input type="checkbox"> Remember me</label>
+        </div>
+    </nav>
+    <!---------------------------------- End the nav-bar ------------------------------------->
+
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow border-0 rounded-4">
+                    <div class="card-header bg-primary text-white text-center py-3 rounded-top-4">
+                        <h4 class="mb-0 fw-bold"><i class="fa-solid fa-right-to-bracket me-2"></i>Sign In</h4>
+                    </div>
+                    <div class="card-body p-4">
+                        <form action="confirmation.html" method="">
+                            <div class="mb-3">
+                                <label for="inputEmail" class="form-label fw-semibold">Email address</label>
+                                <input type="text" readonly class="form-control-plaintext border-bottom" id="inputEmail" value="example@example.com">
+                            </div>
+                            <div class="mb-3">
+                                <label for="inputPassword" class="form-label fw-semibold">Password</label>
+                                <input type="password" class="form-control" id="inputPassword" placeholder="Enter password" required>
+                            </div>
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label text-muted" for="rememberMe">Remember me on this device</label>
+                            </div>
+                            <div class="d-grid mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg"><i class="fa-solid fa-arrow-right-to-bracket me-2"></i>Sign in</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer bg-light text-center py-3 rounded-bottom-4">
+                        <a href="index.html" class="text-decoration-none text-secondary"><i class="fa-solid fa-arrow-left me-1"></i> Back to Home</a>
                     </div>
                 </div>
             </div>
-            <div class="form-group row">
-                <div class="col-sm-10 offset-sm-2">
-                    <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+    </main>
+
+    <!---------------------------------- Begin the footer (Part 1.5b) -------------------------->
+    <footer class="bg-dark text-light py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">About WebDev</h5>
+                    <p class="text-muted">A showcase of modern responsive layouts, tables, interactive components, and CSS animations built using the Bootstrap 5 framework.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">Quick Navigation</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-muted d-block py-1">Home</a></li>
+                        <li><a href="#" class="text-muted d-block py-1">Sign In Form</a></li>
+                        <li><a href="confirmation.html" class="text-muted d-block py-1">Confirmation</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-uppercase fw-bold text-white mb-3">Connect With Me</h5>
+                    <div class="d-flex gap-3">
+                        <a href="https://facebook.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://x.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://github.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-github"></i></a>
+                        <a href="https://tiktok.com" target="_blank" class="footer-social-icon"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
                 </div>
             </div>
-        </form>
-    </div>
+            <hr class="border-secondary my-4">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="text-muted mb-0">&copy; 2026 Bauke Nijs. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p class="text-muted mb-0">Web Development (Teut Q4 2026)</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!---------------------------------- End the footer --------------------------------------->
 </body>
-
 </html>

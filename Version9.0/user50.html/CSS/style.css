@@ -1,0 +1,231 @@
+body{
+    background:#ffffff;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color:#242841;
+}
+
+
+/* TITLES */
+
+h1,h2,h3,h4,h5{
+    font-family:'TimesNewRoman';
+    font-weight:700;
+    color:#12355b;
+}
+
+
+p{
+    line-height:1.8;
+    font-size:1rem;
+}
+
+
+/* NAVBAR */
+
+.custom-navbar{
+    background:linear-gradient(to right,#0f172a,#1e3a8a);
+    padding:15px 0;
+    box-shadow:0px 4px 20px rgba(0,0,0,0.2);
+}
+
+
+.navbar-brand{
+    color:white !important;
+    font-size:1.8rem;
+    letter-spacing:1px;
+    font-family:'Montserrat', sans-serif;
+}
+
+
+.nav-link{
+    color:white !important;
+    margin-left:15px;
+    font-weight:600;
+    transition:0.3s;
+    position:relative;
+}
+
+
+.nav-link:hover{
+    color:#93c5fd !important;
+}
+
+
+.nav-link::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    background:#93c5fd;
+    left:0;
+    bottom:-5px;
+    transition:0.3s;
+}
+
+.nav-link:hover::after{
+    width:100%;
+}
+
+
+.explore-btn{
+    border-radius:30px;
+    padding:10px 22px;
+    font-weight:700;
+    transition:0.3s;
+}
+
+
+.explore-btn:hover{
+    transform:translateY(-2px);
+}
+
+
+/* HERO SECTION */
+
+.hero{
+    background-image:
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://cdn.minnesotamonthly.com/wp-content/uploads/sites/85/2019/08/hansel_bryan_181013-201.jpg');
+
+    background-size:cover;
+    background-position:center;
+
+    min-height:90vh;
+
+    display:flex;
+    align-items:center;
+
+    text-align:center;
+}
+
+
+.hero h1{
+    font-size:4.5rem;
+    color:white;
+    font-weight:800;
+}
+
+
+.hero p{
+    color:white;
+    font-size:1.3rem;
+}
+
+
+/* BUTTONS */
+
+.btn-success{
+    background:linear-gradient(to right,#2563eb,#3b82f6);
+    border:none;
+    padding:12px 25px;
+    border-radius:12px;
+    font-weight:700;
+}
+
+
+.btn-success:hover{
+    transform:translateY(-2px);
+}
+
+/* CARDS */
+
+.card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+    transition:0.4s;
+    background:white;
+}
+
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0px 15px 35px rgba(0,0,0,0.15);
+}
+
+
+.card img{
+    height:220px;
+    object-fit:cover;
+}
+
+
+.card-body{
+    padding:30px;
+}
+
+
+.card h3{
+    margin-bottom:15px;
+}
+
+
+/* WEATHER CARD */
+
+.weather-card{
+    background:linear-gradient(to right,#2563eb,#60a5fa);
+    color:white;
+    border-radius:25px;
+}
+
+
+.weather-card h1,
+.weather-card h2,
+.weather-card p{
+    color:white;
+}
+
+
+/* INPUTS */
+
+.form-control{
+    border-radius:12px;
+    padding:14px;
+    border:1px solid #cbd5e1;
+}
+
+
+.form-control:focus{
+    box-shadow:0px 0px 10px rgba(37,99,235,0.4);
+    border-color:#2563eb;
+}
+
+/* LIST GROUP */
+
+.list-group-item{
+    padding:15px;
+    font-weight:600;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#0f172a;
+    color:white;
+    padding:35px;
+    text-align:center;
+    margin-top:60px;
+}
+
+
+/* SECTIONS */
+
+section{
+    padding:70px 0;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+}

@@ -1,188 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Version 4.0
-        Name: Grant Swenson
-        Date Completed: 4/27/26
-    -->
 
 <head>
 
     <title>Gallery</title>
 
-    <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="SHS WebDev Version 4.0 - Gallery">
 
-    <!-- CSS -->
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <!-- Custom -->
+
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/gallery.css">
 
-    <!-- JavaScript -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-
-
-    <!-- Custom styles for this template -->
-    <style type="text/css">
-        footer {
-            font-size: 12px;
-            text-align: center;
-        }
-        
-        #rainbow {
-            width: 100%;
-        }
-    </style>
 </head>
 
 <body>
-    <!---------------------------------- Begin the nav-bar ------------->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav me-auto">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="display.html" class="nav-link">Display</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="portfolio.html" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="gallery.html" class="nav-link active">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
-                    </li>
-                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-primary" type="button">Login</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <!---------------------------------- End the nav-bar ------------------------------------->
+<!-- NAV BAR (unchanged) -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">WebDev</a>
+    </div>
+</nav>
 
-    <main class="container-fluid mt-3">
+<main class="container-fluid mt-3">
 
-        <h1 class="text-left my-3 title" tabindex="0">Check out my favorite images</h1>
-        <!-- Edit this line for the title of your page -->
+    <h1 class="my-3">Check out my favorite images</h1>
 
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+    <!-- GALLERY -->
+    <div id="gallery">
 
-        <div id="gallery">
-            <p>Hover over the images to get the answer</p>
-            <div class="container">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="https://logixconsulting.com/wp-content/uploads/2021/10/pexels-pixabay-163140.jpg" alt="ATX_Motherboard">
-                        <p class="caption">Computer Part</p>
-                    </div>
-                    <div class="back">
-                        <a href="https://en.wikipedia.org/wiki/Motherboard" target="_blank">
-                            <h2 class="mh-100">Motherboard</h2>
-                        </a>
-                        <p class="description">A motherboard, idk really what to say here it just kind of hold everything together and stuff, I know it does more but I don't remember Computer Hardware and Sofware that much.</p>
-                    </div>
+        <p>Hover over the images to get the answer</p>
+
+        <!-- CARD 1 -->
+        <div class="container">
+            <div class="flipper">
+                <div class="front">
+                    <img src="images/Tracer.jpeg" alt="Tracer">
+                    <p class="caption">Tracer</p>
                 </div>
-            </div>
-
-            <div class="container">
-                <div class="flipperextra">
-                    <div class="front">
-                        <img src="https://intelcorp.scene7.com/is/image/intelcorp/s5-a13-02-styles-ram-rwd:1920-1080?wid=480&hei=270" alt="RAM Stick">
-                        <p class="caption">Computer Part</p>
-                    </div>
-                    <div class="back">
-                        <a href="https://en.wikipedia.org/wiki/Random-access_memory" target="_blank">
-                            <h2>RAM</h2>
-                        </a>
-                        <p class="description"> It's RAM, we have none of it due to AI, but hopefully soon we will have it back.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="https://cdn.mos.cms.futurecdn.net/R6zbNW4EyUFXHdD4Laq8tb-1024-80.jpg" alt="NVIDIA GPU">
-                        <p class="caption">Computer Part</p>
-                    </div>
-                    <div class="back">
-                        <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" target="_blank">
-                            <h2 class="">GPU</h2>
-                        </a>
-                        <p class="description">This makes things look fancy in games, it also requires a LOT of power and a LOT of money.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div class="flipper">
-                    <div class="front">
-                        <img src="https://www.pcworld.com/wp-content/uploads/2025/04/evga-power-supply-100883513-orig.jpg?quality=50&strip=all&w=1024" alt="NVIDIA GPU">
-                        <p class="caption">Computer Part</p>
-                    </div>
-                    <div class="back">
-                        <a href="https://en.wikipedia.org/wiki/Graphics_processing_unit" target="_blank">
-                            <h2 class="">GPU</h2>
-                        </a>
-                        <p class="description">The power supply provides power to the whole computer, just make sure you upgrade it with your grahpics card unless you want a blown up PC.</p>
-                    </div>
+                <div class="back">
+                    <h2>Tracer</h2>
+                    <p>Fast movement and accuracy.</p>
                 </div>
             </div>
         </div>
 
-
-
-
-        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑-->
-    </main>
-
-    <!---------------------------------- Begin the footer ------------->
-    <footer>
-        <span class="title d-block">Example of a Footer Title</span>
-        <div class="container py-1" id="footerTable">
-            <ul class="list-unstyled d-flex justify-content-center">
-                <li class="mx-3">
-                    <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                </li>
-                <li class="mx-3">
-                    <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                </li>
-                <li class="mx-3">
-                    <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                </li>
-                <li class="mx-3">
-                    <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                </li>
-                <li class="mx-3">
-                    <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                </li>
-            </ul>
+        <!-- CARD 2 -->
+        <div class="container">
+            <div class="flipper">
+                <div class="front">
+                    <img src="images/ghost.jpeg" alt="Ghost">
+                    <p class="caption">Ghost</p>
+                </div>
+                <div class="back">
+                    <h2>Ghost</h2>
+                    <p>Stealth and precision style.</p>
+                </div>
+            </div>
         </div>
-    </footer>
-    <!---------------------------------- End the footer ------------->
+
+        <!-- CARD 3 -->
+        <div class="container">
+            <div class="flipper">
+                <div class="front">
+                    <img src="images/jetspeed.jpeg" alt="Jetspeed">
+                    <p class="caption">Jetspeed</p>
+                </div>
+                <div class="back">
+                    <h2>Jetspeed</h2>
+                    <p>Built for speed and quick reactions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="container">
+            <div class="flipper">
+                <div class="front">
+                    <img src="images/prodo.jpeg" alt="Prodo">
+                    <p class="caption">Prodo</p>
+                </div>
+                <div class="back">
+                    <h2>Prodo</h2>
+                    <p>Light control and handling.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
 </body>
-
 </html>

@@ -7,7 +7,8 @@
 
 <head>
     <title>Dynamic Webpage</title>
-
+	
+<script src="JS/SampleJS.js"></script>
     <!-- Meta data -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,12 +38,45 @@
 </head>
 
 <body>
+ <script>
+alert("Welcome to my webpage!");
+</script>
+
+<script>
+document.body.style.backgroundColor = "lightblue";
+</script>
+
+<script>
+document.body.style.border = "10px solid red";
+</script>
+
+<script>
+document.querySelector("h1").style.color = "red";
+</script>
+
+<script>
+document.querySelector("h1").style.fontSize = "50px";
+</script>
+
+<script>
+document.body.style.fontFamily = "Arial";
+</script>
+
+<script>
+console.log("JavaScript is working!");
+</script>
+
+<script>
+document.title = "Nick's Website";
+</script>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
             <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
+<center><p id="textChange"> My name is User ##</p></center>
+<center><button type="button" onclick="changeText()">Click if you like</button></center>
 
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav me-auto">

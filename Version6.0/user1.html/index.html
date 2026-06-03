@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeVerse</title>
+
+```
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">AnimeVerse</a>
+
+```
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+                <a class="nav-link active" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="characters.html">Characters</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="topanime.html">Top Anime</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </div>
+</div>
+```
+
+</nav>
+
+<section id="home" class="hero-section d-flex align-items-center text-center text-white">
+    <div class="container">
+        <h1 class="display-2 fw-bold">Welcome to AnimeVerse</h1>
+
+```
+    <p class="lead mt-3">
+        Explore legendary anime series, characters, and recommendations.
+    </p>
+
+    <button class="btn btn-warning mt-3" onclick="showDate()">
+        Show Today's Date
+    </button>
+
+    <p id="date" class="mt-3"></p>
+
+    <a href="#characters" class="btn btn-danger btn-lg mt-3">
+        Start Exploring
+    </a>
+</div>
+```
+
+</section>
+
+<section class="container py-5">
+    <div class="row align-items-center">
+
+```
+    <div class="col-md-6">
+        <h2>About This Website</h2>
+
+        <p>
+            AnimeVerse is a website dedicated to anime fans. This website highlights iconic anime characters,
+            top anime series, and reasons why anime has become popular worldwide.
+        </p>
+
+        <ul>
+            <li>Anime Recommendations</li>
+            <li>Popular Characters</li>
+            <li>Top Anime Series</li>
+            <li>Responsive Bootstrap Design</li>
+        </ul>
+    </div>
+
+    <div class="col-md-6 text-center">
+        <img src="https://cdn.wallpapersafari.com/17/62/4nqLxA.jpg"
+             class="img-fluid rounded shadow"
+             alt="Anime Wallpaper">
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="characters" class="container py-5">
+
+```
+<h2 class="text-center mb-5">Popular Anime Characters</h2>
+
+<div class="row g-4">
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0">
+
+            <img src="https://images6.alphacoders.com/413/thumb-1920-413205.jpg"
+                 class="card-img-top"
+                 alt="Naruto Uzumaki">
+
+            <div class="card-body text-center">
+                <h4 class="card-title">Naruto Uzumaki</h4>
+
+                <p class="card-text">
+                    Naruto is the energetic ninja from Naruto who dreams of becoming Hokage.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0">
+
+            <img src="https://images5.alphacoders.com/104/1046568.jpg"
+                 class="card-img-top"
+                 alt="Monkey D. Luffy">
+
+            <div class="card-body text-center">
+                <h4 class="card-title">Monkey D. Luffy</h4>
+
+                <p class="card-text">
+                    Luffy is the fearless pirate captain from One Piece searching for the One Piece treasure.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card h-100 shadow-lg border-0">
+
+            <img src="https://images4.alphacoders.com/852/thumb-1920-852184.png"
+                 class="card-img-top"
+                 alt="Ichigo Kurosaki">
+
+            <div class="card-body text-center">
+                <h4 class="card-title">Ichigo Kurosaki</h4>
+
+                <p class="card-text">
+                    Ichigo is a Soul Reaper from Bleach who protects humans and spirits.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="anime" class="container py-5">
+
+```
+<h2 class="text-center mb-4">Top Anime Series</h2>
+
+<div class="table-responsive">
+
+    <table class="table table-dark table-striped table-hover text-center align-middle">
+
+        <thead>
+            <tr>
+                <th>Anime</th>
+                <th>Genre</th>
+                <th>Episodes</th>
+                <th>Main Character</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Naruto</td>
+                <td>Action</td>
+                <td>720</td>
+                <td>Naruto Uzumaki</td>
+            </tr>
+
+            <tr>
+                <td>One Piece</td>
+                <td>Adventure</td>
+                <td>1000+</td>
+                <td>Monkey D. Luffy</td>
+            </tr>
+
+            <tr>
+                <td>Bleach</td>
+                <td>Supernatural</td>
+                <td>366</td>
+                <td>Ichigo Kurosaki</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+```
+
+</section>
+
+<section class="container py-5">
+
+```
+<h2 class="text-center mb-4">Why People Love Anime</h2>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <ul class="list-group shadow">
+            <li class="list-group-item">Amazing animation and visuals</li>
+            <li class="list-group-item">Memorable characters</li>
+            <li class="list-group-item">Strong emotional storytelling</li>
+            <li class="list-group-item">Great fight scenes and music</li>
+            <li class="list-group-item">Huge variety of genres</li>
+        </ul>
+    </div>
+
+    <div class="col-md-6 text-center mt-4 mt-md-0">
+        <i class="fa-solid fa-tv fa-6x icon"></i>
+    </div>
+
+</div>
+```
+
+</section>
+
+<section id="contact" class="container py-5 text-center">
+
+```
+<h2>Contact Information</h2>
+
+<p class="mt-4">
+    <i class="fa-solid fa-envelope"></i>
+    animeverse@email.com
+</p>
+
+<p>
+    <i class="fa-brands fa-instagram"></i>
+    @animeverse
+</p>
+
+<p>
+    <i class="fa-brands fa-youtube"></i>
+    AnimeVerse Channel
+</p>
+```
+
+</section>
+
+<footer class="text-center text-light bg-black p-4">
+    <p class="mb-0">AnimeVerse | Web Development Final Project</p>
+</footer>
+
+<script src="JS/script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

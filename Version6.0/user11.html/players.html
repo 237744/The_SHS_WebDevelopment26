@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players - Court Time</title>
+    <link rel="icon" type="image/png" href="images/basketball-favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <style>
+        .player-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+
+        .player-card:hover {
+            transform: translateY(-15px);
+        }
+
+        .player-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px 12px 0 0;
+        }
+
+        .stats-table {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-table thead {
+            background: linear-gradient(135deg, #FF6B35, #004E89) !important;
+            color: white;
+        }
+
+        .stats-table tbody tr {
+            transition: all 0.3s ease;
+        }
+
+        .stats-table tbody tr:hover {
+            background-color: #f5f5f5;
+            transform: scale(1.02);
+        }
+
+        .stats-table tbody td {
+            vertical-align: middle;
+            padding: 15px;
+        }
+
+        .badge-custom {
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fas fa-basketball"></i> Court Time
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="players.html">Players</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header text-white text-center py-5"
+        style="background: linear-gradient(135deg, #004E89 0%, #FF6B35 100%);">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-3">Featured Players</h1>
+            <p class="lead">Meet the stars of the court</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+            <!-- Featured Players Grid -->
+            <section class="mb-5">
+                <h2 class="text-center mb-5 fw-bold">Top Players</h2>
+                <div class="row g-4">
+                    <!-- Player 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card player-card feature-card h-100">
+                            <img src="https://via.placeholder.com/400x250?text=Player+1"
+                                alt="Star player on the basketball court" class="player-image">
+                            <div class="card-body">
+                                <h5 class="card-title">Steph Currry</h5>
+                                <p class="text-muted small mb-2">
+                                    <i class="fas fa-jersey"></i> Position:Point Guard
+                                </p>
+                                <p class="card-text text-muted">A dynamic point guard known for incredible court vision
+                                    and leadership.</p>
+                                <div class="d-flex gap-2 mt-3">
+                                    <span class="badge-custom bg-warning text-dark">PPG: 26.6</span>
+                                    <span class="badge-custom bg-info text-white">APG: 4.7</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Player 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card player-card feature-card h-100">
+                            <img src="https://via.placeholder.com/400x250?text=Player+2"
+                                alt="Forward with exceptional scoring ability" class="player-image">
+                            <div class="card-body">
+                                <h5 class="card-title">jayson tatum</h5>
+                                <p class="text-muted small mb-2">
+                                    <i class="fas fa-jersey"></i> Position: Forward
+                                </p>
+                                <p class="card-text text-muted">Explosive scorer with versatile skills on both ends of
+                                    the floor.</p>
+                                <div class="d-flex gap-2 mt-3">
+                                    <span class="badge-custom bg-warning text-dark">PPG: 21.8</span>
+                                    <span class="badge-custom bg-success text-white">RPG: 11.8</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- Player 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <article class="card player-card feature-card h-100">
+                            <img src="https://via.placeholder.com/400x250?text=Player+3"
+                                alt="Dominant center and defensive anchor" class="player-image">
+                            <div class="card-body">
+                                <h5 class="card-title">Victor Wembanyama</h5>
+                                <p class="text-muted small mb-2">
+                                    <i class="fas fa-jersey"></i> Position: Center
+                                </p>
+                                <p class="card-text text-muted">Defensive anchor and rebounding machine in the paint.
+                                </p>
+                                <div class="d-flex gap-2 mt-3">
+                                    <span class="badge-custom bg-warning text-dark">PPG: 11.5</span>
+                                    <span class="badge-custom bg-danger text-white">BPG: 3,1</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Player Statistics Table -->
+            <section class="mb-5">
+                <h2 class="text-center mb-5 fw-bold">Season Statistics</h2>
+                <div class="table-responsive">
+                    <table class="table stats-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">
+                                    <i class="fas fa-user"></i> Player Name
+                                </th>
+                                <th scope="col" class="text-center">
+                                    <i class="fas fa-basketball"></i> PPG
+                                </th>
+                                <th scope="col" class="text-center">
+                                    <i class="fas fa-redo"></i> RPG
+                                </th>
+                                <th scope="col" class="text-center">
+                                    <i class="fas fa-handshake"></i> APG
+                                </th>
+                                <th scope="col" class="text-center">
+                                    <i class="fas fa-shield"></i> SPG
+                                </th>
+                                <th scope="col" class="text-center">
+                                    <i class="fas fa-hand-fist"></i> BPG
+                                </th>
+                                <th scope="col" class="text-center">
+                                    <i class="fas fa-percent"></i> FG%
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <strong>Shai Gilgeous-Alexander</strong><br>
+                                    <small class="text-muted">Guard | Oklahoma City Thunder</small>
+                                </td>
+                                <td class="text-center"><strong>32.7</strong></td>
+                                <td class="text-center">5.0</td>
+                                <td class="text-center">6.4</td>
+                                <td class="text-center"><strong>1.7</strong></td>
+                                <td class="text-center">0.9</td>
+                                <td class="text-center">51.9%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Giannis Antetokounmpo</strong><br>
+                                    <small class="text-muted">Forward | Milwaukee Bucks</small>
+                                </td>
+                                <td class="text-center"><strong>30.4</strong></td>
+                                <td class="text-center"><strong>11.9</strong></td>
+                                <td class="text-center">6.5</td>
+                                <td class="text-center">1.2</td>
+                                <td class="text-center">1.1</td>
+                                <td class="text-center">61.1%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Nikola Jokić</strong><br>
+                                    <small class="text-muted">Center | Denver Nuggets</small>
+                                </td>
+                                <td class="text-center"><strong>29.6</strong></td>
+                                <td class="text-center">12.7</td>
+                                <td class="text-center"><strong>10.2</strong></td>
+                                <td class="text-center">1.8</td>
+                                <td class="text-center">0.8</td>
+                                <td class="text-center">57.8%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Trae Young</strong><br>
+                                    <small class="text-muted">Guard | Atlanta Hawks</small>
+                                </td>
+                                <td class="text-center">25.7</td>
+                                <td class="text-center">3.3</td>
+                                <td class="text-center"><strong>11.6</strong></td>
+                                <td class="text-center">1.3</td>
+                                <td class="text-center">0.2</td>
+                                <td class="text-center">43.1%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Victor Wembanyama</strong><br>
+                                    <small class="text-muted">Center | San Antonio Spurs</small>
+                                </td>
+                                <td class="text-center">24.3</td>
+                                <td class="text-center">10.7</td>
+                                <td class="text-center">3.9</td>
+                                <td class="text-center">1.2</td>
+                                <td class="text-center"><strong>3.8</strong></td>
+                                <td class="text-center">50.0%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-muted small mt-3 text-center">
+                    <em>PPG = Points Per Game | RPG = Rebounds Per Game | APG = Assists Per Game | SPG = Steals Per Game
+                        | BPG = Blocks Per Game | FG% = Field Goal Percentage</em>
+                </p>
+            </section>
+            <!-- Download Stats -->
+            <section class="bg-light rounded p-5 text-center">
+                <h3 class="mb-4 fw-bold">Download Full Player Statistics</h3>
+                <p class="mb-4 text-muted">Get detailed stats and information about all our featured players</p>
+                <a href="#" class="btn btn-primary me-2">
+                    <i class="fas fa-download"></i> Download PDF
+                </a>
+                <a href="#" class="btn btn-success">
+                    <i class="fas fa-file-csv"></i> Download CSV
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <h5>Court Time</h5>
+                    <p>Your basketball hub for stats, highlights, and more.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html" class="text-decoration-none text-warning">About</a></li>
+                        <li><a href="gallery.html" class="text-decoration-none text-warning">Gallery</a></li>
+                        <li><a href="contact.html" class="text-decoration-none text-warning">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="text-warning me-3"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-warning me-3"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <p class="mb-0">&copy; 2026 Court Time. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

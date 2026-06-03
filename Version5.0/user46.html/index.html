@@ -40,37 +40,61 @@
         .demo-content {
             padding: 15px;
             font-size: 18px;
-            background: #dbdfe5;
+            background: #6eff07;
             margin-bottom: 15px;
         }
         
         .demo-content.bg-alt {
-            background: #abb1b8;
+            background: #0077ff;
         }
     </style>
 
     <body>
         <!---------------------------------- Begin the nav-bar ----------------------------------->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-light bg-light">
             <div class="container-fluid">
                 <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+    
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav me-auto">
                         <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
                         <li class="nav-item">
-                            <a href="#" class="nav-link active">Home</a>
+                            <a href="#" class="nav-link active" colgroup></colgroup>Home</a>  
+                           <style>
+                            .nav-link.active {
+                                font-weight: bold;
+                                color: #15ff00;
+                            }
+                            .nav-link.active::after {
+                                content: '';
+                                display: block;
+                                width: 100%;
+                                height: 2px;
+                                background-color: #15ff00;
+                                margin-top: 5px;
+                            }
+                            .nav-link.active:hover {
+                                color: #15ff00;
+                            }
+                            .nav-link.nav-link.active:hover::after {
+                                background-color: #0004ff;
+                            }
+                        
+                            
+</style>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                               Link
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                               <flex-wrap: nowrap;
+                                justify-content: flex-start;>   </flex-wrap:>
+                                <li><a class="dropdown-item" href="#">Cool Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another Cool Action</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
@@ -78,8 +102,31 @@
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="#" class="nav-link enabled" tabindex="-1">Confirmations</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a> 
+                        </li>
+                        <nav class="navbar bg-body-tertiary">
+                            
+<div class="container-fluid">
+    <form class="d-flex input-group w-auto"bg-dark>
+      <input
+        type="search"
+        class="form-control rounded"
+        placeholder="Search"
+        aria-label="Search"
+        aria-describedby="search-addon"
+      />
+      <span class="input-group-text border-0" id="search-addon">
+        <i class="fas fa-search"></i>
+      </span>
+    </form>
+  </div>
+</nav>
                         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                     </ul>
                     <form class="d-flex">
@@ -153,6 +200,36 @@
 
             <!---------Table-Striped------------------------------------------->
             <div class="container mt-3" name="table-striped">
+                <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Row</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Clark</td>
+                    <td>Kent</td>
+                    <td>clarkkent@mail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>John</td>
+                    <td>Carter</td>
+                    <td>johncarter@mail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Peter</td>
+                    <td>Parker</td>
+                    <td>peterparker@mail.com</td>
+                </tr>
+            </tbody>
+        </table>
             </div>
 
             <!---------List-Group---------------------------------------------->
@@ -165,26 +242,151 @@
         </main>
 
         <!---------------------------------- Begin the footer ------------------------------------->
-        <footer>
-            <span class="title">Example of a Footer Title</span>
-            <div class="container py-4" id="footerTable">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
+        <footer class="bg-grey text-black py-3">
+            <div class="container"> 
+                <!-- Footer -->
+<footer class="bg-body-tertiary text-center">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a data-mdb-ripple-init class="btn btn-outline btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div data-mdb-input-init class="form-outline mb-4">
+              <input type="email" id="form5Example24" class="form-control" />
+              <label class="form-label" for="form5Example24">Email address</label>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button data-mdb-ripple-init type="submit" class="btn btn-outline mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+    <!-- Section: Form -->
+
+    <!-- Section: Text -->
+    <section class="mb-4">
+      <p>
+        Thank you, and have a great day!
+      </p>
+    </section>
+    <!-- Section: Text -->
+
+    <!-- Section: Links -->
+    <section class="">
+      <!--Grid row-->
+      <div class="row">
+       
+
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a class="text-body" href="#!">Link 1</a>
+            </li>
+            <li>
+              <a class="text-body" href="#!">Link 2</a>
+            </li>
+            <li>
+              <a class="text-body" href="#!">Link 3</a>
+            </li>
+            <li>
+              <a class="text-body" href="#!">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+
+        
+        <!--Grid column-->
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled mb-0">
+            <li>
+              <a class="text-body" href="#!">Link 1</a>
+            </li>
+            <li>
+              <a class="text-body" href="#!">Link 2</a>
+            </li>
+            <li>
+              <a class="text-body" href="#!">Link 3</a>
+            </li>
+            <li>
+              <a class="text-body" href="#!">Link 4</a>
+            </li>
+          </ul>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </section>
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
             </div>
         </footer>
         <!---------------------------------- End the footer --------------------------------------->

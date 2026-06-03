@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mad Lib Assignment</title>
+
+<style>
+body{
+    font-family: Arial;
+    margin-left:50px;
+    margin-top:50px;
+}
+
+label{
+    display:inline-block;
+    width:100px;
+    font-size:28px;
+}
+
+input{
+    width:220px;
+    height:30px;
+    margin:5px;
+}
+
+button{
+    margin-top:10px;
+    padding:8px;
+}
+
+#output{
+    margin-top:20px;
+    font-size:30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Mad Lib Input Form</h2>
+
+<label>Noun:</label>
+<input id="noun"><br>
+
+<label>Adjective:</label>
+<input id="adjective"><br>
+
+<label>Verb:</label>
+<input id="verb"><br>
+
+<button onclick="submitWords()">Submit</button>
+
+<p id="output"></p>
+
+<script>
+
+function submitWords(){
+
+let noun =
+document.getElementById("noun").value;
+
+let adjective =
+document.getElementById("adjective").value;
+
+let verb =
+document.getElementById("verb").value;
+
+
+document.getElementById("output").innerHTML=
+"These are my output words: "
++ noun + ", "
++ adjective + ", "
++ verb + ".";
+
+}
+
+</script>
+
+</body>
+</html>

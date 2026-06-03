@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function addNums(){
+                let a = Number(document.getElementById("addNum1").value);
+                let b = Number(document.getElementById("addNum2").value);
+                c = a+b
+                document.getElementById('addEq').innerHTML = c;
+            }
+            function multNums(){
+                let d = Number(document.getElementById("multNum1").value);
+                let e = Number(document.getElementById("multNum2").value);
+                f = d*e
+                document.getElementById('multEq').innerHTML = f;
+            }
+            function pythTheorem(){
+                let g = Number(document.getElementById("pytha").value);
+                let h = Number(document.getElementById("pythb").value);
+                i = g**2 + h**2
+                j = Math.sqrt(i)
+                document.getElementById('pythagorean').innerHTML = "c = " + j;
+            }
+            
+        </script>
+    </head>
+
+    <body>
+        <main>
+
+            <br><br>
+            <div>
+                <input id="addNum1" type="text">
+                <p style="display: inline;"> + </p>
+                <input id="addNum2" type="text">
+                <p style="display: inline;"> = </p>
+                <span id="addEq"></span>
+                <input id="addEq" onclick="addNums()" type="button" value="add">
+            </div>
+            <br><br>
+            <div>
+                <input id="multNum1" type="text">
+                <p style="display: inline;"> * </p>
+                <input id="multNum2" type="text">
+                <p style="display: inline;"> = </p>
+                <span id="multEq"></span>
+                <input id="multEq" onclick="multNums()" type="button" value="multiply">
+            </div>
+            
+            <br><br>
+            <h3>Pythagorean Theorem</h3>
+            <div style="display: inline;">
+                <p>a = </p>
+                <input id="pytha" type="text">
+            </div>
+            <div style="display: inline;">
+                <p>b = </p>
+                <input id="pythb" type="text">
+            <div>
+            <div style="display: inline;" ></div>
+            </div>
+            <span id="pythagorean">
+                <p>c = </p>
+            </span>
+            <input id="pythagorean" onclick="pythTheorem()" type="button" value="Find c">
+        </main>
+    </body>
+</html>

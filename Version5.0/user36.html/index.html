@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 5.0
-    Name:
+    Name:Ryan
     Date Completed:
 -->
 
@@ -45,49 +45,67 @@
         }
         
         .demo-content.bg-alt {
-            background: #abb1b8;
-        }
+            background: #0077ff;
+        }.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: rgba(255, 0, 0, 0.3)
+}
     </style>
 
     <body>
-        <!---------------------------------- Begin the nav-bar ----------------------------------->
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        
+       <!---------------------------------- Begin the nav-bar ----------------------------------->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
 
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                    <ul class="navbar-nav me-auto">
-                        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active">Home</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                              Link
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
-                        </li>
-                        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                    </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+    <!-- Brand -->
+    <a class="navbar-brand fw-bold" href="#">Ryan</a>
+
+    <!-- Mobile toggle -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="aboutMe.html">About</a>
+        </li>
+
+        <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+            Services
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Messages</a></li>
+            <li><a class="dropdown-item" href="#">Marketing</a></li>
+            <li><a class="dropdown-item" href="#">Customer Service</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="mailto:sample@gmail.com">Contact</a>
+        </li>
+
+      </ul>
+
+      <!-- Button -->
+      <a href="#" class="btn btn-primary ms-3">Schedule Appointment</a>
+    </div>
+
+  </div>
+</nav>
+<!---------------------------------- End the nav-bar ------------------------------------->
+  </div>
+</nav>
+       
         <!---------------------------------- End the nav-bar ------------------------------------->
         <!---------Jumbotron---------------------------------------------->
         <header class="p-5 bg-primary-subtle text-black" name="Jumbotron">
@@ -98,6 +116,21 @@
 
         <main>
             <!---------Three Column Layouts------------------------------------>
+           <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active">
+        <i class="fa fa-home"></i> Home
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa-solid fa-photo-film"></i> Photos <span class="badge bg-secondary badge-pill badge-primary pull-right active">243</span>
+    </a>
+    <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+        <i class="fa-solid fa-chess"></i> Games <span class="badge bg-secondary badge-pill badge-primary pull-right active">2</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa-regular fa-message"></i> Messages <span class="badge bg-secondary badge-pill badge-primary pull-right">22</span>
+    </a>
+</div>
+<a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a>
             <div class="container mt-3">
                 <!--Row with two equal columns-->
                 <div class="row">
@@ -166,7 +199,55 @@
 
         <!---------------------------------- Begin the footer ------------------------------------->
         <footer>
-            <span class="title">Example of a Footer Title</span>
+            <footer class="bg-dark text-light pt-5">
+  <div class="container">
+    <div class="row">
+
+      <!-- About -->
+      <div class="col-md-3 mb-4">
+        <h5>My Website</h5>
+        <p class="small">
+          A student built webpage
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="col-md-3 mb-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-light text-decoration-none">Home</a></li>
+          <li><a href="#" class="text-light text-decoration-none">About</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Gallery</a></li>
+          <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 mb-4">
+        <h5>Contact</h5>
+        <p class="small mb-1">Email: student@email.com</p>
+        <p class="small mb-1">Phone: (123) 456-7890</p>
+        <p class="small">Location: Los Angeles, CA</p>
+      </div>
+
+      <!-- Call to Action -->
+      <div class="col-md-3 mb-4">
+        <h5>Stay Connected</h5>
+        <p class="small">Sign up for updates</p>
+        <input type="email" class="form-control mb-2" placeholder="Enter email">
+        <button class="btn btn-primary btn-sm w-100">Subscribe</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sub-Footer -->
+  <div class="bg-secondary text-center py-3 mt-4">
+    <p class="mb-0 small">&copy; 2026 My Website | All Rights Reserved</p>
+  </div>
+</footer>
+            <span class="title">Example of a Footer <Title>
+            </span>
             <div class="container py-4" id="footerTable">
                 <ul class="list-unstyled d-flex justify-content-center">
                     <li class="mx-3">

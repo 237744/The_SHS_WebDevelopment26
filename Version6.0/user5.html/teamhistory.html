@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA History Vault | Team History</title>
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        body { 
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        
+        .nav-link { color: #ffffff !important; }
+        .nav-link:hover { color: #ff0000 !important; }
+
+        .active-page {
+            color: #ff0000 !important;
+            font-weight: bold;
+        }
+
+        .page-header {
+            background-color: #034fba; 
+            color: #ffffff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 5px solid #ff0000; 
+        }
+
+        .table-custom { border: 2px solid #ff0000; }
+        
+        .table-custom thead {
+            background-color: #034fba;
+            color: #ffffff;
+            border-bottom: 5px solid #000000 !important;
+        }
+        
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            background-color: rgba(3, 79, 186, 0.1); 
+        }
+
+        .table-custom th, .table-custom td {
+            border-left: 4px solid #000000 !important;
+            padding: 15px !important;
+        }
+
+        .table-custom th:first-child, .table-custom td:first-child {
+            border-left: none !important;
+        }
+
+        .footer-bar {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px 0;
+    border-top: 2px solid #ffc107; /* The thin Gold line */
+    font-size: 0.85rem;
+    margin-top: auto; /* Helps with sticky footer */
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #ff0000; /* Red hover to match your page style */
+}
+
+/* This part ensures the footer stays at the bottom of the screen 
+   even if the page doesn't have much content */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+        /* Team Color Classes */
+        .sixers { color: #ffffff !important; background-color: #006BB6 !important; font-weight: bold; } 
+        .blazers { color: #ffffff !important; background-color: #E03A3E !important; font-weight: bold; }
+        .bucks { color: #ffffff !important; background-color: #00471B !important; font-weight: bold; }
+        .suns { color: #ffffff !important; background-color: #1D1160 !important; font-weight: bold; }
+        .warriors { color: #ffffff !important; background-color: #1D428A !important; font-weight: bold; }
+        .lakers { color: #ffffff !important; background-color: #552583 !important; font-weight: bold; } 
+        .jazz { color: #ffffff !important; background-color: #002B5C !important; font-weight: bold; }
+        .raptors { color: #ffffff !important; background-color: #CE1141 !important; font-weight: bold; }
+        .timberwolves { color: #ffffff !important; background-color: #0C2340 !important; font-weight: bold; }
+        .nets { color: #ffffff !important; background-color: #000000 !important; font-weight: bold; }
+        .bulls { color: #ffffff !important; background-color: #CE1141 !important; font-weight: bold; }
+        .cavs { color: #ffffff !important; background-color: #6F263D !important; font-weight: bold; }
+        .pacers { color: #ffffff !important; background-color: #002D62 !important; font-weight: bold; }
+        .mavericks { color: #ffffff !important; background-color: #00538C !important; font-weight: bold; }
+        .celtics { color: #ffffff !important; background-color: #007A33 !important; font-weight: bold; }
+        .heat { color: #ffffff !important; background-color: #98002E !important; font-weight: bold; }  
+        .knicks { color: #ffffff !important; background-color: #006BB6 !important; font-weight: bold; }
+        .pelicans { color: #ffffff !important; background-color: #0C2340 !important; font-weight: bold; }
+        .clippers { color: #ffffff !important; background-color: #C8102E !important; font-weight: bold; }
+        .grizzlies { color: #ffffff !important; background-color: #5D76A8 !important; font-weight: bold; }
+        .hornets { color: #ffffff !important; background-color:  #00788C !important; font-weight: bold; }
+        .thunder { color: #ffffff !important; background-color: #007AC1 !important; font-weight: bold; }
+        .pelicans { color: #ffffff !important; background-color: #0C2340 !important; font-weight: bold; }
+        .rockets { color: #ffffff !important; background-color: #CE1141 !important; font-weight: bold; }
+        .magic { color: #ffffff !important; background-color: #0077C0 !important; font-weight: bold; }
+        .spurs { color: #ffffff !important; background-color: #000000 !important; font-weight: bold; }
+        .hawks { color: #ffffff !important; background-color: #E03A3E !important; font-weight: bold; }
+        .kings { color: #ffffff !important; background-color: #5A2D81 !important; font-weight: bold; }
+        .wizards { color: #ffffff !important; background-color: #002B5C !important; font-weight: bold; }
+        .pistons { color: #ffffff !important; background-color: #C8102E !important; font-weight: bold; }
+        .nuggets { color: #ffffff !important; background-color: #0E2240 !important; font-weight: bold; }
+
+
+        
+        .team-logo {
+            width: 45px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning" aria-label="Main Navigation">
+    <div class="container-fluid justify-content-start gap-3">
+        <a class="navbar-brand" href="index.html">Home</a>
+        <div class="navbar-nav flex-row gap-3">
+            <a class="nav-link" href="champions.html">Past Champions</a>
+            <a class="nav-link" href="mvps.html">MVPs</a>
+            <a class="nav-link" href="nbadraft.html">NBA Draft</a>
+            <a class="nav-link active-page" href="teamhistory.html">Team history</a>
+        </div>
+    </div>
+</nav>
+
+<header class="page-header mb-5">
+    <div class="container">
+        <h1 class="display-3 fw-bold">Team History</h1>
+        <p class="lead">Franchise Data: Championships, Playoff Appearances, Arenas, and Retired Numbers</p>
+    </div>
+</header>
+
+<main class="container mb-5">
+    <section class="table-responsive shadow" aria-labelledby="team-history-table">
+        <table class="table table-hover table-striped table-custom align-middle text-center">
+            <thead>
+                <tr>
+                    <th scope="col">Logo</th>
+                    <th scope="col">Team</th>
+                    <th scope="col">Titles</th>
+                    <th scope="col">Playoff Appearances</th>
+                    <th scope="col">Retired Numbers</th>
+                    <th scope="col">Arena</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/0/0e/Philadelphia_76ers_logo.svg" alt="76ers Logo" class="team-logo">
+                    </td>
+                    <td class="sixers">Philadelphia 76ers</td>
+                    <td class="fw-bold">3</td>
+                    <td>55</td>
+                    <td>2, 3, 4, 6, 10, 13, 15, 24, 32, 34</td>
+                    <td>Wells Fargo Center</td>
+                </tr>
+
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/4/4a/Milwaukee_Bucks_logo.svg" alt="Bucks Logo" class="team-logo">
+                    </td>
+                    <td class="bucks">Milwaukee Bucks</td>
+                    <td class="fw-bold">2</td>
+                    <td>37</td>
+                    <td>1, 2, 4, 6, 8, 10, 14, 16, 32, 33</td>
+                    <td>Fiserv Forum</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://images.seeklogo.com/logo-png/22/2/chicago-bulls-logo-png_seeklogo-226690.png" alt="Trail Blazers Logo" class="team-logo">
+                    </td>
+                    <td class="bulls">Chicago Bulls</td>
+                    <td class="fw-bold">6</td>
+                    <td>36</td>
+                    <td>1, 4, 6, 10, 23, 33</td>
+                    <td>United Center</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Cleveland_Cavaliers_logo.svg/1280px-Cleveland_Cavaliers_logo.svg.png" alt="Trail Blazers Logo" class="team-logo">
+                    </td>
+                    <td class="cavs">Cleveland Cavaliers</td>
+                    <td class="fw-bold">1</td>
+                    <td>26</td>
+                    <td>6, 7, 11, 22, 25, 34, 42, 43</td>
+                    <td>Rocket Arena</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Boston_Celtics.svg/1280px-Boston_Celtics.svg.png" alt="Boston Celtics Logo" class="team-logo">
+                    </td>
+                    <td class="celtics">Boston Celtics</td>
+                    <td class="fw-bold">18</td>
+                    <td>63</td>
+                    <td>00, 1, 2, 3, 5, 6, 10, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 31, 32, 33, 34, 35</td>
+                    <td>TD Garden</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Los_Angeles_Clippers_%282024%29.svg/1280px-Los_Angeles_Clippers_%282024%29.svg.png" alt="Clippers Logo" class="team-logo">
+                    </td>
+                    <td class="clippers">Los Angeles Clippers</td>
+                    <td class="fw-bold">0</td>
+                    <td>20</td>
+                    <td>N/A</td>
+                    <td>Inuite Dome</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://sports.cbsimg.net/fly/images/team-logos/light/360.svg" alt="Grizzlies Logo" class="team-logo">
+                    </td>
+                    <td class="grizzlies">Memphis Grizzlies</td>
+                    <td class="fw-bold">0</td>
+                    <td>14</td>
+                    <td>6, 9, 33, 50</td>
+                    <td>FedExForum</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://www.nicepng.com/png/full/37-370608_atlanta-hawks-logo-pacman-atlanta-hawks-logo-jpg.png" alt="Grizzlies Logo" class="team-logo">
+                    </td>
+                    <td class="hawks">Atlanta Hawks</td>
+                    <td class="fw-bold">1</td>
+                    <td>50</td>
+                    <td>6, 9, 21, 23, 44, 55, 59</td>
+                    <td>State Farm Arena</td>
+                </tr> 
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fb/Miami_Heat_logo.svg/960px-Miami_Heat_logo.svg.png" alt="Grizzlies Logo" class="team-logo">
+                    </td>
+                    <td class="heat">Miami Heat</td>
+                    <td class="fw-bold">3</td>
+                    <td>25</td>
+                    <td>1, 3, 6, 10, 23, 32, 33, 40</td>
+                    <td>Kaseya Center</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c4/Charlotte_Hornets_%282014%29.svg/1280px-Charlotte_Hornets_%282014%29.svg.png" alt="Grizzlies Logo" class="team-logo">
+                    </td>
+                    <td class="hornets">Charlotte Hornets</td>
+                    <td class="fw-bold">0</td>
+                    <td>11</td>
+                    <td>6, 13, 30</td>
+                    <td>Spectrum Center</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/77/Utah_Jazz_logo_2025.svg/1280px-Utah_Jazz_logo_2025.svg.png" alt="Grizzlies Logo" class="team-logo">
+                    </td>
+                    <td class="jazz">Utah Jazz</td>
+                    <td class="fw-bold">0</td>
+                    <td>31</td>
+                    <td>1, 4, 6, 7, 9, 12, 14, 32, 35, 53</td>
+                    <td>Delta Center</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c7/SacramentoKings.svg/1280px-SacramentoKings.svg.png" alt="Grizzlies Logo" class="team-logo">
+                    </td>
+                    <td class="kings">Sacremento Kings</td>
+                    <td class="fw-bold">1</td>
+                    <td>30</td>
+                    <td>2, 4, 6, 11, 12, 14, 16, 21, 27, 44</td>
+                    <td>Golden 1 Center</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/25/New_York_Knicks_logo.svg/1280px-New_York_Knicks_logo.svg.png" alt="Grizzlies Logo" class="team-logo">
+                    </td>
+                    <td class="knicks">New York Knicks</td>
+                    <td class="fw-bold">2</td>
+                    <td>47</td>
+                    <td>6, 10, 12, 15, 19, 22, 24, 33</td>
+                    <td>Madison Square Garden</td>
+                </tr>
+
+
+            <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Los_Angeles_Lakers_logo.svg/1280px-Los_Angeles_Lakers_logo.svg.png" alt="Lakers Logo" class="team-logo"></td>
+                    <td class="lakers">Los Angeles Lakers</td>
+                    <td class="fw-bold">17</td>
+                    <td>66</td>
+                    <td>8, 13, 16, 21, 22, 24, 25, 32, 33, 34, 42, 44, 52, 99</td>
+                    <td>Crypto.com Arena</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/1/10/Orlando_Magic_logo.svg/1280px-Orlando_Magic_logo.svg.png" alt="Magic Logo" class="team-logo"></td>
+                    <td class="magic">Orlando Magic</td>
+                    <td class="fw-bold">0</td>
+                    <td>19</td>
+                    <td>6, 32</td>
+                    <td>Kia Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/97/Dallas_Mavericks_logo.svg/1280px-Dallas_Mavericks_logo.svg.png" alt="Mavericks Logo" class="team-logo"></td>
+                    <td class="mavericks">Dallas Mavericks</td>
+                    <td class="fw-bold">1</td>
+                    <td>25</td>
+                    <td>6, 12, 15, 22, 24</td>
+                    <td>American Airlines Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Brooklyn_Nets_newlogo.svg/1280px-Brooklyn_Nets_newlogo.svg.png" alt="Nets Logo" class="team-logo"></td>
+                    <td class="nets">Brooklyn Nets</td>
+                    <td class="fw-bold">0</td>
+                    <td>24</td>
+                    <td>3, 4, 5, 6, 23, 25, 32, 52</td>
+                    <td>Barclays Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Denver_Nuggets.svg/1280px-Denver_Nuggets.svg.png" alt="Nuggets Logo" class="team-logo"></td>
+                    <td class="nuggets">Denver Nuggets</td>
+                    <td class="fw-bold">1</td>
+                    <td>32</td>
+                    <td>2, 6, 12, 33, 40, 44, 55, 432</td>
+                    <td>Ball Arena</td>
+                </tr>
+                <tr>
+                    <td><img src="https://brandlogos.net/wp-content/uploads/2025/05/indiana_pacers-logo_brandlogos.net_rp1ju-512x477.png" alt="Pacers Logo" class="team-logo"></td>
+                    <td class="pacers">Indiana Pacers</td>
+                    <td class="fw-bold">0</td>
+                    <td>29</td>
+                    <td>6, 30, 31, 34, 35</td>
+                    <td>Gainbridge Fieldhouse</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0d/New_Orleans_Pelicans_logo.svg/1280px-New_Orleans_Pelicans_logo.svg.png" alt="Pelicans Logo" class="team-logo"></td>
+                    <td class="pelicans">New Orleans Pelicans</td>
+                    <td class="fw-bold">0</td>
+                    <td>9</td>
+                    <td>6, 7</td>
+                    <td>Smoothie King Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Logo_of_the_Detroit_Pistons.svg/1280px-Logo_of_the_Detroit_Pistons.svg.png" alt="Pistons Logo" class="team-logo"></td>
+                    <td class="pistons">Detroit Pistons</td>
+                    <td class="fw-bold">3</td>
+                    <td>44</td>
+                    <td>1, 2, 3, 4, 6, 10, 11, 15, 16, 21, 32</td>
+                    <td>Little Caesars Arena</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/36/Toronto_Raptors_logo.svg/1280px-Toronto_Raptors_logo.svg.png" alt="Raptors Logo" class="team-logo"></td>
+                    <td class="raptors">Toronto Raptors</td>
+                    <td class="fw-bold">1</td>
+                    <td>14</td>
+                    <td>6, 15</td>
+                    <td>Scotiabank Arena</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Houston_Rockets.svg/1280px-Houston_Rockets.svg.png" alt="Rockets Logo" class="team-logo"></td>
+                    <td class="rockets">Houston Rockets</td>
+                    <td class="fw-bold">2</td>
+                    <td>36</td>
+                    <td>6, 11, 22, 23, 24, 32, 34, 45</td>
+                    <td>Toyota Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a2/San_Antonio_Spurs.svg/1280px-San_Antonio_Spurs.svg.png" alt="Spurs Logo" class="team-logo"></td>
+                    <td class="spurs">San Antonio Spurs</td>
+                    <td class="fw-bold">5</td>
+                    <td>40</td>
+                    <td>00, 6, 9, 12, 13, 20, 21, 32, 44, 50</td>
+                    <td>Frost Bank Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/dc/Phoenix_Suns_logo.svg/1280px-Phoenix_Suns_logo.svg.png" alt="Suns Logo" class="team-logo"></td>
+                    <td class="suns">Phoenix Suns</td>
+                    <td class="fw-bold">0</td>
+                    <td>34</td>
+                    <td>5, 6, 7, 9, 13, 24, 31, 32, 33, 34, 42, 44</td>
+                    <td>Footprint Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Oklahoma_City_Thunder.svg/1280px-Oklahoma_City_Thunder.svg.png" alt="Thunder Logo" class="team-logo"></td>
+                    <td class="thunder">Oklahoma City Thunder</td>
+                    <td class="fw-bold">1</td>
+                    <td>12</td>
+                    <td>4, 6</td>
+                    <td>Paycom Center</td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <img src="https://images.seeklogo.com/logo-png/53/2/portland-trail-blazers-logo-png_seeklogo-531096.png" alt="Trail Blazers Logo" class="team-logo">
+                    </td>
+                    <td class="blazers">Portland Trail Blazers</td>
+                    <td class="fw-bold">1</td>
+                    <td>38</td>
+                    <td>1, 6, 13, 14, 15, 20, 22, 30, 32, 36, 45, 77</td>
+                    <td>Moda Center</td>
+                </tr> 
+
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c2/Minnesota_Timberwolves_logo.svg/1280px-Minnesota_Timberwolves_logo.svg.png" alt="Timberwolves Logo" class="team-logo"></td>
+                    <td class="timberwolves">Minnesota Timberwolves</td>
+                    <td class="fw-bold">0</td>
+                    <td>14</td>
+                    <td>2, 6, 21</td>
+                    <td>Target Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Golden_State_Warriors_logo.svg/1280px-Golden_State_Warriors_logo.svg.png" alt="Warriors Logo" class="team-logo"></td>
+                    <td class="warriors">Golden State Warriors</td>
+                    <td class="fw-bold">7</td>
+                    <td>39</td>
+                    <td>6, 9, 13, 14, 16, 17, 24, 42</td>
+                    <td>Chase Center</td>
+                </tr>
+                <tr>
+                    <td><img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/02/Washington_Wizards_logo.svg/1280px-Washington_Wizards_logo.svg.png" alt="Wizards Logo" class="team-logo"></td>
+                    <td class="wizards">Washington Wizards</td>
+                    <td class="fw-bold">1</td>
+                    <td>30</td>
+                    <td>6, 10, 11, 25, 41, 45</td>
+                    <td>Capital One Arena</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+</main>
+<footer class="footer-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+        <p class="mb-0">© 2026 NBA History Vault</p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="champions.html">Champions</a>
+            <a href="mvps.html">MVPs</a>
+            <a href="nbadraft.html">Draft</a>
+            <a href="teamhistory.html">Teams history</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

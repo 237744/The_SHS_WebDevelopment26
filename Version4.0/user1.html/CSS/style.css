@@ -1,37 +1,85 @@
 .button {
-	background-color: #4CAF50;
-	border: none;
-	color: white;
-	padding: 20px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
 }
 
 .button1 {
-	border-radius: 8px;
+    border-radius: 8px;
 }
 
 .button2 {
-	border-radius: 30%;
+    border-radius: 30%;
 }
 
 .red {
-	background-color: #ff0000;
+    background-color: #ff0000;
 }
 
-td{
-	padding:20px;
+/* New Button Styles */
+.glow {
+    box-shadow: 0 0 15px #00ffcc;
 }
 
-table{
-	margin-left: auto;
-	margin-right: auto;
+.big {
+    font-size: 24px;
+    padding: 30px;
 }
 
-h1, h2, h3, h4, h5, h6{
-	text-align:center;
+.outline {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+}
+
+/* Table + layout */
+td {
+    padding: 20px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+/* TITLE + SUBCLASSES */
+.title {
+    color: red;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.title-large {
+    font-size: 2rem;
+}
+
+.title-small {
+    font-size: .5rem;
+}
+
+/* ID STYLING */
+#hireButtons {
+    background-color: #f2f2f2;
+    border: 2px solid black;
+}
+
+#footerTable {
+    background-color: #222;
+    color: white;
+}
+
+/* UNIVERSAL SELECTOR */
+* {
+    font-family: Arial, sans-serif;
 }

@@ -19,7 +19,63 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+#banner {
+    border: 5px outset red;
+    background-color: lightblue;
+    text-align: center;
+    padding: 10px;
+}
 
+div#face {
+    width: 40vw;
+    height: 40vw;
+    max-width: 400px;
+    max-height: 400px;
+    margin: 0 auto;
+    position: relative;
+    background: orange;
+    margin-top: 2rem;
+}
+
+div#face, div#face * {
+    border-radius: 50%;
+}
+
+.eye {
+    width: 25%;
+    height: 25%;
+    background: #fff;
+    position: absolute;
+    top: 20%;
+}
+
+.left.eye {
+    left: 20%;
+}
+
+.right.eye {
+    right: 20%;
+}
+
+.pupil {
+    background: #000;
+    width: 50%;
+    height: 50%;
+    position: relative;
+    left: 25%;
+    transform-origin: bottom;
+}
+
+#mouth {
+    position: relative;
+    width: 60%;
+    left: 20%;
+    height: 25%;
+    border: 1vw solid transparent;
+    border-radius: 50%;
+    top: 50%;
+    border-bottom-color: #000;
+}4
     </style>
 </head>
 
@@ -36,19 +92,43 @@
 
             <h2>Heading Examples</h2>
 
-            <!-- Put your Headings ↓↓↓↓↓↓Below↓↓↓↓↓↓ here-->
+          <h1>Main Title</h1>
+<h2>Subtitle</h2>
+<h3>Section</h3>
+<h4>Minor Section</h4>
+<h5>Tiny Header</h5>
+<h6>Smallest Header</h6>  <!-- Put your Headings ↓↓↓↓↓↓Below↓↓↓↓↓↓ here-->
 
             <!-- Put your Headings ↑↑↑↑↑↑Above↑↑↑↑↑↑ here-->
 
             <h2>Examples of "Other" HTML elements</h2>
 
             <!-- Put your 8 examples of other elements ↓↓↓↓↓↓Below↓↓↓↓↓↓ here-->
+             <p>I was <del>stressed</del> but now I am <ins>succeeding</ins>!</p>
+<p>Learning progress: <progress value="100" max="100"></progress></p>
+<hr>
+<p>I go to <abbr title="Shakopee High School">SHS</abbr>.</p>
+<p><small>This is a small text example.</small></p>
+<p>Exponents look like 10<sup>2</sup> and water is H<sub>2</sub>O.</p>
 
             <!-- Put your 8 examples of other elements ↑↑↑↑↑↑Above↑↑↑↑↑↑ here-->
         </div>
-        <div id="banner">
+        <div id="banner"><h1>Welcome to User 20's Awesome Site!</h1>4
         </div>
         <div id="face">
+        <div class="left eye">
+            <div class="pupil"></div>
+        </div>
+        <div class="right eye">
+            <div class="pupil"></div>
+        </div>
+        <div id="mouth"></div>
+    </div>
+
+    <section>
+        <h2>My Specific Container</h2>
+        <p>This is a section element used to organize my content for Activity 1.2b.</p>
+    </section>
 
         </div>
     </main>

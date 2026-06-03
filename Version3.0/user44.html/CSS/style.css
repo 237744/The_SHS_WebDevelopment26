@@ -19,3 +19,20 @@ th {
 	color: #ffffff;
 	background-color: #003366;
 }
+
+body {
+    background-image: url('../fly_by_nightAlbumCover.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+ol {
+    background-color: #fdf5e6; /* Old Lace color */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: square;
+    font-size: 18px;
+    color: #003366;
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="style.css">
+<script src="tailwind-config.js"></script>
+</head>
+<body class="page-fade-in flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50 h-16">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+<a href="index.html" class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight hover:opacity-80 transition-opacity">SkyGuide</a>
+<nav class="hidden md:flex items-center gap-gutter h-full">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="index.html">Intro</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="journey.html">Journey</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="hardware.html">Hardware</a>
+<a class="font-label-md text-label-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="styles.html">Styles</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html">Safety</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-all">Join Community</button>
+</div>
+</header>
+<main class="flex-grow">
+<!-- Hero Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-16 md:py-24">
+<div class="max-w-3xl">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-sm text-label-sm inline-block mb-4">Core Disciplines</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6">Flight Styles &amp; Use Cases</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    FPV isn't a one-size-fits-all hobby. Whether you're chasing high-speed competition or capturing cinematic vistas, your hardware and technique must adapt to your mission.
+                </p>
+</div>
+</section>
+<!-- Bento Style Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto pb-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Racing Card (Large Feature) -->
+<div class="md:col-span-8 group border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest flex flex-col p-4 md:p-6">
+<div class="aspect-video relative overflow-hidden bg-surface-dim">
+<img alt="Racing FPV Drone" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/fpvracing.jpeg"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">High Velocity</div>
+</div>
+<div class="p-gutter flex flex-col justify-between flex-grow">
+<div>
+<h3 class="font-headline-xl text-headline-xl text-primary mb-3">Racing</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Built for pure speed and agility. Pilots navigate through complex gates at speeds exceeding 100mph. This discipline requires high-refresh rate analog or low-latency digital video systems.</p>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="border border-outline px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface">5-inch Props</span>
+<span class="border border-outline px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface">6S Voltage</span>
+<span class="border border-outline px-3 py-1 rounded-full font-label-sm text-label-sm text-on-surface">Low Latency</span>
+</div>
+</div>
+</div>
+<!-- Micro/Whoop Card (Small Accent) -->
+<div class="md:col-span-4 group border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest flex flex-col p-4 md:p-6">
+<div class="aspect-square relative overflow-hidden bg-surface-dim">
+<img alt="Tiny Whoop Micro Drone" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/fpvmicrowhoops.jpeg"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Indoor / Training</div>
+</div>
+<div class="p-gutter">
+<h3 class="font-headline-lg text-headline-lg text-primary mb-3">Micro &amp; Whoops</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">The safest entry point for beginners. Ducted propellers allow for indoor flight and proximity training without the risk of heavy damage.</p>
+</div>
+</div>
+<!-- Freestyle Card (Medium) -->
+<div class="md:col-span-6 group border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest flex flex-col p-4 md:p-6">
+<div class="aspect-[16/10] relative overflow-hidden bg-surface-dim">
+<img alt="Freestyle FPV Drone" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/fpvdrone.png"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Creative Expression</div>
+</div>
+<div class="p-gutter">
+<h3 class="font-headline-xl text-headline-xl text-primary mb-3">Freestyle</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Combining acrobatics with architectural environments. It's about 'flow' and finding unique lines through gaps. Heavy-duty frames are required for the occasional impact.</p>
+</div>
+</div>
+<!-- Cinematic Card (Medium) -->
+<div class="md:col-span-6 group border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest flex flex-col p-4 md:p-6">
+<div class="aspect-[16/10] relative overflow-hidden bg-surface-dim">
+<img alt="Cinematic FPV Drone" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="images/fpvlongrange.jpg"/>
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Visual Storytelling</div>
+</div>
+<div class="p-gutter">
+<h3 class="font-headline-xl text-headline-xl text-primary mb-3">Cinematic / Long Range</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Equipped with HD cameras like GoPros or built-in O3 systems. Focused on smooth, sweeping movements and exploring vast landscapes with GPS stabilization.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Comparison Table -->
+<section class="bg-surface-container-low py-24 px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<h2 class="font-headline-xl text-headline-xl text-primary mb-12">System Comparison</h2>
+<div class="overflow-x-auto">
+<table class="w-full border-collapse">
+<thead>
+<tr class="border-b border-outline-variant">
+<th class="text-left py-4 font-label-md text-label-md text-on-surface-variant">Feature</th>
+<th class="text-left py-4 font-label-md text-label-md text-on-surface">Racing</th>
+<th class="text-left py-4 font-label-md text-label-md text-on-surface">Freestyle</th>
+<th class="text-left py-4 font-label-md text-label-md text-on-surface">Cinematic</th>
+<th class="text-left py-4 font-label-md text-label-md text-on-surface">Micro</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm">
+<tr class="border-b border-outline-variant">
+<td class="py-6 font-label-md text-on-surface-variant">Primary Goal</td>
+<td class="py-6">Lap Times</td>
+<td class="py-6">Acrobatics</td>
+<td class="py-6">Video Quality</td>
+<td class="py-6">Practice</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="py-6 font-label-md text-on-surface-variant">Durability</td>
+<td class="py-6">Moderate</td>
+<td class="py-6">High (Carbon)</td>
+<td class="py-6">Low</td>
+<td class="py-6">Very High</td>
+</tr>
+<tr class="border-b border-outline-variant">
+<td class="py-6 font-label-md text-on-surface-variant">Camera Type</td>
+<td class="py-6">Analog / Low-Lat</td>
+<td class="py-6">Hybrid HD</td>
+<td class="py-6">Full HD Gimbals</td>
+<td class="py-6">Nano Analog</td>
+</tr>
+<tr>
+<td class="py-6 font-label-md text-on-surface-variant">Weight Class</td>
+<td class="py-6">300g - 450g</td>
+<td class="py-6">500g - 750g</td>
+<td class="py-6">800g+</td>
+<td class="py-6">&lt; 50g</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-high border-t border-outline-variant dark:border-outline full-width mt-auto">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="font-label-md text-label-md font-bold text-primary dark:text-inverse-primary">SkyGuide</div>
+<div class="flex gap-gutter">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#safety-manual">Safety Manual</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#flight-logs">Flight Logs</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#find-spots">Find Spots</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#community-code">Community Code</a>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface mt-4 md:mt-0">
+                © 2024 SkyGuide. Professional FPV Education.
+            </p>
+</div>
+</footer>
+</body></html>

@@ -147,15 +147,19 @@ h1, h2, h3, h4, h5, h6{
 #knowledge > * {
   border: 3px red solid;
 }
-p + * {
-  background-color: #FFFF00;
-}
 #knowledge li::marker{
   content:"😜 ";
 }
-td:hover {
+#rainbow td:hover {
   background-color: black;
 }
-.rainbow:autofill {
-  background-color: #ff0000;
+p.caption {
+  position: absolute;
+  bottom: 1vh;
+}
+
+.description {
+  font-size: 0.9em;
+  padding: 0 20px 20px 20px;
+  text-align: left;
 }

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Super Mario 3D Land — Worlds</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav>
+    <div class="nav-container">
+      <span class="nav-logo">★ MARIO 3D LAND ★</span>
+      <ul class="nav-links">
+        <li><a href="index.html"> Home</a></li>
+        <li><a href="story.html"> Story</a></li>
+        <li><a href="worlds.html" class="active"> Worlds</a></li>
+        <li><a href="powerups.html"> Power-Ups</a></li>
+        <li><a href="characters.html"> Characters</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="page-wrapper">
+
+    <!-- Page Header -->
+    <header class="page-header">
+      <h1> Worlds & Levels</h1>
+      <p>From grassy plains to lava-filled fortresses — every world in Super Mario 3D Land offers a new theme, new enemies, and new surprises.</p>
+    </header>
+
+    <!-- Overview -->
+    <section aria-label="World overview">
+      <div class="card">
+        <h2>🌍 The 16-World Journey</h2>
+        <p>The game is split into <strong>8 Main Worlds</strong> and <strong>8 Special Worlds</strong>, each containing multiple levels, a midpoint Toad House, and a fortress or castle boss.</p>
+        <p>Every level hides <strong>3 Star Medals</strong>. Collecting enough unlocks the next world's path — and gathering them all opens the ultimate challenge in the Special Worlds.</p>
+        <div class="mt-24">
+          <span class="badge">16 Total Worlds</span>
+          <span class="badge badge-blue">80+ Levels</span>
+          <span class="badge badge-green">240 Star Medals</span>
+          <span class="badge badge-red">16 Boss Fights</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="star-divider">★ ★ ★</div>
+
+    <!-- Main Worlds Grid -->
+    <section aria-label="Main worlds">
+      <div class="card">
+        <h2> Main Worlds (1–8)</h2>
+        <div class="card-grid">
+
+          <article class="card card-green mb-0">
+            <h3> World 1 — Grassy Plains</h3>
+            <p>Mario's adventure begins in sunny green fields. Simple moving platforms, basic Goombas, and the first Tanooki Leaf introduce core mechanics.</p>
+            <p>The castle boss is a typical bowser fight</p>
+            <span class="badge badge-green">Beginner</span>
+          </article>
+
+          <article class="card card-yellow mb-0">
+            <h3> World 2 — Desert Dunes</h3>
+            <p>Sandy pyramids, quicksand pits, and Pokey cacti fill this sun-scorched world. Watch for hidden underground caverns!</p>
+            <p>Boss: Boom Boom, returning from Super Mario Bros. 3.</p>
+            <span class="badge">Easy</span>
+          </article>
+
+          <article class="card card-blue mb-0">
+            <h3> World 3 — Waterside Cliffs</h3>
+            <p>Waterfalls, slippery wet platforms, and Cheep-Cheeps make this world a wet and wild ride. The second airship level appears here.</p>
+            <span class="badge badge-blue">Moderate</span>
+          </article>
+
+          <article class="card card-red mb-0">
+            <h3> World 4 — Ghost Houses</h3>
+            <p>Dark corridors, illusion rooms, and Boos lurk around every corner. Levels flip and rotate to disorient the player.</p>
+            <span class="badge badge-red">Spooky!</span>
+          </article>
+
+          <article class="card card-green mb-0">
+            <h3> World 5 — Sky Jungles</h3>
+            <p>High-altitude platforms over endless drops, vine-covered ruins, and Piranha Plants on every ledge. Precision jumping is key.</p>
+            <span class="badge badge-green">Moderate</span>
+          </article>
+
+          <article class="card card-blue mb-0">
+            <h3> World 6 — Icy Peaks</h3>
+            <p>Slippery ice physics meet treacherous narrow ledges. Freezing winds knock Mario off course. Spike Traps everywhere.</p>
+            <span class="badge badge-blue">Hard</span>
+          </article>
+
+          <article class="card card-yellow mb-0">
+            <h3> World 7 — Lava Fortress</h3>
+            <p>Magma rises beneath crumbling stone bridges. Hammer Bros. and Lakitus rain projectiles. The pressure is relentless.</p>
+            <span class="badge badge-red">Very Hard</span>
+          </article>
+
+          <article class="card card-red mb-0">
+            <h3> World 8 — Bowser's Castle</h3>
+            <p>The final gauntlet combines every mechanic from all previous worlds. Multiple sub-areas lead to the ultimate Bowser showdown.</p>
+            <span class="badge badge-red">Extreme!</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <div class="star-divider">⭐ ⭐ ⭐</div>
+
+    <!-- ===== BOOTSTRAP FEATURE: PROGRESS BARS (Star Medal tracker) ===== -->
+    <section aria-label="Star Medal progress">
+      <div class="card">
+        <h2> Star Medal Completion Guide</h2>
+        <p>Here's a rough guide to how many Star Medals each world zone contains and how challenging they are to find:</p>
+
+        <article style="margin-bottom:20px;">
+          <p style="margin-bottom:6px;"><strong>Worlds 1–2</strong> <span class="badge" style="float:right">15 medals</span></p>
+          <div class="progress">
+            <div class="progress-bar bg-success" style="width:25%">Easy</div>
+          </div>
+        </article>
+
+        <article style="margin-bottom:20px;">
+          <p style="margin-bottom:6px;"><strong>Worlds 3–4</strong> <span class="badge badge-blue" style="float:right">30 medals</span></p>
+          <div class="progress">
+            <div class="progress-bar bg-primary" style="width:45%">Moderate</div>
+          </div>
+        </article>
+
+        <article style="margin-bottom:20px;">
+          <p style="margin-bottom:6px;"><strong>Worlds 5–6</strong> <span class="badge" style="float:right">30 medals</span></p>
+          <div class="progress">
+            <div class="progress-bar bg-warning text-dark" style="width:65%">Tricky</div>
+          </div>
+        </article>
+
+        <article style="margin-bottom:20px;">
+          <p style="margin-bottom:6px;"><strong>Worlds 7–8</strong> <span class="badge badge-red" style="float:right">30 medals</span></p>
+          <div class="progress">
+            <div class="progress-bar bg-danger" style="width:82%">Hard</div>
+          </div>
+        </article>
+
+        <article style="margin-bottom:20px;">
+          <p style="margin-bottom:6px;"><strong>Special Worlds S1–S8</strong> <span class="badge badge-red" style="float:right">120 medals</span></p>
+          <div class="progress">
+            <div class="progress-bar bg-danger" style="width:98%">Brutal!</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="star-divider">🍄 🍄 🍄</div>
+
+    <!-- Special Worlds Teaser -->
+    <section aria-label="Special Worlds overview">
+      <div class="card card-red">
+        <h2> Special Worlds (S1–S8)</h2>
+        <p>After rescuing Princess Peach, eight brutal Special Worlds unlock. These are <strong>remixed, harder versions</strong> of existing levels — with more enemies, fewer platforms, and brutal time limits.</p>
+        <p>Completing all Special Worlds and collecting every Star Medal unlocks the <strong>Crown on your save file</strong> — the ultimate badge of honour for Mario masters.</p>
+        <span class="badge badge-red">Unlocked Post-Game</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>★ SUPER MARIO 3D LAND FAN SITE ★</p>
+    <p style="font-family:var(--font-body);color:rgba(255,255,255,0.6);font-size:0.85rem;margin-top:8px;">
+      Not affiliated with Nintendo. All characters and trademarks belong to Nintendo Co., Ltd.
+    </p>
+    <nav style="margin-top:14px;">
+      <a href="index.html">Home</a>
+      <a href="story.html">Story</a>
+      <a href="worlds.html">Worlds</a>
+      <a href="powerups.html">Power-Ups</a>
+      <a href="characters.html">Characters</a>
+    </nav>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

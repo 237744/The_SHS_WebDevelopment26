@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 5.0
-    Name:
-    Date Completed:
+    Name:Grant Swenson
+    Date Completed: 4/28/26
 -->
 
 <head>
@@ -47,6 +47,49 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+        --bs-table-color-type: var(--bs-table-striped-color);
+        --bs-table-bg-type: rgba(255, 0, 0, 0.3)
+        }
+        .img {
+            border-radius: 50%;
+            }
+            .navbar {
+                --bs-navbar-padding-x: 0;
+                --bs-navbar-padding-y: 0.5rem;
+                --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
+                --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+                --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
+                --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+                --bs-navbar-brand-padding-y: 0.3125rem;
+                --bs-navbar-brand-margin-end: 1rem;
+                --bs-navbar-brand-font-size: 1.25rem;
+                --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 1);
+                --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+                --bs-navbar-nav-link-padding-x: 0.5rem;
+                --bs-navbar-toggler-padding-y: 0.25rem;
+                --bs-navbar-toggler-padding-x: 0.75rem;
+                --bs-navbar-toggler-font-size: 1.25rem;
+                --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+                --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+                --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+                --bs-navbar-toggler-focus-width: 0.25rem;
+                --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+            }
+            .navbar-dark .navbar-nav .show > .nav-link, 
+            .navbar-dark .navbar-nav .active > .nav-link, 
+            .navbar-dark .navbar-nav .nav-link.show, 
+            .navbar-dark .navbar-nav .nav-link.active { 
+                color: #fff; 
+            }
     </style>
 
     <body>
@@ -78,13 +121,26 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
+                            <a href="https://mail.google.com/" class="nav-link active" tabindex="-1">Contact</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img class="img" src="https://static.vecteezy.com/system/resources/thumbnails/002/318/271/small/user-profile-icon-free-vector.jpg" alt="Avatar" style="width:40px">
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="http://burger.com/">Profile</a></li>
+                                <li><a class="dropdown-item" href="https://play.google.com/store/apps/details?id=app.wizyemm.settings&hl=en_US">Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="https://www.google.com/">Logout</a></li>
+                            </ul>
                         </li>
                         <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </form>
+                    <div name="form-button">
+                        <a href="form.html" class="btn btn-primary" role="button" > Login</a>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -152,39 +208,165 @@
             </div>
 
             <!---------Table-Striped------------------------------------------->
-            <div class="container mt-3" name="table-striped">
-            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Row</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>This</td>
+                            <td>is</td>
+                            <td>burger@burger.com</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>a</td>
+                            <td>test</td>
+                            <td>Testing@IHateTests.com</td>
+                            </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>for</td>
+                            <td>table-striped</td>
+                            <td>MyEyes@TheyHurt.com</td>
+                        </tr>
+                    </tbody>
+            </table>
 
             <!---------List-Group---------------------------------------------->
             <div class="container mt-3" name="list-group">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action active">
+                        <i class="fa fa-home"></i> Home
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fa fa-camera"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active">145</span>
+                    </a>
+                    <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+                        <i class="fa fa-music"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active">50</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <i class="fa fa-film"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right">8</span>
+                    </a>
+                    <a href="https://cats.com/" target="_blank" class="list-group-item list-group-item-action">
+                        <i class="fa-solid fa-cat"></i></i> Cats <span class="badge bg-secondary badge-pill badge-primary pull-right">800</span>
+                    </a>
+                </div>
             </div>
 
             <!---------Form Button--------------------------------------------->
             <div class="container mt-3 vstack" name="form-button">
+                <a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a>
             </div>
         </main>
 
         <!---------------------------------- Begin the footer ------------------------------------->
         <footer>
-            <span class="title">Example of a Footer Title</span>
-            <div class="container py-4" id="footerTable">
-                <ul class="list-unstyled d-flex justify-content-center">
-                    <li class="mx-3">
-                        <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                    </li>
-                    <li class="mx-3">
-                        <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                    </li>
-                </ul>
+            <div class="row">
+                <div class="container mt-3" name="list-group">
+                    <div class="list-group">
+                        <a href="https://getbootstrap.com/docs/5.3/layout/grid/" class="list-group-item list-group-item-action">
+                            <i class="fa-brands fa-bootstrap"></i> Bootstrap info 
+                        </a>
+                            <i class="fa fa-film"> </i> Links for socials
+                            <div class="row">
+                                <div class="col demo-content">
+                                    <a href="https://x.com/" class="list-group-item list-group-item-action"> X </a>
+                                    <i class="fa fa-brands fa-x-twitter"></i>
+                                </div>
+                                <div class="col demo-content">
+                                    <a href="https://www.instagram.com/" class="list-group-item list-group-item-action"> Insta </a>
+                                    <i class="fa fa-brands fa-instagram"></i>
+                                </div>
+                                <div class="col demo-content">
+                                    <a href="https://github.com/" class="list-group-item list-group-item-action"> Github </a>
+                                    <i class="fa fa-brands fa-github"></i>
+                                </div>
+                                <div class="col demo-content">
+                                    <a href="https://www.tiktok.com/en/" class="list-group-item list-group-item-action"> Ticktock </a>
+                                    <i class="fa fa-brands fa-tiktok"></i>
+                                </div>
+                                <div class="col demo-content">
+                                    <a href="https://www.facebook.com/" class="list-group-item list-group-item-action"> Facebook </a>
+                                    <i class="fa fa-brands fa-facebook"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="container p-4">
+                    <section class="">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div data-mdb-ripple-init
+                            class="bg-image hover-overlay shadow-1-strong rounded"
+                            data-ripple-color="light"
+                        >
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoDim25Sj5loXJbpYM0NKMZI2geNtFbDme5A&s" class="w-100" />
+                            <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div data-mdb-ripple-init
+                            class="bg-image hover-overlay shadow-1-strong rounded"
+                            data-ripple-color="light"
+                        >
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKV64Jlqll6ISIAKPmaNugVWXlbshzxyNPPw&s" class="w-100" />
+                            <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div data-mdb-ripple-init
+                            class="bg-image hover-overlay shadow-1-strong rounded"
+                            data-ripple-color="light"
+                        >
+                            <img src="https://cdn.mexicancaribbean.travel/wp-content/uploads/2024/09/cozumel-15_11zon-scaled.jpg" class="w-100" />
+                            <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                        </div>
+                        
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div data-mdb-ripple-init
+                            class="bg-image hover-overlay shadow-1-strong rounded"
+                            data-ripple-color="light"
+                        >
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b2/Bootstrap_logo.svg" class="w-100" />
+                            <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 mb-4 mb-md-0">
+                        <div data-mdb-ripple-init
+                            class="bg-image hover-overlay shadow-1-strong rounded"
+                            data-ripple-color="light"
+                        >
+                            <img src="https://mdbcdn.b-cdn.net/img/new/fluid/city/116.webp" class="w-100" />
+                            <a href="#!">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.2);"></div>
+                            </a>
+                        </div>
+                        </div>
+                    </div>
+                    </section>
+                </div>
+                
+                <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+                    © 2020 Copyright:
+                    <a class="text-body" href="https://www.copyright.gov/">Copyright.gov</a>
+                </div>
             </div>
         </footer>
         <!---------------------------------- End the footer --------------------------------------->

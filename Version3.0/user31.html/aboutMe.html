@@ -41,7 +41,45 @@
             font-size: 12px;
             text-align: center;
         }
+    h1{
+    color: red;
+}
+table,th,td{
+    color: white;
+    border: 3px solid black;
+}
+h3 {
+    padding: 50px;
+    background-color: lavender;
+}
+p {
+  padding: 5px 50px 30px 5px;  /* Top  Right  Bottom  Left */
+    background-color: lavender;
+}
+p {
+padding: 20px 10px;  /* Vertical  Horizontal */
+}
+h3 {
+    padding:50px;
+    background-color: lavender;
+    display: inline-block;
+    border-bottom: 1px solid #5D6063;
+    border-right: 3px dotted #0000ff;
+    border-top: 5px inset;
+    border-left: 3px dashed #e9e9e9;
+}
+
+p {
+    padding: 5px 50px 30px 5px;
+    margin-bottom: 50px;
+}
+strong {
+    margin: 50px;
+    background-color: lightblue;
+}
+
     </style>
+    <title>Mohamed's CSS example</title>
 </head>
 
 <body>
@@ -68,25 +106,44 @@
                 </div>
             </div>
         </nav>
-        <!---------------------------------- End the nav-bar ------------------------------------->
+        <h3>Headings Are Block Elements</h3>
+
+<p>paragraphs are blocks, too.<em>However</em>, &lt;em&gt; and &lt;strong&gt;
+elements are not. They are <strong>inline</strong> elements.</p>
+
+<p>Block elements define the flow of the HTML document, while inline elements
+do not.</p>
     </menu>
 
     <main class="wideMargin">
 
         <h1 class="text-left my-3">About Me</h1><!-- Edit this line for the title of your page -->
-
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-
-        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
+<p id=“YourIDName”> </p>
+<table class= “YourClassName”>
+<div id=“IDNAME” class= “className”>
     </main>
+    <p>
+        i am mohamed
+    </p>
+    <h3>CSS Box Model Demonstration</h3>
+<p>
+Paragraphs are blocks too. <em>However</em> things like &lt;em&gt; and &lt;strong&gt; elements are not.
+They are <strong>inline</strong> elements.
+</p>
 
+<div style='padding-top: 1px'></div>  <!-- Add this -->
+
+<p>Block elements define the flow of the HTML document, while inline elements
+do not.
+</p>
     <!---------------------------------- Begin the footer ------------->
     <footer class="wideMargin">
         <div>
-            Webpage made by <a href="#" target="_blank">[your name]</a>
+            Webpage made by <a href="#" target="_blank">[Mohamed Amin]</a>
         </div>
     </footer>
     <!---------------------------------- End the footer ------------->
+
 </body>
 
 </html>

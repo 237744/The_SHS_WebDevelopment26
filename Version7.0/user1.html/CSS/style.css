@@ -41,3 +41,34 @@ h1 {
     border-bottom: 1px solid black;
     margin-bottom: 1em;
 }
+
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+#shoppingList {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#shoppingList button {
+    margin-left: 10px;
+}
+
+#date {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn {
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}

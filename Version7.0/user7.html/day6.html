@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Higher or Lower</title>
+    <script>
+        const answer = Math.floor(Math.random() * 100) + 1;
+
+        function checkGuess() {
+        
+            alert("The secret answer is: " + answer);
+
+
+            const userGuess = Number(document.getElementById("guessInput").value);
+
+
+            if (userGuess < answer) {
+                alert("higher");
+            } else if (userGuess > answer) {
+                alert("lower");
+            } else if (userGuess === answer) {
+                alert("Success");
+            }
+
+
+            document.getElementById("guessInput").value = "";
+        }
+    </script>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            font-size: 1rem;
+            width: 200px;
+        }
+
+        input[type="button"] {
+            padding: 5px 15px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <h1>Higher or Lower</h1>
+        <p>Guess a number between 1 and 100:</p>
+        <input type="text" id="guessInput">
+        <input onclick="checkGuess()" type="button" value="Submit" />
+    </main>
+</body>
+</html>

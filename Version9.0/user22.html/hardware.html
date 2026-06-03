@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hardware Lab | SkyGuide FPV Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="style.css">
+<script src="tailwind-config.js"></script>
+</head>
+<body class="page-fade-in bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-on-surface border-b border-outline-variant dark:border-outline docked full-width top-0 sticky z-50 h-16">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-full">
+<a href="index.html" class="font-headline-lg text-headline-lg font-bold text-primary dark:text-inverse-primary tracking-tight hover:opacity-80 transition-opacity">SkyGuide</a>
+<nav class="hidden md:flex items-center gap-gutter h-full">
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="index.html">Intro</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="journey.html">Journey</a>
+<a class="font-label-md text-label-md text-primary dark:text-inverse-primary border-b-2 border-primary dark:border-inverse-primary pb-1" href="hardware.html">Hardware</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="styles.html">Styles</a>
+<a class="font-label-md text-label-md text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html">Safety</a>
+</nav>
+<button class="bg-primary text-on-primary font-label-md text-label-md px-6 py-2 rounded-lg hover:bg-primary-container hover:text-on-primary-container active:scale-95 transition-all">Join Community</button>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-12">
+<!-- Hero Section -->
+<section class="mb-16 text-center max-w-3xl mx-auto">
+<h1 class="font-display-lg text-display-lg text-primary mb-4">Hardware Lab</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">A clinical deconstruction of high-performance FPV racing and cinematic drones. Master the anatomy of flight through technical precision.</p>
+</section>
+<!-- Schematic Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-20">
+<!-- Flight Controller (FC) -->
+<div class="md:col-span-8 group bg-surface-container-lowest border border-outline-variant rounded-lg p-8 md:p-10 overflow-hidden flex flex-col md:flex-row gap-gutter">
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary icon-lg">memory</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">Flight Controller (FC)</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">The brain of the drone. It processes gyroscope data and pilot inputs thousands of times per second to maintain stability and execute maneuvers.</p>
+<ul class="space-y-4">
+<li class="flex items-center gap-3 font-label-md text-label-md text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-primary opacity-40"></span> STM32 Microcontrollers</li>
+<li class="flex items-center gap-3 font-label-md text-label-md text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-primary opacity-40"></span> MPU6000 Gyroscope Integration</li>
+<li class="flex items-center gap-3 font-label-md text-label-md text-on-surface"><span class="w-1.5 h-1.5 rounded-full bg-primary opacity-40"></span> UART Port Connectivity</li>
+</ul>
+</div>
+<div class="flex-1 min-h-[240px] bg-surface-container-low rounded-lg relative overflow-hidden">
+<img class="absolute inset-0 w-full h-full object-cover" src="images/fpvflightcontroller.png"/>
+</div>
+</div>
+<!-- ESC Section -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-lg p-8 md:p-10 flex flex-col">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary icon-lg">speed</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">ESC</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-auto leading-relaxed">Electronic Speed Controllers translate the FC's signals into high-current pulses that drive the motors, supporting protocols like DShot1200.</p>
+<div class="mt-6 aspect-square bg-surface-container-low rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" src="images/fpvesc.jpg"/>
+</div>
+</div>
+<!-- Motors -->
+<div class="md:col-span-4 bg-surface-container-lowest border border-outline-variant rounded-lg p-8 md:p-10">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary icon-lg">settings_input_component</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">Motors</h3>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4 leading-relaxed">Brushless powerhouses measured in KV (RPM per volt). Low KV for high torque, high KV for raw speed.</p>
+<div class="aspect-video bg-surface-container-low rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" src="images/fpvmotor.jpg"/>
+</div>
+</div>
+<!-- VTX & Antennas -->
+<div class="md:col-span-8 bg-surface-container-lowest border border-outline-variant rounded-lg p-8 md:p-10 flex flex-col md:flex-row gap-gutter">
+<div class="flex-1 min-h-[200px] bg-surface-container-low rounded-lg overflow-hidden order-last md:order-first">
+<img class="w-full h-full object-cover" src="images/fpvvtx.jpg"/>
+</div>
+<div class="flex-1">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary icon-lg">settings_input_antenna</span>
+<h3 class="font-headline-lg text-headline-lg text-primary">VTX &amp; Antennas</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed">The Video Transmitter (VTX) sends the camera feed to your goggles. Antennas ensure the signal remains clear through obstacles and distance.</p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 border border-outline-variant rounded-lg">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-1">Frequency</span>
+<span class="font-headline-lg text-headline-lg text-primary">5.8GHz</span>
+</div>
+<div class="p-4 border border-outline-variant rounded-lg">
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-widest block mb-1">Output</span>
+<span class="font-headline-lg text-headline-lg text-primary">1W+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Analog vs Digital Comparison -->
+<section class="py-16 border-t border-outline-variant">
+<h2 class="font-headline-xl text-headline-xl text-primary text-center mb-12">The Visual Ecosystem: Analog vs. Digital</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Analog -->
+<div class="bg-surface-container border border-outline-variant rounded-lg p-unit*5">
+<div class="flex items-center justify-between mb-8">
+<h4 class="font-headline-lg text-headline-lg text-primary">Analog Systems</h4>
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full">Legacy Performance</span>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="bolt">bolt</span>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-1">Near-Zero Latency</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Instant feedback loop, critical for professional racing where every millisecond counts.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="signal_cellular_nodata">signal_cellular_nodata</span>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-1">Graceful Degradation</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Signal turns to 'snow' as it weakens, allowing the pilot to react before total loss.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="payments">payments</span>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-1">Cost Effective</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Entry level components are significantly cheaper and more accessible.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Digital -->
+<div class="bg-surface-container border border-outline-variant rounded-lg p-unit*5">
+<div class="flex items-center justify-between mb-8">
+<h4 class="font-headline-lg text-headline-lg text-primary">Digital Systems</h4>
+<span class="bg-primary text-on-primary font-label-sm text-label-sm px-3 py-1 rounded-full">HD Immersive</span>
+</div>
+<div class="space-y-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="hd">hd</span>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-1">Crystal Clarity</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">720p or 1080p resolution provides unparalleled detail for cinematic navigation.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="security">security</span>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-1">Signal Integrity</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Bidirectional communication ensures error correction and stable image quality.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-primary mt-1" data-icon="auto_videocam">auto_videocam</span>
+<div>
+<h5 class="font-label-md text-label-md text-primary mb-1">On-board Recording</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Most digital VTX units record high-quality flight footage directly to an SD card.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-high border-t border-outline-variant dark:border-outline full-width mt-auto flat no shadows">
+<div class="w-full py-12 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-gutter">
+<div class="font-label-md text-label-md font-bold text-primary dark:text-inverse-primary mb-4 md:mb-0">SkyGuide</div>
+<div class="flex flex-wrap justify-center gap-6 mb-4 md:mb-0">
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#safety-manual">Safety Manual</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#flight-logs">Flight Logs</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#find-spots">Find Spots</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200" href="safety.html#community-code">Community Code</a>
+</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant dark:text-on-surface opacity-80">© 2024 SkyGuide. Professional FPV Education.</div>
+</div>
+</footer>
+</body></html>

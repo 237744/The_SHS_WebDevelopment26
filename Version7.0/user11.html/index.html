@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 7.0 
-    Name:  
-    Date Completed: 
+    Name:  Jaihatsen Jaiju
+    Date Completed: 5/12/2026
 -->
 
 <head>
@@ -65,6 +65,7 @@
     <main class="container-fluid mt-3">
         <div id="built-in-functions">
             <!-- ALERT-->
+            <h1 onMouseover="alert('GO Sabers!');" value="Click Me!">Shakopee High School</h1>
             <script>
                 alert('Go Sabers!');
             </script>
@@ -219,7 +220,7 @@
             const input = document.getElementById('item');
             const button = document.getElementById('aggregating-list');
 
-            button.onclick = function() {
+            button.onclick = function () {
                 let myItem = input.value;
                 input.value = '';
 
@@ -233,7 +234,7 @@
                 listBtn.textContent = 'Delete';
                 list.appendChild(listItem);
 
-                listBtn.onclick = function(e) {
+                listBtn.onclick = function (e) {
                     list.removeChild(listItem);
                 }
 

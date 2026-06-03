@@ -33,6 +33,9 @@
 
     <!-- Custom styles for this template -->
     <style type="text/css">
+        .card img {
+  width: 100%;
+}
         footer {
             font-size: 12px;
             text-align: center;
@@ -43,15 +46,18 @@
             transition: 0.3s;
             width: 32%;
             margin-bottom: .6em;
+            display: inline-block;
         }
         
         .card:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            display: inline-block;
         }
         
         .nameplate {
-            padding: 2px 16px;
-        }
+  font-size: 2vw;
+  white-space: nowrap;
+}
         
         .paragraph {
             font-family: Arial, Helvetica, sans-serif;
@@ -62,8 +68,11 @@
         }
     </style>
 </head>
-
-<body>
+.paragraph {
+          font-family: Arial, Helvetica, sans-serif;
+          display: inline;
+}
+<body style="background-color: lightblue"> 
     <!---------------------------------- Begin the nav-bar ------------->
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
@@ -127,7 +136,7 @@
                 <p>Computer Scientist</p>
             </div>
         </div>
-        <div class="card" style="display: none;">
+        <div class="card">
             <img src="https://github.com/rmainhar/SHS_WebDevelopment/blob/master/Version4.0/user00/images/img_avatar3.png?raw=true" alt="Avatar Linux" style="width:100%;">
             <div class="nameplate">
                 <h4><b>Sir Linux Penguin</b></h4>

@@ -10,6 +10,94 @@
     </head>
     
     <body>
+        <script>
+        function getRandomGreeting() {
+            const greetings = ['Hello', 'Hi', 'Greetings', 'Welcome', 'Good day'];
+            return greetings[Math.floor(Math.random() * greetings.length)];
+        }
+        function insertGreeting() {
+            const greeting = document.createElement('div');
+            greeting.id = 'greeting';
+            greeting.style.textAlign = 'center';
+            greeting.style.marginBottom = '0.5rem';
+            greeting.textContent = `${getRandomGreeting()}, User #00`;
+            document.body.insertBefore(greeting, document.body.firstChild);
+        }
+        function createApiDisplay() {
+            const apiBlock = document.createElement('div');
+            apiBlock.id = 'apiData';
+            apiBlock.style.textAlign = 'center';
+            apiBlock.textContent = 'Loading API data...';
+            document.body.insertBefore(apiBlock, document.body.children[1] || null);
+        }
+        function showApiData(text) {
+            const apiBlock = document.getElementById('apiData');
+            if (apiBlock) apiBlock.textContent = text;
+        }
+        async function fetchApiData() {
+            const createControlButtons = () => {
+                let controls = document.getElementById('controls');
+                if (!controls) {
+                    controls = document.createElement('div');
+                    controls.id = 'controls';
+                    controls.style.textAlign = 'center';
+                    controls.style.margin = '0.5rem 0';
+                    document.body.insertBefore(controls, document.body.children[2] || null);
+                }
+                const addButton = (id, label, handler) => {
+                    if (document.getElementById(id)) return;
+                    const button = document.createElement('button');
+                    button.id = id;
+                    button.textContent = label;
+                    button.style.margin = '0 0.25rem';
+                    button.addEventListener('click', handler);
+                    controls.appendChild(button);
+                };
+                addButton('jokeButton', 'Tell a joke', () => {
+                    const jokes = ['Why did the programmer quit? Because he didn\'t get arrays.', 'How many programmers does it take to change a light bulb? None, that\'s a hardware problem.', 'Why do programmers prefer dark mode? Because light attracts bugs!'];
+                    showApiData(jokes[Math.floor(Math.random() * jokes.length)]);
+                });
+                addButton('counterButton', 'Click counter', () => {
+                    if (!window.clickCount) window.clickCount = 0;
+                    window.clickCount++;
+                    showApiData(`Button clicked ${window.clickCount} times`);
+                });
+                addButton('timeButton', 'Show current time', () => {
+                    const now = new Date();
+                    showApiData(`Current time: ${now.toLocaleTimeString()}`);
+                });
+                addButton('bgButton', 'Change background color', () => {
+                    document.body.style.backgroundColor = `hsl(${Math.floor(Math.random() * 360)}, 80%, 90%)`;
+                });
+                addButton('nicknameButton', 'Generate 1 nicknames', () => {
+                    const adjectives = ['Swift', 'Brave', 'Mighty', 'Silent', 'Bold', 'Clever', 'Lucky', 'Happy', 'Sly', 'Sunny'];
+                    const nouns = ['Falcon', 'Wizard', 'Ranger', 'Shadow', 'Knight', 'Pilot', 'Phantom', 'Nova', 'Tiger', 'Dragon'];
+                    const nicknames = new Set();
+                    while (nicknames.size < 1) {
+                        const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
+                        const noun = nouns[Math.floor(Math.random() * nouns.length)];
+                        nicknames.add(`${adjective}${noun}${Math.floor(Math.random() * 1000)}`);
+                    }
+                    showApiData(`Nicknames: ${Array.from(nicknames).join(', ')}`);
+                });
+            };
+            createControlButtons();
+            try {
+                const response = await fetch('https://api.quotable.io/random');
+                if (!response.ok) throw new Error('Network response was not ok');
+                const data = await response.json();
+                showApiData(`Quote: "${data.content}" — ${data.author}`);
+            } catch (error) {
+                showApiData('Unable to load API data.');
+                console.error(error);
+            }
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            insertGreeting();
+            createApiDisplay();
+            fetchApiData();
+        });
+        </script>
         
         <center>My name is User #00</center>
     

@@ -47,16 +47,50 @@
         .demo-content.bg-alt {
             background: #abb1b8;
         }
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-color-type: var(--bs-table-striped-color);
+  --bs-table-bg-type: rgba(21, 0, 321, 0.3)
+}
+.navbar {
+  --bs-navbar-padding-x: 0;
+  --bs-navbar-padding-y: 0.5rem;
+  --bs-navbar-color: rgba(var(--bs-emphasis-color-rgb), 0.65);
+  --bs-navbar-hover-color: rgba(var(--bs-emphasis-color-rgb), 0.8);
+  --bs-navbar-disabled-color: rgba(var(--bs-emphasis-color-rgb), 0.3);
+  --bs-navbar-active-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-brand-padding-y: 0.3125rem;
+  --bs-navbar-brand-margin-end: 1rem;
+  --bs-navbar-brand-font-size: 1.25rem;
+  --bs-navbar-brand-color: rgba(var(--bs-emphasis-color-rgb), 7);
+  --bs-navbar-brand-hover-color: rgba(var(--bs-emphasis-color-rgb), 1);
+  --bs-navbar-nav-link-padding-x: 0.5rem;
+  --bs-navbar-toggler-padding-y: 0.25rem;
+  --bs-navbar-toggler-padding-x: 0.75rem;
+  --bs-navbar-toggler-font-size: 1.25rem;
+  --bs-navbar-toggler-icon-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2833, 37, 41, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  --bs-navbar-toggler-border-color: rgba(var(--bs-emphasis-color-rgb), 0.15);
+  --bs-navbar-toggler-border-radius: var(--bs-border-radius);
+  --bs-navbar-toggler-focus-width: 0.25rem;
+  --bs-navbar-toggler-transition: box-shadow 0.15s ease-in-out;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
+}
     </style>
 
     <body>
         <!---------------------------------- Begin the nav-bar ----------------------------------->
+        
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <div class="container-fluid">
                 <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
 
                 <div class="collapse navbar-collapse" id="collapsibleNavbar">
                     <ul class="navbar-nav me-auto">
@@ -88,13 +122,58 @@
                 </div>
             </div>
         </nav>
-        <!---------------------------------- End the nav-bar ------------------------------------->
-        <!---------Jumbotron---------------------------------------------->
-        <header class="p-5 bg-primary-subtle text-black" name="Jumbotron">
+                <header class="p-5 bg-primary-subtle text-black" name="Jumbotron">
             <h4> Bootstrap Examples</h4>
             <p class="lead"> Let's look at the man different examples of how we can use bootstrap and what bootstrap can do!
             </p>
         </header>
+        <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action active">
+        <i class="fa fa-home"></i> Home
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-camera"></i> Pictures <span class="badge bg-secondary badge-pill badge-primary pull-right active">145</span>
+    </a>
+    <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+        <i class="fa fa-music"></i> Music <span class="badge bg-secondary badge-pill badge-primary pull-right active">50</span>
+    </a>
+    <a href="#" class="list-group-item list-group-item-action">
+        <i class="fa fa-film"></i> Videos <span class="badge bg-secondary badge-pill badge-primary pull-right">8</span>
+    </a>
+    <a href="form.html" class="btn btn-success btn-lg" role="button" aria-pressed="true">Form Page</a>
+</div>
+        <!---------------------------------- End the nav-bar ------------------------------------->
+        <!---------Jumbotron---------------------------------------------->
+            
+            <thead>
+                <tr>
+                    <th>Row</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Clark</td>
+                    <td>Kent</td>
+                    <td>clarkkent@mail.com</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>John</td>
+                    <td>Carter</td>
+                    <td>johncarter@mail.com</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Peter</td>
+                    <td>Parker</td>
+                    <td>peterparker@mail.com</td>
+                </tr>
+            </tbody>
+        </table>
 
         <main>
             <!---------Three Column Layouts------------------------------------>
@@ -150,6 +229,7 @@
                     </div>
                 </div>
             </div>
+            
 
             <!---------Table-Striped------------------------------------------->
             <div class="container mt-3" name="table-striped">
@@ -162,6 +242,7 @@
             <!---------Form Button--------------------------------------------->
             <div class="container mt-3 vstack" name="form-button">
             </div>
+            
         </main>
 
         <!---------------------------------- Begin the footer ------------------------------------->
@@ -189,5 +270,41 @@
         </footer>
         <!---------------------------------- End the footer --------------------------------------->
     </body>
+    <footer class="bg-body-tertiary text-center text-lg-start">
+  <!-- Grid container -->
+  <div class="container p-4">
+    <!--Grid row-->
+    <div class="row">
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Footer text</h5>
+
+        <p>
+          thank you for visiting our website! We hope you found what you were looking for and had a great experience. If you have any questions or feedback, please don't hesitate to contact us. We appreciate your support and look forward to serving you again in the future!
+        </p>
+      </div>
+      <!--Grid column-->
+
+      <!--Grid column-->
+      <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <h5 class="text-uppercase">Footer text</h5>
+
+        <p>
+        Click on the icons above to visit our social media pages!
+        </p>
+      </div>
+      <!--Grid column-->
+    </div>
+    <!--Grid row-->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2026 Copyright:
+    <a class="text-body" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 
 </html>
