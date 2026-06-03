@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Watchlist</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            transition: 0.3s;
+            background: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background: #121212;
+            color: white;
+        }
+
+        .btn {
+            margin: 5px;
+        }
+
+        .card {
+            margin-top: 20px;
+        }
+
+        .video-box {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">🎬 Movie Watchlist</a>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="interstellar.html">Interstellar</a></li>
+        <li class="nav-item"><a class="nav-link" href="godfather.html">The Godfather</a></li>
+        <li class="nav-item"><a class="nav-link" href="Top Gun : Maverick.html">Top Gun</a></li>
+        <li class="nav-item"><a class="nav-link" href="ferris.html">Ferris Bueller</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container text-center mt-4">
+
+    <h1>🎬 Movie Watchlist</h1>
+
+    <button class="btn btn-dark" onclick="darkMode()">Dark Mode</button>
+    <button class="btn btn-primary" onclick="showDate()">Show Date</button>
+    <button class="btn btn-success" onclick="randomMovie()">Random Movie</button>
+    <button class="btn btn-warning" onclick="movieQuote()">Movie Quote</button>
+    <button class="btn btn-danger" onclick="changeWallpaper()">Change Wallpaper</button>
+
+    <button class="btn btn-info" onclick="runAPI()">
+        Run API (Movie)
+    </button>
+
+    <hr>
+
+    <p id="date"></p>
+    <h3 id="randomMovie"></h3>
+    <p id="quote"></p>
+
+    <div id="apiData" class="mt-3"></div>
+
+    <hr>
+
+    <div class="my-4">
+        <h3>🔍 Search TV Shows</h3>
+        <div class="input-group mb-3 w-50 mx-auto">
+            <input type="text" id="searchInput" class="form-control" placeholder="Search for a show (e.g., Breaking Bad)">
+            <button class="btn btn-primary m-0" onclick="searchShows()">Search</button>
+        </div>
+        <div id="results" class="row"></div>
+    </div>
+
+    <hr>
+
+    <div class="video-box">
+        <h4>🎥 My Video</h4>
+
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/0ZDbKhkLxTs"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <hr>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/movie1.jpg" class="card-img-top">
+                <div class="card-body"><h5>Interstellar</h5></div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/movie3.jpg" class="card-img-top">
+                <div class="card-body"><h5>The Godfather</h5></div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/movie4.jpeg" class="card-img-top">
+                <div class="card-body"><h5>Top Gun</h5></div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/movie2.jpg" class="card-img-top">
+                <div class="card-body"><h5>Ferris Bueller</h5></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function darkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    function showDate() {
+        document.getElementById("date").innerText = new Date().toLocaleString();
+    }
+
+    // Modernized random selection to dynamic array
+    const moviesList = ["Interstellar", "The Godfather", "Top Gun", "Ferris Bueller"];
+
+    function randomMovie() {
+        const pick = moviesList[Math.floor(Math.random() * moviesList.length)];
+        document.getElementById("randomMovie").innerText = "🎥 " + pick;
+    }
+
+    function movieQuote() {
+        const quotes = [
+            "I'm gonna make him an offer he can't refuse.",
+            "Stay in the light — Interstellar.",
+            "I feel the need... the need for speed!",
+            "Life moves pretty fast."
+        ];
+        document.getElementById("quote").innerText =
+            quotes[Math.floor(Math.random() * quotes.length)];
+    }
+
+    function changeWallpaper() {
+        document.body.style.backgroundImage = "url('images/movie1.jpg')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundPosition = "center";
+    }
+
+    // =========================
+    // ✅ API (OMDb MOVIE API)
+    // =========================
+
+    async function runAPI() {
+        const movie = "Interstellar";
+        const response = await fetch(
+            `https://www.omdbapi.com/?t=${movie}&apikey=129347d6`
+        );
+        const data = await response.json();
+
+        if (data.Response === "False") {
+            document.getElementById("apiData").innerHTML = `
+                <div class="alert alert-danger">
+                    ❌ API Error: ${data.Error}
+                </div>
+            `;
+            return;
+        }
+
+        document.getElementById("apiData").innerHTML = `
+            <div class="card mx-auto" style="width: 22rem;">
+                <img src="${data.Poster}" class="card-img-top">
+                <div class="card-body">
+                    <h3>${data.Title}</h3>
+                    <p><strong>Year:</strong> ${data.Year}</p>
+                    <p><strong>Genre:</strong> ${data.Genre}</p>
+                    <p><strong>IMDb Rating:</strong> ${data.imdbRating}</p>
+                </div>
+            </div>
+        `;
+    }
+
+    // =========================
+    // ✅ API (TV MAZE SHOW API)
+    // =========================
+
+    function searchShows() {
+        let query = document.getElementById("searchInput").value;
+        if (!query) return; // Prevent empty searches
+
+        fetch("https://api.tvmaze.com/search/shows?q=" + query)
+            .then(response => response.json())
+            .then(data => {
+                let output = "";
+
+                data.forEach(item => {
+                    let show = item.show;
+                    // Provide a default fallback image if the API doesn't have one
+                    let imageSrc = show.image ? show.image.medium : 'https://via.placeholder.com/210x295?text=No+Image';
+
+                    output += `
+                    <div class="col-md-4 mb-4 text-dark">
+                        <div class="card h-100 shadow">
+                            <img src="${imageSrc}" class="card-img-top" alt="${show.name}">
+                            <div class="card-body text-center">
+                                <h3>${show.name}</h3>
+                                <p>Rating: ${show.rating.average || "N/A"}</p>
+                                <button class="btn btn-dark" onclick="addToWatchlist('${show.name.replace(/'/g, "\\'")}')">
+                                    Add to Watchlist
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                });
+
+                document.getElementById("results").innerHTML = output || "<p class='text-muted'>No shows found.</p>";
+            });
+    }
+
+    // Added missing function handler for adding shows
+    function addToWatchlist(showName) {
+        alert(`" ${showName} " has been added to your watchlist features!`);
+    }
+</script>
+
+</body>
+</html>

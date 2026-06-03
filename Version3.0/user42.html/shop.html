@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Eagles Nation - Shop</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        body {
+            background: url("images/philly.png") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        .overlay {
+            background: rgba(0,0,0,0.7);
+            min-height: 100vh;
+        }
+
+        .shop-title {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: rgba(0,0,0,0.8);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            height: 100%;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .product-card h3 {
+            margin-top: 15px;
+        }
+
+        .price {
+            color: lime;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .btn-shop {
+            background-color: #004c54;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .btn-shop:hover {
+            background-color: #006d77;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <a href="index.html" class="navbar-brand">Eagles Nation</a>
+
+        <div class="navbar-nav">
+
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="aboutMe.html" class="nav-link">About</a>
+            <a href="music.html" class="nav-link">Players</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="shop.html" class="nav-link active">Shop</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+
+        </div>
+
+    </div>
+</nav>
+
+<!-- SHOP -->
+<main class="container">
+
+    <h1 class="shop-title">Eagles Team Shop</h1>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="images/jersey.jpg" alt="Jersey">
+                <h3>Team Jersey</h3>
+                <p class="price">$59.99</p>
+                <button class="btn-shop">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="images/ball.jpg" alt="Football">
+                <h3>Signed Football</h3>
+                <p class="price">$39.99</p>
+                <button class="btn-shop">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="product-card">
+                <img src="images/hat.jpg" alt="Hat">
+                <h3>Eagles Hat</h3>
+                <p class="price">$24.99</p>
+                <button class="btn-shop">Buy Now</button>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="text-center text-white p-3 mt-4">
+    <p>&copy; 2026 Eagles Nation</p>
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

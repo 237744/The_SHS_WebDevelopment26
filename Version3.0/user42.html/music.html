@@ -1,141 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Version 3.0
-        Name:
-        Date Completed:
-    -->
 
 <head>
-<link rel="stylesheet" href="CSS/style.css">
-    <title>Music for Web Dev User ## </title>
+    <title>Eagles Nation - Players</title>
 
-    <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Version 3.0 - My Favorite Music">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS -->
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <!-- Animate -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-    <!-- Custom -->
-    <link rel="stylesheet" href="">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- JavaScript -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            background: url("images/philly.png") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
 
-    <!-- Custom styles for this template -->
-    <style type="text/css">
-        footer {
-            font-size: 5px;
-            text-align: center;
+        .overlay {
+            background: rgba(0,0,0,0.7);
+            min-height: 100vh;
+        }
+
+        .pos {
+            font-weight: bold;
+            border-bottom: 2px solid black;
+            display: inline-block;
+        }
+
+        .stats {
+            font-size: 12px;
+            opacity: 0.85;
+            display: block;
+            margin-top: 3px;
+        }
+
+        table img {
+            border-radius: 10px;
         }
     </style>
 </head>
 
 <body>
-    <!---------------------------------- Begin the nav-bar ------------->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav me-auto">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <li class="nav-item">
-                        <a href="index.html" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="aboutMe.html" class="nav-link">About Me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="music.html" class="nav-link">Music</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="list.html" class="nav-link">Lists</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled" tabindex="-1">Contact</a>
-                    </li>
-                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-primary" type="button">Login</button>
-                </form>
-            </div>
+<div class="overlay">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <a href="index.html" class="navbar-brand">Eagles Nation</a>
+
+        <div class="navbar-nav">
+
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="aboutMe.html" class="nav-link">About</a>
+            <a href="music.html" class="nav-link active">Players</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="shop.html" class="nav-link">Shop</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+
         </div>
-    </nav>
-    <!---------------------------------- End the nav-bar ------------------------------------->
 
-    <main class="container-fluid mt-3">
+    </div>
+</nav>
 
-        <h1 class="text-left my-3" tabindex="0">Music</h1>
-        <!-- Edit this line for the title of your page -->
+<!-- CONTENT -->
+<main class="container mt-4">
 
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-        <h2>My Top 5 Favorite Songs</h2>
-        <table id="songs">
-            <thead>
-                <tr>
-                    <th>1</th>
-                    <th>rank</th>
-                    <th>music</th>
-                    <th>album cover</th>
-                </tr>
-            </thead>
+    <h1 class="text-center mb-4">Top Philadelphia Eagles Players</h1>
+
+    <table class="table table-dark table-striped table-bordered text-center">
+
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Player</th>
+                <th>Position</th>
+                <th>Image</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
             <tr>
                 <td>1</td>
-                <td>the weeknd</td>
-                <td>double fantasy </td>
-                <td><img src="images/dawnfm.jpg" "></td>
+                <td>Jalen Hurts</td>
+                <td>
+                    <div class="pos">Quarterback</div>
+                    <div class="stats">3,900 Pass Yards • 28 TD • 12 Rush TD</div>
+                </td>
+                <td><img src="images/jalenhurts.jpg" width="80"></td>
             </tr>
+
             <tr>
                 <td>2</td>
-                <td>the weeknd</td>
-                <td> moth to a flame</td>
-                <td><img src="images/starboy.jpg"
-                    "></td>
+                <td>A.J. Brown</td>
+                <td>
+                    <div class="pos">Wide Receiver</div>
+                    <div class="stats">1,400 Rec Yards • 10 TD • 95 Catches</div>
+                </td>
+                <td><img src="images/ajbrown.jpg" width="80"></td>
             </tr>
+
             <tr>
                 <td>3</td>
-                <td>kendrick lamar</td>
-                <td>money trees</td>
-                <td><img src="images/money.jpg"></td>
+                <td>DeVonta Smith</td>
+                <td>
+                    <div class="pos">Wide Receiver</div>
+                    <div class="stats">1,150 Rec Yards • 8 TD • 85 Catches</div>
+                </td>
+                <td><img src="images/devonta.jpg" width="80"></td>
             </tr>
+
             <tr>
                 <td>4</td>
-                <td> the weeknd</td>
-                <td>low life</td>
-                <td><img src="images/low life.jpg" alt="Modest Mouse - One Chance"></td>
+                <td>Dallas Goedert</td>
+                <td>
+                    <div class="pos">Tight End</div>
+                    <div class="stats">750 Rec Yards • 6 TD • 65 Catches</div>
+                </td>
+                <td><img src="images/goedert.jpg" width="80"></td>
             </tr>
+
             <tr>
                 <td>5</td>
-                <td>the weeknd</td>
-                <td>the hills </td>
-                <td><img src="images/hills.jpeg""></td>
+                <td>Saquon Barkley</td>
+                <td>
+                    <div class="pos">Running Back</div>
+                    <div class="stats">1,300 Rush Yards • 12 TD • 4.9 AVG</div>
+                </td>
+                <td><img src="images/saquon.jpg" width="80"></td>
             </tr>
-        </table>
-    </main>
-    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
 
+        </tbody>
 
-    <!---------------------------------- Begin the footer ------------->
-    <footer>
-        <div>
-            Music can be found here <a href="https://music.amazon.com"> Amazon Music</a>
-        </div>
-    </footer>
-    <!---------------------------------- End the footer ------------->
+    </table>
+
+</main>
+
+<footer class="text-center text-white p-3">
+    <p>&copy; 2026 Eagles Nation</p>
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
-
 </html>

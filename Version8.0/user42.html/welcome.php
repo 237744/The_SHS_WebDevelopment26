@@ -1,8 +1,7 @@
 <?php
-// Initialize the session
 session_start();
- 
-// Check if the user is logged in, if not then redirect him to login page
+
+// Redirect if not logged in
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
@@ -13,64 +12,124 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Login">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Welcome</title>
+<title>Welcome</title>
 
-    <!-- Bootstrap core JS -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-    <style type="text/css">
-        body {
-            font: 14px sans-serif;
-            text-align: center;
-        }
+<style>
 
-    </style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f9;
+    text-align: center;
+}
+
+.page-header {
+    margin-top: 60px;
+}
+
+.card-box {
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 600px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+</style>
+
 </head>
 
 <body>
-    <div class="menu">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <a href="http://shakonet.isd720.com/WebDev" class="navbar-brand">WebDev</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <!---------------------------------- Edit These Items in your Menu ------------->
-                    <a href="#" class="nav-item nav-link active">Home</a>
-                    <a href="#" class="nav-item nav-link">About Me</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Music</a>
-                    <a href="#" class="nav-item nav-link disabled" tabindex="-1">Lists</a>
-                    <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled" tabindex="-1">Contact</a>
-                    <!----------------------------------^ Edit These Items in your Menu ^ ------------->
-                </div>
-                                <div class="navbar-nav ml-auto">
-                    <a href="reset_password.php" class="nav-item nav-link active"><i class="fa fa-cog fa-lg" aria-hidden="true"></i><?php echo htmlspecialchars($_SESSION["username"]); ?></a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
-                    <?php if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-                    echo "<a href='logout.php' class='nav-item nav-link btn-danger' onclick='return confirm(\"Are you sure?\");'> Logout </a>";
-                    } else { echo "<a href='login.php' class='nav-item nav-link'> Login </a>";} ?>
-                </div>
-            </div>
-        </nav>
+    <a href="#" class="navbar-brand">WebDev</a>
+
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Me</a>
+            </li>
+
+            <li class="nav-item disabled">
+                <a class="nav-link" href="#" tabindex="-1">Music</a>
+            </li>
+
+            <li class="nav-item disabled">
+                <a class="nav-link" href="#" tabindex="-1">Lists</a>
+            </li>
+
+            <li class="nav-item disabled">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+                <a class="nav-link" href="reset_password.php">
+                    <i class="fa fa-cog"></i>
+                    <?php echo htmlspecialchars($_SESSION["username"]); ?>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link btn btn-danger text-white ml-2"
+                   href="logout.php"
+                   onclick="return confirm('Are you sure you want to logout?');">
+                   Logout
+                </a>
+            </li>
+
+        </ul>
+
     </div>
-    <div class="page-header">
-        <h1>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+
+    <div class="card-box">
+
+        <h1>Welcome</h1>
+
+        <h3>
+            Hi,
+            <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>
+        </h3>
+
+        <p>You are now logged in successfully.</p>
+
     </div>
+
+</div>
 
 </body>
-
 </html>

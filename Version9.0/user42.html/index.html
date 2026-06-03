@@ -1,18 +1,170 @@
+<!DOCTYPE html>
 <html lang="en">
-    <!--Version 9.0 
-	Name:
-	Date Completed:
-    -->
-    <head>
-        
-        <title>Web Development User #00</title>
-    
-    </head>
-    
-    <body>
-        
-        <center>My name is User #00</center>
-    
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Watchlist</title>
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            transition: 0.3s;
+            background: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background: #121212;
+            color: white;
+        }
+
+        .btn {
+            margin: 5px;
+        }
+
+        .card {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">🎬 Movie Watchlist</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="interstellar.html">Interstellar</a></li>
+        <li class="nav-item"><a class="nav-link" href="godfather.html">The Godfather</a></li>
+        <li class="nav-item"><a class="nav-link" href="Top Gun : Maverick.html">Top Gun: Maverick</a></li>
+        <li class="nav-item"><a class="nav-link" href="ferris.html">Ferris Bueller</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container text-center mt-4">
+
+    <h1>🎬 Movie Watchlist</h1>
+
+    <!-- BUTTONS -->
+    <button class="btn btn-dark" onclick="darkMode()">Dark Mode</button>
+    <button class="btn btn-primary" onclick="showDate()">Show Date</button>
+    <button class="btn btn-success" onclick="randomMovie()">Random Movie</button>
+    <button class="btn btn-warning" onclick="movieQuote()">Movie Quote</button>
+    <button class="btn btn-danger" onclick="changeWallpaper()">Change Wallpaper</button>
+
+    <!-- API BUTTON -->
+    <button class="btn btn-info" onclick="getAPIData()">Movie Mood API</button>
+
+    <hr>
+
+    <p id="date"></p>
+    <h3 id="randomMovie"></h3>
+    <p id="quote"></p>
+
+    <div id="apiData" class="mt-3"></div>
+
+    <hr>
+
+    <div class="row">
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/movie1.jpg" class="card-img-top">
+                <div class="card-body"><h5>Interstellar</h5></div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/movie3.jpg" class="card-img-top">
+                <div class="card-body"><h5>The Godfather</h5></div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/movie4.jpeg" class="card-img-top">
+                <div class="card-body"><h5>Top Gun</h5></div>
+            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="card">
+                <img src="images/movie2.jpg" class="card-img-top">
+                <div class="card-body"><h5>Ferris Bueller</h5></div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+    function darkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+
+    function showDate() {
+        document.getElementById("date").innerText = new Date().toLocaleString();
+    }
+
+    function randomMovie() {
+        const movies = ["Interstellar", "The Godfather", "Top Gun", "Ferris Bueller"];
+        const pick = movies[Math.floor(Math.random() * movies.length)];
+        document.getElementById("randomMovie").innerText = "🎥 " + pick;
+    }
+
+    function movieQuote() {
+        const quotes = [
+            "I'm gonna make him an offer he can't refuse.",
+            "Stay in the light — Interstellar.",
+            "I feel the need... the need for speed!",
+            "Life moves pretty fast."
+        ];
+
+        document.getElementById("quote").innerText =
+            quotes[Math.floor(Math.random() * quotes.length)];
+    }
+
+    function changeWallpaper() {
+        document.body.style.backgroundImage = "url('images/movie1.jpg')";
+        document.body.style.backgroundSize = "cover";
+        document.body.style.backgroundRepeat = "no-repeat";
+        document.body.style.backgroundPosition = "center";
+    }
+
+    // ✅ API FUNCTION (REQUIRED FOR GRADE)
+    async function getAPIData() {
+        const res = await fetch(
+            "https://api.open-meteo.com/v1/forecast?latitude=44.8&longitude=-93.5&current_weather=true"
+        );
+
+        const data = await res.json();
+
+        const temp = data.current_weather.temperature;
+
+        let mood = "";
+
+        if (temp >= 25) {
+            mood = "🎬 Hot summer blockbuster weather";
+        } else if (temp >= 10) {
+            mood = "🍿 Perfect cozy movie night";
+        } else {
+            mood = "❄️ Stay inside and binge movies";
+        }
+
+        document.getElementById("apiData").innerHTML =
+            `Current Temp: ${temp}°C <br><strong>${mood}</strong>`;
+    }
+</script>
+
+</body>
 </html>

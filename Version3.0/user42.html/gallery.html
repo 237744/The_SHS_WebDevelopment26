@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Eagles Nation - Gallery</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        body {
+            background: url("images/philly.png") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            padding-top: 75px;
+        }
+
+        .overlay {
+            background: rgba(0,0,0,0.7);
+            min-height: 100vh;
+            padding-top: 0;
+        }
+
+        .navbar {
+            z-index: 9999;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container-fluid">
+
+        <a class="navbar-brand" href="index.html">Eagles Nation</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="nav">
+
+            <div class="navbar-nav">
+
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="aboutMe.html" class="nav-link">About</a>
+                <a href="music.html" class="nav-link">Players</a>
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="shop.html" class="nav-link">Shop</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+<div class="overlay">
+
+<!-- CONTENT -->
+<main class="container mt-4">
+
+    <h1 class="text-center mb-4">Eagles Gallery</h1>
+
+    <div class="row">
+
+        <div class="col-md-4">
+            <img src="images/hurts.jpg" alt="Hurts">
+        </div>
+
+        <div class="col-md-4">
+            <img src="images/birds.jpg" alt="Birds">
+        </div>
+
+        <div class="col-md-4">
+            <img src="images/boom.jpg" alt="Boom">
+        </div>
+
+        <div class="col-md-4">
+            <img src="images/run.jpg" alt="Run">
+        </div>
+
+        <div class="col-md-4">
+            <img src="images/brown.jpg" alt="AJ Brown">
+        </div>
+
+        <div class="col-md-4">
+            <img src="images/tuff.jpg" alt="Tuff">
+        </div>
+
+        <div class="col-md-4">
+            <img src="images/sock.jpg" alt="Sock">
+        </div>
+
+        <div class="col-md-4">
+            <img src="images/goat.jpg" alt="Goat">
+        </div>
+
+        <div class="col-md-4">
+            <img src="images/coop.jpg" alt="Coop">
+        </div>
+
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center p-3 mt-4 bg-dark">
+    <p>&copy; 2026 Eagles Nation</p>
+</footer>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

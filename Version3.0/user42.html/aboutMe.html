@@ -1,92 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--Version 3.0
-        Name:
-        Date Completed:
-    -->
 
 <head>
+    <title>Eagles Nation - About</title>
 
-    <title>Web Dev User ## </title>
-
-    <!-- Meta -->
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="SHS WebDev Version 3.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 
-    <!-- JavaScript -->
-    <!-- These are needed to get the responsive menu to work -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <!-- Custom styles for this template -->
-    <style type="text/css">
-        menu {
-            margin: 0;
-            padding: 0;
+    <style>
+        body {
+            background: url("images/philly.png") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
         }
 
-        .wideMargin {
-            margin: 15px;
+        .overlay {
+            background: rgba(0,0,0,0.75);
+            min-height: 100vh;
         }
 
-        footer {
-            font-size: 12px;
-            text-align: center;
+        .box {
+            padding: 20px;
+            margin: 15px 0;
+            border: 2px solid white;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.1);
         }
     </style>
 </head>
 
 <body>
-    <!---------------------------------- Begin the nav-bar ------------------------------------------>
-    <menu>
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your Menu ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="aboutMe.html" class="nav-item nav-link active">About Me</a>
-                    <a href="music.html" class="nav-item nav-link">Music</a>
-                    <a href="list.html" class="nav-item nav-link">Lists</a>
-                    <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-item nav-link disabled"
-                        tabindex="-1">Contact</a>
-                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your Menu ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                </div>
-                <div class="navbar-nav ml-auto">
-                    <a href="#" class="nav-item nav-link disabled">Login</a>
-                </div>
-            </div>
-        </nav>
-        <!---------------------------------- End the nav-bar ------------------------------------->
-    </menu>
 
-    <main class="wideMargin">
+<div class="overlay">
 
-        <h1 class="text-left my-3">About Me</h1><!-- Edit this line for the title of your page -->
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
 
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
+        <a class="navbar-brand" href="index.html">Eagles Nation</a>
 
-        <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-    </main>
+        <div class="navbar-nav">
 
-    <!---------------------------------- Begin the footer ------------->
-    <footer class="wideMargin">
-        <div>
-            Webpage made by <a href="#" target="_blank">[your name]</a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="aboutMe.html" class="nav-link active">About</a>
+            <a href="music.html" class="nav-link">Players</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="shop.html" class="nav-link">Shop</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+
         </div>
-    </footer>
-    <!---------------------------------- End the footer ------------->
-</body>
 
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header class="text-center p-5">
+    <h1>About the Philadelphia Eagles</h1>
+    <p class="lead">History, legacy, and the pride of Eagles Nation 🦅</p>
+</header>
+
+<!-- CONTENT -->
+<main class="container">
+
+    <section class="box">
+        <h3>🏈 Team History</h3>
+        <p>
+            The Philadelphia Eagles are one of the most historic franchises in the National Football League (NFL).
+            Founded in 1933, the team has built a long legacy of passionate football, tough competition, and loyal fans.
+            Over the decades, the Eagles have experienced rebuilding years, playoff runs, and championship success.
+        </p>
+    </section>
+
+    <section class="box">
+        <h3>🏆 Super Bowl Victory</h3>
+        <p>
+            One of the most iconic moments in Eagles history came during the 2017 season when the team won Super Bowl LII
+            against the New England Patriots. Backup quarterback Nick Foles led the team in a legendary performance,
+            including the famous “Philly Special” play that is still remembered as one of the greatest trick plays in NFL history.
+        </p>
+    </section>
+
+    <section class="box">
+        <h3>⭐ Modern Era</h3>
+        <p>
+            Today, the Eagles are led by quarterback Jalen Hurts, who has become the face of the franchise.
+            With star players like A.J. Brown and DeVonta Smith, the team continues to be one of the strongest contenders in the NFC.
+            Their physical style of play and strong offense make them a dangerous team every season.
+        </p>
+    </section>
+
+    <section class="box">
+        <h3>🦅 Eagles Fans</h3>
+        <p>
+            Eagles fans are known as some of the most passionate in all of sports.
+            Whether at Lincoln Financial Field or watching from home, the energy of Eagles Nation is unmatched.
+            The fan base is loud, loyal, and proud of their team no matter the situation.
+        </p>
+    </section>
+
+    <section class="box">
+        <h3>📍 Philadelphia Pride</h3>
+        <p>
+            The Eagles represent more than just football — they represent the city of Philadelphia itself.
+            Known for toughness, grit, and determination, the team reflects the identity of the city and its people.
+            Every game is a battle, and every season is a chance to make history.
+        </p>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center p-3 mt-4 bg-dark">
+    <p>&copy; 2026 Eagles Nation</p>
+</footer>
+
+</div>
+
+</body>
 </html>

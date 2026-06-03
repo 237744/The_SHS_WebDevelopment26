@@ -1,217 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <!--Version 4.0
-        Name:
-        Date Completed:
-    -->
+        Name: Sawyer
+        Date Completed: Wednesday, April 29
+-->
 
-<head></head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Hire Me For Your Web Development Needs</title>
+    <title>Hire Me For Your Web Development Needs</title>
 
-<!-- Meta -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="SHS WebDev Version 4.0 - Index">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
 
-<!-- CSS -->
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.css">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<!-- Animate -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-<!-- Custom -->
-<link rel="stylesheet" href="CSS/style.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-<!-- JavaScript -->
-<!-- These are needed to get the responsive menu to work -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.8/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <style>
+        footer {
+            font-size: 12px;
+            text-align: center;
+        }
 
-<!-- Custom styles for this template -->
-<style type="text/css">
-    footer {
-        font-size: 12px;
-        text-align: center;
-    }
-</style>
+        /* BUTTON STYLES */
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            border-radius: 8px;
+        }
+
+        .button2 {
+            border-radius: 30%;
+        }
+
+        .button:hover {
+            color: red;
+            background-color: blue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .red:hover {
+            background-color: lime;
+            color: black;
+        }
+
+        td {
+            padding: 20px;
+        }
+
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        /* CUSTOM TABLE */
+        .table-striped > tbody > tr:nth-of-type(odd) > * {
+            --bs-table-bg-type: rgba(0, 128, 255, 0.2);
+        }
+    </style>
 </head>
 
 <body>
-    <!---------------------------------- Begin the nav-bar ------------->
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a href="http://shakonet.isd720.com" class="navbar-brand">WebDev</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
-                <span class="navbar-toggler-icon"></span>
-            </button>
 
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav me-auto">
-                    <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Edit These Items in your NavBar ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-                    <li class="nav-item">
-                        <a href="#" class="nav-link active">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="display.html" class="nav-link">Display</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="portfolio.html" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="gallery.html" class="nav-link">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="mailto:sample@gmail.com?Subject=Hello" class="nav-link disabled"
-                            tabindex="-1">Contact</a>
-                    </li>
-                    <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Edit These Items in your NavBar ↑↑↑↑↑↑↑↑↑↑↑↑↑↑-->
-                </ul>
-                <form class="d-flex">
-                    <button class="btn btn-primary" type="button">Login</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <!---------------------------------- End the nav-bar ------------------------------------->
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand">Sawyer WebDev</a>
 
-    <main class="container-fluid mt-3">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <h1 class="text-left my-3 title" tabindex="0">Check out my work!</h1>
-        <!-- Edit this line for the title of your page -->
-
-        <!--↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓ Put your content below this line ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓-->
-        <h3 id="topHeading">I'm a Web Developer</h3>
-        <table id="hireButtons">
-            <tr>
-                <td>
-                    <button>Hire me</button>
-                </td>
-                <td>
-                    <button class="button">Hire me</button>
-                </td>
-                <td>
-                    <button class="button button1">Hire me</button>
-                </td>
-                <td>
-                    <button class="button button2">Hire me</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="button button2 red">Hire me</button>
-                </td>
-                <td>
-                    <!-- New button 1 here-->
-                </td>
-                <td>
-                    <!-- New button 2 here-->
-                </td>
-                <td>
-                    <!-- New button 3 here-->
-                </td>
-            </tr>
-        </table>
-        <div class="pt-3">
-            <!-- spacing div-->
-
-            <span class="title">Example of a Heading Title</span>
-
-            <div class="content">
-
-                <p>
-                    Page content..
-                </p>
-
-                <p>
-                    Some more page content..
-                </p>
-
-            </div>
-
-            <p id="morecontent">
-                Even more content
-            </p>
-
-            <!--↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ Make sure all your content is above this line ↑↑↑↑↑↑↑↑↑-->
-    </main>
-
-    <!---------------------------------- Begin the footer ------------->
-    <footer>
-        <span class="title">Example of a Footer Title</span>
-        <div class="container py-4" id="footerTable">
-            <ul class="list-unstyled d-flex justify-content-center">
-                <li class="mx-3">
-                    <i class="fa-brands fa-facebook fa-3x" aria-hidden="true"></i>
-                </li>
-                <li class="mx-3">
-                    <i class="fa-brands fa-x-twitter fa-3x" aria-hidden="true"></i>
-                </li>
-                <li class="mx-3">
-                    <i class="fa-brands fa-instagram fa-3x" aria-hidden="true"></i>
-                </li>
-                <li class="mx-3">
-                    <i class="fa-brands fa-github fa-3x" aria-hidden="true"></i>
-                </li>
-                <li class="mx-3">
-                    <i class="fa-brands fa-tiktok fa-3x" aria-hidden="true"></i>
-                </li>
+        <div class="collapse navbar-collapse" id="nav">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Portfolio</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Gallery</a></li>
             </ul>
+
+            <a href="form.html" class="btn btn-success">Form Page</a>
         </div>
-    </footer>
-    <!---------------------------------- End the footer ------------->
+    </div>
+</nav>
+
+<!-- MAIN -->
+<main class="container mt-4">
+
+    <h1>Check out my work!</h1>
+    <h3>I'm Sawyer, a Web Developer</h3>
+
+    <!-- GRID SYSTEM -->
+    <div class="row mb-3">
+        <div class="col-md-6 bg-primary text-white p-3">6 Columns</div>
+        <div class="col-md-6 bg-secondary text-white p-3">6 Columns</div>
+    </div>
+
+    <div class="row mb-3">
+        <div class="col-md-4 bg-success text-white p-3">4 Columns</div>
+        <div class="col-md-8 bg-warning text-dark p-3">8 Columns</div>
+    </div>
+
+    <!-- BUTTON TABLE -->
+    <table>
+        <tr>
+            <td><button class="button">Hire Me</button></td>
+            <td><button class="button button1">Hire Me</button></td>
+            <td><button class="button button2">Hire Me</button></td>
+            <td><button class="button button2 red">Hire Me</button></td>
+        </tr>
+        <tr>
+            <td><button class="button">Contact Me</button></td>
+            <td><button class="button button1">Projects</button></td>
+            <td><button class="button button2">Skills</button></td>
+            <td><button class="button red">Hire Now</button></td>
+        </tr>
+    </table>
+
+    <!-- TABLE -->
+    <h2 class="mt-4">Contacts</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Peter Parker</td>
+                <td>peter@email.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Bruce Wayne</td>
+                <td>bruce@email.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Clark Kent</td>
+                <td>clark@email.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- LIST GROUP -->
+    <h2>Menu</h2>
+    <div class="list-group mb-4">
+        <a href="#" class="list-group-item list-group-item-action active">
+            <i class="fa fa-home"></i> Home
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="fa fa-camera"></i> Photos <span class="badge bg-secondary float-end">120</span>
+        </a>
+        <a href="https://www.spotify.com/" target="_blank" class="list-group-item list-group-item-action">
+            <i class="fa fa-music"></i> Music <span class="badge bg-secondary float-end">45</span>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+            <i class="fa fa-film"></i> Videos <span class="badge bg-secondary float-end">10</span>
+        </a>
+    </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="mt-4">
+    <div class="container py-3">
+        <p>Follow me:</p>
+        <i class="fa-brands fa-facebook fa-2x mx-2"></i>
+        <i class="fa-brands fa-instagram fa-2x mx-2"></i>
+        <i class="fa-brands fa-github fa-2x mx-2"></i>
+    </div>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
 </body>
-
 </html>
-.button {
-background-color: #4CAF50;
-border: none;
-color: white;
-padding: 20px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 4px 2px;
-cursor: pointer;
-}
-
-.button1 {
-border-radius: 8px;
-}button:hover {
-color: rgb(255, 0, 0);
-background-color: rgb(11, 48, 234);
-}
-
-.button2 {
-border-radius: 30%;
-hover {
-color: red;
-background-color: turquoise;
-
-
-}
-
-
-.red {
-background-color: #ff0000;
-hover {
-color: rgb(244, 7, 7);
-background-color: #3ae10c;
-}
-
-td{
-padding:20px;
-}
-
-table{
-margin-left: auto;
-margin-right: auto;
-}
-
-h1, h2, h3, h4, h5, h6{
-text-align:center;
-}
